@@ -157,10 +157,10 @@ public class Principal extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        contBorda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(61, 186, 244)));
+        contBorda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
         contBorda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        nav.setBackground(new java.awt.Color(61, 186, 244));
+        nav.setBackground(new java.awt.Color(0, 167, 230));
         nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setOpaque(false);
@@ -170,12 +170,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/bioLabLogo2.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/bioLabLogo.png"))); // NOI18N
+        jLabel2.setToolTipText("Bio Lab - Análises Clínicas");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 160));
 
         nav.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 160));
 
-        btnInicio.setBackground(new java.awt.Color(40, 124, 162));
+        btnInicio.setBackground(new java.awt.Color(0, 128, 200));
         btnInicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnInicio.setForeground(new java.awt.Color(255, 255, 255));
         btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Home_18px.png"))); // NOI18N
@@ -197,7 +198,7 @@ public class Principal extends javax.swing.JFrame {
         });
         nav.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 160, 282, 50));
 
-        btnExame.setBackground(new java.awt.Color(61, 186, 244));
+        btnExame.setBackground(new java.awt.Color(0, 167, 230));
         btnExame.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnExame.setForeground(new java.awt.Color(255, 255, 255));
         btnExame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Test_Passed_18px.png"))); // NOI18N
@@ -219,7 +220,7 @@ public class Principal extends javax.swing.JFrame {
         });
         nav.add(btnExame, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 210, 282, 50));
 
-        btnCliente.setBackground(new java.awt.Color(61, 186, 244));
+        btnCliente.setBackground(new java.awt.Color(0, 167, 230));
         btnCliente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Management_18px.png"))); // NOI18N
@@ -241,7 +242,7 @@ public class Principal extends javax.swing.JFrame {
         });
         nav.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 260, 282, 50));
 
-        btnConfigura.setBackground(new java.awt.Color(61, 186, 244));
+        btnConfigura.setBackground(new java.awt.Color(0, 167, 230));
         btnConfigura.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnConfigura.setForeground(new java.awt.Color(255, 255, 255));
         btnConfigura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Wrench_18px.png"))); // NOI18N
@@ -410,10 +411,10 @@ public class Principal extends javax.swing.JFrame {
         divExame.setBackground(new java.awt.Color(255, 255, 255));
         divExame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        divNavExame.setBackground(new java.awt.Color(61, 186, 244));
+        divNavExame.setBackground(new java.awt.Color(0, 167, 230));
         divNavExame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnCadastraPedido.setBackground(new java.awt.Color(40, 124, 162));
+        btnCadastraPedido.setBackground(new java.awt.Color(0, 128, 200));
         btnCadastraPedido.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCadastraPedido.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastraPedido.setText("Cadastrar Pedido");
@@ -431,7 +432,7 @@ public class Principal extends javax.swing.JFrame {
         });
         divNavExame.add(btnCadastraPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
-        btnCadastraResultado.setBackground(new java.awt.Color(61, 186, 244));
+        btnCadastraResultado.setBackground(new java.awt.Color(0, 167, 230));
         btnCadastraResultado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCadastraResultado.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastraResultado.setText("Cadastrar Resultados");
@@ -449,7 +450,7 @@ public class Principal extends javax.swing.JFrame {
         });
         divNavExame.add(btnCadastraResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 140, 50));
 
-        btnRelatorioExame.setBackground(new java.awt.Color(61, 186, 244));
+        btnRelatorioExame.setBackground(new java.awt.Color(0, 167, 230));
         btnRelatorioExame.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnRelatorioExame.setForeground(new java.awt.Color(255, 255, 255));
         btnRelatorioExame.setText("Relatorio de Exames");
@@ -472,7 +473,7 @@ public class Principal extends javax.swing.JFrame {
         txtBuscar1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
         divNavExame.add(txtBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 200, 30));
 
-        btnBuscar5.setBackground(new java.awt.Color(40, 124, 162));
+        btnBuscar5.setBackground(new java.awt.Color(0, 128, 200));
         btnBuscar5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnBuscar5.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar5.setText("Buscar");
@@ -840,7 +841,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnCadastraExame2.setBackground(new java.awt.Color(40, 124, 162));
+        btnCadastraExame2.setBackground(new java.awt.Color(0, 167, 230));
         btnCadastraExame2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCadastraExame2.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastraExame2.setText("Salvar");
@@ -1182,7 +1183,7 @@ public class Principal extends javax.swing.JFrame {
         jTable2.setGridColor(new java.awt.Color(255, 255, 255));
         jTable2.setRowHeight(25);
         jTable2.setRowMargin(2);
-        jTable2.setSelectionBackground(new java.awt.Color(40, 124, 162));
+        jTable2.setSelectionBackground(new java.awt.Color(0, 128, 200));
         jTable2.setSelectionForeground(new java.awt.Color(232, 230, 236));
         jTable2.setShowHorizontalLines(false);
         jTable2.setShowVerticalLines(false);
@@ -1193,7 +1194,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnBuscar7.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscar7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnBuscar7.setForeground(new java.awt.Color(40, 124, 162));
+        btnBuscar7.setForeground(new java.awt.Color(0, 167, 230));
         btnBuscar7.setText("Detalhes");
         btnBuscar7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
         btnBuscar7.setBorderPainted(false);
@@ -1209,7 +1210,7 @@ public class Principal extends javax.swing.JFrame {
         });
         divRelatorioExame.add(btnBuscar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 80, 30));
 
-        btnBuscar8.setBackground(new java.awt.Color(40, 124, 162));
+        btnBuscar8.setBackground(new java.awt.Color(0, 167, 230));
         btnBuscar8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnBuscar8.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar8.setText("Editar");
@@ -1253,10 +1254,10 @@ public class Principal extends javax.swing.JFrame {
         divCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         divCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        divNavCliente.setBackground(new java.awt.Color(61, 186, 244));
+        divNavCliente.setBackground(new java.awt.Color(0, 167, 230));
         divNavCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnconsultaCliente.setBackground(new java.awt.Color(40, 124, 162));
+        btnconsultaCliente.setBackground(new java.awt.Color(0, 128, 200));
         btnconsultaCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnconsultaCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnconsultaCliente.setText("Consultar Cliente");
@@ -1274,7 +1275,7 @@ public class Principal extends javax.swing.JFrame {
         });
         divNavCliente.add(btnconsultaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 50));
 
-        btnCadastraCliente.setBackground(new java.awt.Color(61, 186, 244));
+        btnCadastraCliente.setBackground(new java.awt.Color(0, 167, 230));
         btnCadastraCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCadastraCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastraCliente.setText("Cadastrar Cliente");
@@ -1293,12 +1294,12 @@ public class Principal extends javax.swing.JFrame {
         divNavCliente.add(btnCadastraCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 130, 50));
 
         txtBuscar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        txtBuscar.setForeground(new java.awt.Color(40, 124, 162));
+        txtBuscar.setForeground(new java.awt.Color(0, 167, 230));
         txtBuscar.setText("Buscar cliente...");
         txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
         divNavCliente.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 200, 30));
 
-        btnBuscar.setBackground(new java.awt.Color(40, 124, 162));
+        btnBuscar.setBackground(new java.awt.Color(0, 128, 200));
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("Buscar");
@@ -1386,7 +1387,7 @@ public class Principal extends javax.swing.JFrame {
         jTable1.setGridColor(new java.awt.Color(255, 255, 255));
         jTable1.setRowHeight(25);
         jTable1.setRowMargin(2);
-        jTable1.setSelectionBackground(new java.awt.Color(40, 124, 162));
+        jTable1.setSelectionBackground(new java.awt.Color(0, 128, 200));
         jTable1.setSelectionForeground(new java.awt.Color(232, 230, 236));
         jTable1.setShowHorizontalLines(false);
         jTable1.setShowVerticalLines(false);
@@ -1398,7 +1399,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnBuscar2.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscar2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnBuscar2.setForeground(new java.awt.Color(40, 124, 162));
+        btnBuscar2.setForeground(new java.awt.Color(0, 167, 230));
         btnBuscar2.setText("Detalhes");
         btnBuscar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
         btnBuscar2.setBorderPainted(false);
@@ -1414,7 +1415,7 @@ public class Principal extends javax.swing.JFrame {
         });
         divConsultaCliente.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 80, 30));
 
-        btnBuscar1.setBackground(new java.awt.Color(40, 124, 162));
+        btnBuscar1.setBackground(new java.awt.Color(0, 167, 230));
         btnBuscar1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnBuscar1.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar1.setText("Editar");
@@ -1678,7 +1679,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel82.setForeground(new java.awt.Color(35, 59, 77));
         jLabel82.setText("CEP");
 
-        btnBuscar4.setBackground(new java.awt.Color(40, 124, 162));
+        btnBuscar4.setBackground(new java.awt.Color(0, 128, 200));
         btnBuscar4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnBuscar4.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar4.setText("Cadastrar");
@@ -1697,7 +1698,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnBuscar6.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscar6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnBuscar6.setForeground(new java.awt.Color(40, 124, 162));
+        btnBuscar6.setForeground(new java.awt.Color(0, 128, 200));
         btnBuscar6.setText("Limpar Formulário");
         btnBuscar6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
         btnBuscar6.setBorderPainted(false);
@@ -2026,11 +2027,11 @@ public class Principal extends javax.swing.JFrame {
     // Btn Colors
     private void setBtnColor(JToggleButton btn)
     {
-        btn.setBackground(new Color(40,124,162));
+        btn.setBackground(new Color(0,128,200));
     }
     private void resetBtnColor(JToggleButton btn)
     {
-        btn.setBackground(new Color(61,186,244));
+        btn.setBackground(new Color(0,167,230));
     }
     
     private void setCbxColor(JCheckBox check)
