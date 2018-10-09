@@ -198,7 +198,7 @@
                                   </Group>
                                   <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txtConvenio33" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <Component id="txtTGO" min="-2" pref="80" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel9" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
@@ -300,7 +300,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtConvenio23" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtConvenio33" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtTGO" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -746,7 +746,7 @@
                 <Property name="text" type="java.lang.String" value="TGO"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConvenio33">
+            <Component class="javax.swing.JTextField" name="txtTGO">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="12" style="0"/>
@@ -769,7 +769,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtConvenio33ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTGOActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel57">

@@ -49,7 +49,7 @@ public class Bioquimica extends javax.swing.JFrame {
         jLabel53 = new javax.swing.JLabel();
         txtConvenio29 = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
-        txtConvenio33 = new javax.swing.JTextField();
+        txtTGO = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
         txtConvenio28 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -284,16 +284,16 @@ public class Bioquimica extends javax.swing.JFrame {
         jLabel59.setForeground(new java.awt.Color(11, 19, 25));
         jLabel59.setText("TGO");
 
-        txtConvenio33.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio33.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio33.setToolTipText("");
-        txtConvenio33.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio33.setName(""); // NOI18N
-        txtConvenio33.setOpaque(false);
-        txtConvenio33.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio33.addActionListener(new java.awt.event.ActionListener() {
+        txtTGO.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtTGO.setForeground(new java.awt.Color(11, 19, 25));
+        txtTGO.setToolTipText("");
+        txtTGO.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtTGO.setName(""); // NOI18N
+        txtTGO.setOpaque(false);
+        txtTGO.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtTGO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio33ActionPerformed(evt);
+                txtTGOActionPerformed(evt);
             }
         });
 
@@ -475,7 +475,7 @@ public class Bioquimica extends javax.swing.JFrame {
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel59)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio33, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTGO, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel57)))
@@ -554,7 +554,7 @@ public class Bioquimica extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtConvenio23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(txtConvenio33, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTGO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -621,9 +621,9 @@ public class Bioquimica extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConvenio31ActionPerformed
 
-    private void txtConvenio33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio33ActionPerformed
+    private void txtTGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTGOActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio33ActionPerformed
+    }//GEN-LAST:event_txtTGOActionPerformed
 
     private void txtConvenio28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio28ActionPerformed
         // TODO add your handling code here:
@@ -719,6 +719,6 @@ public class Bioquimica extends javax.swing.JFrame {
     private javax.swing.JTextField txtConvenio30;
     private javax.swing.JTextField txtConvenio31;
     private javax.swing.JTextField txtConvenio32;
-    private javax.swing.JTextField txtConvenio33;
+    private javax.swing.JTextField txtTGO;
     // End of variables declaration//GEN-END:variables
 }
