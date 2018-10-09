@@ -2,6 +2,9 @@
 package fronteira;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JToggleButton;
@@ -16,6 +19,11 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
+        //Icone do Sistema
+        URL url = this.getClass().getResource("/imgIcons/icon.png");  
+        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
+        this.setIconImage(iconeTitulo);
+        
         
         divExame.setVisible(false);
         divCliente.setVisible(false);
@@ -31,17 +39,18 @@ public class Principal extends javax.swing.JFrame {
 
         contBorda = new javax.swing.JPanel();
         nav = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        LogoTipo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnInicio = new javax.swing.JToggleButton();
         btnExame = new javax.swing.JToggleButton();
         btnCliente = new javax.swing.JToggleButton();
         btnConfigura = new javax.swing.JToggleButton();
+        jLabel4 = new javax.swing.JLabel();
         barNotifq = new javax.swing.JPanel();
+        lblNomeUsuario = new javax.swing.JLabel();
+        lblNivelAcesso = new javax.swing.JLabel();
         btnMinimizar = new javax.swing.JToggleButton();
         btnSair = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         divInicio = new javax.swing.JPanel();
         btnInicioCadasCliente = new javax.swing.JToggleButton();
         btnInicioCadsResulExam = new javax.swing.JToggleButton();
@@ -83,15 +92,15 @@ public class Principal extends javax.swing.JFrame {
         btnCadastraExame2 = new javax.swing.JToggleButton();
         divCadastraResultado = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
-        txtCodPedido1 = new javax.swing.JTextField();
+        txtCodPedidoResult = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        txtDataPedido1 = new javax.swing.JTextField();
+        txtDataPedidoResult = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        txtConvenio1 = new javax.swing.JTextField();
+        txtConvenioResult = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
-        txtCodCliente1 = new javax.swing.JTextField();
+        txtCodClienteResult = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        txtNome1 = new javax.swing.JTextField();
+        txtNomeResult = new javax.swing.JTextField();
         btnHemograma = new javax.swing.JToggleButton();
         btnBioquimica = new javax.swing.JToggleButton();
         btnUrinaRotina = new javax.swing.JToggleButton();
@@ -163,8 +172,8 @@ public class Principal extends javax.swing.JFrame {
         nav.setBackground(new java.awt.Color(0, 167, 230));
         nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setOpaque(false);
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        LogoTipo.setOpaque(false);
+        LogoTipo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -172,9 +181,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/bioLabLogo.png"))); // NOI18N
         jLabel2.setToolTipText("Bio Lab - Análises Clínicas");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 160));
+        LogoTipo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 160));
 
-        nav.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 160));
+        nav.add(LogoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 160));
 
         btnInicio.setBackground(new java.awt.Color(0, 128, 200));
         btnInicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -264,10 +273,34 @@ public class Principal extends javax.swing.JFrame {
         });
         nav.add(btnConfigura, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 310, 282, 50));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/UXLAB.png"))); // NOI18N
+        jLabel4.setToolTipText("UxLab - Versão 1.0.0");
+        nav.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 280, 70));
+
         contBorda.add(nav, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 280, 620));
 
         barNotifq.setBackground(new java.awt.Color(255, 255, 255));
         barNotifq.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblNomeUsuario.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblNomeUsuario.setForeground(new java.awt.Color(35, 59, 77));
+        lblNomeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Male_User_22px.png"))); // NOI18N
+        lblNomeUsuario.setText("$NomeDeUsuario");
+        lblNomeUsuario.setToolTipText("Usuário");
+        lblNomeUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        barNotifq.add(lblNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 180, 50));
+
+        lblNivelAcesso.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblNivelAcesso.setForeground(new java.awt.Color(35, 59, 77));
+        lblNivelAcesso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_User_Shield_22px_2.png"))); // NOI18N
+        lblNivelAcesso.setText("Administrador");
+        lblNivelAcesso.setToolTipText("Nível de Acesso");
+        lblNivelAcesso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        barNotifq.add(lblNivelAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 140, 50));
 
         btnMinimizar.setBackground(new java.awt.Color(35, 59, 77));
         btnMinimizar.setForeground(new java.awt.Color(35, 59, 77));
@@ -301,22 +334,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         barNotifq.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, 40, 50));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(35, 59, 77));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_User_Shield_22px_2.png"))); // NOI18N
-        jLabel1.setText("Administrador");
-        jLabel1.setToolTipText("Nível de Acesso");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        barNotifq.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 140, 50));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(35, 59, 77));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Male_User_22px.png"))); // NOI18N
-        jLabel3.setText("$NomeDeUsuario");
-        jLabel3.setToolTipText("Usuário");
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        barNotifq.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 180, 50));
 
         contBorda.add(barNotifq, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 2, 830, 50));
 
@@ -509,11 +526,6 @@ public class Principal extends javax.swing.JFrame {
         txtCodPedido.setName(""); // NOI18N
         txtCodPedido.setOpaque(false);
         txtCodPedido.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtCodPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodPedidoActionPerformed(evt);
-            }
-        });
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(35, 59, 77));
@@ -526,11 +538,6 @@ public class Principal extends javax.swing.JFrame {
         txtCodCliente.setName(""); // NOI18N
         txtCodCliente.setOpaque(false);
         txtCodCliente.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtCodCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodClienteActionPerformed(evt);
-            }
-        });
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(35, 59, 77));
@@ -543,11 +550,6 @@ public class Principal extends javax.swing.JFrame {
         txtNome.setName(""); // NOI18N
         txtNome.setOpaque(false);
         txtNome.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
-            }
-        });
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(35, 59, 77));
@@ -560,11 +562,6 @@ public class Principal extends javax.swing.JFrame {
         txtDataPedido.setName(""); // NOI18N
         txtDataPedido.setOpaque(false);
         txtDataPedido.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtDataPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataPedidoActionPerformed(evt);
-            }
-        });
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(35, 59, 77));
@@ -577,11 +574,6 @@ public class Principal extends javax.swing.JFrame {
         txtConvenio.setName(""); // NOI18N
         txtConvenio.setOpaque(false);
         txtConvenio.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenioActionPerformed(evt);
-            }
-        });
 
         jpnExames.setOpaque(false);
         jpnExames.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -928,90 +920,65 @@ public class Principal extends javax.swing.JFrame {
         jLabel24.setForeground(new java.awt.Color(35, 59, 77));
         jLabel24.setText("Cód. Pedido");
 
-        txtCodPedido1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtCodPedido1.setForeground(new java.awt.Color(35, 59, 77));
-        txtCodPedido1.setToolTipText("");
-        txtCodPedido1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtCodPedido1.setName(""); // NOI18N
-        txtCodPedido1.setOpaque(false);
-        txtCodPedido1.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtCodPedido1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodPedido1ActionPerformed(evt);
-            }
-        });
+        txtCodPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtCodPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtCodPedidoResult.setToolTipText("");
+        txtCodPedidoResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtCodPedidoResult.setName(""); // NOI18N
+        txtCodPedidoResult.setOpaque(false);
+        txtCodPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(35, 59, 77));
         jLabel27.setText("Data do Pedido");
 
-        txtDataPedido1.setEditable(false);
-        txtDataPedido1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtDataPedido1.setForeground(new java.awt.Color(35, 59, 77));
-        txtDataPedido1.setToolTipText("");
-        txtDataPedido1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtDataPedido1.setName(""); // NOI18N
-        txtDataPedido1.setOpaque(false);
-        txtDataPedido1.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtDataPedido1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataPedido1ActionPerformed(evt);
-            }
-        });
+        txtDataPedidoResult.setEditable(false);
+        txtDataPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtDataPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtDataPedidoResult.setToolTipText("");
+        txtDataPedidoResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtDataPedidoResult.setName(""); // NOI18N
+        txtDataPedidoResult.setOpaque(false);
+        txtDataPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(35, 59, 77));
         jLabel28.setText("Convênio");
 
-        txtConvenio1.setEditable(false);
-        txtConvenio1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio1.setForeground(new java.awt.Color(35, 59, 77));
-        txtConvenio1.setToolTipText("");
-        txtConvenio1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio1.setName(""); // NOI18N
-        txtConvenio1.setOpaque(false);
-        txtConvenio1.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio1ActionPerformed(evt);
-            }
-        });
+        txtConvenioResult.setEditable(false);
+        txtConvenioResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtConvenioResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtConvenioResult.setToolTipText("");
+        txtConvenioResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtConvenioResult.setName(""); // NOI18N
+        txtConvenioResult.setOpaque(false);
+        txtConvenioResult.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(35, 59, 77));
         jLabel25.setText("Cód. Cliente");
 
-        txtCodCliente1.setEditable(false);
-        txtCodCliente1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtCodCliente1.setForeground(new java.awt.Color(35, 59, 77));
-        txtCodCliente1.setToolTipText("");
-        txtCodCliente1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtCodCliente1.setName(""); // NOI18N
-        txtCodCliente1.setOpaque(false);
-        txtCodCliente1.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtCodCliente1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodCliente1ActionPerformed(evt);
-            }
-        });
+        txtCodClienteResult.setEditable(false);
+        txtCodClienteResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtCodClienteResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtCodClienteResult.setToolTipText("");
+        txtCodClienteResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtCodClienteResult.setName(""); // NOI18N
+        txtCodClienteResult.setOpaque(false);
+        txtCodClienteResult.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(35, 59, 77));
         jLabel26.setText("Nome Completo");
 
-        txtNome1.setEditable(false);
-        txtNome1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtNome1.setForeground(new java.awt.Color(35, 59, 77));
-        txtNome1.setToolTipText("");
-        txtNome1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtNome1.setName(""); // NOI18N
-        txtNome1.setOpaque(false);
-        txtNome1.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtNome1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome1ActionPerformed(evt);
-            }
-        });
+        txtNomeResult.setEditable(false);
+        txtNomeResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtNomeResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtNomeResult.setToolTipText("");
+        txtNomeResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtNomeResult.setName(""); // NOI18N
+        txtNomeResult.setOpaque(false);
+        txtNomeResult.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         btnHemograma.setBackground(new java.awt.Color(255, 255, 255));
         btnHemograma.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -1094,11 +1061,11 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel28))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divCadastraResultadoLayout.createSequentialGroup()
                         .addGap(125, 125, 125)
-                        .addComponent(txtCodPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtDataPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtConvenio1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(divCadastraResultadoLayout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(jLabel25)
@@ -1106,9 +1073,9 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel26))
                     .addGroup(divCadastraResultadoLayout.createSequentialGroup()
                         .addGap(125, 125, 125)
-                        .addComponent(txtCodCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(divCadastraResultadoLayout.createSequentialGroup()
                         .addGap(210, 210, 210)
                         .addComponent(btnHemograma, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1130,16 +1097,16 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(jLabel28))
                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDataPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtConvenio1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel25)
                     .addComponent(jLabel26))
                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnHemograma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1465,11 +1432,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario.setName(""); // NOI18N
         txtUsuario.setOpaque(false);
         txtUsuario.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
-            }
-        });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(35, 59, 77));
@@ -1482,11 +1444,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario1.setName(""); // NOI18N
         txtUsuario1.setOpaque(false);
         txtUsuario1.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario1ActionPerformed(evt);
-            }
-        });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(35, 59, 77));
@@ -1499,11 +1456,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario2.setName(""); // NOI18N
         txtUsuario2.setOpaque(false);
         txtUsuario2.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario2ActionPerformed(evt);
-            }
-        });
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(35, 59, 77));
@@ -1516,11 +1468,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario3.setName(""); // NOI18N
         txtUsuario3.setOpaque(false);
         txtUsuario3.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario3ActionPerformed(evt);
-            }
-        });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(35, 59, 77));
@@ -1533,11 +1480,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario4.setName(""); // NOI18N
         txtUsuario4.setOpaque(false);
         txtUsuario4.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario4ActionPerformed(evt);
-            }
-        });
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(35, 59, 77));
@@ -1550,11 +1492,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario5.setName(""); // NOI18N
         txtUsuario5.setOpaque(false);
         txtUsuario5.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario5ActionPerformed(evt);
-            }
-        });
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(35, 59, 77));
@@ -1567,11 +1504,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario6.setName(""); // NOI18N
         txtUsuario6.setOpaque(false);
         txtUsuario6.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario6ActionPerformed(evt);
-            }
-        });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(35, 59, 77));
@@ -1584,11 +1516,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario7.setName(""); // NOI18N
         txtUsuario7.setOpaque(false);
         txtUsuario7.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario7ActionPerformed(evt);
-            }
-        });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(35, 59, 77));
@@ -1601,11 +1528,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario8.setName(""); // NOI18N
         txtUsuario8.setOpaque(false);
         txtUsuario8.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario8ActionPerformed(evt);
-            }
-        });
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(35, 59, 77));
@@ -1618,11 +1540,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario9.setName(""); // NOI18N
         txtUsuario9.setOpaque(false);
         txtUsuario9.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario9ActionPerformed(evt);
-            }
-        });
 
         jLabel79.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(35, 59, 77));
@@ -1635,11 +1552,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario10.setName(""); // NOI18N
         txtUsuario10.setOpaque(false);
         txtUsuario10.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario10ActionPerformed(evt);
-            }
-        });
 
         jLabel80.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(35, 59, 77));
@@ -1652,11 +1564,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario11.setName(""); // NOI18N
         txtUsuario11.setOpaque(false);
         txtUsuario11.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario11ActionPerformed(evt);
-            }
-        });
 
         jLabel81.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(35, 59, 77));
@@ -1669,11 +1576,6 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario12.setName(""); // NOI18N
         txtUsuario12.setOpaque(false);
         txtUsuario12.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario12ActionPerformed(evt);
-            }
-        });
 
         jLabel82.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(35, 59, 77));
@@ -2219,58 +2121,6 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscar3ActionPerformed
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioActionPerformed
-
-    private void txtUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario1ActionPerformed
-
-    private void txtUsuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario2ActionPerformed
-
-    private void txtUsuario3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario3ActionPerformed
-
-    private void txtUsuario4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario4ActionPerformed
-
-    private void txtUsuario5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario5ActionPerformed
-
-    private void txtUsuario6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario6ActionPerformed
-
-    private void txtUsuario7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario7ActionPerformed
-
-    private void txtUsuario8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario8ActionPerformed
-
-    private void txtUsuario9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario9ActionPerformed
-
-    private void txtUsuario10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario10ActionPerformed
-
-    private void txtUsuario11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario11ActionPerformed
-
-    private void txtUsuario12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario12ActionPerformed
-
     private void btnBuscar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscar4ActionPerformed
@@ -2294,26 +2144,6 @@ public class Principal extends javax.swing.JFrame {
     private void btnBuscar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscar7ActionPerformed
-
-    private void txtCodPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodPedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodPedidoActionPerformed
-
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
-    private void txtDataPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataPedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataPedidoActionPerformed
-
-    private void txtCodClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodClienteActionPerformed
-
-    private void txtConvenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenioActionPerformed
     
     // Inicio Cadastrar Pedidos 
     private void cbxGlicoseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGlicoseActionPerformed
@@ -2476,26 +2306,6 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastraExameActionPerformed
 
-    private void txtCodPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodPedido1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodPedido1ActionPerformed
-
-    private void txtCodCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodCliente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodCliente1ActionPerformed
-
-    private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNome1ActionPerformed
-
-    private void txtDataPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataPedido1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataPedido1ActionPerformed
-
-    private void txtConvenio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio1ActionPerformed
-
     private void btnCadastraExame2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastraExame2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastraExame2ActionPerformed
@@ -2611,6 +2421,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel LogoTipo;
     private javax.swing.JPanel barNotifq;
     private javax.swing.JToggleButton btnBioquimica;
     private javax.swing.JToggleButton btnBuscar;
@@ -2674,7 +2485,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel divNavCliente;
     private javax.swing.JPanel divNavExame;
     private javax.swing.JPanel divRelatorioExame;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -2695,30 +2505,31 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JPanel jpnExames;
+    private javax.swing.JLabel lblNivelAcesso;
+    private javax.swing.JLabel lblNomeUsuario;
     private javax.swing.JPanel nav;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtBuscar1;
     private javax.swing.JTextField txtCodCliente;
-    private javax.swing.JTextField txtCodCliente1;
+    private javax.swing.JTextField txtCodClienteResult;
     private javax.swing.JTextField txtCodPedido;
-    private javax.swing.JTextField txtCodPedido1;
+    private javax.swing.JTextField txtCodPedidoResult;
     private javax.swing.JTextField txtConvenio;
-    private javax.swing.JTextField txtConvenio1;
+    private javax.swing.JTextField txtConvenioResult;
     private javax.swing.JTextField txtDataPedido;
-    private javax.swing.JTextField txtDataPedido1;
+    private javax.swing.JTextField txtDataPedidoResult;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNome1;
+    private javax.swing.JTextField txtNomeResult;
     private javax.swing.JTextField txtUsuario;
     private javax.swing.JTextField txtUsuario1;
     private javax.swing.JTextField txtUsuario10;

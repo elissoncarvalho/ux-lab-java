@@ -1,10 +1,19 @@
 
 package fronteira;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
+
 public class Bioquimica extends javax.swing.JFrame {
 
     public Bioquimica() {
         initComponents();
+        //Icone do Sistema
+        URL url = this.getClass().getResource("/imgIcons/icon.png");  
+        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
+        this.setIconImage(iconeTitulo);
+        
         setLocationRelativeTo(null);
         setAlwaysOnTop(true);
     }
