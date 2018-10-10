@@ -11,6 +11,17 @@ import javax.swing.JToggleButton;
 
 public class Principal extends javax.swing.JFrame {
     
+    // Variaveis de verificação de Status no Cadastro do Resultado de Exame 
+    private boolean activeHemograma     = true;
+    private boolean activeBioquimica    = false;
+    private boolean activeUrinaRotina   = false;
+    private boolean activeSangueOculto  = false;
+    
+    private boolean statusHemograma     = false;
+    private boolean statusBioquimica    = false;
+    private boolean statusUrinaRotina   = false;
+    private boolean statusSangueOculto  = false;
+    
     Hemograma       hemograma      = new Hemograma();
     Bioquimica      bioquimica     = new Bioquimica();
     UrinaRotina     urinaRotina    = new UrinaRotina();
@@ -24,13 +35,7 @@ public class Principal extends javax.swing.JFrame {
         Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
         this.setIconImage(iconeTitulo);
         
-        
-        divExame.setVisible(false);
-        divCliente.setVisible(false);
-        divConfigura.setVisible(false);
-        divCadastraCliente.setVisible(false);
-        divCadastraResultado.setVisible(false);
-        divRelatorioExame.setVisible(false);
+        divNaoInicia();
     }
     
     @SuppressWarnings("unchecked")
@@ -88,8 +93,8 @@ public class Principal extends javax.swing.JFrame {
         cbxUrinaRotina = new javax.swing.JCheckBox();
         cbxEpf = new javax.swing.JCheckBox();
         cbxSangueOculto = new javax.swing.JCheckBox();
-        btnCadastraExame = new javax.swing.JToggleButton();
-        btnCadastraExame2 = new javax.swing.JToggleButton();
+        btnBuscar10 = new javax.swing.JToggleButton();
+        btnBuscar11 = new javax.swing.JToggleButton();
         divCadastraResultado = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         txtCodPedidoResult = new javax.swing.JTextField();
@@ -115,8 +120,8 @@ public class Principal extends javax.swing.JFrame {
         divNavCliente = new javax.swing.JPanel();
         btnconsultaCliente = new javax.swing.JToggleButton();
         btnCadastraCliente = new javax.swing.JToggleButton();
-        txtBuscar = new javax.swing.JTextField();
-        btnBuscar = new javax.swing.JToggleButton();
+        txtBuscaCliente = new javax.swing.JTextField();
+        btnBuscaCliente = new javax.swing.JToggleButton();
         divConsultaCliente = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -486,7 +491,6 @@ public class Principal extends javax.swing.JFrame {
 
         txtBuscar1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtBuscar1.setForeground(new java.awt.Color(40, 124, 162));
-        txtBuscar1.setText("Buscar exame...");
         txtBuscar1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
         divNavExame.add(txtBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 200, 30));
 
@@ -816,37 +820,37 @@ public class Principal extends javax.swing.JFrame {
         });
         jpnExames.add(cbxSangueOculto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 140, 62));
 
-        btnCadastraExame.setBackground(new java.awt.Color(190, 75, 73));
-        btnCadastraExame.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnCadastraExame.setForeground(new java.awt.Color(255, 255, 255));
-        btnCadastraExame.setText("Cancelar");
-        btnCadastraExame.setBorder(null);
-        btnCadastraExame.setBorderPainted(false);
-        btnCadastraExame.setContentAreaFilled(false);
-        btnCadastraExame.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCadastraExame.setFocusPainted(false);
-        btnCadastraExame.setNextFocusableComponent(btnCadastraResultado);
-        btnCadastraExame.setOpaque(true);
-        btnCadastraExame.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar10.setBackground(new java.awt.Color(0, 167, 230));
+        btnBuscar10.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnBuscar10.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar10.setText("Salvar");
+        btnBuscar10.setBorder(null);
+        btnBuscar10.setBorderPainted(false);
+        btnBuscar10.setContentAreaFilled(false);
+        btnBuscar10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar10.setFocusPainted(false);
+        btnBuscar10.setNextFocusableComponent(btnCadastraResultado);
+        btnBuscar10.setOpaque(true);
+        btnBuscar10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastraExameActionPerformed(evt);
+                btnBuscar10ActionPerformed(evt);
             }
         });
 
-        btnCadastraExame2.setBackground(new java.awt.Color(0, 167, 230));
-        btnCadastraExame2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnCadastraExame2.setForeground(new java.awt.Color(255, 255, 255));
-        btnCadastraExame2.setText("Salvar");
-        btnCadastraExame2.setBorder(null);
-        btnCadastraExame2.setBorderPainted(false);
-        btnCadastraExame2.setContentAreaFilled(false);
-        btnCadastraExame2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCadastraExame2.setFocusPainted(false);
-        btnCadastraExame2.setNextFocusableComponent(btnCadastraResultado);
-        btnCadastraExame2.setOpaque(true);
-        btnCadastraExame2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar11.setBackground(new java.awt.Color(190, 75, 73));
+        btnBuscar11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnBuscar11.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar11.setText("Excluir");
+        btnBuscar11.setBorder(null);
+        btnBuscar11.setBorderPainted(false);
+        btnBuscar11.setContentAreaFilled(false);
+        btnBuscar11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar11.setFocusPainted(false);
+        btnBuscar11.setNextFocusableComponent(btnCadastraResultado);
+        btnBuscar11.setOpaque(true);
+        btnBuscar11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastraExame2ActionPerformed(evt);
+                btnBuscar11ActionPerformed(evt);
             }
         });
 
@@ -856,34 +860,34 @@ public class Principal extends javax.swing.JFrame {
             divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(divCadastraExameLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(jLabel19)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel22)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel20)
-                .addGap(211, 211, 211)
-                .addComponent(jLabel21)
-                .addGap(55, 55, 55)
-                .addComponent(jLabel23))
-            .addGroup(divCadastraExameLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(divCadastraExameLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jpnExames, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(divCadastraExameLayout.createSequentialGroup()
-                .addGap(522, 522, 522)
-                .addComponent(btnCadastraExame2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnCadastraExame, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(divCadastraExameLayout.createSequentialGroup()
+                        .addComponent(btnBuscar10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnBuscar11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(divCadastraExameLayout.createSequentialGroup()
+                            .addComponent(jLabel19)
+                            .addGap(35, 35, 35)
+                            .addComponent(jLabel22)
+                            .addGap(35, 35, 35)
+                            .addComponent(jLabel20)
+                            .addGap(211, 211, 211)
+                            .addComponent(jLabel21)
+                            .addGap(55, 55, 55)
+                            .addComponent(jLabel23))
+                        .addGroup(divCadastraExameLayout.createSequentialGroup()
+                            .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jpnExames, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30))
         );
         divCadastraExameLayout.setVerticalGroup(
             divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -905,10 +909,11 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(txtConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addComponent(jpnExames, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastraExame, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCadastraExame2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(42, 42, 42)
+                .addGroup(divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBuscar10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         divExame.add(divCadastraExame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 830, 520));
@@ -987,6 +992,7 @@ public class Principal extends javax.swing.JFrame {
         btnHemograma.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnHemograma.setContentAreaFilled(false);
         btnHemograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHemograma.setEnabled(false);
         btnHemograma.setFocusPainted(false);
         btnHemograma.setNextFocusableComponent(btnCadastraResultado);
         btnHemograma.setOpaque(true);
@@ -1003,6 +1009,7 @@ public class Principal extends javax.swing.JFrame {
         btnBioquimica.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnBioquimica.setContentAreaFilled(false);
         btnBioquimica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBioquimica.setEnabled(false);
         btnBioquimica.setFocusPainted(false);
         btnBioquimica.setNextFocusableComponent(btnCadastraResultado);
         btnBioquimica.setOpaque(true);
@@ -1019,6 +1026,7 @@ public class Principal extends javax.swing.JFrame {
         btnUrinaRotina.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnUrinaRotina.setContentAreaFilled(false);
         btnUrinaRotina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUrinaRotina.setEnabled(false);
         btnUrinaRotina.setFocusPainted(false);
         btnUrinaRotina.setNextFocusableComponent(btnCadastraResultado);
         btnUrinaRotina.setOpaque(true);
@@ -1036,6 +1044,7 @@ public class Principal extends javax.swing.JFrame {
         btnSangueOculto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnSangueOculto.setContentAreaFilled(false);
         btnSangueOculto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSangueOculto.setEnabled(false);
         btnSangueOculto.setFocusPainted(false);
         btnSangueOculto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSangueOculto.setNextFocusableComponent(btnCadastraResultado);
@@ -1260,29 +1269,23 @@ public class Principal extends javax.swing.JFrame {
         });
         divNavCliente.add(btnCadastraCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 130, 50));
 
-        txtBuscar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        txtBuscar.setForeground(new java.awt.Color(0, 167, 230));
-        txtBuscar.setText("Buscar cliente...");
-        txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
-        divNavCliente.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 200, 30));
+        txtBuscaCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtBuscaCliente.setForeground(new java.awt.Color(0, 167, 230));
+        txtBuscaCliente.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 255, 255)));
+        divNavCliente.add(txtBuscaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 200, 30));
 
-        btnBuscar.setBackground(new java.awt.Color(0, 128, 200));
-        btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        btnBuscar.setText("Buscar");
-        btnBuscar.setBorder(null);
-        btnBuscar.setBorderPainted(false);
-        btnBuscar.setContentAreaFilled(false);
-        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar.setFocusable(false);
-        btnBuscar.setNextFocusableComponent(btnCadastraResultado);
-        btnBuscar.setOpaque(true);
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        divNavCliente.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 80, 30));
+        btnBuscaCliente.setBackground(new java.awt.Color(0, 128, 200));
+        btnBuscaCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnBuscaCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscaCliente.setText("Buscar");
+        btnBuscaCliente.setBorder(null);
+        btnBuscaCliente.setBorderPainted(false);
+        btnBuscaCliente.setContentAreaFilled(false);
+        btnBuscaCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscaCliente.setFocusable(false);
+        btnBuscaCliente.setNextFocusableComponent(btnCadastraResultado);
+        btnBuscaCliente.setOpaque(true);
+        divNavCliente.add(btnBuscaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 80, 30));
 
         divCliente.add(divNavCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 50));
 
@@ -1925,8 +1928,19 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    // Btn Colors
+    
+    private void divNaoInicia()
+    {   // Paineis Divisorios que por padrão não inicia junto com o jFrame principal,
+        // Para não causar conflitos na visão do usuario.
+        divExame.setVisible(false);
+        divCliente.setVisible(false);
+        divConfigura.setVisible(false);
+        divCadastraCliente.setVisible(false);
+        divCadastraResultado.setVisible(false);
+        divRelatorioExame.setVisible(false);
+    }
+    
+    // Btn Colors; Transições de Cores
     private void setBtnColor(JToggleButton btn)
     {
         btn.setBackground(new Color(0,128,200));
@@ -1937,7 +1951,7 @@ public class Principal extends javax.swing.JFrame {
     }
     
     private void setCbxColor(JCheckBox check)
-    {
+    {   // Exame > CadastraExame > CheckBoxColors
         check.setBackground(new Color(75,190,73));
         check.setForeground(Color.white);
         check.setBorder(javax.swing.BorderFactory.createCompoundBorder(
@@ -1952,7 +1966,37 @@ public class Principal extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35,59,77)), 
                 javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
     }
+    private void SetColorBtnExameCadReslt(JToggleButton check)
+    {
+        check.setBackground(new Color(75,190,73));
+        check.setForeground(Color.white);
+        check.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(75, 190, 73)), 
+                javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
+    }
+    private void restColorBtnExameCadReslt(JToggleButton check)
+    {
+        check.setBackground(Color.white);
+        check.setForeground(new Color(35,59,77));
+        check.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35,59,77)), 
+                javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
+    }
     // Fim Colors
+    private void verificaActive()
+    {   // Verifica se o Exame esta Ativado
+        // Hemograma
+        if(activeHemograma == true){
+            this.btnHemograma.setEnabled(true);
+        }
+        // Bioquimica
+        if(activeBioquimica == true){
+            this.btnBioquimica.setEnabled(true);
+        }
+        
+        
+    }
+    
     // Ações On Click Navegação
     private void clickMouseInicio()
     {
@@ -2096,10 +2140,6 @@ public class Principal extends javax.swing.JFrame {
     private void btnRelatorioExameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioExameActionPerformed
         clickMouseExameRelatorio();
     }//GEN-LAST:event_btnRelatorioExameActionPerformed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnconsultaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconsultaClienteActionPerformed
         clickMouseClienteConsulta();
@@ -2302,14 +2342,6 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cbxSangueOcultoActionPerformed
 
-    private void btnCadastraExameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastraExameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCadastraExameActionPerformed
-
-    private void btnCadastraExame2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastraExame2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCadastraExame2ActionPerformed
-
     private void btnBioquimicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBioquimicaActionPerformed
         bioquimica.setVisible(true);
     }//GEN-LAST:event_btnBioquimicaActionPerformed
@@ -2384,6 +2416,14 @@ public class Principal extends javax.swing.JFrame {
     private void btnSair11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSair11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSair11ActionPerformed
+
+    private void btnBuscar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscar10ActionPerformed
+
+    private void btnBuscar11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscar11ActionPerformed
     //Fim Cadastra Pedidos
     
     
@@ -2424,8 +2464,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel LogoTipo;
     private javax.swing.JPanel barNotifq;
     private javax.swing.JToggleButton btnBioquimica;
-    private javax.swing.JToggleButton btnBuscar;
+    private javax.swing.JToggleButton btnBuscaCliente;
     private javax.swing.JToggleButton btnBuscar1;
+    private javax.swing.JToggleButton btnBuscar10;
+    private javax.swing.JToggleButton btnBuscar11;
     private javax.swing.JToggleButton btnBuscar2;
     private javax.swing.JToggleButton btnBuscar3;
     private javax.swing.JToggleButton btnBuscar4;
@@ -2435,8 +2477,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnBuscar8;
     private javax.swing.JToggleButton btnBuscar9;
     private javax.swing.JToggleButton btnCadastraCliente;
-    private javax.swing.JToggleButton btnCadastraExame;
-    private javax.swing.JToggleButton btnCadastraExame2;
     private javax.swing.JToggleButton btnCadastraPedido;
     private javax.swing.JToggleButton btnCadastraResultado;
     private javax.swing.JToggleButton btnCliente;
@@ -2518,7 +2558,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel lblNivelAcesso;
     private javax.swing.JLabel lblNomeUsuario;
     private javax.swing.JPanel nav;
-    private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtBuscaCliente;
     private javax.swing.JTextField txtBuscar1;
     private javax.swing.JTextField txtCodCliente;
     private javax.swing.JTextField txtCodClienteResult;

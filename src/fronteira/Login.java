@@ -130,11 +130,6 @@ public class Login extends javax.swing.JFrame {
         txtUsuario.setNextFocusableComponent(txtSenha);
         txtUsuario.setOpaque(false);
         txtUsuario.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
-            }
-        });
 
         lblSenha.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(35, 59, 77));
@@ -219,6 +214,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void login(){
+        //Verifica se os usuarios são verdadeiros
         if((1+1) != 2)
         {
             lblMsg.setText("<html><p>Preencha todos os campos, por favor. Não me Deixe! :(.</p>");
@@ -241,7 +237,7 @@ public class Login extends javax.swing.JFrame {
         }
     }
     private void erroLogin()
-    {
+    {   //Caso o usuario ou senha seja falso, Exibe mensagem de erro.
         txtUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,new java.awt.Color(190,75,73)));
         txtSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(190,75,73)));
         lblUsuario.setForeground(new java.awt.Color(190,75,73)); 
@@ -250,10 +246,6 @@ public class Login extends javax.swing.JFrame {
         lblMsg.setOpaque(true);
     }
     
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioActionPerformed
-
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
@@ -266,9 +258,6 @@ public class Login extends javax.swing.JFrame {
         login();
     }//GEN-LAST:event_btnEntrarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
