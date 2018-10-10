@@ -12,10 +12,10 @@ import javax.swing.JToggleButton;
 public class Principal extends javax.swing.JFrame {
     
     // Variaveis de verificação de Status no Cadastro do Resultado de Exame 
-    private boolean activeHemograma     = true;
-    private boolean activeBioquimica    = false;
+    private boolean activeHemograma     = !false;
+    private boolean activeBioquimica    = !false;
     private boolean activeUrinaRotina   = false;
-    private boolean activeSangueOculto  = false;
+    private boolean activeSangueOculto  = !false;
     
     private boolean statusHemograma     = false;
     private boolean statusBioquimica    = false;
@@ -36,6 +36,8 @@ public class Principal extends javax.swing.JFrame {
         this.setIconImage(iconeTitulo);
         
         divNaoInicia();
+        verificaActive();
+        verificaStatus();
     }
     
     @SuppressWarnings("unchecked")
@@ -1966,7 +1968,7 @@ public class Principal extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35,59,77)), 
                 javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
     }
-    private void SetColorBtnExameCadReslt(JToggleButton check)
+    private void setColorBtnExameCadReslt(JToggleButton check)
     {
         check.setBackground(new Color(75,190,73));
         check.setForeground(Color.white);
@@ -1986,17 +1988,65 @@ public class Principal extends javax.swing.JFrame {
     private void verificaActive()
     {   // Verifica se o Exame esta Ativado
         // Hemograma
-        if(activeHemograma == true){
+        if(activeHemograma == true)
+        {
             this.btnHemograma.setEnabled(true);
         }
         // Bioquimica
-        if(activeBioquimica == true){
+        if(activeBioquimica == true)
+        {
             this.btnBioquimica.setEnabled(true);
         }
-        
-        
+        // Urina Rotina
+        if(activeUrinaRotina == true)
+        {
+            this.btnUrinaRotina.setEnabled(true);
+        }
+        // Sangue Oculto
+        if(activeSangueOculto == true)
+        {
+            this.btnSangueOculto.setEnabled(true);
+        }
     }
-    
+    private void verificaStatus()
+    {   // Verifica se o Exame esta Concluido
+        // Hemograma
+        if(statusHemograma == true)
+        {
+            setColorBtnExameCadReslt(btnHemograma);
+        }
+        else
+        {
+            restColorBtnExameCadReslt(btnHemograma);
+        }
+        // Bioquimica
+        if(statusBioquimica == true)
+        {
+            setColorBtnExameCadReslt(btnBioquimica);
+        }
+        else
+        {
+            restColorBtnExameCadReslt(btnBioquimica);
+        }
+        // Urina Rotina
+        if(statusUrinaRotina == true)
+        {
+            setColorBtnExameCadReslt(btnUrinaRotina);
+        }
+        else
+        {
+            restColorBtnExameCadReslt(btnUrinaRotina);
+        }
+        // Sangue Oculto
+        if(statusSangueOculto == true)
+        {
+            setColorBtnExameCadReslt(btnSangueOculto);
+        }
+        else
+        {
+            restColorBtnExameCadReslt(btnSangueOculto);
+        }
+    }
     // Ações On Click Navegação
     private void clickMouseInicio()
     {
