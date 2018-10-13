@@ -3,12 +3,12 @@ package entidade;
 
 public class Loggar 
 {
-    private String usuario;
+    private String usuarioLogin;
     private String senha;
     private boolean logadoStatus = true;
 
     public boolean isLogadoStatus() {
-        if(usuario == "admin")
+        if(usuarioLogin == "admin")
         {
             logadoStatus = true;
         }
@@ -20,11 +20,11 @@ public class Loggar
     }
 
     public String getUsuario() {
-        return usuario;
+        return usuarioLogin;
     }
 
     public void setUsuario(String usuario) {
-        this.usuario = usuario;
+        this.usuarioLogin = usuario;
     }
 
     public String getSenha() {
