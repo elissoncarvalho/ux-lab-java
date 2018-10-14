@@ -5,16 +5,21 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 
+import entidade.VerifExaRult;
 
 public class Hemograma extends javax.swing.JFrame {
-
+    
+    
+    VerifExaRult    verifExaRult    = new VerifExaRult();
 
     public Hemograma() {
         initComponents();
+        
         //Icone do Sistema
         URL url = this.getClass().getResource("/imgIcons/icon.png");  
         Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
         this.setIconImage(iconeTitulo);
+        // Posicionamento do Frame
         setLocationRelativeTo(null);
         setAlwaysOnTop(true);
     }
@@ -127,11 +132,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio18.setName(""); // NOI18N
         txtConvenio18.setOpaque(false);
         txtConvenio18.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio18ActionPerformed(evt);
-            }
-        });
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(11, 19, 25));
@@ -144,11 +144,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio19.setName(""); // NOI18N
         txtConvenio19.setOpaque(false);
         txtConvenio19.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio19ActionPerformed(evt);
-            }
-        });
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(11, 19, 25));
@@ -161,11 +156,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio20.setName(""); // NOI18N
         txtConvenio20.setOpaque(false);
         txtConvenio20.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio20ActionPerformed(evt);
-            }
-        });
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(11, 19, 25));
@@ -178,11 +168,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio21.setName(""); // NOI18N
         txtConvenio21.setOpaque(false);
         txtConvenio21.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio21ActionPerformed(evt);
-            }
-        });
 
         jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(11, 19, 25));
@@ -195,11 +180,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio23.setName(""); // NOI18N
         txtConvenio23.setOpaque(false);
         txtConvenio23.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio23ActionPerformed(evt);
-            }
-        });
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(11, 19, 25));
@@ -212,11 +192,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio24.setName(""); // NOI18N
         txtConvenio24.setOpaque(false);
         txtConvenio24.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio24ActionPerformed(evt);
-            }
-        });
 
         jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(11, 19, 25));
@@ -229,11 +204,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio25.setName(""); // NOI18N
         txtConvenio25.setOpaque(false);
         txtConvenio25.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio25ActionPerformed(evt);
-            }
-        });
 
         jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(11, 19, 25));
@@ -250,11 +220,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio22.setName(""); // NOI18N
         txtConvenio22.setOpaque(false);
         txtConvenio22.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio22ActionPerformed(evt);
-            }
-        });
 
         jLabel54.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(11, 19, 25));
@@ -271,11 +236,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio32.setName(""); // NOI18N
         txtConvenio32.setOpaque(false);
         txtConvenio32.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio32ActionPerformed(evt);
-            }
-        });
 
         txtConvenio26.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtConvenio26.setForeground(new java.awt.Color(11, 19, 25));
@@ -284,11 +244,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio26.setName(""); // NOI18N
         txtConvenio26.setOpaque(false);
         txtConvenio26.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio26ActionPerformed(evt);
-            }
-        });
 
         jLabel56.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(11, 19, 25));
@@ -305,11 +260,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio31.setName(""); // NOI18N
         txtConvenio31.setOpaque(false);
         txtConvenio31.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio31ActionPerformed(evt);
-            }
-        });
 
         jLabel60.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(11, 19, 25));
@@ -330,11 +280,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio29.setName(""); // NOI18N
         txtConvenio29.setOpaque(false);
         txtConvenio29.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio29ActionPerformed(evt);
-            }
-        });
 
         jLabel53.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(11, 19, 25));
@@ -379,11 +324,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio34.setName(""); // NOI18N
         txtConvenio34.setOpaque(false);
         txtConvenio34.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio34ActionPerformed(evt);
-            }
-        });
 
         txtConvenio35.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtConvenio35.setForeground(new java.awt.Color(11, 19, 25));
@@ -392,11 +332,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio35.setName(""); // NOI18N
         txtConvenio35.setOpaque(false);
         txtConvenio35.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio35ActionPerformed(evt);
-            }
-        });
 
         txtConvenio36.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtConvenio36.setForeground(new java.awt.Color(11, 19, 25));
@@ -405,11 +340,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio36.setName(""); // NOI18N
         txtConvenio36.setOpaque(false);
         txtConvenio36.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio36.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio36ActionPerformed(evt);
-            }
-        });
 
         txtConvenio37.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtConvenio37.setForeground(new java.awt.Color(11, 19, 25));
@@ -418,11 +348,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio37.setName(""); // NOI18N
         txtConvenio37.setOpaque(false);
         txtConvenio37.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio37.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio37ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(11, 19, 25));
@@ -495,11 +420,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio42.setName(""); // NOI18N
         txtConvenio42.setOpaque(false);
         txtConvenio42.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio42.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio42ActionPerformed(evt);
-            }
-        });
 
         jLabel26.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(11, 19, 25));
@@ -512,11 +432,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio43.setName(""); // NOI18N
         txtConvenio43.setOpaque(false);
         txtConvenio43.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio43.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio43ActionPerformed(evt);
-            }
-        });
 
         jLabel27.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(11, 19, 25));
@@ -529,11 +444,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio44.setName(""); // NOI18N
         txtConvenio44.setOpaque(false);
         txtConvenio44.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio44.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio44ActionPerformed(evt);
-            }
-        });
 
         jLabel28.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(11, 19, 25));
@@ -546,11 +456,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio45.setName(""); // NOI18N
         txtConvenio45.setOpaque(false);
         txtConvenio45.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio45.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio45ActionPerformed(evt);
-            }
-        });
 
         jLabel29.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(11, 19, 25));
@@ -563,11 +468,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio46.setName(""); // NOI18N
         txtConvenio46.setOpaque(false);
         txtConvenio46.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio46.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio46ActionPerformed(evt);
-            }
-        });
 
         jLabel30.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(11, 19, 25));
@@ -580,11 +480,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio47.setName(""); // NOI18N
         txtConvenio47.setOpaque(false);
         txtConvenio47.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio47.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio47ActionPerformed(evt);
-            }
-        });
 
         jLabel31.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(11, 19, 25));
@@ -597,11 +492,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio48.setName(""); // NOI18N
         txtConvenio48.setOpaque(false);
         txtConvenio48.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio48.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio48ActionPerformed(evt);
-            }
-        });
 
         jLabel32.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(11, 19, 25));
@@ -614,11 +504,6 @@ public class Hemograma extends javax.swing.JFrame {
         txtConvenio49.setName(""); // NOI18N
         txtConvenio49.setOpaque(false);
         txtConvenio49.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio49.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio49ActionPerformed(evt);
-            }
-        });
 
         jLabel33.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(11, 19, 25));
@@ -897,110 +782,30 @@ public class Hemograma extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtConvenio18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio18ActionPerformed
-
-    private void txtConvenio19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio19ActionPerformed
-
-    private void txtConvenio20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio20ActionPerformed
-
-    private void txtConvenio21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio21ActionPerformed
-
-    private void txtConvenio23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio23ActionPerformed
-
-    private void txtConvenio24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio24ActionPerformed
-
-    private void txtConvenio25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio25ActionPerformed
-
-    private void txtConvenio22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio22ActionPerformed
-
-    private void txtConvenio32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio32ActionPerformed
-
-    private void txtConvenio26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio26ActionPerformed
-
-    private void txtConvenio31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio31ActionPerformed
-
-    private void txtConvenio29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio29ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio29ActionPerformed
-
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+    
+    // Faz a validação dos campos, se foram preenchidos corretamente 
+    private void hemogramaVerificaSalvar()
+    {
+        if(1/*CONDICAO VERDADE AQUI*/ == 1)
+        {   
+            verifExaRult.setStatusHemograma(true);
+            //principal.verificaStatus();
+        }
+        else
+        {
+            verifExaRult.setStatusHemograma(!true);
+           // principal.verificaStatus();
+        }
         this.setVisible(false);
+    }
+    
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        hemogramaVerificaSalvar();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void txtConvenio34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio34ActionPerformed
-
-    private void txtConvenio35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio35ActionPerformed
-
-    private void txtConvenio36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio36ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio36ActionPerformed
-
-    private void txtConvenio37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio37ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio37ActionPerformed
-
-    private void txtConvenio42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio42ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio42ActionPerformed
-
-    private void txtConvenio43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio43ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio43ActionPerformed
-
-    private void txtConvenio44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio44ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio44ActionPerformed
-
-    private void txtConvenio45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio45ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio45ActionPerformed
-
-    private void txtConvenio46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio46ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio46ActionPerformed
-
-    private void txtConvenio47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio47ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio47ActionPerformed
-
-    private void txtConvenio48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio48ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio48ActionPerformed
-
-    private void txtConvenio49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio49ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio49ActionPerformed
 
 
     public static void main(String args[]) {
