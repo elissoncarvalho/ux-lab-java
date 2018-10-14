@@ -364,7 +364,7 @@ public class Principal extends javax.swing.JFrame
         btnInicioCadsResulExam.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnInicioCadsResulExam.setForeground(new java.awt.Color(35, 59, 77));
         btnInicioCadsResulExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Edit_File_32px.png"))); // NOI18N
-        btnInicioCadsResulExam.setText("<html><p style=\"text-align:center\">Cadastrar Resultado</p><p style=\"text-align:center\"> de Exame\n");
+        btnInicioCadsResulExam.setText("<html><p style=\"text-align:center\">Cadastrar Resultado</p><p style=\"text-align:center\"> de Exame ");
         btnInicioCadsResulExam.setToolTipText("");
         btnInicioCadsResulExam.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 10)));
         btnInicioCadsResulExam.setContentAreaFilled(false);
@@ -2149,8 +2149,37 @@ public class Principal extends javax.swing.JFrame
         setBtnColor(btnCadastraCliente);
         resetBtnColor(btnconsultaCliente);
     }
-
-    
+    private void clickMouseAtalhoExameCadsResult()
+    {
+        setBtnColor(btnExame);
+        divExame.setVisible(true);
+        
+        resetBtnColor(btnInicio);
+        resetBtnColor(btnCliente);
+        resetBtnColor(btnConfigura);
+        divInicio.setVisible(false);
+        divCliente.setVisible(false);
+        divConfigura.setVisible(false);
+        
+        setBtnColor(btnCadastraResultado);
+        resetBtnColor(btnCadastraPedido);
+        resetBtnColor(btnRelatorioExame);
+        divCadastraExame.setVisible(!true);
+        divCadastraResultado.setVisible(true);
+        divRelatorioExame.setVisible(!true);
+    }
+    private void clickMouseAtalhoConfRelatorio()
+    {
+        setBtnColor(btnConfigura);
+        divConfigura.setVisible(true);
+        
+        resetBtnColor(btnExame);
+        resetBtnColor(btnInicio);
+        resetBtnColor(btnCliente);
+        divInicio.setVisible(false);
+        divCliente.setVisible(false);
+        divExame.setVisible(false);
+    }
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
         this.setExtendedState(JFrame.ICONIFIED);
     }//GEN-LAST:event_btnMinimizarActionPerformed
@@ -2409,34 +2438,11 @@ public class Principal extends javax.swing.JFrame
     }//GEN-LAST:event_btnInicioCadasClienteActionPerformed
 
     private void btnInicioCadsResulExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioCadsResulExamActionPerformed
-        setBtnColor(btnExame);
-        divExame.setVisible(true);
-        
-        resetBtnColor(btnInicio);
-        resetBtnColor(btnCliente);
-        resetBtnColor(btnConfigura);
-        divInicio.setVisible(false);
-        divCliente.setVisible(false);
-        divConfigura.setVisible(false);
-        
-        setBtnColor(btnCadastraResultado);
-        resetBtnColor(btnCadastraPedido);
-        resetBtnColor(btnRelatorioExame);
-        divCadastraExame.setVisible(!true);
-        divCadastraResultado.setVisible(true);
-        divRelatorioExame.setVisible(!true);
+        clickMouseAtalhoExameCadsResult();
     }//GEN-LAST:event_btnInicioCadsResulExamActionPerformed
 
     private void btnInicoGerarRelatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicoGerarRelatActionPerformed
-        setBtnColor(btnConfigura);
-        divConfigura.setVisible(true);
-        
-        resetBtnColor(btnExame);
-        resetBtnColor(btnInicio);
-        resetBtnColor(btnCliente);
-        divInicio.setVisible(false);
-        divCliente.setVisible(false);
-        divExame.setVisible(false);
+        clickMouseAtalhoConfRelatorio();
     }//GEN-LAST:event_btnInicoGerarRelatActionPerformed
 
     private void btnSair6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSair6ActionPerformed

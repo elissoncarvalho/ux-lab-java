@@ -531,7 +531,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imgIcons/icons8_Edit_File_32px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align:center&quot;&gt;Cadastrar Resultado&lt;/p&gt;&lt;p style=&quot;text-align:center&quot;&gt; de Exame&#xa;"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align:center&quot;&gt;Cadastrar Resultado&lt;/p&gt;&lt;p style=&quot;text-align:center&quot;&gt; de Exame "/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
