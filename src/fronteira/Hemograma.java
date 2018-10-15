@@ -1,6 +1,9 @@
 
 package fronteira;
-
+/**
+ *
+ * @author Elisson
+ */
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
