@@ -26,17 +26,22 @@ public class ClienteDetalhe extends javax.swing.JFrame {
         setAlwaysOnTop(true);
     }
 
-    /*private void verifMasq()
-    {   // Efeito Mascara Branca
-        if(helper.StatusMasq == true)
-        {
-            helper.showMasq(contBorda, contMasq);
-        }
-        else
-        {
-            helper.showMasq(contBorda, contMasq);
-        }
-    }*/
+    public void habilitaCampo(boolean habilita){
+        this.txtClienteNome.setEditable(habilita);
+        this.txtClienteDataNasc.setEditable(habilita);
+        this.txtClienteCPF.setEditable(habilita);
+        this.txtClienteRG.setEditable(habilita);
+        this.rbClienteMasc.setEnabled(habilita);
+        this.rbClienteFemi.setEnabled(habilita);
+        this.txtClienteTel.setEditable(habilita);
+        this.txtClienteConv.setEditable(habilita);
+        this.txtClienteEnder.setEditable(habilita);
+        this.txtClienteBairro.setEditable(habilita);
+        this.txtClienteCEP.setEditable(habilita);
+        this.cbxClienteUf.setEnabled(habilita);
+        this.txtClienteCidade.setEditable(habilita);
+        this.btnSalvar.setVisible(habilita);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -72,8 +77,8 @@ public class ClienteDetalhe extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         txtClienteTel = new javax.swing.JTextField();
-        btnCancelar = new javax.swing.JToggleButton();
         btnSalvar = new javax.swing.JToggleButton();
+        btnCancelar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Detalhes do Cliente");
@@ -193,7 +198,6 @@ public class ClienteDetalhe extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(35, 59, 77));
         jLabel10.setText("Código");
 
-        txtClienteNome.setEditable(false);
         txtClienteNome.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtClienteNome.setForeground(new java.awt.Color(35, 59, 77));
         txtClienteNome.setToolTipText("");
@@ -275,6 +279,21 @@ public class ClienteDetalhe extends javax.swing.JFrame {
         txtClienteTel.setOpaque(false);
         txtClienteTel.setSelectionColor(new java.awt.Color(35, 59, 77));
 
+        btnSalvar.setBackground(new java.awt.Color(40, 124, 162));
+        btnSalvar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalvar.setText("Salvar");
+        btnSalvar.setBorderPainted(false);
+        btnSalvar.setContentAreaFilled(false);
+        btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvar.setFocusPainted(false);
+        btnSalvar.setOpaque(true);
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+
         btnCancelar.setBackground(new java.awt.Color(190, 75, 73));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
@@ -287,21 +306,6 @@ public class ClienteDetalhe extends javax.swing.JFrame {
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
-            }
-        });
-
-        btnSalvar.setBackground(new java.awt.Color(40, 124, 162));
-        btnSalvar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalvar.setText("Editar");
-        btnSalvar.setBorderPainted(false);
-        btnSalvar.setContentAreaFilled(false);
-        btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalvar.setFocusPainted(false);
-        btnSalvar.setOpaque(true);
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
             }
         });
 

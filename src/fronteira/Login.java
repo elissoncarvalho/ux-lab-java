@@ -67,7 +67,7 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 420));
 
-        jPanel2.setBackground(new java.awt.Color(0, 167, 230));
+        jPanel2.setBackground(new java.awt.Color(35, 59, 77));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(35, 59, 77));

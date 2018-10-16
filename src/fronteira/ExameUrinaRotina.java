@@ -6,10 +6,10 @@ import java.awt.Toolkit;
 import java.net.URL;
 
 
-public class UrinaRotina extends javax.swing.JFrame {
+public class ExameUrinaRotina extends javax.swing.JFrame {
 
 
-    public UrinaRotina() {
+    public ExameUrinaRotina() {
         initComponents();
         //Icone do Sistema
         URL url = this.getClass().getResource("/imgIcons/icon.png");  
@@ -56,7 +56,6 @@ public class UrinaRotina extends javax.swing.JFrame {
         setTitle("Urina Rotina");
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(492, 420));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -444,14 +443,18 @@ public class UrinaRotina extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExameUrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExameUrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExameUrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExameUrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -460,7 +463,7 @@ public class UrinaRotina extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UrinaRotina().setVisible(true);
+                new ExameUrinaRotina().setVisible(true);
             }
         });
     }
