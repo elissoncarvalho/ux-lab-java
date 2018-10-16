@@ -14,15 +14,11 @@ import entidade.*;
 public class Principal extends javax.swing.JFrame 
 {
     
-    VerifExaRult    verifExaRult    = new VerifExaRult();
-    Hemograma       hemograma       = new Hemograma();
-    Bioquimica      bioquimica      = new Bioquimica();
-    UrinaRotina     urinaRotina     = new UrinaRotina();
-    SangueOculto    sangueOculto    = new SangueOculto();
-    ClienteDetalhe  clienteDetalhe  = new ClienteDetalhe();
-    Helper          helper          = new Helper();
-    
-    public boolean statusMasq = true;
+    VerifExaRult    verifExaRult   = new VerifExaRult();
+    Hemograma       hemograma      = new Hemograma();
+    Bioquimica      bioquimica     = new Bioquimica();
+    UrinaRotina     urinaRotina    = new UrinaRotina();
+    SangueOculto    sangueOculto   = new SangueOculto();
     
     public Principal() 
     {
@@ -43,7 +39,6 @@ public class Principal extends javax.swing.JFrame
     private void initComponents() {
 
         rbgSexo = new javax.swing.ButtonGroup();
-        contMasq = new javax.swing.JPanel();
         contBorda = new javax.swing.JPanel();
         nav = new javax.swing.JPanel();
         LogoTipo = new javax.swing.JPanel();
@@ -174,11 +169,6 @@ public class Principal extends javax.swing.JFrame
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        contMasq.setBackground(new java.awt.Color(255, 255, 255));
-        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
-        contMasq.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(contMasq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1114, 624));
-
         contBorda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
         contBorda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -203,6 +193,7 @@ public class Principal extends javax.swing.JFrame
         btnInicio.setForeground(new java.awt.Color(255, 255, 255));
         btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Home_18px.png"))); // NOI18N
         btnInicio.setText("Inicio");
+        btnInicio.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 40, 0, 0));
         btnInicio.setBorderPainted(false);
         btnInicio.setContentAreaFilled(false);
         btnInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -224,6 +215,7 @@ public class Principal extends javax.swing.JFrame
         btnExame.setForeground(new java.awt.Color(255, 255, 255));
         btnExame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Test_Passed_18px.png"))); // NOI18N
         btnExame.setText("Exames");
+        btnExame.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 40, 0, 0));
         btnExame.setBorderPainted(false);
         btnExame.setContentAreaFilled(false);
         btnExame.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -245,6 +237,7 @@ public class Principal extends javax.swing.JFrame
         btnCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Management_18px.png"))); // NOI18N
         btnCliente.setText("Clientes");
+        btnCliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 40, 0, 0));
         btnCliente.setBorderPainted(false);
         btnCliente.setContentAreaFilled(false);
         btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -266,6 +259,7 @@ public class Principal extends javax.swing.JFrame
         btnConfigura.setForeground(new java.awt.Color(255, 255, 255));
         btnConfigura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Wrench_18px.png"))); // NOI18N
         btnConfigura.setText("Configurações");
+        btnConfigura.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 40, 0, 0));
         btnConfigura.setBorderPainted(false);
         btnConfigura.setContentAreaFilled(false);
         btnConfigura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -315,6 +309,7 @@ public class Principal extends javax.swing.JFrame
         btnMinimizar.setForeground(new java.awt.Color(35, 59, 77));
         btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Subtract_18px.png"))); // NOI18N
         btnMinimizar.setToolTipText("Minimizar Janela");
+        btnMinimizar.setBorder(null);
         btnMinimizar.setBorderPainted(false);
         btnMinimizar.setContentAreaFilled(false);
         btnMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -330,6 +325,7 @@ public class Principal extends javax.swing.JFrame
         btnSair.setForeground(new java.awt.Color(35, 59, 77));
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Delete_18px.png"))); // NOI18N
         btnSair.setToolTipText("Fechar Aplicação");
+        btnSair.setBorder(null);
         btnSair.setBorderPainted(false);
         btnSair.setContentAreaFilled(false);
         btnSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -352,6 +348,7 @@ public class Principal extends javax.swing.JFrame
         btnInicioCadasCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Registration_32px.png"))); // NOI18N
         btnInicioCadasCliente.setText("<html><p style=\"text-align:center\">Cadastrar Cliente");
         btnInicioCadasCliente.setToolTipText("");
+        btnInicioCadasCliente.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
         btnInicioCadasCliente.setContentAreaFilled(false);
         btnInicioCadasCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInicioCadasCliente.setFocusable(false);
@@ -371,6 +368,7 @@ public class Principal extends javax.swing.JFrame
         btnInicioCadsResulExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Edit_File_32px.png"))); // NOI18N
         btnInicioCadsResulExam.setText("<html><p style=\"text-align:center\">Cadastrar Resultado</p><p style=\"text-align:center\"> de Exame ");
         btnInicioCadsResulExam.setToolTipText("");
+        btnInicioCadsResulExam.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 10)));
         btnInicioCadsResulExam.setContentAreaFilled(false);
         btnInicioCadsResulExam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInicioCadsResulExam.setFocusable(false);
@@ -391,6 +389,7 @@ public class Principal extends javax.swing.JFrame
         btnInicoGerarRelat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Play_Graph_Report_32px.png"))); // NOI18N
         btnInicoGerarRelat.setText("<html><p style=\"text-align:center\">Gerar Relatório ");
         btnInicoGerarRelat.setToolTipText("");
+        btnInicoGerarRelat.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
         btnInicoGerarRelat.setContentAreaFilled(false);
         btnInicoGerarRelat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInicoGerarRelat.setFocusable(false);
@@ -439,6 +438,7 @@ public class Principal extends javax.swing.JFrame
         btnCadastraPedido.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCadastraPedido.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastraPedido.setText("Cadastrar Pedido");
+        btnCadastraPedido.setBorder(null);
         btnCadastraPedido.setBorderPainted(false);
         btnCadastraPedido.setContentAreaFilled(false);
         btnCadastraPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -456,6 +456,7 @@ public class Principal extends javax.swing.JFrame
         btnCadastraResultado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCadastraResultado.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastraResultado.setText("Cadastrar Resultados");
+        btnCadastraResultado.setBorder(null);
         btnCadastraResultado.setBorderPainted(false);
         btnCadastraResultado.setContentAreaFilled(false);
         btnCadastraResultado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -473,6 +474,7 @@ public class Principal extends javax.swing.JFrame
         btnRelatorioExame.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnRelatorioExame.setForeground(new java.awt.Color(255, 255, 255));
         btnRelatorioExame.setText("Relatorio de Exames");
+        btnRelatorioExame.setBorder(null);
         btnRelatorioExame.setBorderPainted(false);
         btnRelatorioExame.setContentAreaFilled(false);
         btnRelatorioExame.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -494,6 +496,7 @@ public class Principal extends javax.swing.JFrame
         btnBuscar5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnBuscar5.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar5.setText("Buscar");
+        btnBuscar5.setBorder(null);
         btnBuscar5.setBorderPainted(false);
         btnBuscar5.setContentAreaFilled(false);
         btnBuscar5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -819,6 +822,7 @@ public class Principal extends javax.swing.JFrame
         btnHemoPedSalvar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnHemoPedSalvar.setForeground(new java.awt.Color(255, 255, 255));
         btnHemoPedSalvar.setText("Salvar");
+        btnHemoPedSalvar.setBorder(null);
         btnHemoPedSalvar.setBorderPainted(false);
         btnHemoPedSalvar.setContentAreaFilled(false);
         btnHemoPedSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -835,6 +839,7 @@ public class Principal extends javax.swing.JFrame
         btnHemoPedCancelar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnHemoPedCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnHemoPedCancelar.setText("Cancelar");
+        btnHemoPedCancelar.setBorder(null);
         btnHemoPedCancelar.setBorderPainted(false);
         btnHemoPedCancelar.setContentAreaFilled(false);
         btnHemoPedCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -982,6 +987,7 @@ public class Principal extends javax.swing.JFrame
         btnHemograma.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnHemograma.setForeground(new java.awt.Color(35, 59, 77));
         btnHemograma.setText("Hemograma");
+        btnHemograma.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnHemograma.setContentAreaFilled(false);
         btnHemograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnHemograma.setEnabled(false);
@@ -998,6 +1004,7 @@ public class Principal extends javax.swing.JFrame
         btnBioquimica.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnBioquimica.setForeground(new java.awt.Color(35, 59, 77));
         btnBioquimica.setText("Bioquímica");
+        btnBioquimica.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnBioquimica.setContentAreaFilled(false);
         btnBioquimica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBioquimica.setEnabled(false);
@@ -1014,6 +1021,7 @@ public class Principal extends javax.swing.JFrame
         btnUrinaRotina.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnUrinaRotina.setForeground(new java.awt.Color(35, 59, 77));
         btnUrinaRotina.setText("Urina Rotina");
+        btnUrinaRotina.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnUrinaRotina.setContentAreaFilled(false);
         btnUrinaRotina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUrinaRotina.setEnabled(false);
@@ -1031,6 +1039,7 @@ public class Principal extends javax.swing.JFrame
         btnSangueOculto.setForeground(new java.awt.Color(35, 59, 77));
         btnSangueOculto.setText("<html>\n<p style=\"text-align:center\">EPF</p>\n<p>Sangue Oculto</p>");
         btnSangueOculto.setActionCommand("<html>\n<p><center> EPF</center></p>\n\n<p>Sangue Oculto</p>\n\n</html");
+        btnSangueOculto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnSangueOculto.setContentAreaFilled(false);
         btnSangueOculto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSangueOculto.setEnabled(false);
@@ -1161,6 +1170,7 @@ public class Principal extends javax.swing.JFrame
         btnExameDetalhe.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnExameDetalhe.setForeground(new java.awt.Color(0, 167, 230));
         btnExameDetalhe.setText("Detalhes");
+        btnExameDetalhe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
         btnExameDetalhe.setBorderPainted(false);
         btnExameDetalhe.setContentAreaFilled(false);
         btnExameDetalhe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1178,6 +1188,7 @@ public class Principal extends javax.swing.JFrame
         btnExameEdit.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnExameEdit.setForeground(new java.awt.Color(255, 255, 255));
         btnExameEdit.setText("Editar");
+        btnExameEdit.setBorder(null);
         btnExameEdit.setBorderPainted(false);
         btnExameEdit.setContentAreaFilled(false);
         btnExameEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1195,6 +1206,7 @@ public class Principal extends javax.swing.JFrame
         btnExameExcluir.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnExameExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btnExameExcluir.setText("Excluir");
+        btnExameExcluir.setBorder(null);
         btnExameExcluir.setBorderPainted(false);
         btnExameExcluir.setContentAreaFilled(false);
         btnExameExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1223,6 +1235,7 @@ public class Principal extends javax.swing.JFrame
         btnconsultaCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnconsultaCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnconsultaCliente.setText("Consultar Cliente");
+        btnconsultaCliente.setBorder(null);
         btnconsultaCliente.setBorderPainted(false);
         btnconsultaCliente.setContentAreaFilled(false);
         btnconsultaCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1240,6 +1253,7 @@ public class Principal extends javax.swing.JFrame
         btnCadastraCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCadastraCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastraCliente.setText("Cadastrar Cliente");
+        btnCadastraCliente.setBorder(null);
         btnCadastraCliente.setBorderPainted(false);
         btnCadastraCliente.setContentAreaFilled(false);
         btnCadastraCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1262,6 +1276,7 @@ public class Principal extends javax.swing.JFrame
         btnBuscaCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnBuscaCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscaCliente.setText("Buscar");
+        btnBuscaCliente.setBorder(null);
         btnBuscaCliente.setBorderPainted(false);
         btnBuscaCliente.setContentAreaFilled(false);
         btnBuscaCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1354,6 +1369,7 @@ public class Principal extends javax.swing.JFrame
         btnClienteDetalhe.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnClienteDetalhe.setForeground(new java.awt.Color(0, 167, 230));
         btnClienteDetalhe.setText("Detalhes");
+        btnClienteDetalhe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
         btnClienteDetalhe.setBorderPainted(false);
         btnClienteDetalhe.setContentAreaFilled(false);
         btnClienteDetalhe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1371,6 +1387,7 @@ public class Principal extends javax.swing.JFrame
         btnClienteEdit.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnClienteEdit.setForeground(new java.awt.Color(255, 255, 255));
         btnClienteEdit.setText("Editar");
+        btnClienteEdit.setBorder(null);
         btnClienteEdit.setBorderPainted(false);
         btnClienteEdit.setContentAreaFilled(false);
         btnClienteEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1388,6 +1405,7 @@ public class Principal extends javax.swing.JFrame
         btnClienteExcluir.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnClienteExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btnClienteExcluir.setText("Excluir");
+        btnClienteExcluir.setBorder(null);
         btnClienteExcluir.setBorderPainted(false);
         btnClienteExcluir.setContentAreaFilled(false);
         btnClienteExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1577,6 +1595,7 @@ public class Principal extends javax.swing.JFrame
         btnClienteLimparFor.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnClienteLimparFor.setForeground(new java.awt.Color(0, 128, 200));
         btnClienteLimparFor.setText("Limpar Formulário");
+        btnClienteLimparFor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
         btnClienteLimparFor.setBorderPainted(false);
         btnClienteLimparFor.setContentAreaFilled(false);
         btnClienteLimparFor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1593,6 +1612,7 @@ public class Principal extends javax.swing.JFrame
         btnClienteCadastra.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnClienteCadastra.setForeground(new java.awt.Color(255, 255, 255));
         btnClienteCadastra.setText("Cadastrar");
+        btnClienteCadastra.setBorder(null);
         btnClienteCadastra.setBorderPainted(false);
         btnClienteCadastra.setContentAreaFilled(false);
         btnClienteCadastra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1634,10 +1654,13 @@ public class Principal extends javax.swing.JFrame
                                     .addGap(18, 18, 18)
                                     .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel81)
-                                        .addComponent(cbxClienteUf, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jLabel18)
-                                .addComponent(txtClienteEnder, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
+                                        .addComponent(cbxClienteUf, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18))
+                                .addGroup(divCadastraClienteLayout.createSequentialGroup()
+                                    .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel18)
+                                        .addComponent(txtClienteEnder, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)))
                             .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtClienteCidade)
                                 .addComponent(txtClienteBairro)
@@ -1762,6 +1785,7 @@ public class Principal extends javax.swing.JFrame
         btnConfAddUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Add_User_Male_32px.png"))); // NOI18N
         btnConfAddUser.setText("<html><p>Adicionar Novo</p><p> Usuário");
         btnConfAddUser.setToolTipText("");
+        btnConfAddUser.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
         btnConfAddUser.setContentAreaFilled(false);
         btnConfAddUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfAddUser.setFocusable(false);
@@ -1781,6 +1805,7 @@ public class Principal extends javax.swing.JFrame
         btnConfEdtUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Registration_32px.png"))); // NOI18N
         btnConfEdtUser.setText("<html><p>Editar Usuários");
         btnConfEdtUser.setToolTipText("");
+        btnConfEdtUser.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
         btnConfEdtUser.setContentAreaFilled(false);
         btnConfEdtUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfEdtUser.setFocusable(false);
@@ -1800,6 +1825,7 @@ public class Principal extends javax.swing.JFrame
         btnConfBackup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Data_Protection_32px.png"))); // NOI18N
         btnConfBackup.setText("Realizar Backup");
         btnConfBackup.setToolTipText("");
+        btnConfBackup.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
         btnConfBackup.setContentAreaFilled(false);
         btnConfBackup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfBackup.setFocusable(false);
@@ -1819,6 +1845,7 @@ public class Principal extends javax.swing.JFrame
         btnConfRestBackup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Data_Backup_32px.png"))); // NOI18N
         btnConfRestBackup.setText("Restaurar Backup");
         btnConfRestBackup.setToolTipText("");
+        btnConfRestBackup.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
         btnConfRestBackup.setContentAreaFilled(false);
         btnConfRestBackup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfRestBackup.setFocusable(false);
@@ -1838,6 +1865,7 @@ public class Principal extends javax.swing.JFrame
         btnConfAplic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Maintenance_32px.png"))); // NOI18N
         btnConfAplic.setText("<html>Configurar <p>Aplicação");
         btnConfAplic.setToolTipText("");
+        btnConfAplic.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
         btnConfAplic.setContentAreaFilled(false);
         btnConfAplic.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfAplic.setFocusable(false);
@@ -1857,6 +1885,7 @@ public class Principal extends javax.swing.JFrame
         btnConfRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Play_Graph_Report_32px.png"))); // NOI18N
         btnConfRelatorio.setText("Gerar Relatório ");
         btnConfRelatorio.setToolTipText("");
+        btnConfRelatorio.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
         btnConfRelatorio.setContentAreaFilled(false);
         btnConfRelatorio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfRelatorio.setFocusable(false);
@@ -1983,7 +2012,6 @@ public class Principal extends javax.swing.JFrame
     private void divNaoInicia()
     {   // Paineis Divisorios que por padrão não inicia junto com o jFrame principal,
         // Para não causar conflitos na visão do usuario.
-        contMasq.setVisible(false);
         divExame.setVisible(false);
         divCliente.setVisible(false);
         divConfigura.setVisible(false);
@@ -1991,12 +2019,7 @@ public class Principal extends javax.swing.JFrame
         divCadastraResultado.setVisible(false);
         divRelatorioExame.setVisible(false);
     }
-    public void verifMasq()
-    {   // Efeito Mascara Branca
-        contBorda.setVisible(true);
-        contMasq.setVisible(!true);
-        helper.setStatusMasq(true);
-    }
+    
     // Btn Colors; Transições de Cores
     private void setBtnColor(JToggleButton btn)
     {
@@ -2178,8 +2201,6 @@ public class Principal extends javax.swing.JFrame
         divCliente.setVisible(false);
         divExame.setVisible(false);
     }
-    
-    
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
         this.setExtendedState(JFrame.ICONIFIED);
     }//GEN-LAST:event_btnMinimizarActionPerformed
@@ -2229,8 +2250,7 @@ public class Principal extends javax.swing.JFrame
     }//GEN-LAST:event_btnClienteEditActionPerformed
 
     private void btnClienteDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteDetalheActionPerformed
-        helper.showMasq(contBorda, contMasq);
-        clienteDetalhe.setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnClienteDetalheActionPerformed
 
     private void btnClienteExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteExcluirActionPerformed
@@ -2568,7 +2588,6 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JCheckBox cbxUreia;
     private javax.swing.JCheckBox cbxUrinaRotina;
     private javax.swing.JPanel contBorda;
-    private javax.swing.JPanel contMasq;
     private javax.swing.JPanel divCadastraCliente;
     private javax.swing.JPanel divCadastraExame;
     private javax.swing.JPanel divCadastraResultado;
