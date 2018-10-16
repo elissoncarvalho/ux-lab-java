@@ -21,7 +21,8 @@ public class Principal extends javax.swing.JFrame
     ExameSangueOculto   sangueOculto    = new ExameSangueOculto();
     ExameGeraRelatorio  exameGeraRel    = new ExameGeraRelatorio();
     ClienteDetalhe      clienteDetalhe  = new ClienteDetalhe();
-    
+    ConfAddUser         confAddUser     = new ConfAddUser();
+    ConfEdtUser         confEdtUser     = new ConfEdtUser();         
     
     public Principal() 
     {
@@ -2459,11 +2460,11 @@ public class Principal extends javax.swing.JFrame
     }//GEN-LAST:event_btnConfRestBackupActionPerformed
 
     private void btnConfAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfAddUserActionPerformed
-        // TODO add your handling code here:
+        confAddUser.setVisible(true);
     }//GEN-LAST:event_btnConfAddUserActionPerformed
 
     private void btnConfEdtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfEdtUserActionPerformed
-        // TODO add your handling code here:
+        confEdtUser.setVisible(true);
     }//GEN-LAST:event_btnConfEdtUserActionPerformed
 
     private void btnConfAplicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfAplicActionPerformed

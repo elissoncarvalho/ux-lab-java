@@ -36,6 +36,21 @@ public class ConfAddUser extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnSalvar = new javax.swing.JToggleButton();
         btnCancelar = new javax.swing.JToggleButton();
+        jLabel11 = new javax.swing.JLabel();
+        txtClienteNome = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtClienteCod = new javax.swing.JTextField();
+        txtClienteCPF = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        txtClienteCPF1 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        txtClienteCPF2 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txtClienteCPF3 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        rbClienteMasc = new javax.swing.JRadioButton();
+        rbClienteFemi = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Detalhes do Cliente");
@@ -63,7 +78,7 @@ public class ConfAddUser extends javax.swing.JFrame {
         btnSalvar.setBackground(new java.awt.Color(40, 124, 162));
         btnSalvar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalvar.setText("Imprimir");
+        btnSalvar.setText("Cadastrar");
         btnSalvar.setBorderPainted(false);
         btnSalvar.setContentAreaFilled(false);
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -78,7 +93,7 @@ public class ConfAddUser extends javax.swing.JFrame {
         btnCancelar.setBackground(new java.awt.Color(190, 75, 73));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setText("Voltar");
+        btnCancelar.setText("Cancelar");
         btnCancelar.setBorderPainted(false);
         btnCancelar.setContentAreaFilled(false);
         btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -90,21 +105,185 @@ public class ConfAddUser extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel11.setText("Nome completo");
+
+        txtClienteNome.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtClienteNome.setForeground(new java.awt.Color(35, 59, 77));
+        txtClienteNome.setToolTipText("");
+        txtClienteNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtClienteNome.setName(""); // NOI18N
+        txtClienteNome.setOpaque(false);
+        txtClienteNome.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel10.setText("Código");
+
+        txtClienteCod.setEditable(false);
+        txtClienteCod.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtClienteCod.setForeground(new java.awt.Color(35, 59, 77));
+        txtClienteCod.setText("# 0013899");
+        txtClienteCod.setToolTipText("");
+        txtClienteCod.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtClienteCod.setName(""); // NOI18N
+        txtClienteCod.setOpaque(false);
+        txtClienteCod.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        txtClienteCPF.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtClienteCPF.setForeground(new java.awt.Color(35, 59, 77));
+        txtClienteCPF.setToolTipText("");
+        txtClienteCPF.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtClienteCPF.setName(""); // NOI18N
+        txtClienteCPF.setOpaque(false);
+        txtClienteCPF.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel13.setText("Usuário");
+
+        txtClienteCPF1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtClienteCPF1.setForeground(new java.awt.Color(35, 59, 77));
+        txtClienteCPF1.setToolTipText("");
+        txtClienteCPF1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtClienteCPF1.setName(""); // NOI18N
+        txtClienteCPF1.setOpaque(false);
+        txtClienteCPF1.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel14.setText("E-mail");
+
+        txtClienteCPF2.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtClienteCPF2.setForeground(new java.awt.Color(35, 59, 77));
+        txtClienteCPF2.setToolTipText("");
+        txtClienteCPF2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtClienteCPF2.setName(""); // NOI18N
+        txtClienteCPF2.setOpaque(false);
+        txtClienteCPF2.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel15.setText("Senha");
+
+        txtClienteCPF3.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtClienteCPF3.setForeground(new java.awt.Color(35, 59, 77));
+        txtClienteCPF3.setToolTipText("");
+        txtClienteCPF3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtClienteCPF3.setName(""); // NOI18N
+        txtClienteCPF3.setOpaque(false);
+        txtClienteCPF3.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel16.setText("Confirmar Senha");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel17.setText("Nível de Acesso");
+
+        rbClienteMasc.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        rbClienteMasc.setForeground(new java.awt.Color(11, 19, 25));
+        rbClienteMasc.setText("Usuário");
+        rbClienteMasc.setFocusPainted(false);
+        rbClienteMasc.setOpaque(false);
+
+        rbClienteFemi.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        rbClienteFemi.setForeground(new java.awt.Color(11, 19, 25));
+        rbClienteFemi.setText("Administrador");
+        rbClienteFemi.setFocusPainted(false);
+        rbClienteFemi.setOpaque(false);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(rbClienteMasc, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbClienteFemi))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(txtClienteCPF2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addGap(111, 111, 111))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(txtClienteCPF3)
+                                .addGap(50, 50, 50))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtClienteCod, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtClienteNome)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(20, 20, 20)
+                                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(50, 50, 50))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(txtClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(txtClienteCPF1)
+                                .addGap(50, 50, 50))))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(384, 384, 384)
+                .addGap(50, 50, 50)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtClienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtClienteCod, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtClienteCPF1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtClienteCPF2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtClienteCPF3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel17)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbClienteMasc, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rbClienteFemi, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -182,9 +361,24 @@ public class ConfAddUser extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnCancelar;
     private javax.swing.JToggleButton btnSalvar;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButton rbClienteFemi;
+    private javax.swing.JRadioButton rbClienteMasc;
+    private javax.swing.JTextField txtClienteCPF;
+    private javax.swing.JTextField txtClienteCPF1;
+    private javax.swing.JTextField txtClienteCPF2;
+    private javax.swing.JTextField txtClienteCPF3;
+    private javax.swing.JTextField txtClienteCod;
+    private javax.swing.JTextField txtClienteNome;
     // End of variables declaration//GEN-END:variables
 }

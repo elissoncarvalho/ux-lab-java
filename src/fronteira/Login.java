@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JOptionPane;
+
 public class Login extends javax.swing.JFrame {
     
     Loggar      loggar      = new Loggar();
