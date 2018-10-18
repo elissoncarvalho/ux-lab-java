@@ -44,13 +44,13 @@ public class ConfAddUser extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         txtClienteCPF1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        txtClienteCPF2 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        txtClienteCPF3 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         rbClienteMasc = new javax.swing.JRadioButton();
         rbClienteFemi = new javax.swing.JRadioButton();
+        txtSenha = new javax.swing.JPasswordField();
+        txtSenhaConfir = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Detalhes do Cliente");
@@ -155,25 +155,9 @@ public class ConfAddUser extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(35, 59, 77));
         jLabel14.setText("E-mail");
 
-        txtClienteCPF2.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtClienteCPF2.setForeground(new java.awt.Color(35, 59, 77));
-        txtClienteCPF2.setToolTipText("");
-        txtClienteCPF2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtClienteCPF2.setName(""); // NOI18N
-        txtClienteCPF2.setOpaque(false);
-        txtClienteCPF2.setSelectionColor(new java.awt.Color(35, 59, 77));
-
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(35, 59, 77));
         jLabel15.setText("Senha");
-
-        txtClienteCPF3.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtClienteCPF3.setForeground(new java.awt.Color(35, 59, 77));
-        txtClienteCPF3.setToolTipText("");
-        txtClienteCPF3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtClienteCPF3.setName(""); // NOI18N
-        txtClienteCPF3.setOpaque(false);
-        txtClienteCPF3.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(35, 59, 77));
@@ -195,6 +179,18 @@ public class ConfAddUser extends javax.swing.JFrame {
         rbClienteFemi.setFocusPainted(false);
         rbClienteFemi.setOpaque(false);
 
+        txtSenha.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtSenha.setForeground(new java.awt.Color(35, 59, 77));
+        txtSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtSenha.setOpaque(false);
+        txtSenha.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        txtSenhaConfir.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtSenhaConfir.setForeground(new java.awt.Color(35, 59, 77));
+        txtSenhaConfir.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtSenhaConfir.setOpaque(false);
+        txtSenhaConfir.setSelectionColor(new java.awt.Color(35, 59, 77));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -202,23 +198,6 @@ public class ConfAddUser extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(rbClienteMasc, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbClienteFemi))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(txtClienteCPF2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(111, 111, 111))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txtClienteCPF3)
-                                .addGap(50, 50, 50))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtClienteCod, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,9 +220,30 @@ public class ConfAddUser extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(0, 0, 0)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel16)
+                                            .addComponent(txtSenhaConfir, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtClienteCPF1))
+                                .addGap(50, 50, 50))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txtClienteCPF1)
-                                .addGap(50, 50, 50))))))
+                                .addComponent(rbClienteMasc, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbClienteFemi)))
+                        .addGap(0, 0, 0))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(0, 0, 0))
+                            .addComponent(txtSenha))
+                        .addGap(322, 322, 322))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,15 +269,14 @@ public class ConfAddUser extends javax.swing.JFrame {
                         .addGap(0, 0, 0)
                         .addComponent(txtClienteCPF1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(0, 0, 0)
-                        .addComponent(txtClienteCPF2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addGap(0, 0, 0)
-                        .addComponent(txtClienteCPF3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel16)
+                            .addGap(0, 0, 0)
+                            .addComponent(txtSenhaConfir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -314,6 +313,7 @@ public class ConfAddUser extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
 
         this.setVisible(false);
+        
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
@@ -376,9 +376,9 @@ public class ConfAddUser extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbClienteMasc;
     private javax.swing.JTextField txtClienteCPF;
     private javax.swing.JTextField txtClienteCPF1;
-    private javax.swing.JTextField txtClienteCPF2;
-    private javax.swing.JTextField txtClienteCPF3;
     private javax.swing.JTextField txtClienteCod;
     private javax.swing.JTextField txtClienteNome;
+    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JPasswordField txtSenhaConfir;
     // End of variables declaration//GEN-END:variables
 }

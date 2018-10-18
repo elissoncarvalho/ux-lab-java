@@ -1,8 +1,8 @@
-
 package persistencia;
 import java.sql.*;
 
-public class BaseDeDados {
+public class BaseDeDados 
+{
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     private static final String DATABASE_URL = "jdbc:mysql://localhost/uxlab";
     private String user = "root";
@@ -10,10 +10,12 @@ public class BaseDeDados {
     private Connection conn;
     
     
-public Connection conecta(){
-        try{
+    public Connection conecta()
+    {
+        try
+        {
             Class.forName(JDBC_DRIVER);
-          conn = DriverManager.getConnection(DATABASE_URL, this.user, this.password);
+            conn = DriverManager.getConnection(DATABASE_URL, this.user, this.password);
         } 
         catch (ClassNotFoundException e){
             System.out.println(e.getMessage());
@@ -23,17 +25,19 @@ public Connection conecta(){
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
-    return conn;
+        return conn;
     }
 
-public void desconecta(){
-        try{
+    public void desconecta()
+    {
+        try
+        {
             conn.close();
-            } 
-        catch (SQLException e){
+        } 
+        catch (SQLException e)
+        {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }
-    
 }

@@ -1,6 +1,6 @@
-
 package persistencia;
 
-public class ClienteDAO {
+public class ClienteDAO 
+{
     
 }

@@ -7,10 +7,14 @@ import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JOptionPane;
 
+import entidade.Loggar;
+
 public class Login extends javax.swing.JFrame {
     
     Loggar      loggar      = new Loggar();
     Principal   principal   = new Principal();
+    
+    private String msgLbl;
     
     public Login() {
         initComponents();
@@ -25,6 +29,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -49,6 +54,10 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jPanel1.setBackground(new java.awt.Color(35, 59, 77));
         jPanel1.setLayout(null);
 
@@ -66,44 +75,63 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(0, 0, 420, 420);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 420));
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 416, 416));
 
-        jPanel2.setBackground(new java.awt.Color(35, 59, 77));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setOpaque(false);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(35, 59, 77));
         jPanel3.setOpaque(false);
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnMinimizar.setBackground(new java.awt.Color(35, 59, 77));
+        btnMinimizar.setBackground(new java.awt.Color(255, 255, 255));
         btnMinimizar.setForeground(new java.awt.Color(35, 59, 77));
-        btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Horizontal_Line_12px_2.png"))); // NOI18N
+        btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Subtract_18px.png"))); // NOI18N
         btnMinimizar.setBorder(null);
         btnMinimizar.setBorderPainted(false);
         btnMinimizar.setContentAreaFilled(false);
         btnMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMinimizar.setFocusable(false);
+        btnMinimizar.setOpaque(true);
+        btnMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMinimizarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMinimizarMouseExited(evt);
+            }
+        });
         btnMinimizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMinimizarActionPerformed(evt);
             }
         });
-        jPanel3.add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 40, 40));
+        jPanel3.add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 2, 40, 40));
 
-        btnSair.setBackground(new java.awt.Color(35, 59, 77));
+        btnSair.setBackground(new java.awt.Color(255, 255, 255));
         btnSair.setForeground(new java.awt.Color(35, 59, 77));
-        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Delete_18px_4.png"))); // NOI18N
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Delete_18px.png"))); // NOI18N
         btnSair.setBorder(null);
         btnSair.setBorderPainted(false);
         btnSair.setContentAreaFilled(false);
         btnSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSair.setFocusable(false);
+        btnSair.setOpaque(true);
+        btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSairMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSairMouseExited(evt);
+            }
+        });
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
             }
         });
-        jPanel3.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 40, 40));
+        jPanel3.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 2, 40, 40));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 40));
 
@@ -143,17 +171,24 @@ public class Login extends javax.swing.JFrame {
         txtSenha.setOpaque(false);
         txtSenha.setSelectionColor(new java.awt.Color(35, 59, 77));
 
-        btnEntrar.setBackground(new java.awt.Color(35, 59, 77));
-        btnEntrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEntrar.setBackground(new java.awt.Color(255, 255, 255));
+        btnEntrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEntrar.setForeground(new java.awt.Color(35, 59, 77));
         btnEntrar.setText("Entrar");
-        btnEntrar.setBorder(null);
-        btnEntrar.setBorderPainted(false);
+        btnEntrar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(35, 59, 77)));
         btnEntrar.setContentAreaFilled(false);
         btnEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEntrar.setFocusable(false);
         btnEntrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEntrar.setOpaque(true);
+        btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEntrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEntrarMouseExited(evt);
+            }
+        });
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntrarActionPerformed(evt);
@@ -184,7 +219,7 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 1, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(20, 20, 20))
             .addComponent(lblMsg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -198,53 +233,95 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(lblUsuario)
                 .addGap(0, 0, 0)
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblSenha)
                 .addGap(0, 0, 0)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 290, 340));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 420, 420));
+        jPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 420, 420));
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
     private void login(){
         //Verifica se os usuarios são verdadeiros
-        if((1+1) != 2)
+        if(verificaCampo() == false)
         {
+            msgLbl = "<html><p>Preencha todos os campos, por favor. Não me Deixe! :(.</p>";
             lblMsg.setText("<html><p>Preencha todos os campos, por favor. Não me Deixe! :(.</p>");
             lblMsg.setOpaque(true);
+            erroLogin(msgLbl);
         }
         else
         {
             loggar.setUsuario(txtUsuario.getText().trim());
             loggar.setSenha(new String(txtSenha.getPassword()).trim());
-
+            
+            loggar.setLogadoStatus();
+            
             if(loggar.isLogadoStatus() == true)
             {
-                this.setVisible(!true);
+                this.setVisible(false);
                 principal.setVisible(true);
             }
             else
             {
-                erroLogin();
+                msgLbl = "<html><p>Usuario ou Senha Icorretos. Por favor tente novamente.</p>";
+                erroLogin(msgLbl);
             }
         }
     }
-    private void erroLogin()
+    
+    private boolean verificaCampo()
+    {   // Verificando se todos os campos de Login estão preenchidos
+        return !(txtUsuario.getText().trim().isEmpty() || new String(txtSenha.getPassword()).trim().isEmpty());
+    }
+    private void erroLogin(String msg)
     {   //Caso o usuario ou senha seja falso, Exibe mensagem de erro.
         txtUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,new java.awt.Color(190,75,73)));
         txtSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(190,75,73)));
         lblUsuario.setForeground(new java.awt.Color(190,75,73)); 
         lblSenha.setForeground(new java.awt.Color(190,75,73));
-        lblMsg.setText("<html><p>Usuario ou Senha Icorretos. Por favor tente novamente.</p>");
+        lblMsg.setText(msg);
         lblMsg.setOpaque(true);
+    }
+    
+    // Transicoes de cor ao passar o mouse por cima
+    private void setMouseBtnSairMoved()
+    {
+        btnSair.setBackground(new java.awt.Color(229, 229, 229));
+    }
+    private void resMouseBtnSairMoved()
+    {
+        btnSair.setBackground(new java.awt.Color(255, 255, 255));
+    }
+    
+    private void setMouseBtnMinimizarMoved()
+    {
+        btnMinimizar.setBackground(new java.awt.Color(229, 229, 229));
+    }
+    private void resMouseBtnMinimizarMoved()
+    {
+        btnMinimizar.setBackground(new java.awt.Color(255, 255, 255));
+    }
+    
+    private void setMouseBtnEntrarMoved()
+    {
+        btnEntrar.setBackground(new java.awt.Color(35, 59, 77));
+        btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
+    }
+    private void resMouseBtnEntrarMoved()
+    {
+        btnEntrar.setBackground(new java.awt.Color(255, 255, 255));
+        btnEntrar.setForeground(new java.awt.Color(35, 59, 77));
     }
     
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -256,8 +333,33 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinimizarActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        lblMsg.setOpaque(false);
         login();
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseEntered
+        setMouseBtnEntrarMoved();
+    }//GEN-LAST:event_btnEntrarMouseEntered
+
+    private void btnEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseExited
+        resMouseBtnEntrarMoved();
+    }//GEN-LAST:event_btnEntrarMouseExited
+
+    private void btnSairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseEntered
+        setMouseBtnSairMoved();
+    }//GEN-LAST:event_btnSairMouseEntered
+
+    private void btnSairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseExited
+        resMouseBtnSairMoved();
+    }//GEN-LAST:event_btnSairMouseExited
+
+    private void btnMinimizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizarMouseEntered
+        setMouseBtnMinimizarMoved();
+    }//GEN-LAST:event_btnMinimizarMouseEntered
+
+    private void btnMinimizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizarMouseExited
+        resMouseBtnMinimizarMoved();
+    }//GEN-LAST:event_btnMinimizarMouseExited
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -302,6 +404,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel lblMsg;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblUsuario;
