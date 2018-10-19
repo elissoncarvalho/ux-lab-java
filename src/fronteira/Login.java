@@ -8,6 +8,7 @@ import java.net.URL;
 import javax.swing.JOptionPane;
 
 import entidade.Loggar;
+import javax.swing.JToggleButton;
 
 public class Login extends javax.swing.JFrame {
     
@@ -295,24 +296,15 @@ public class Login extends javax.swing.JFrame {
     }
     
     // Transicoes de cor ao passar o mouse por cima
-    private void setMouseBtnSairMoved()
+    private void setMouseBtnSMMoved(JToggleButton btn)
     {
-        btnSair.setBackground(new java.awt.Color(229, 229, 229));
+        btn.setBackground(new java.awt.Color(229, 229, 229));
     }
-    private void resMouseBtnSairMoved()
+    private void resMouseBtnSMMoved(JToggleButton btn)
     {
-        btnSair.setBackground(new java.awt.Color(255, 255, 255));
+        btn.setBackground(new java.awt.Color(255, 255, 255));
     }
-    
-    private void setMouseBtnMinimizarMoved()
-    {
-        btnMinimizar.setBackground(new java.awt.Color(229, 229, 229));
-    }
-    private void resMouseBtnMinimizarMoved()
-    {
-        btnMinimizar.setBackground(new java.awt.Color(255, 255, 255));
-    }
-    
+
     private void setMouseBtnEntrarMoved()
     {
         btnEntrar.setBackground(new java.awt.Color(35, 59, 77));
@@ -346,19 +338,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrarMouseExited
 
     private void btnSairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseEntered
-        setMouseBtnSairMoved();
+        setMouseBtnSMMoved(btnSair);
     }//GEN-LAST:event_btnSairMouseEntered
 
     private void btnSairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseExited
-        resMouseBtnSairMoved();
+        resMouseBtnSMMoved(btnMinimizar);
     }//GEN-LAST:event_btnSairMouseExited
 
     private void btnMinimizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizarMouseEntered
-        setMouseBtnMinimizarMoved();
+        setMouseBtnSMMoved(btnMinimizar);
     }//GEN-LAST:event_btnMinimizarMouseEntered
 
     private void btnMinimizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizarMouseExited
-        resMouseBtnMinimizarMoved();
+        resMouseBtnSMMoved(btnMinimizar);
     }//GEN-LAST:event_btnMinimizarMouseExited
 
     public static void main(String args[]) {

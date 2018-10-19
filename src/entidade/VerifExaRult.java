@@ -10,7 +10,7 @@ public class VerifExaRult
 {   
             
     // Variaveis de verificação de Status no Cadastro do Resultado de Exame 
-    private boolean activeHemograma     = !false;
+    private boolean activeHemograma     = false;
     private boolean activeBioquimica    = false;
     private boolean activeUrinaRotina   = false;
     private boolean activeSangueOculto  = false;

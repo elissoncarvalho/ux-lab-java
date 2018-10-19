@@ -24,6 +24,8 @@ public class Principal extends javax.swing.JFrame
     ConfAddUser         confAddUser     = new ConfAddUser();
     ConfEdtUser         confEdtUser     = new ConfEdtUser();         
     
+    private String iconsBg;
+    
     public Principal() 
     {
         initComponents();
@@ -60,7 +62,7 @@ public class Principal extends javax.swing.JFrame
         divInicio = new javax.swing.JPanel();
         btnInicioCadasCliente = new javax.swing.JToggleButton();
         btnInicioCadsResulExam = new javax.swing.JToggleButton();
-        btnInicoGerarRelat = new javax.swing.JToggleButton();
+        btnInicioConfRelat = new javax.swing.JToggleButton();
         divExame = new javax.swing.JPanel();
         divNavExame = new javax.swing.JPanel();
         btnCadastraPedido = new javax.swing.JToggleButton();
@@ -305,7 +307,7 @@ public class Principal extends javax.swing.JFrame
         lblNivelAcesso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         barNotifq.add(lblNivelAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 140, 50));
 
-        btnMinimizar.setBackground(new java.awt.Color(35, 59, 77));
+        btnMinimizar.setBackground(new java.awt.Color(255, 255, 255));
         btnMinimizar.setForeground(new java.awt.Color(35, 59, 77));
         btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Subtract_18px.png"))); // NOI18N
         btnMinimizar.setToolTipText("Minimizar Janela");
@@ -314,6 +316,15 @@ public class Principal extends javax.swing.JFrame
         btnMinimizar.setContentAreaFilled(false);
         btnMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMinimizar.setFocusable(false);
+        btnMinimizar.setOpaque(true);
+        btnMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMinimizarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMinimizarMouseExited(evt);
+            }
+        });
         btnMinimizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMinimizarActionPerformed(evt);
@@ -321,7 +332,7 @@ public class Principal extends javax.swing.JFrame
         });
         barNotifq.add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 40, 50));
 
-        btnSair.setBackground(new java.awt.Color(35, 59, 77));
+        btnSair.setBackground(new java.awt.Color(255, 255, 255));
         btnSair.setForeground(new java.awt.Color(35, 59, 77));
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Delete_18px.png"))); // NOI18N
         btnSair.setToolTipText("Fechar Aplicação");
@@ -331,6 +342,15 @@ public class Principal extends javax.swing.JFrame
         btnSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSair.setFocusable(false);
         btnSair.setNextFocusableComponent(btnMinimizar);
+        btnSair.setOpaque(true);
+        btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSairMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSairMouseExited(evt);
+            }
+        });
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -342,7 +362,7 @@ public class Principal extends javax.swing.JFrame
 
         divInicio.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnInicioCadasCliente.setBackground(new java.awt.Color(35, 59, 77));
+        btnInicioCadasCliente.setBackground(new java.awt.Color(255, 255, 255));
         btnInicioCadasCliente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnInicioCadasCliente.setForeground(new java.awt.Color(35, 59, 77));
         btnInicioCadasCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Registration_32px.png"))); // NOI18N
@@ -356,6 +376,14 @@ public class Principal extends javax.swing.JFrame
         btnInicioCadasCliente.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnInicioCadasCliente.setIconTextGap(15);
         btnInicioCadasCliente.setNextFocusableComponent(btnMinimizar);
+        btnInicioCadasCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInicioCadasClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInicioCadasClienteMouseExited(evt);
+            }
+        });
         btnInicioCadasCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicioCadasClienteActionPerformed(evt);
@@ -366,7 +394,7 @@ public class Principal extends javax.swing.JFrame
         btnInicioCadsResulExam.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnInicioCadsResulExam.setForeground(new java.awt.Color(35, 59, 77));
         btnInicioCadsResulExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Edit_File_32px.png"))); // NOI18N
-        btnInicioCadsResulExam.setText("<html><p style=\"text-align:center\">Cadastrar Resultado</p><p style=\"text-align:center\"> de Exame ");
+        btnInicioCadsResulExam.setText("<html><p style=\"text-align:center\">Cadastrar Resultado</p><p style=\"text-align:center\"> de Exame "); // NOI18N
         btnInicioCadsResulExam.setToolTipText("");
         btnInicioCadsResulExam.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 10)));
         btnInicioCadsResulExam.setContentAreaFilled(false);
@@ -377,29 +405,45 @@ public class Principal extends javax.swing.JFrame
         btnInicioCadsResulExam.setIconTextGap(8);
         btnInicioCadsResulExam.setInheritsPopupMenu(true);
         btnInicioCadsResulExam.setNextFocusableComponent(btnMinimizar);
+        btnInicioCadsResulExam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInicioCadsResulExamMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInicioCadsResulExamMouseExited(evt);
+            }
+        });
         btnInicioCadsResulExam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicioCadsResulExamActionPerformed(evt);
             }
         });
 
-        btnInicoGerarRelat.setBackground(new java.awt.Color(35, 59, 77));
-        btnInicoGerarRelat.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnInicoGerarRelat.setForeground(new java.awt.Color(35, 59, 77));
-        btnInicoGerarRelat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Play_Graph_Report_32px.png"))); // NOI18N
-        btnInicoGerarRelat.setText("<html><p style=\"text-align:center\">Gerar Relatório ");
-        btnInicoGerarRelat.setToolTipText("");
-        btnInicoGerarRelat.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
-        btnInicoGerarRelat.setContentAreaFilled(false);
-        btnInicoGerarRelat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnInicoGerarRelat.setFocusable(false);
-        btnInicoGerarRelat.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnInicoGerarRelat.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnInicoGerarRelat.setIconTextGap(15);
-        btnInicoGerarRelat.setNextFocusableComponent(btnMinimizar);
-        btnInicoGerarRelat.addActionListener(new java.awt.event.ActionListener() {
+        btnInicioConfRelat.setBackground(new java.awt.Color(255, 255, 255));
+        btnInicioConfRelat.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnInicioConfRelat.setForeground(new java.awt.Color(35, 59, 77));
+        btnInicioConfRelat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Play_Graph_Report_32px.png"))); // NOI18N
+        btnInicioConfRelat.setText("Gerar Relátorio");
+        btnInicioConfRelat.setToolTipText("");
+        btnInicioConfRelat.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
+        btnInicioConfRelat.setContentAreaFilled(false);
+        btnInicioConfRelat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInicioConfRelat.setFocusable(false);
+        btnInicioConfRelat.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInicioConfRelat.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnInicioConfRelat.setIconTextGap(15);
+        btnInicioConfRelat.setNextFocusableComponent(btnMinimizar);
+        btnInicioConfRelat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInicioConfRelatMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInicioConfRelatMouseExited(evt);
+            }
+        });
+        btnInicioConfRelat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicoGerarRelatActionPerformed(evt);
+                btnInicioConfRelatActionPerformed(evt);
             }
         });
 
@@ -413,17 +457,17 @@ public class Principal extends javax.swing.JFrame
                 .addGap(30, 30, 30)
                 .addComponent(btnInicioCadsResulExam, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(btnInicoGerarRelat, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addComponent(btnInicioConfRelat, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         divInicioLayout.setVerticalGroup(
             divInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(divInicioLayout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addGroup(divInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnInicioConfRelat, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnInicioCadasCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInicioCadsResulExam, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInicoGerarRelat, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnInicioCadsResulExam, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         contBorda.add(divInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 52, 830, 570));
@@ -971,6 +1015,14 @@ public class Principal extends javax.swing.JFrame
         btnHemograma.setFocusPainted(false);
         btnHemograma.setNextFocusableComponent(btnCadastraResultado);
         btnHemograma.setOpaque(true);
+        btnHemograma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHemogramaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHemogramaMouseExited(evt);
+            }
+        });
         btnHemograma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHemogramaActionPerformed(evt);
@@ -988,6 +1040,14 @@ public class Principal extends javax.swing.JFrame
         btnBioquimica.setFocusPainted(false);
         btnBioquimica.setNextFocusableComponent(btnCadastraResultado);
         btnBioquimica.setOpaque(true);
+        btnBioquimica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBioquimicaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBioquimicaMouseExited(evt);
+            }
+        });
         btnBioquimica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBioquimicaActionPerformed(evt);
@@ -1005,6 +1065,14 @@ public class Principal extends javax.swing.JFrame
         btnUrinaRotina.setFocusPainted(false);
         btnUrinaRotina.setNextFocusableComponent(btnCadastraResultado);
         btnUrinaRotina.setOpaque(true);
+        btnUrinaRotina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnUrinaRotinaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUrinaRotinaMouseExited(evt);
+            }
+        });
         btnUrinaRotina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUrinaRotinaActionPerformed(evt);
@@ -1014,7 +1082,7 @@ public class Principal extends javax.swing.JFrame
         btnSangueOculto.setBackground(new java.awt.Color(255, 255, 255));
         btnSangueOculto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnSangueOculto.setForeground(new java.awt.Color(35, 59, 77));
-        btnSangueOculto.setText("<html>\n<p style=\"text-align:center\">EPF</p>\n<p>Sangue Oculto</p>");
+        btnSangueOculto.setText("<html>EPF\n<p>Sangue Oculto</p>");
         btnSangueOculto.setActionCommand("<html>\n<p><center> EPF</center></p>\n\n<p>Sangue Oculto</p>\n\n</html");
         btnSangueOculto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnSangueOculto.setContentAreaFilled(false);
@@ -1024,6 +1092,14 @@ public class Principal extends javax.swing.JFrame
         btnSangueOculto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSangueOculto.setNextFocusableComponent(btnCadastraResultado);
         btnSangueOculto.setOpaque(true);
+        btnSangueOculto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSangueOcultoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSangueOcultoMouseExited(evt);
+            }
+        });
         btnSangueOculto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSangueOcultoActionPerformed(evt);
@@ -1794,6 +1870,14 @@ public class Principal extends javax.swing.JFrame
         btnConfAddUser.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnConfAddUser.setIconTextGap(15);
         btnConfAddUser.setNextFocusableComponent(btnMinimizar);
+        btnConfAddUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfAddUserMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfAddUserMouseExited(evt);
+            }
+        });
         btnConfAddUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfAddUserActionPerformed(evt);
@@ -1814,6 +1898,14 @@ public class Principal extends javax.swing.JFrame
         btnConfEdtUser.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnConfEdtUser.setIconTextGap(15);
         btnConfEdtUser.setNextFocusableComponent(btnMinimizar);
+        btnConfEdtUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfEdtUserMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfEdtUserMouseExited(evt);
+            }
+        });
         btnConfEdtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfEdtUserActionPerformed(evt);
@@ -1834,6 +1926,14 @@ public class Principal extends javax.swing.JFrame
         btnConfBackup.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnConfBackup.setIconTextGap(15);
         btnConfBackup.setNextFocusableComponent(btnMinimizar);
+        btnConfBackup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfBackupMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfBackupMouseExited(evt);
+            }
+        });
         btnConfBackup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfBackupActionPerformed(evt);
@@ -1854,6 +1954,14 @@ public class Principal extends javax.swing.JFrame
         btnConfRestBackup.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnConfRestBackup.setIconTextGap(15);
         btnConfRestBackup.setNextFocusableComponent(btnMinimizar);
+        btnConfRestBackup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfRestBackupMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfRestBackupMouseExited(evt);
+            }
+        });
         btnConfRestBackup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfRestBackupActionPerformed(evt);
@@ -1874,6 +1982,14 @@ public class Principal extends javax.swing.JFrame
         btnConfAplic.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnConfAplic.setIconTextGap(15);
         btnConfAplic.setNextFocusableComponent(btnMinimizar);
+        btnConfAplic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfAplicMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfAplicMouseExited(evt);
+            }
+        });
         btnConfAplic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfAplicActionPerformed(evt);
@@ -1894,6 +2010,14 @@ public class Principal extends javax.swing.JFrame
         btnConfRelatorio.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnConfRelatorio.setIconTextGap(15);
         btnConfRelatorio.setNextFocusableComponent(btnMinimizar);
+        btnConfRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfRelatorioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfRelatorioMouseExited(evt);
+            }
+        });
         btnConfRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfRelatorioActionPerformed(evt);
@@ -1946,6 +2070,33 @@ public class Principal extends javax.swing.JFrame
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    // Transicoes de cor ao passar o mouse por cima
+    private void setMouseBtnSMMoved(JToggleButton btn)
+    {
+        btn.setBackground(new java.awt.Color(229, 229, 229));
+    }
+    private void resMouseBtnSMMoved(JToggleButton btn)
+    {
+        btn.setBackground(new java.awt.Color(255, 255, 255));
+    }
+    
+    private void setMouseBtnMoved(JToggleButton btn, String iconsBg)
+    {
+        btn.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconsBg)));
+        btn.setForeground(new java.awt.Color(0,167,230));
+        btn.setBorder(javax.swing.BorderFactory.createCompoundBorder
+                        (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0,167,230)), 
+                        javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
+    }
+    private void resMouseBtnMoved(JToggleButton btn, String iconsBg)
+    {
+        btn.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconsBg)));
+        btn.setForeground(new java.awt.Color(35,59,77));
+        btn.setBorder(javax.swing.BorderFactory.createCompoundBorder
+                        (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35,59,77)), 
+                        javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
+    }
     
     public void verificaActive()
     {   // Verifica se o Exame esta Ativado
@@ -2447,10 +2598,6 @@ public class Principal extends javax.swing.JFrame
         clickMouseAtalhoExameCadsResult();
     }//GEN-LAST:event_btnInicioCadsResulExamActionPerformed
 
-    private void btnInicoGerarRelatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicoGerarRelatActionPerformed
-        clickMouseAtalhoConfRelatorio();
-    }//GEN-LAST:event_btnInicoGerarRelatActionPerformed
-
     private void btnConfBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfBackupActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConfBackupActionPerformed
@@ -2496,6 +2643,181 @@ public class Principal extends javax.swing.JFrame
     private void btnClienteExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteExcluirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnClienteExcluirActionPerformed
+
+    private void btnSairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseEntered
+        setMouseBtnSMMoved(btnSair);
+    }//GEN-LAST:event_btnSairMouseEntered
+
+    private void btnSairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseExited
+        resMouseBtnSMMoved(btnSair);
+    }//GEN-LAST:event_btnSairMouseExited
+
+    private void btnMinimizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizarMouseEntered
+        setMouseBtnSMMoved(btnMinimizar);
+    }//GEN-LAST:event_btnMinimizarMouseEntered
+
+    private void btnMinimizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizarMouseExited
+        resMouseBtnSMMoved(btnMinimizar);
+    }//GEN-LAST:event_btnMinimizarMouseExited
+
+    private void btnInicioCadasClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioCadasClienteMouseEntered
+        iconsBg = "/imgIcons/icons8_Registration_32px_1.png";
+        setMouseBtnMoved(btnInicioCadasCliente, iconsBg);
+    }//GEN-LAST:event_btnInicioCadasClienteMouseEntered
+
+    private void btnInicioCadasClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioCadasClienteMouseExited
+        iconsBg = "/imgIcons/icons8_Registration_32px.png";
+        resMouseBtnMoved(btnInicioCadasCliente, iconsBg);
+    }//GEN-LAST:event_btnInicioCadasClienteMouseExited
+
+    private void btnInicioCadsResulExamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioCadsResulExamMouseEntered
+        iconsBg = "/imgIcons/icons8_Edit_File_32px_1.png";
+        setMouseBtnMoved(btnInicioCadsResulExam, iconsBg);
+    }//GEN-LAST:event_btnInicioCadsResulExamMouseEntered
+
+    private void btnInicioCadsResulExamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioCadsResulExamMouseExited
+        iconsBg = "/imgIcons/icons8_Edit_File_32px.png";
+        resMouseBtnMoved(btnInicioCadsResulExam, iconsBg);
+    }//GEN-LAST:event_btnInicioCadsResulExamMouseExited
+
+    private void btnHemogramaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHemogramaMouseEntered
+        if(btnHemograma.isEnabled() == true)
+        {
+            iconsBg = "";
+            setMouseBtnMoved(btnHemograma, iconsBg);
+        }
+    }//GEN-LAST:event_btnHemogramaMouseEntered
+
+    private void btnHemogramaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHemogramaMouseExited
+        if(btnHemograma.isEnabled() == true)
+        {
+            iconsBg = "";
+            resMouseBtnMoved(btnHemograma, iconsBg);
+        }
+    }//GEN-LAST:event_btnHemogramaMouseExited
+
+    private void btnInicioConfRelatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioConfRelatMouseEntered
+        iconsBg = "/imgIcons/icons8_Play_Graph_Report_32px_1.png";
+        setMouseBtnMoved(btnInicioConfRelat, iconsBg);
+    }//GEN-LAST:event_btnInicioConfRelatMouseEntered
+
+    private void btnInicioConfRelatMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioConfRelatMouseExited
+        iconsBg = "/imgIcons/icons8_Play_Graph_Report_32px.png";
+        resMouseBtnMoved(btnInicioConfRelat, iconsBg);
+    }//GEN-LAST:event_btnInicioConfRelatMouseExited
+
+    private void btnInicioConfRelatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioConfRelatActionPerformed
+        clickMouseAtalhoConfRelatorio();
+    }//GEN-LAST:event_btnInicioConfRelatActionPerformed
+
+    private void btnBioquimicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBioquimicaMouseEntered
+        if(btnHemograma.isEnabled() == true)
+        {
+            iconsBg = "";
+            setMouseBtnMoved(btnBioquimica, iconsBg); 
+        }
+        
+    }//GEN-LAST:event_btnBioquimicaMouseEntered
+
+    private void btnBioquimicaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBioquimicaMouseExited
+        if(btnBioquimica.isEnabled() == true)
+        {
+            iconsBg = "";
+            resMouseBtnMoved(btnBioquimica, iconsBg);
+        }
+    }//GEN-LAST:event_btnBioquimicaMouseExited
+
+    private void btnUrinaRotinaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUrinaRotinaMouseEntered
+        if(btnUrinaRotina.isEnabled() == true)
+        {
+            iconsBg = "";
+            setMouseBtnMoved(btnUrinaRotina, iconsBg);
+        }
+    }//GEN-LAST:event_btnUrinaRotinaMouseEntered
+
+    private void btnUrinaRotinaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUrinaRotinaMouseExited
+        if(btnUrinaRotina.isEnabled() == true)
+        {
+            iconsBg = "";
+            resMouseBtnMoved(btnUrinaRotina, iconsBg);
+        }
+    }//GEN-LAST:event_btnUrinaRotinaMouseExited
+
+    private void btnSangueOcultoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSangueOcultoMouseEntered
+        if(btnSangueOculto.isEnabled() == true)
+        {
+            iconsBg = "";
+            setMouseBtnMoved(btnSangueOculto, iconsBg);
+        }
+    }//GEN-LAST:event_btnSangueOcultoMouseEntered
+
+    private void btnSangueOcultoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSangueOcultoMouseExited
+        if(btnSangueOculto.isEnabled() == true)
+        {
+            iconsBg = "";
+            resMouseBtnMoved(btnSangueOculto, iconsBg);
+        }
+    }//GEN-LAST:event_btnSangueOcultoMouseExited
+
+    private void btnConfAddUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfAddUserMouseEntered
+        iconsBg = "/imgIcons/icons8_Add_User_Male_32px_1.png";
+        setMouseBtnMoved(btnConfAddUser, iconsBg);
+    }//GEN-LAST:event_btnConfAddUserMouseEntered
+
+    private void btnConfAddUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfAddUserMouseExited
+        iconsBg = "/imgIcons/icons8_Add_User_Male_32px.png";
+        resMouseBtnMoved(btnConfAddUser, iconsBg);
+    }//GEN-LAST:event_btnConfAddUserMouseExited
+
+    private void btnConfEdtUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfEdtUserMouseEntered
+        iconsBg = "/imgIcons/icons8_Registration_32px_1.png";
+        setMouseBtnMoved(btnConfEdtUser, iconsBg);
+    }//GEN-LAST:event_btnConfEdtUserMouseEntered
+
+    private void btnConfEdtUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfEdtUserMouseExited
+        iconsBg = "/imgIcons/icons8_Registration_32px.png";
+        resMouseBtnMoved(btnConfEdtUser, iconsBg);
+    }//GEN-LAST:event_btnConfEdtUserMouseExited
+
+    private void btnConfBackupMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfBackupMouseEntered
+        iconsBg = "/imgIcons/icons8_Registration_32px.png";
+        setMouseBtnMoved(btnConfBackup, iconsBg);
+    }//GEN-LAST:event_btnConfBackupMouseEntered
+
+    private void btnConfBackupMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfBackupMouseExited
+        iconsBg = "/imgIcons/icons8_Registration_32px.png";
+        resMouseBtnMoved(btnConfBackup, iconsBg);
+    }//GEN-LAST:event_btnConfBackupMouseExited
+
+    private void btnConfRestBackupMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfRestBackupMouseEntered
+        iconsBg = "/imgIcons/icons8_Data_Backup_32px_1.png";
+        setMouseBtnMoved(btnConfRestBackup, iconsBg);
+    }//GEN-LAST:event_btnConfRestBackupMouseEntered
+
+    private void btnConfRestBackupMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfRestBackupMouseExited
+        iconsBg = "/imgIcons/icons8_Data_Backup_32px.png";
+        resMouseBtnMoved(btnConfRestBackup, iconsBg);
+    }//GEN-LAST:event_btnConfRestBackupMouseExited
+
+    private void btnConfAplicMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfAplicMouseEntered
+        iconsBg = "/imgIcons/icons8_Maintenance_32px_1.png";
+        setMouseBtnMoved(btnConfAplic, iconsBg);
+    }//GEN-LAST:event_btnConfAplicMouseEntered
+
+    private void btnConfAplicMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfAplicMouseExited
+        iconsBg = "/imgIcons/icons8_Maintenance_32px.png";
+        resMouseBtnMoved(btnConfAplic, iconsBg);
+    }//GEN-LAST:event_btnConfAplicMouseExited
+
+    private void btnConfRelatorioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfRelatorioMouseEntered
+        iconsBg = "/imgIcons/icons8_Play_Graph_Report_32px_1.png";
+        setMouseBtnMoved(btnConfRelatorio, iconsBg);
+    }//GEN-LAST:event_btnConfRelatorioMouseEntered
+
+    private void btnConfRelatorioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfRelatorioMouseExited
+        iconsBg = "/imgIcons/icons8_Play_Graph_Report_32px.png";
+        resMouseBtnMoved(btnConfRelatorio, iconsBg);
+    }//GEN-LAST:event_btnConfRelatorioMouseExited
     
     
     
@@ -2562,7 +2884,7 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JToggleButton btnInicio;
     private javax.swing.JToggleButton btnInicioCadasCliente;
     private javax.swing.JToggleButton btnInicioCadsResulExam;
-    private javax.swing.JToggleButton btnInicoGerarRelat;
+    private javax.swing.JToggleButton btnInicioConfRelat;
     private javax.swing.JToggleButton btnMinimizar;
     private javax.swing.JToggleButton btnRelatorioExame;
     private javax.swing.JToggleButton btnSair;
