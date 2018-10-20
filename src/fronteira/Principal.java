@@ -2780,12 +2780,12 @@ public class Principal extends javax.swing.JFrame
     }//GEN-LAST:event_btnConfEdtUserMouseExited
 
     private void btnConfBackupMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfBackupMouseEntered
-        iconsBg = "/imgIcons/icons8_Registration_32px.png";
+        iconsBg = "/imgIcons/icons8_Data_Protection_32px_1.png";
         setMouseBtnMoved(btnConfBackup, iconsBg);
     }//GEN-LAST:event_btnConfBackupMouseEntered
 
     private void btnConfBackupMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfBackupMouseExited
-        iconsBg = "/imgIcons/icons8_Registration_32px.png";
+        iconsBg = "/imgIcons/icons8_Data_Protection_32px.png";
         resMouseBtnMoved(btnConfBackup, iconsBg);
     }//GEN-LAST:event_btnConfBackupMouseExited
 
