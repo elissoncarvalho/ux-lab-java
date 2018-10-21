@@ -543,7 +543,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imgIcons/icons8_Edit_File_32px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align:center&quot;&gt;Cadastrar Resultado&lt;/p&gt;&lt;p style=&quot;text-align:center&quot;&gt; de Exame " noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Cadastrar Resultado"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
@@ -803,15 +803,15 @@
                                       <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="txtCodPedido" min="-2" pref="82" max="-2" attributes="0"/>
+                                      <Component id="txtExPedCodPedido" min="-2" pref="82" max="-2" attributes="0"/>
                                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                      <Component id="txtCodCliente" min="-2" pref="82" max="-2" attributes="0"/>
+                                      <Component id="txtExPedCodCliente" min="-2" pref="82" max="-2" attributes="0"/>
                                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                      <Component id="txtNome" min="-2" pref="282" max="-2" attributes="0"/>
+                                      <Component id="txtExPedNome" min="-2" pref="282" max="-2" attributes="0"/>
                                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                      <Component id="txtDataPedido" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="txtExPedDataPedido" min="-2" pref="118" max="-2" attributes="0"/>
                                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                      <Component id="txtConvenio" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="txtExPedConvenio" min="-2" pref="118" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jpnExames" min="-2" pref="754" max="-2" attributes="0"/>
                               </Group>
@@ -835,11 +835,11 @@
                           </Group>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtCodPedido" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="txtCodCliente" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="txtNome" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="txtDataPedido" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="txtConvenio" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtExPedCodPedido" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtExPedCodCliente" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtExPedNome" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtExPedDataPedido" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtExPedConvenio" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                           <Component id="jpnExames" min="-2" pref="272" max="-2" attributes="0"/>
@@ -865,7 +865,7 @@
                     <Property name="text" type="java.lang.String" value="C&#xf3;d. Pedido"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCodPedido">
+                <Component class="javax.swing.JTextField" name="txtExPedCodPedido">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -901,7 +901,7 @@
                     <Property name="text" type="java.lang.String" value="C&#xf3;d. Cliente"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCodCliente">
+                <Component class="javax.swing.JTextField" name="txtExPedCodCliente">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Monospaced" size="12" style="0"/>
@@ -935,8 +935,9 @@
                     <Property name="text" type="java.lang.String" value="Nome Completo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtNome">
+                <Component class="javax.swing.JTextField" name="txtExPedNome">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Monospaced" size="12" style="0"/>
                     </Property>
@@ -969,8 +970,9 @@
                     <Property name="text" type="java.lang.String" value="Data do Pedido"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtDataPedido">
+                <Component class="javax.swing.JTextField" name="txtExPedDataPedido">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Monospaced" size="12" style="0"/>
                     </Property>
@@ -1003,8 +1005,9 @@
                     <Property name="text" type="java.lang.String" value="Conv&#xea;nio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtConvenio">
+                <Component class="javax.swing.JTextField" name="txtExPedConvenio">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Monospaced" size="12" style="0"/>
                     </Property>
@@ -1062,6 +1065,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1072,6 +1078,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxHemogramaMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxHemogramaMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxHemogramaActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1107,6 +1115,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1117,6 +1128,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxGlicoseMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxGlicoseMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxGlicoseActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1152,6 +1165,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1162,6 +1178,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxAcidoUricoMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxAcidoUricoMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxAcidoUricoActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1197,6 +1215,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1207,6 +1228,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxUreiaMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxUreiaMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxUreiaActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1242,6 +1265,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1252,6 +1278,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxCoatininaMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxCoatininaMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxCoatininaActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1287,6 +1315,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1297,6 +1328,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxColesterolTotalMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxColesterolTotalMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxColesterolTotalActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1332,6 +1365,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1342,6 +1378,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxColesterolFracionadoMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxColesterolFracionadoMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxColesterolFracionadoActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1377,6 +1415,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1387,6 +1428,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxTrigliceridesMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxTrigliceridesMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxTrigliceridesActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1422,6 +1465,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1432,6 +1478,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxTgoTgpMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxTgoTgpMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxTgoTgpActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1467,6 +1515,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1477,6 +1528,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxGamaGtMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxGamaGtMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxGamaGtActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1512,6 +1565,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1522,6 +1578,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxBilirrubinaMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxBilirrubinaMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxBilirrubinaActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1557,6 +1615,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1567,6 +1628,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxUrinaRotinaMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxUrinaRotinaMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxUrinaRotinaActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1602,6 +1665,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1612,6 +1678,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxEpfMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxEpfMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxEpfActionPerformed"/>
                       </Events>
                       <Constraints>
@@ -1647,6 +1715,9 @@
                           </Border>
                         </Property>
                         <Property name="borderPainted" type="boolean" value="true"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Cursor em Forma de M&#xe3;o"/>
+                        </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1657,6 +1728,8 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxSangueOcultoMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbxSangueOcultoMouseExited"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxSangueOcultoActionPerformed"/>
                       </Events>
                       <Constraints>

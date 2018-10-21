@@ -11,8 +11,7 @@ import javax.swing.JToggleButton;
 
 import entidade.*;
 
-public class Principal extends javax.swing.JFrame 
-{
+public class Principal extends javax.swing.JFrame {
     
     VerifExaRult        verifExaRult    = new VerifExaRult();
     ExameHemograma      hemograma       = new ExameHemograma();
@@ -26,8 +25,18 @@ public class Principal extends javax.swing.JFrame
     
     private String iconsBg;
     
-    public Principal() 
-    {
+    // Paleta Cores
+    private String corAzul1    = "0, 167, 230";
+    private String corAzul2    = "0, 128, 200";
+    private String corAzul3    = "40, 124, 162";
+    private String corAzul4    = "35, 58, 76";
+    private String corBranco1  = "255, 255, 255";
+    private String corBranco2  = "229, 229, 229";
+    private String corPreto    = "18, 12, 30";
+    private String corVerde    = "75, 190, 73";
+    private String corVermelho = "75, 190, 73";
+    
+    public Principal(){
         initComponents();
         setLocationRelativeTo(null);
         //Icone do Sistema
@@ -70,15 +79,15 @@ public class Principal extends javax.swing.JFrame
         btnRelatorioExame = new javax.swing.JToggleButton();
         divCadastraExame = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        txtCodPedido = new javax.swing.JTextField();
+        txtExPedCodPedido = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        txtCodCliente = new javax.swing.JTextField();
+        txtExPedCodCliente = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
+        txtExPedNome = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        txtDataPedido = new javax.swing.JTextField();
+        txtExPedDataPedido = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        txtConvenio = new javax.swing.JTextField();
+        txtExPedConvenio = new javax.swing.JTextField();
         jpnExames = new javax.swing.JPanel();
         cbxHemograma = new javax.swing.JCheckBox();
         cbxGlicose = new javax.swing.JCheckBox();
@@ -394,7 +403,7 @@ public class Principal extends javax.swing.JFrame
         btnInicioCadsResulExam.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnInicioCadsResulExam.setForeground(new java.awt.Color(35, 59, 77));
         btnInicioCadsResulExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Edit_File_32px.png"))); // NOI18N
-        btnInicioCadsResulExam.setText("<html><p style=\"text-align:center\">Cadastrar Resultado</p><p style=\"text-align:center\"> de Exame "); // NOI18N
+        btnInicioCadsResulExam.setText("Cadastrar Resultado");
         btnInicioCadsResulExam.setToolTipText("");
         btnInicioCadsResulExam.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 10)));
         btnInicioCadsResulExam.setContentAreaFilled(false);
@@ -540,63 +549,66 @@ public class Principal extends javax.swing.JFrame
         jLabel19.setForeground(new java.awt.Color(35, 59, 77));
         jLabel19.setText("Cód. Pedido");
 
-        txtCodPedido.setEditable(false);
-        txtCodPedido.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtCodPedido.setForeground(new java.awt.Color(35, 59, 77));
-        txtCodPedido.setText("# 000087");
-        txtCodPedido.setToolTipText("");
-        txtCodPedido.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtCodPedido.setName(""); // NOI18N
-        txtCodPedido.setOpaque(false);
-        txtCodPedido.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtExPedCodPedido.setEditable(false);
+        txtExPedCodPedido.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtExPedCodPedido.setForeground(new java.awt.Color(35, 59, 77));
+        txtExPedCodPedido.setText("# 000087");
+        txtExPedCodPedido.setToolTipText("");
+        txtExPedCodPedido.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtExPedCodPedido.setName(""); // NOI18N
+        txtExPedCodPedido.setOpaque(false);
+        txtExPedCodPedido.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(35, 59, 77));
         jLabel22.setText("Cód. Cliente");
 
-        txtCodCliente.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtCodCliente.setForeground(new java.awt.Color(35, 59, 77));
-        txtCodCliente.setToolTipText("");
-        txtCodCliente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtCodCliente.setName(""); // NOI18N
-        txtCodCliente.setOpaque(false);
-        txtCodCliente.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtExPedCodCliente.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtExPedCodCliente.setForeground(new java.awt.Color(35, 59, 77));
+        txtExPedCodCliente.setToolTipText("");
+        txtExPedCodCliente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtExPedCodCliente.setName(""); // NOI18N
+        txtExPedCodCliente.setOpaque(false);
+        txtExPedCodCliente.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(35, 59, 77));
         jLabel20.setText("Nome Completo");
 
-        txtNome.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtNome.setForeground(new java.awt.Color(35, 59, 77));
-        txtNome.setToolTipText("");
-        txtNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtNome.setName(""); // NOI18N
-        txtNome.setOpaque(false);
-        txtNome.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtExPedNome.setEditable(false);
+        txtExPedNome.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtExPedNome.setForeground(new java.awt.Color(35, 59, 77));
+        txtExPedNome.setToolTipText("");
+        txtExPedNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtExPedNome.setName(""); // NOI18N
+        txtExPedNome.setOpaque(false);
+        txtExPedNome.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(35, 59, 77));
         jLabel21.setText("Data do Pedido");
 
-        txtDataPedido.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtDataPedido.setForeground(new java.awt.Color(35, 59, 77));
-        txtDataPedido.setToolTipText("");
-        txtDataPedido.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtDataPedido.setName(""); // NOI18N
-        txtDataPedido.setOpaque(false);
-        txtDataPedido.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtExPedDataPedido.setEditable(false);
+        txtExPedDataPedido.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtExPedDataPedido.setForeground(new java.awt.Color(35, 59, 77));
+        txtExPedDataPedido.setToolTipText("");
+        txtExPedDataPedido.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtExPedDataPedido.setName(""); // NOI18N
+        txtExPedDataPedido.setOpaque(false);
+        txtExPedDataPedido.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(35, 59, 77));
         jLabel23.setText("Convênio");
 
-        txtConvenio.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio.setForeground(new java.awt.Color(35, 59, 77));
-        txtConvenio.setToolTipText("");
-        txtConvenio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio.setName(""); // NOI18N
-        txtConvenio.setOpaque(false);
-        txtConvenio.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtExPedConvenio.setEditable(false);
+        txtExPedConvenio.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtExPedConvenio.setForeground(new java.awt.Color(35, 59, 77));
+        txtExPedConvenio.setToolTipText("");
+        txtExPedConvenio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtExPedConvenio.setName(""); // NOI18N
+        txtExPedConvenio.setOpaque(false);
+        txtExPedConvenio.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jpnExames.setOpaque(false);
         jpnExames.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -607,10 +619,19 @@ public class Principal extends javax.swing.JFrame
         cbxHemograma.setText("Hemograma");
         cbxHemograma.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxHemograma.setBorderPainted(true);
+        cbxHemograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxHemograma.setFocusable(false);
         cbxHemograma.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxHemograma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxHemograma.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxHemograma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxHemogramaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxHemogramaMouseExited(evt);
+            }
+        });
         cbxHemograma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxHemogramaActionPerformed(evt);
@@ -624,10 +645,19 @@ public class Principal extends javax.swing.JFrame
         cbxGlicose.setText("Glicose");
         cbxGlicose.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxGlicose.setBorderPainted(true);
+        cbxGlicose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxGlicose.setFocusable(false);
         cbxGlicose.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxGlicose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxGlicose.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxGlicose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxGlicoseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxGlicoseMouseExited(evt);
+            }
+        });
         cbxGlicose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxGlicoseActionPerformed(evt);
@@ -641,10 +671,19 @@ public class Principal extends javax.swing.JFrame
         cbxAcidoUrico.setText("Ácido úrico");
         cbxAcidoUrico.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxAcidoUrico.setBorderPainted(true);
+        cbxAcidoUrico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxAcidoUrico.setFocusable(false);
         cbxAcidoUrico.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxAcidoUrico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxAcidoUrico.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxAcidoUrico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxAcidoUricoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxAcidoUricoMouseExited(evt);
+            }
+        });
         cbxAcidoUrico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxAcidoUricoActionPerformed(evt);
@@ -658,10 +697,19 @@ public class Principal extends javax.swing.JFrame
         cbxUreia.setText("Ureia");
         cbxUreia.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxUreia.setBorderPainted(true);
+        cbxUreia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxUreia.setFocusable(false);
         cbxUreia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxUreia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxUreia.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxUreia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxUreiaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxUreiaMouseExited(evt);
+            }
+        });
         cbxUreia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxUreiaActionPerformed(evt);
@@ -675,10 +723,19 @@ public class Principal extends javax.swing.JFrame
         cbxCoatinina.setText("Coatinina");
         cbxCoatinina.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxCoatinina.setBorderPainted(true);
+        cbxCoatinina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxCoatinina.setFocusable(false);
         cbxCoatinina.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxCoatinina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxCoatinina.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxCoatinina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxCoatininaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxCoatininaMouseExited(evt);
+            }
+        });
         cbxCoatinina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxCoatininaActionPerformed(evt);
@@ -692,10 +749,19 @@ public class Principal extends javax.swing.JFrame
         cbxColesterolTotal.setText("Colesterol Total");
         cbxColesterolTotal.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxColesterolTotal.setBorderPainted(true);
+        cbxColesterolTotal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxColesterolTotal.setFocusable(false);
         cbxColesterolTotal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxColesterolTotal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxColesterolTotal.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxColesterolTotal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxColesterolTotalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxColesterolTotalMouseExited(evt);
+            }
+        });
         cbxColesterolTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxColesterolTotalActionPerformed(evt);
@@ -709,10 +775,19 @@ public class Principal extends javax.swing.JFrame
         cbxColesterolFracionado.setText("Colesterol Frações");
         cbxColesterolFracionado.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 2)));
         cbxColesterolFracionado.setBorderPainted(true);
+        cbxColesterolFracionado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxColesterolFracionado.setFocusable(false);
         cbxColesterolFracionado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxColesterolFracionado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxColesterolFracionado.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxColesterolFracionado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxColesterolFracionadoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxColesterolFracionadoMouseExited(evt);
+            }
+        });
         cbxColesterolFracionado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxColesterolFracionadoActionPerformed(evt);
@@ -726,10 +801,19 @@ public class Principal extends javax.swing.JFrame
         cbxTriglicerides.setText("Triglicerides");
         cbxTriglicerides.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxTriglicerides.setBorderPainted(true);
+        cbxTriglicerides.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxTriglicerides.setFocusable(false);
         cbxTriglicerides.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxTriglicerides.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxTriglicerides.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxTriglicerides.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxTrigliceridesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxTrigliceridesMouseExited(evt);
+            }
+        });
         cbxTriglicerides.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxTrigliceridesActionPerformed(evt);
@@ -743,10 +827,19 @@ public class Principal extends javax.swing.JFrame
         cbxTgoTgp.setText("TGO/TGP");
         cbxTgoTgp.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxTgoTgp.setBorderPainted(true);
+        cbxTgoTgp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxTgoTgp.setFocusable(false);
         cbxTgoTgp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxTgoTgp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxTgoTgp.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxTgoTgp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxTgoTgpMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxTgoTgpMouseExited(evt);
+            }
+        });
         cbxTgoTgp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxTgoTgpActionPerformed(evt);
@@ -760,10 +853,19 @@ public class Principal extends javax.swing.JFrame
         cbxGamaGt.setText("Gama GT");
         cbxGamaGt.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxGamaGt.setBorderPainted(true);
+        cbxGamaGt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxGamaGt.setFocusable(false);
         cbxGamaGt.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxGamaGt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxGamaGt.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxGamaGt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxGamaGtMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxGamaGtMouseExited(evt);
+            }
+        });
         cbxGamaGt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxGamaGtActionPerformed(evt);
@@ -777,10 +879,19 @@ public class Principal extends javax.swing.JFrame
         cbxBilirrubina.setText("Bilirrubina");
         cbxBilirrubina.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxBilirrubina.setBorderPainted(true);
+        cbxBilirrubina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxBilirrubina.setFocusable(false);
         cbxBilirrubina.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxBilirrubina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxBilirrubina.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxBilirrubina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxBilirrubinaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxBilirrubinaMouseExited(evt);
+            }
+        });
         cbxBilirrubina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxBilirrubinaActionPerformed(evt);
@@ -794,10 +905,19 @@ public class Principal extends javax.swing.JFrame
         cbxUrinaRotina.setText("Urina Rotina");
         cbxUrinaRotina.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxUrinaRotina.setBorderPainted(true);
+        cbxUrinaRotina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxUrinaRotina.setFocusable(false);
         cbxUrinaRotina.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxUrinaRotina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxUrinaRotina.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxUrinaRotina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxUrinaRotinaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxUrinaRotinaMouseExited(evt);
+            }
+        });
         cbxUrinaRotina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxUrinaRotinaActionPerformed(evt);
@@ -811,10 +931,19 @@ public class Principal extends javax.swing.JFrame
         cbxEpf.setText("EPF");
         cbxEpf.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxEpf.setBorderPainted(true);
+        cbxEpf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxEpf.setFocusable(false);
         cbxEpf.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxEpf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxEpf.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxEpf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxEpfMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxEpfMouseExited(evt);
+            }
+        });
         cbxEpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxEpfActionPerformed(evt);
@@ -828,10 +957,19 @@ public class Principal extends javax.swing.JFrame
         cbxSangueOculto.setText("Sangue Oculto");
         cbxSangueOculto.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxSangueOculto.setBorderPainted(true);
+        cbxSangueOculto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxSangueOculto.setFocusable(false);
         cbxSangueOculto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cbxSangueOculto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png"))); // NOI18N
         cbxSangueOculto.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Checked_18px.png"))); // NOI18N
+        cbxSangueOculto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cbxSangueOcultoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cbxSangueOcultoMouseExited(evt);
+            }
+        });
         cbxSangueOculto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxSangueOcultoActionPerformed(evt);
@@ -896,15 +1034,15 @@ public class Principal extends javax.swing.JFrame
                             .addGap(55, 55, 55)
                             .addComponent(jLabel23))
                         .addGroup(divCadastraExameLayout.createSequentialGroup()
-                            .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtExPedCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(txtCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtExPedCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtExPedNome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(txtDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtExPedDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(txtConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtExPedConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jpnExames, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(38, 38, 38))
         );
@@ -921,11 +1059,11 @@ public class Principal extends javax.swing.JFrame
                         .addComponent(jLabel23)))
                 .addGap(0, 0, 0)
                 .addGroup(divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtExPedCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtExPedCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtExPedNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtExPedDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtExPedConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addComponent(jpnExames, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -2072,97 +2210,104 @@ public class Principal extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
     
     // Transicoes de cor ao passar o mouse por cima
-    private void setMouseBtnSMMoved(JToggleButton btn)
-    {
+    private void setMouseBtnSMMoved(JToggleButton btn){
         btn.setBackground(new java.awt.Color(229, 229, 229));
     }
-    private void resMouseBtnSMMoved(JToggleButton btn)
-    {
+    private void resMouseBtnSMMoved(JToggleButton btn){
         btn.setBackground(new java.awt.Color(255, 255, 255));
     }
     
-    private void setMouseBtnMoved(JToggleButton btn, String iconsBg)
-    {
+    private void setMouseBtnMoved(JToggleButton btn, String iconsBg){
         btn.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconsBg)));
         btn.setForeground(new java.awt.Color(0,167,230));
         btn.setBorder(javax.swing.BorderFactory.createCompoundBorder
                         (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0,167,230)), 
                         javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
     }
-    private void resMouseBtnMoved(JToggleButton btn, String iconsBg)
-    {
+    private void resMouseBtnMoved(JToggleButton btn, String iconsBg){
         btn.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconsBg)));
         btn.setForeground(new java.awt.Color(35,59,77));
         btn.setBorder(javax.swing.BorderFactory.createCompoundBorder
                         (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35,59,77)), 
                         javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
     }
-    
-    public void verificaActive()
-    {   // Verifica se o Exame esta Ativado
+    private void setMouseCbxMoved(JCheckBox cbx){
+        if(!cbx.isSelected()){
+            cbx.setForeground(new java.awt.Color(0,167,230));
+            cbx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px_1.png")));
+            cbx.setBorder(javax.swing.BorderFactory.createCompoundBorder
+                            (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new 
+                            java.awt.Color(0,167,230)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
+        }
+    }
+    private void resMouseCbxMoved(JCheckBox cbx){   
+        if(!cbx.isSelected()){
+            cbx.setForeground(new java.awt.Color(35,59,77));
+            cbx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png")));
+            cbx.setBorder(javax.swing.BorderFactory.createCompoundBorder
+                            (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new 
+                            java.awt.Color(35,59,77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
+        } else {
+            cbx.setForeground(new java.awt.Color(255, 255, 255));
+            cbx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Circle_18px.png")));
+            cbx.setBorder(javax.swing.BorderFactory.createCompoundBorder
+                            (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new 
+                            java.awt.Color(75, 190, 73)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
+        }
+    }
+    private void setMouseBtnFormMoved(JToggleButton btn){
+        
+    }
+    private void resMouseBtnFormMoved(JToggleButton btn){
+        
+    }
+    public void verificaActive(){   // Verifica se o Exame esta Ativado
         // ExameHemograma
-        if(verifExaRult.isActiveHemograma() == true)
-        {
+        if(verifExaRult.isActiveHemograma() == true){
             this.btnHemograma.setEnabled(true);
         }
         // ExameBioquimica
-        if(verifExaRult.isActiveBioquimica() == true)
-        {
+        if(verifExaRult.isActiveBioquimica() == true){
             this.btnBioquimica.setEnabled(true);
         }
         // Urina Rotina
-        if(verifExaRult.isActiveUrinaRotina() == true)
-        {
+        if(verifExaRult.isActiveUrinaRotina() == true){
             this.btnUrinaRotina.setEnabled(true);
         }
         // Sangue Oculto
-        if(verifExaRult.isActiveSangueOculto() == true)
-        {
+        if(verifExaRult.isActiveSangueOculto() == true){
             this.btnSangueOculto.setEnabled(true);
         }
     }
-    public void verificaStatus()
-    {   // Verifica se o Exame esta Concluido
+    public void verificaStatus(){   // Verifica se o Exame esta Concluido
         // ExameHemograma
-        if(verifExaRult.isStatusHemograma() == true)
-        {
+        if(verifExaRult.isStatusHemograma() == true){
             setColorBtnExameCadReslt(btnHemograma);
-        }
-        else
-        {
+        } else {
             restColorBtnExameCadReslt(btnHemograma);
         }
         // ExameBioquimica
-        if(verifExaRult.isStatusBioquimica() == true)
-        {
+        if(verifExaRult.isStatusBioquimica() == true){
             setColorBtnExameCadReslt(btnBioquimica);
-        }
-        else
-        {
+        } else {
             restColorBtnExameCadReslt(btnBioquimica);
         }
         // Urina Rotina
-        if(verifExaRult.isStatusUrinaRotina() == true)
-        {
+        if(verifExaRult.isStatusUrinaRotina() == true){
             setColorBtnExameCadReslt(btnUrinaRotina);
-        }
-        else
-        {
+        } else {
             restColorBtnExameCadReslt(btnUrinaRotina);
         }
         // Sangue Oculto
-        if(verifExaRult.isStatusSangueOculto() == true)
-        {
+        if(verifExaRult.isStatusSangueOculto() == true){
             setColorBtnExameCadReslt(btnSangueOculto);
-        }
-        else
-        {
+        } else {
             restColorBtnExameCadReslt(btnSangueOculto);
         }
     }
     
-    private void divNaoInicia()
-    {   // Paineis Divisorios que por padrão não inicia junto com o jFrame principal,
+    private void divNaoInicia(){   
+        // Paineis Divisorios que por padrão não inicia junto com o jFrame principal,
         // Para não causar conflitos na visão do usuario.
         divExame.setVisible(false);
         divCliente.setVisible(false);
@@ -2173,41 +2318,36 @@ public class Principal extends javax.swing.JFrame
     }
     
     // Btn Colors; Transições de Cores
-    private void setBtnColor(JToggleButton btn)
-    {
+    private void setBtnColor(JToggleButton btn){
         btn.setBackground(new Color(0,128,200));
     }
-    private void resetBtnColor(JToggleButton btn)
-    {
+    private void resetBtnColor(JToggleButton btn){
         btn.setBackground(new Color(0,167,230));
     }
     
-    private void setCbxColor(JCheckBox check)
-    {   // Exame > CadastraExame > CheckBoxColors
+    private void setCbxColor(JCheckBox check){   // Exame > CadastraExame > CheckBoxColors
         check.setBackground(new Color(75,190,73));
         check.setForeground(Color.white);
         check.setBorder(javax.swing.BorderFactory.createCompoundBorder(
                 javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(75, 190, 73)), 
                 javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
     }
-    private void restCbxColor(JCheckBox check)
-    {
+    private void restCbxColor(JCheckBox check){
         check.setBackground(Color.white);
         check.setForeground(new Color(35,59,77));
         check.setBorder(javax.swing.BorderFactory.createCompoundBorder(
                 javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35,59,77)), 
                 javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
     }
-    private void setColorBtnExameCadReslt(JToggleButton check)
-    {
+    
+    private void setColorBtnExameCadReslt(JToggleButton check){
         check.setBackground(new Color(75,190,73));
         check.setForeground(Color.white);
         check.setBorder(javax.swing.BorderFactory.createCompoundBorder(
                 javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(75, 190, 73)), 
                 javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
     }
-    private void restColorBtnExameCadReslt(JToggleButton check)
-    {
+    private void restColorBtnExameCadReslt(JToggleButton check){
         check.setBackground(Color.white);
         check.setForeground(new Color(35,59,77));
         check.setBorder(javax.swing.BorderFactory.createCompoundBorder(
@@ -2217,8 +2357,7 @@ public class Principal extends javax.swing.JFrame
     // Fim Colors
     
     // Ações On Click Navegação
-    private void clickMouseInicio()
-    {
+    private void clickMouseInicio(){
         setBtnColor(btnInicio);
         divInicio.setVisible(true);
         
@@ -2229,8 +2368,7 @@ public class Principal extends javax.swing.JFrame
         divCliente.setVisible(false);
         divConfigura.setVisible(false);
     }
-    private void clickMouseExame()
-    {
+    private void clickMouseExame(){
         setBtnColor(btnExame);
         divExame.setVisible(true);
         
@@ -2241,8 +2379,7 @@ public class Principal extends javax.swing.JFrame
         divCliente.setVisible(false);
         divConfigura.setVisible(false);
     }
-    private void clickMouseCliente()
-    {
+    private void clickMouseCliente(){
         setBtnColor(btnCliente);
         resetBtnColor(btnInicio);
         resetBtnColor(btnExame);
@@ -2252,8 +2389,7 @@ public class Principal extends javax.swing.JFrame
         divCliente.setVisible(true);
         divConfigura.setVisible(!true);
     }
-    private void clickMouseConfiguracao()
-    {
+    private void clickMouseConfiguracao(){
         setBtnColor(btnConfigura);
         resetBtnColor(btnExame);
         resetBtnColor(btnInicio);
@@ -2264,26 +2400,25 @@ public class Principal extends javax.swing.JFrame
         divConfigura.setVisible(true);
     }
     
-    private void clickMouseExamePedido()
-    {
+    private void clickMouseExamePedido(){
         setBtnColor(btnCadastraPedido);
         resetBtnColor(btnCadastraResultado);
         resetBtnColor(btnRelatorioExame);
         divCadastraExame.setVisible(true);
         divCadastraResultado.setVisible(!true);
         divRelatorioExame.setVisible(!true);
+        txtExPedCodCliente.requestFocusInWindow();
     }
-    private void clickMouseExameCadastra()
-    {
+    private void clickMouseExameCadastra(){
         setBtnColor(btnCadastraResultado);
         resetBtnColor(btnCadastraPedido);
         resetBtnColor(btnRelatorioExame);
         divCadastraExame.setVisible(!true);
         divCadastraResultado.setVisible(true);
         divRelatorioExame.setVisible(!true);
+        txtCodPedidoResult.requestFocusInWindow();
     }
-    private void clickMouseExameRelatorio()
-    {
+    private void clickMouseExameRelatorio(){
         setBtnColor(btnRelatorioExame);
         resetBtnColor(btnCadastraPedido);
         resetBtnColor(btnCadastraResultado);
@@ -2291,22 +2426,20 @@ public class Principal extends javax.swing.JFrame
         divCadastraResultado.setVisible(!true);
         divRelatorioExame.setVisible(true);
     }
-    private void clickMouseClienteConsulta()
-    {
+    private void clickMouseClienteConsulta(){
         divConsultaCliente.setVisible(true);
         divCadastraCliente.setVisible(!true);
         setBtnColor(btnconsultaCliente);
         resetBtnColor(btnCadastraCliente);
     }
-    private void clickMouseClienteCadastra()
-    {
+    private void clickMouseClienteCadastra(){
         divConsultaCliente.setVisible(!true);
         divCadastraCliente.setVisible(true);
         setBtnColor(btnCadastraCliente);
-        resetBtnColor(btnconsultaCliente);   
+        resetBtnColor(btnconsultaCliente);
+        txtClienteNome.requestFocusInWindow();
     }
-    private void clickMouseAtalhoCadClie()
-    {
+    private void clickMouseAtalhoCadClie(){
         setBtnColor(btnCliente);
         divCliente.setVisible(true);
         
@@ -2322,8 +2455,7 @@ public class Principal extends javax.swing.JFrame
         setBtnColor(btnCadastraCliente);
         resetBtnColor(btnconsultaCliente);
     }
-    private void clickMouseAtalhoExameCadsResult()
-    {
+    private void clickMouseAtalhoExameCadsResult(){
         setBtnColor(btnExame);
         divExame.setVisible(true);
         
@@ -2341,8 +2473,7 @@ public class Principal extends javax.swing.JFrame
         divCadastraResultado.setVisible(true);
         divRelatorioExame.setVisible(!true);
     }
-    private void clickMouseAtalhoConfRelatorio()
-    {
+    private void clickMouseAtalhoConfRelatorio(){
         setBtnColor(btnConfigura);
         divConfigura.setVisible(true);
         
@@ -2352,6 +2483,12 @@ public class Principal extends javax.swing.JFrame
         divInicio.setVisible(false);
         divCliente.setVisible(false);
         divExame.setVisible(false);
+    }
+    private void limparExamePedido(){
+        txtExPedCodCliente.setText("");
+        txtExPedNome.setText("");
+        txtExPedDataPedido.setText("");
+        txtExPedConvenio.setText("");
     }
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
         this.setExtendedState(JFrame.ICONIFIED);
@@ -2420,156 +2557,114 @@ public class Principal extends javax.swing.JFrame
     // Inicio Cadastrar Pedidos 
     private void cbxGlicoseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGlicoseActionPerformed
         
-        if(cbxGlicose.isSelected())
-        {
+        if(cbxGlicose.isSelected()){
             setCbxColor(cbxGlicose);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxGlicose);
         }
     }//GEN-LAST:event_cbxGlicoseActionPerformed
 
     private void cbxHemogramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxHemogramaActionPerformed
          
-        if(cbxHemograma.isSelected())
-        {
+        if(cbxHemograma.isSelected()){
             setCbxColor(cbxHemograma);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxHemograma);
         }
     }//GEN-LAST:event_cbxHemogramaActionPerformed
 
     private void cbxAcidoUricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxAcidoUricoActionPerformed
-        if(cbxAcidoUrico.isSelected())
-        {
+        if(cbxAcidoUrico.isSelected()){
             setCbxColor(cbxAcidoUrico);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxAcidoUrico);
         }
     }//GEN-LAST:event_cbxAcidoUricoActionPerformed
 
     private void cbxUreiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxUreiaActionPerformed
-        if(cbxUreia.isSelected())
-        {
+        if(cbxUreia.isSelected()){
             setCbxColor(cbxUreia);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxUreia);
         }
     }//GEN-LAST:event_cbxUreiaActionPerformed
 
     private void cbxCoatininaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCoatininaActionPerformed
-        if(cbxCoatinina.isSelected())
-        {
+        if(cbxCoatinina.isSelected()){
             setCbxColor(cbxCoatinina);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxCoatinina);
         }
     }//GEN-LAST:event_cbxCoatininaActionPerformed
 
     private void cbxColesterolTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxColesterolTotalActionPerformed
-        if(cbxColesterolTotal.isSelected())
-        {
+        if(cbxColesterolTotal.isSelected()){
             setCbxColor(cbxColesterolTotal);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxColesterolTotal);
         }
     }//GEN-LAST:event_cbxColesterolTotalActionPerformed
 
     private void cbxColesterolFracionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxColesterolFracionadoActionPerformed
-        if(cbxColesterolFracionado.isSelected())
-        {
+        if(cbxColesterolFracionado.isSelected()){
             setCbxColor(cbxColesterolFracionado);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxColesterolFracionado);
         }
     }//GEN-LAST:event_cbxColesterolFracionadoActionPerformed
 
     private void cbxTrigliceridesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTrigliceridesActionPerformed
-        if(cbxTriglicerides.isSelected())
-        {
+        if(cbxTriglicerides.isSelected()){
             setCbxColor(cbxTriglicerides);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxTriglicerides);
         }
     }//GEN-LAST:event_cbxTrigliceridesActionPerformed
 
     private void cbxTgoTgpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTgoTgpActionPerformed
-        if(cbxTgoTgp.isSelected())
-        {
+        if(cbxTgoTgp.isSelected()){
             setCbxColor(cbxTgoTgp);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxTgoTgp);
         }
     }//GEN-LAST:event_cbxTgoTgpActionPerformed
 
     private void cbxGamaGtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGamaGtActionPerformed
-        if(cbxGamaGt.isSelected())
-        {
+        if(cbxGamaGt.isSelected()){
             setCbxColor(cbxGamaGt);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxGamaGt);
         }
     }//GEN-LAST:event_cbxGamaGtActionPerformed
 
     private void cbxBilirrubinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBilirrubinaActionPerformed
-        if(cbxBilirrubina.isSelected())
-        {
+        if(cbxBilirrubina.isSelected()){
             setCbxColor(cbxBilirrubina);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxBilirrubina);
         }
     }//GEN-LAST:event_cbxBilirrubinaActionPerformed
 
     private void cbxUrinaRotinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxUrinaRotinaActionPerformed
-        if(cbxUrinaRotina.isSelected())
-        {
+        if(cbxUrinaRotina.isSelected()){
             setCbxColor(cbxUrinaRotina);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxUrinaRotina);
         }
     }//GEN-LAST:event_cbxUrinaRotinaActionPerformed
 
     private void cbxEpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEpfActionPerformed
-        if(cbxEpf.isSelected())
-        {
+        if(cbxEpf.isSelected()){
             setCbxColor(cbxEpf);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxEpf);
         }
     }//GEN-LAST:event_cbxEpfActionPerformed
 
     private void cbxSangueOcultoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSangueOcultoActionPerformed
-        if(cbxSangueOculto.isSelected())
-        {
+        if(cbxSangueOculto.isSelected()){
             setCbxColor(cbxSangueOculto);
-        }
-        else
-        {
+        } else {
             restCbxColor(cbxSangueOculto);
         }
     }//GEN-LAST:event_cbxSangueOcultoActionPerformed
@@ -2627,7 +2722,7 @@ public class Principal extends javax.swing.JFrame
     }//GEN-LAST:event_btnHemoPedSalvarActionPerformed
 
     private void btnHemoPedCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHemoPedCancelarActionPerformed
-        // TODO add your handling code here:
+        limparExamePedido();
     }//GEN-LAST:event_btnHemoPedCancelarActionPerformed
 
     private void btnClienteDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteDetalheActionPerformed
@@ -2681,16 +2776,14 @@ public class Principal extends javax.swing.JFrame
     }//GEN-LAST:event_btnInicioCadsResulExamMouseExited
 
     private void btnHemogramaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHemogramaMouseEntered
-        if(btnHemograma.isEnabled() == true)
-        {
+        if(btnHemograma.isEnabled() == true){
             iconsBg = "";
             setMouseBtnMoved(btnHemograma, iconsBg);
         }
     }//GEN-LAST:event_btnHemogramaMouseEntered
 
     private void btnHemogramaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHemogramaMouseExited
-        if(btnHemograma.isEnabled() == true)
-        {
+        if(btnHemograma.isEnabled() == true){
             iconsBg = "";
             resMouseBtnMoved(btnHemograma, iconsBg);
         }
@@ -2711,8 +2804,7 @@ public class Principal extends javax.swing.JFrame
     }//GEN-LAST:event_btnInicioConfRelatActionPerformed
 
     private void btnBioquimicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBioquimicaMouseEntered
-        if(btnHemograma.isEnabled() == true)
-        {
+        if(btnHemograma.isEnabled() == true){
             iconsBg = "";
             setMouseBtnMoved(btnBioquimica, iconsBg); 
         }
@@ -2720,40 +2812,35 @@ public class Principal extends javax.swing.JFrame
     }//GEN-LAST:event_btnBioquimicaMouseEntered
 
     private void btnBioquimicaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBioquimicaMouseExited
-        if(btnBioquimica.isEnabled() == true)
-        {
+        if(btnBioquimica.isEnabled() == true){
             iconsBg = "";
             resMouseBtnMoved(btnBioquimica, iconsBg);
         }
     }//GEN-LAST:event_btnBioquimicaMouseExited
 
     private void btnUrinaRotinaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUrinaRotinaMouseEntered
-        if(btnUrinaRotina.isEnabled() == true)
-        {
+        if(btnUrinaRotina.isEnabled() == true){
             iconsBg = "";
             setMouseBtnMoved(btnUrinaRotina, iconsBg);
         }
     }//GEN-LAST:event_btnUrinaRotinaMouseEntered
 
     private void btnUrinaRotinaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUrinaRotinaMouseExited
-        if(btnUrinaRotina.isEnabled() == true)
-        {
+        if(btnUrinaRotina.isEnabled() == true){
             iconsBg = "";
             resMouseBtnMoved(btnUrinaRotina, iconsBg);
         }
     }//GEN-LAST:event_btnUrinaRotinaMouseExited
 
     private void btnSangueOcultoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSangueOcultoMouseEntered
-        if(btnSangueOculto.isEnabled() == true)
-        {
+        if(btnSangueOculto.isEnabled() == true){
             iconsBg = "";
             setMouseBtnMoved(btnSangueOculto, iconsBg);
         }
     }//GEN-LAST:event_btnSangueOcultoMouseEntered
 
     private void btnSangueOcultoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSangueOcultoMouseExited
-        if(btnSangueOculto.isEnabled() == true)
-        {
+        if(btnSangueOculto.isEnabled() == true){
             iconsBg = "";
             resMouseBtnMoved(btnSangueOculto, iconsBg);
         }
@@ -2818,6 +2905,118 @@ public class Principal extends javax.swing.JFrame
         iconsBg = "/imgIcons/icons8_Play_Graph_Report_32px.png";
         resMouseBtnMoved(btnConfRelatorio, iconsBg);
     }//GEN-LAST:event_btnConfRelatorioMouseExited
+
+    private void cbxGlicoseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxGlicoseMouseEntered
+        setMouseCbxMoved(cbxGlicose);
+    }//GEN-LAST:event_cbxGlicoseMouseEntered
+
+    private void cbxGlicoseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxGlicoseMouseExited
+        resMouseCbxMoved(cbxGlicose);
+    }//GEN-LAST:event_cbxGlicoseMouseExited
+
+    private void cbxAcidoUricoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxAcidoUricoMouseEntered
+        setMouseCbxMoved(cbxAcidoUrico);
+    }//GEN-LAST:event_cbxAcidoUricoMouseEntered
+
+    private void cbxAcidoUricoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxAcidoUricoMouseExited
+        resMouseCbxMoved(cbxAcidoUrico);
+    }//GEN-LAST:event_cbxAcidoUricoMouseExited
+
+    private void cbxUreiaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxUreiaMouseEntered
+        setMouseCbxMoved(cbxUreia);
+    }//GEN-LAST:event_cbxUreiaMouseEntered
+
+    private void cbxUreiaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxUreiaMouseExited
+        resMouseCbxMoved(cbxUreia);
+    }//GEN-LAST:event_cbxUreiaMouseExited
+
+    private void cbxCoatininaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxCoatininaMouseEntered
+        setMouseCbxMoved(cbxCoatinina);
+    }//GEN-LAST:event_cbxCoatininaMouseEntered
+
+    private void cbxCoatininaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxCoatininaMouseExited
+        resMouseCbxMoved(cbxCoatinina);
+    }//GEN-LAST:event_cbxCoatininaMouseExited
+
+    private void cbxHemogramaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxHemogramaMouseEntered
+        setMouseCbxMoved(cbxHemograma);
+    }//GEN-LAST:event_cbxHemogramaMouseEntered
+
+    private void cbxHemogramaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxHemogramaMouseExited
+        resMouseCbxMoved(cbxHemograma);
+    }//GEN-LAST:event_cbxHemogramaMouseExited
+
+    private void cbxColesterolTotalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxColesterolTotalMouseEntered
+        setMouseCbxMoved(cbxColesterolTotal);
+    }//GEN-LAST:event_cbxColesterolTotalMouseEntered
+
+    private void cbxColesterolTotalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxColesterolTotalMouseExited
+        resMouseCbxMoved(cbxColesterolTotal);
+    }//GEN-LAST:event_cbxColesterolTotalMouseExited
+
+    private void cbxColesterolFracionadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxColesterolFracionadoMouseEntered
+        setMouseCbxMoved(cbxColesterolFracionado);
+    }//GEN-LAST:event_cbxColesterolFracionadoMouseEntered
+
+    private void cbxColesterolFracionadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxColesterolFracionadoMouseExited
+        resMouseCbxMoved(cbxColesterolFracionado);
+    }//GEN-LAST:event_cbxColesterolFracionadoMouseExited
+
+    private void cbxTrigliceridesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxTrigliceridesMouseEntered
+        setMouseCbxMoved(cbxTriglicerides);
+    }//GEN-LAST:event_cbxTrigliceridesMouseEntered
+
+    private void cbxTrigliceridesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxTrigliceridesMouseExited
+        resMouseCbxMoved(cbxTriglicerides);
+    }//GEN-LAST:event_cbxTrigliceridesMouseExited
+
+    private void cbxGamaGtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxGamaGtMouseEntered
+        setMouseCbxMoved(cbxGamaGt);
+    }//GEN-LAST:event_cbxGamaGtMouseEntered
+
+    private void cbxGamaGtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxGamaGtMouseExited
+        resMouseCbxMoved(cbxGamaGt);
+    }//GEN-LAST:event_cbxGamaGtMouseExited
+
+    private void cbxBilirrubinaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxBilirrubinaMouseEntered
+        setMouseCbxMoved(cbxBilirrubina);
+    }//GEN-LAST:event_cbxBilirrubinaMouseEntered
+
+    private void cbxBilirrubinaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxBilirrubinaMouseExited
+        resMouseCbxMoved(cbxBilirrubina);
+    }//GEN-LAST:event_cbxBilirrubinaMouseExited
+
+    private void cbxTgoTgpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxTgoTgpMouseEntered
+        setMouseCbxMoved(cbxTgoTgp);
+    }//GEN-LAST:event_cbxTgoTgpMouseEntered
+
+    private void cbxTgoTgpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxTgoTgpMouseExited
+        resMouseCbxMoved(cbxTgoTgp);
+    }//GEN-LAST:event_cbxTgoTgpMouseExited
+
+    private void cbxUrinaRotinaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxUrinaRotinaMouseEntered
+        setMouseCbxMoved(cbxUrinaRotina);
+    }//GEN-LAST:event_cbxUrinaRotinaMouseEntered
+
+    private void cbxUrinaRotinaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxUrinaRotinaMouseExited
+        resMouseCbxMoved(cbxUrinaRotina);
+    }//GEN-LAST:event_cbxUrinaRotinaMouseExited
+
+    private void cbxEpfMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxEpfMouseEntered
+        setMouseCbxMoved(cbxEpf);
+    }//GEN-LAST:event_cbxEpfMouseEntered
+
+    private void cbxEpfMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxEpfMouseExited
+        resMouseCbxMoved(cbxEpf);
+    }//GEN-LAST:event_cbxEpfMouseExited
+
+    private void cbxSangueOcultoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxSangueOcultoMouseEntered
+        setMouseCbxMoved(cbxSangueOculto);
+    }//GEN-LAST:event_cbxSangueOcultoMouseEntered
+
+    private void cbxSangueOcultoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxSangueOcultoMouseExited
+        resMouseCbxMoved(cbxSangueOculto);
+    }//GEN-LAST:event_cbxSangueOcultoMouseExited
     
     
     
@@ -2965,15 +3164,15 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JTextField txtClienteNome;
     private javax.swing.JTextField txtClienteRG;
     private javax.swing.JTextField txtClienteTel;
-    private javax.swing.JTextField txtCodCliente;
     private javax.swing.JTextField txtCodClienteResult;
-    private javax.swing.JTextField txtCodPedido;
     private javax.swing.JTextField txtCodPedidoResult;
-    private javax.swing.JTextField txtConvenio;
     private javax.swing.JTextField txtConvenioResult;
-    private javax.swing.JTextField txtDataPedido;
     private javax.swing.JTextField txtDataPedidoResult;
-    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtExPedCodCliente;
+    private javax.swing.JTextField txtExPedCodPedido;
+    private javax.swing.JTextField txtExPedConvenio;
+    private javax.swing.JTextField txtExPedDataPedido;
+    private javax.swing.JTextField txtExPedNome;
     private javax.swing.JTextField txtNomeResult;
     // End of variables declaration//GEN-END:variables
 }
