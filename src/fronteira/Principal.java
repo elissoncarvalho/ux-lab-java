@@ -978,34 +978,48 @@ public class Principal extends javax.swing.JFrame {
         });
         jpnExames.add(cbxSangueOculto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 140, 62));
 
-        btnHemoPedSalvar.setBackground(new java.awt.Color(0, 167, 230));
+        btnHemoPedSalvar.setBackground(new java.awt.Color(255, 255, 255));
         btnHemoPedSalvar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnHemoPedSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        btnHemoPedSalvar.setForeground(new java.awt.Color(0, 167, 230));
         btnHemoPedSalvar.setText("Salvar");
-        btnHemoPedSalvar.setBorder(null);
-        btnHemoPedSalvar.setBorderPainted(false);
+        btnHemoPedSalvar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 167, 230)));
         btnHemoPedSalvar.setContentAreaFilled(false);
         btnHemoPedSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnHemoPedSalvar.setFocusPainted(false);
         btnHemoPedSalvar.setNextFocusableComponent(btnCadastraResultado);
         btnHemoPedSalvar.setOpaque(true);
+        btnHemoPedSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHemoPedSalvarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHemoPedSalvarMouseExited(evt);
+            }
+        });
         btnHemoPedSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHemoPedSalvarActionPerformed(evt);
             }
         });
 
-        btnHemoPedCancelar.setBackground(new java.awt.Color(190, 75, 73));
+        btnHemoPedCancelar.setBackground(new java.awt.Color(255, 255, 255));
         btnHemoPedCancelar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnHemoPedCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnHemoPedCancelar.setForeground(new java.awt.Color(190, 75, 73));
         btnHemoPedCancelar.setText("Cancelar");
-        btnHemoPedCancelar.setBorder(null);
-        btnHemoPedCancelar.setBorderPainted(false);
+        btnHemoPedCancelar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(190, 75, 73)));
         btnHemoPedCancelar.setContentAreaFilled(false);
         btnHemoPedCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnHemoPedCancelar.setFocusPainted(false);
         btnHemoPedCancelar.setNextFocusableComponent(btnCadastraResultado);
         btnHemoPedCancelar.setOpaque(true);
+        btnHemoPedCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHemoPedCancelarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHemoPedCancelarMouseExited(evt);
+            }
+        });
         btnHemoPedCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHemoPedCancelarActionPerformed(evt);
@@ -1358,6 +1372,7 @@ public class Principal extends javax.swing.JFrame {
         btnExameDetalhe.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnExameDetalhe.setForeground(new java.awt.Color(0, 167, 230));
         btnExameDetalhe.setText("Gerar Relatório");
+        btnExameDetalhe.setActionCommand("<html><p style=\"text-decoration: underline\">Gerar Relatório<p>");
         btnExameDetalhe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
         btnExameDetalhe.setBorderPainted(false);
         btnExameDetalhe.setContentAreaFilled(false);
@@ -1365,40 +1380,57 @@ public class Principal extends javax.swing.JFrame {
         btnExameDetalhe.setFocusPainted(false);
         btnExameDetalhe.setFocusable(false);
         btnExameDetalhe.setNextFocusableComponent(btnCadastraResultado);
-        btnExameDetalhe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExameDetalheActionPerformed(evt);
+        btnExameDetalhe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExameDetalheMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExameDetalheMouseExited(evt);
             }
         });
 
-        btnExameEdit.setBackground(new java.awt.Color(0, 167, 230));
+        btnExameEdit.setBackground(new java.awt.Color(255, 255, 255));
         btnExameEdit.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnExameEdit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExameEdit.setForeground(new java.awt.Color(0, 167, 230));
         btnExameEdit.setText("Editar");
-        btnExameEdit.setBorder(null);
-        btnExameEdit.setBorderPainted(false);
+        btnExameEdit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 167, 230)));
         btnExameEdit.setContentAreaFilled(false);
         btnExameEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExameEdit.setFocusPainted(false);
         btnExameEdit.setNextFocusableComponent(btnCadastraResultado);
         btnExameEdit.setOpaque(true);
+        btnExameEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExameEditMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExameEditMouseExited(evt);
+            }
+        });
         btnExameEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExameEditActionPerformed(evt);
             }
         });
 
-        btnExameExcluir.setBackground(new java.awt.Color(190, 75, 73));
+        btnExameExcluir.setBackground(new java.awt.Color(255, 255, 255));
         btnExameExcluir.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnExameExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btnExameExcluir.setForeground(new java.awt.Color(190, 75, 73));
         btnExameExcluir.setText("Excluir");
-        btnExameExcluir.setBorder(null);
-        btnExameExcluir.setBorderPainted(false);
+        btnExameExcluir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(190, 75, 73)));
         btnExameExcluir.setContentAreaFilled(false);
         btnExameExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExameExcluir.setFocusPainted(false);
         btnExameExcluir.setNextFocusableComponent(btnCadastraResultado);
         btnExameExcluir.setOpaque(true);
+        btnExameExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExameExcluirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExameExcluirMouseExited(evt);
+            }
+        });
         btnExameExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExameExcluirActionPerformed(evt);
@@ -1568,40 +1600,62 @@ public class Principal extends javax.swing.JFrame {
         btnClienteDetalhe.setFocusPainted(false);
         btnClienteDetalhe.setFocusable(false);
         btnClienteDetalhe.setNextFocusableComponent(btnCadastraResultado);
+        btnClienteDetalhe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClienteDetalheMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClienteDetalheMouseExited(evt);
+            }
+        });
         btnClienteDetalhe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteDetalheActionPerformed(evt);
             }
         });
 
-        btnClienteEdit.setBackground(new java.awt.Color(0, 167, 230));
+        btnClienteEdit.setBackground(new java.awt.Color(255, 255, 255));
         btnClienteEdit.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnClienteEdit.setForeground(new java.awt.Color(255, 255, 255));
+        btnClienteEdit.setForeground(new java.awt.Color(0, 167, 230));
         btnClienteEdit.setText("Editar");
-        btnClienteEdit.setBorder(null);
-        btnClienteEdit.setBorderPainted(false);
+        btnClienteEdit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 167, 230)));
         btnClienteEdit.setContentAreaFilled(false);
         btnClienteEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClienteEdit.setFocusPainted(false);
         btnClienteEdit.setNextFocusableComponent(btnCadastraResultado);
         btnClienteEdit.setOpaque(true);
+        btnClienteEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClienteEditMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClienteEditMouseExited(evt);
+            }
+        });
         btnClienteEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteEditActionPerformed(evt);
             }
         });
 
-        btnClienteExcluir.setBackground(new java.awt.Color(190, 75, 73));
+        btnClienteExcluir.setBackground(new java.awt.Color(255, 255, 255));
         btnClienteExcluir.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnClienteExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btnClienteExcluir.setForeground(new java.awt.Color(190, 75, 73));
         btnClienteExcluir.setText("Excluir");
-        btnClienteExcluir.setBorder(null);
-        btnClienteExcluir.setBorderPainted(false);
+        btnClienteExcluir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(190, 75, 73)));
         btnClienteExcluir.setContentAreaFilled(false);
         btnClienteExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClienteExcluir.setFocusPainted(false);
         btnClienteExcluir.setNextFocusableComponent(btnCadastraResultado);
         btnClienteExcluir.setOpaque(true);
+        btnClienteExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClienteExcluirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClienteExcluirMouseExited(evt);
+            }
+        });
         btnClienteExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteExcluirActionPerformed(evt);
@@ -1812,7 +1866,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnClienteLimparFor.setBackground(new java.awt.Color(255, 255, 255));
         btnClienteLimparFor.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnClienteLimparFor.setForeground(new java.awt.Color(0, 128, 200));
+        btnClienteLimparFor.setForeground(new java.awt.Color(0, 167, 230));
         btnClienteLimparFor.setText("Limpar Formulário");
         btnClienteLimparFor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
         btnClienteLimparFor.setBorderPainted(false);
@@ -1821,23 +1875,38 @@ public class Principal extends javax.swing.JFrame {
         btnClienteLimparFor.setFocusPainted(false);
         btnClienteLimparFor.setFocusable(false);
         btnClienteLimparFor.setNextFocusableComponent(btnCadastraResultado);
+        btnClienteLimparFor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClienteLimparForMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClienteLimparForMouseExited(evt);
+            }
+        });
         btnClienteLimparFor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteLimparForActionPerformed(evt);
             }
         });
 
-        btnClienteCadastra.setBackground(new java.awt.Color(0, 128, 200));
+        btnClienteCadastra.setBackground(new java.awt.Color(255, 255, 255));
         btnClienteCadastra.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnClienteCadastra.setForeground(new java.awt.Color(255, 255, 255));
+        btnClienteCadastra.setForeground(new java.awt.Color(0, 167, 230));
         btnClienteCadastra.setText("Cadastrar");
-        btnClienteCadastra.setBorder(null);
-        btnClienteCadastra.setBorderPainted(false);
+        btnClienteCadastra.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 167, 230)));
         btnClienteCadastra.setContentAreaFilled(false);
         btnClienteCadastra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClienteCadastra.setFocusPainted(false);
         btnClienteCadastra.setNextFocusableComponent(btnCadastraResultado);
         btnClienteCadastra.setOpaque(true);
+        btnClienteCadastra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClienteCadastraMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClienteCadastraMouseExited(evt);
+            }
+        });
         btnClienteCadastra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteCadastraActionPerformed(evt);
@@ -2272,10 +2341,40 @@ public class Principal extends javax.swing.JFrame {
                             java.awt.Color(75, 190, 73)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         }
     }
-    private void setMouseBtnFormMoved(JToggleButton btn){
+    private void setMouseBtnFormMoved(JToggleButton btn, int borderColor, String lblText){
+        switch (borderColor) {
+            case 1:
+                btn.setForeground(new java.awt.Color(255,255,255));
+                btn.setBackground(new java.awt.Color(0,167,230));//azul
+                break;
+            case 2:
+                btn.setForeground(new java.awt.Color(255,255,255));
+                btn.setBackground(new java.awt.Color(190,75,73));//vermelho
+                break;
+            case 3:
+                btn.setText("<html><p style='text-decoration: underline'>"+lblText+"</p>");
+                break;
+            default:
+                break;
+        }
         
     }
-    private void resMouseBtnFormMoved(JToggleButton btn){
+    private void resMouseBtnFormMoved(JToggleButton btn, int borderColor, String lblText){
+        switch (borderColor) {
+            case 1:
+                btn.setForeground(new java.awt.Color(0,167,230));//azul
+                btn.setBackground(new java.awt.Color(255,255,255));
+                break;
+            case 2:
+                btn.setForeground(new java.awt.Color(190,75,73));//vermelho
+                btn.setBackground(new java.awt.Color(255,255,255));
+                break;
+            case 3:
+                btn.setText(lblText);
+                break;
+            default:
+                break;
+        }
         
     }
     public void verificaActive(){   // Verifica se o Exame esta Ativado
@@ -2566,10 +2665,6 @@ public class Principal extends javax.swing.JFrame {
     private void btnExameEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameEditActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnExameEditActionPerformed
-
-    private void btnExameDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameDetalheActionPerformed
-        exameGeraRel.setVisible(true);
-    }//GEN-LAST:event_btnExameDetalheActionPerformed
     
     // Inicio Cadastrar Pedidos 
     private void cbxGlicoseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGlicoseActionPerformed
@@ -3034,6 +3129,86 @@ public class Principal extends javax.swing.JFrame {
     private void cbxSangueOcultoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxSangueOcultoMouseExited
         resMouseCbxMoved(cbxSangueOculto);
     }//GEN-LAST:event_cbxSangueOcultoMouseExited
+
+    private void btnHemoPedSalvarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHemoPedSalvarMouseEntered
+        setMouseBtnFormMoved(btnHemoPedSalvar, 1, null);
+    }//GEN-LAST:event_btnHemoPedSalvarMouseEntered
+
+    private void btnHemoPedSalvarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHemoPedSalvarMouseExited
+        resMouseBtnFormMoved(btnHemoPedSalvar, 1, null);
+    }//GEN-LAST:event_btnHemoPedSalvarMouseExited
+
+    private void btnHemoPedCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHemoPedCancelarMouseEntered
+        setMouseBtnFormMoved(btnHemoPedCancelar, 2, null);
+    }//GEN-LAST:event_btnHemoPedCancelarMouseEntered
+
+    private void btnHemoPedCancelarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHemoPedCancelarMouseExited
+        resMouseBtnFormMoved(btnHemoPedCancelar, 2, null);
+    }//GEN-LAST:event_btnHemoPedCancelarMouseExited
+
+    private void btnExameDetalheMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExameDetalheMouseEntered
+        setMouseBtnFormMoved(btnExameDetalhe, 3, "Gerar Relatório");
+    }//GEN-LAST:event_btnExameDetalheMouseEntered
+
+    private void btnExameDetalheMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExameDetalheMouseExited
+        resMouseBtnFormMoved(btnExameDetalhe, 3, "Gerar Relatório");
+    }//GEN-LAST:event_btnExameDetalheMouseExited
+
+    private void btnExameEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExameEditMouseEntered
+        setMouseBtnFormMoved(btnExameEdit, 1, null);
+    }//GEN-LAST:event_btnExameEditMouseEntered
+
+    private void btnExameEditMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExameEditMouseExited
+        resMouseBtnFormMoved(btnExameEdit, 1, null);
+    }//GEN-LAST:event_btnExameEditMouseExited
+
+    private void btnExameExcluirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExameExcluirMouseEntered
+        setMouseBtnFormMoved(btnExameExcluir, 2, null);
+    }//GEN-LAST:event_btnExameExcluirMouseEntered
+
+    private void btnExameExcluirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExameExcluirMouseExited
+        resMouseBtnFormMoved(btnExameExcluir, 2, null);
+    }//GEN-LAST:event_btnExameExcluirMouseExited
+
+    private void btnClienteDetalheMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteDetalheMouseEntered
+        setMouseBtnFormMoved(btnClienteDetalhe, 3, "Detalhes");
+    }//GEN-LAST:event_btnClienteDetalheMouseEntered
+
+    private void btnClienteDetalheMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteDetalheMouseExited
+        resMouseBtnFormMoved(btnClienteDetalhe, 3, "Detalhes");
+    }//GEN-LAST:event_btnClienteDetalheMouseExited
+
+    private void btnClienteEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteEditMouseEntered
+        setMouseBtnFormMoved(btnClienteEdit, 1, null);
+    }//GEN-LAST:event_btnClienteEditMouseEntered
+
+    private void btnClienteEditMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteEditMouseExited
+        resMouseBtnFormMoved(btnClienteEdit, 1, null);
+    }//GEN-LAST:event_btnClienteEditMouseExited
+
+    private void btnClienteExcluirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteExcluirMouseEntered
+        setMouseBtnFormMoved(btnClienteExcluir, 2, null);
+    }//GEN-LAST:event_btnClienteExcluirMouseEntered
+
+    private void btnClienteExcluirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteExcluirMouseExited
+        resMouseBtnFormMoved(btnClienteExcluir, 2, null);
+    }//GEN-LAST:event_btnClienteExcluirMouseExited
+
+    private void btnClienteLimparForMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteLimparForMouseEntered
+        setMouseBtnFormMoved(btnClienteLimparFor, 3, "Limpar Formulário");
+    }//GEN-LAST:event_btnClienteLimparForMouseEntered
+
+    private void btnClienteLimparForMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteLimparForMouseExited
+        resMouseBtnFormMoved(btnClienteLimparFor, 3, "Limpar Formulário");
+    }//GEN-LAST:event_btnClienteLimparForMouseExited
+
+    private void btnClienteCadastraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteCadastraMouseEntered
+        setMouseBtnFormMoved(btnClienteCadastra, 1, null);
+    }//GEN-LAST:event_btnClienteCadastraMouseEntered
+
+    private void btnClienteCadastraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteCadastraMouseExited
+        resMouseBtnFormMoved(btnClienteCadastra, 1, null);
+    }//GEN-LAST:event_btnClienteCadastraMouseExited
     
     
     
