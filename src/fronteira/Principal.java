@@ -173,6 +173,7 @@ public class Principal extends javax.swing.JFrame {
         btnConfRestBackup = new javax.swing.JToggleButton();
         btnConfAplic = new javax.swing.JToggleButton();
         btnConfRelatorio = new javax.swing.JToggleButton();
+        contMasq = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BIOLAB Análises Clínicas - UX LAB 1.0");
@@ -2206,6 +2207,22 @@ public class Principal extends javax.swing.JFrame {
 
         getContentPane().add(contBorda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1114, 624));
 
+        contMasq.setBackground(new java.awt.Color(255, 255, 255));
+        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
+
+        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
+        contMasq.setLayout(contMasqLayout);
+        contMasqLayout.setHorizontalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1110, Short.MAX_VALUE)
+        );
+        contMasqLayout.setVerticalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(contMasq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1114, 624));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
@@ -3106,6 +3123,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JCheckBox cbxUreia;
     private javax.swing.JCheckBox cbxUrinaRotina;
     private javax.swing.JPanel contBorda;
+    private javax.swing.JPanel contMasq;
     private javax.swing.JPanel divCadastraCliente;
     private javax.swing.JPanel divCadastraExame;
     private javax.swing.JPanel divCadastraResultado;

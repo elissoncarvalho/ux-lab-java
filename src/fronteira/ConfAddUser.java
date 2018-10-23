@@ -381,4 +381,8 @@ public class ConfAddUser extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JPasswordField txtSenhaConfir;
     // End of variables declaration//GEN-END:variables
+
+    void setModal(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
