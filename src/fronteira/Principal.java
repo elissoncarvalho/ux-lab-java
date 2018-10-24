@@ -7,6 +7,7 @@ import java.net.URL;
 import javax.swing.JFrame;
 
 import entidade.*;
+import javax.swing.JOptionPane;
 
 public class Principal extends javax.swing.JFrame {
     
@@ -34,6 +35,8 @@ public class Principal extends javax.swing.JFrame {
         divNaoInicia();
         helper.verificaActive(btnHemograma, btnBioquimica, btnUrinaRotina, btnSangueOculto);
         helper.verificaStatus(btnHemograma, btnBioquimica, btnUrinaRotina, btnSangueOculto);
+        
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -42,6 +45,7 @@ public class Principal extends javax.swing.JFrame {
 
         rbgSexo = new javax.swing.ButtonGroup();
         contBorda = new javax.swing.JPanel();
+        contMasq = new javax.swing.JPanel();
         nav = new javax.swing.JPanel();
         LogoTipo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -160,7 +164,6 @@ public class Principal extends javax.swing.JFrame {
         btnConfRestBackup = new javax.swing.JToggleButton();
         btnConfAplic = new javax.swing.JToggleButton();
         btnConfRelatorio = new javax.swing.JToggleButton();
-        contMasq = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BIOLAB Análises Clínicas - UX LAB 1.0");
@@ -170,6 +173,22 @@ public class Principal extends javax.swing.JFrame {
 
         contBorda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
         contBorda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        contMasq.setBackground(new java.awt.Color(255, 255, 255));
+        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
+
+        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
+        contMasq.setLayout(contMasqLayout);
+        contMasqLayout.setHorizontalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1110, Short.MAX_VALUE)
+        );
+        contMasqLayout.setVerticalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        contBorda.add(contMasq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1114, 624));
 
         nav.setBackground(new java.awt.Color(0, 167, 230));
         nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -294,6 +313,11 @@ public class Principal extends javax.swing.JFrame {
         lblNomeUsuario.setText("$NomeDeUsuario");
         lblNomeUsuario.setToolTipText("Usuário");
         lblNomeUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblNomeUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNomeUsuarioMouseClicked(evt);
+            }
+        });
         barNotifq.add(lblNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 180, 50));
 
         lblNivelAcesso.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -2264,25 +2288,24 @@ public class Principal extends javax.swing.JFrame {
 
         getContentPane().add(contBorda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1114, 624));
 
-        contMasq.setBackground(new java.awt.Color(255, 255, 255));
-        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
-
-        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
-        contMasq.setLayout(contMasqLayout);
-        contMasqLayout.setHorizontalGroup(
-            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1110, Short.MAX_VALUE)
-        );
-        contMasqLayout.setVerticalGroup(
-            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(contMasq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1114, 624));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*/ Metodos de teste
+    public void setMascara(){
+        contMasq.setVisible(true);
+       
+    }
+    public void resMascara(){
+        JOptionPane.showMessageDialog(rootPane, "aquiii");
+        //resMascaraHelper();
+        contMasq;
+    }
+    private void resMascaraHelper(){
+        contMasq.setVisible(false);
+        contBorda.setVisible(true);
+    }
+    */
     private void divNaoInicia(){   
         // Paineis Divisorios que por padrão não inicia junto com o jFrame principal,
         // Para não causar conflitos na visão do usuario.
@@ -2292,6 +2315,8 @@ public class Principal extends javax.swing.JFrame {
         divCadastraCliente.setVisible(false);
         divCadastraResultado.setVisible(false);
         divRelatorioExame.setVisible(false);
+        
+        contMasq.setVisible(false);
     }
 
     // Ações On Click Navegação
@@ -3032,6 +3057,12 @@ public class Principal extends javax.swing.JFrame {
     private void btnClienteCadastraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteCadastraMouseExited
         helper.resMouseBtnFormMoved(btnClienteCadastra, 1, null);
     }//GEN-LAST:event_btnClienteCadastraMouseExited
+
+    private void lblNomeUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNomeUsuarioMouseClicked
+        
+        //setMascara();
+        confEdtUser.setVisible(true);
+    }//GEN-LAST:event_lblNomeUsuarioMouseClicked
     
     
     
