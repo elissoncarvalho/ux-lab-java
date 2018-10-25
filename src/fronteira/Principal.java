@@ -7,7 +7,6 @@ import java.net.URL;
 import javax.swing.JFrame;
 
 import entidade.*;
-import javax.swing.JOptionPane;
 
 public class Principal extends javax.swing.JFrame {
     
@@ -45,7 +44,6 @@ public class Principal extends javax.swing.JFrame {
 
         rbgSexo = new javax.swing.ButtonGroup();
         contBorda = new javax.swing.JPanel();
-        contMasq = new javax.swing.JPanel();
         nav = new javax.swing.JPanel();
         LogoTipo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -173,22 +171,6 @@ public class Principal extends javax.swing.JFrame {
 
         contBorda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
         contBorda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        contMasq.setBackground(new java.awt.Color(255, 255, 255));
-        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
-
-        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
-        contMasq.setLayout(contMasqLayout);
-        contMasqLayout.setHorizontalGroup(
-            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1110, Short.MAX_VALUE)
-        );
-        contMasqLayout.setVerticalGroup(
-            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
-        );
-
-        contBorda.add(contMasq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1114, 624));
 
         nav.setBackground(new java.awt.Color(0, 167, 230));
         nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -417,7 +399,7 @@ public class Principal extends javax.swing.JFrame {
         btnInicioCadsResulExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Edit_File_32px.png"))); // NOI18N
         btnInicioCadsResulExam.setText("Cadastrar Resultado");
         btnInicioCadsResulExam.setToolTipText("");
-        btnInicioCadsResulExam.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 10)));
+        btnInicioCadsResulExam.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1)));
         btnInicioCadsResulExam.setContentAreaFilled(false);
         btnInicioCadsResulExam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInicioCadsResulExam.setFocusable(false);
@@ -1296,9 +1278,7 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jLabel24))
                                 .addGap(22, 22, 22)
                                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                                        .addComponent(jLabel25)
-                                        .addGap(17, 17, 17))
+                                    .addComponent(jLabel25)
                                     .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(22, 22, 22)
                                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1330,9 +1310,11 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(divCadastraResultadoLayout.createSequentialGroup()
                         .addComponent(jLabel25)
+                        .addGap(0, 0, 0)
                         .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(22, 22, 22)
                 .addComponent(jLabel26)
+                .addGap(0, 0, 0)
                 .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2291,21 +2273,6 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /*/ Metodos de teste
-    public void setMascara(){
-        contMasq.setVisible(true);
-       
-    }
-    public void resMascara(){
-        JOptionPane.showMessageDialog(rootPane, "aquiii");
-        //resMascaraHelper();
-        contMasq;
-    }
-    private void resMascaraHelper(){
-        contMasq.setVisible(false);
-        contBorda.setVisible(true);
-    }
-    */
     private void divNaoInicia(){   
         // Paineis Divisorios que por padrão não inicia junto com o jFrame principal,
         // Para não causar conflitos na visão do usuario.
@@ -2315,8 +2282,6 @@ public class Principal extends javax.swing.JFrame {
         divCadastraCliente.setVisible(false);
         divCadastraResultado.setVisible(false);
         divRelatorioExame.setVisible(false);
-        
-        contMasq.setVisible(false);
     }
 
     // Ações On Click Navegação
@@ -3152,7 +3117,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JCheckBox cbxUreia;
     private javax.swing.JCheckBox cbxUrinaRotina;
     private javax.swing.JPanel contBorda;
-    private javax.swing.JPanel contMasq;
     private javax.swing.JPanel divCadastraCliente;
     private javax.swing.JPanel divCadastraExame;
     private javax.swing.JPanel divCadastraResultado;

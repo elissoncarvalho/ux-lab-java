@@ -46,14 +46,14 @@ public class Helper {
         btn.setForeground(new java.awt.Color(0,167,230));
         btn.setBorder(javax.swing.BorderFactory.createCompoundBorder
                         (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0,167,230)), 
-                        javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
+                        javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 10)));
     }
     public void resMouseBtnMoved(JToggleButton btn, String iconsBg){
         btn.setIcon(new javax.swing.ImageIcon(getClass().getResource(iconsBg)));
         btn.setForeground(new java.awt.Color(35,59,77));
         btn.setBorder(javax.swing.BorderFactory.createCompoundBorder
                         (javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35,59,77)), 
-                        javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 20)));
+                        javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 10)));
     }
     public void setMouseCbxMoved(JCheckBox cbx){
         if(!cbx.isSelected()){
