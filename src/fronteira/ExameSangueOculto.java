@@ -1,30 +1,30 @@
-
 package fronteira;
 
+import entidade.Helper;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 
-
+/**
+ *
+ * @author Elisson
+ */
 public class ExameSangueOculto extends javax.swing.JFrame {
-
-
+    
+    Helper helper = new Helper();
+    
     public ExameSangueOculto() {
         initComponents();
-        //Icone do Sistema
-        URL url = this.getClass().getResource("/imgIcons/icon.png");  
-        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
-        this.setIconImage(iconeTitulo);
-        setLocationRelativeTo(null);
-        setAlwaysOnTop(true);
+        
+        formConfig();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        grbSangueFezes = new javax.swing.ButtonGroup();
+        contMasq = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -45,17 +45,24 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JToggleButton();
         btnCancelar = new javax.swing.JToggleButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EPF / Sangue Oculto");
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setUndecorated(true);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setType(java.awt.Window.Type.UTILITY);
+
+        contMasq.setBackground(new java.awt.Color(255, 255, 255));
+        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
+        contMasq.setOpaque(false);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 59, 77), 1, true));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 167, 230), 2));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(61, 186, 244));
+        jPanel6.setBackground(new java.awt.Color(0, 167, 230));
         jPanel6.setLayout(new java.awt.GridBagLayout());
 
         jLabel3.setBackground(new java.awt.Color(240, 249, 253));
@@ -67,7 +74,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 533, 40));
 
-        jPanel1.setBackground(new java.awt.Color(240, 249, 253));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(11, 19, 25));
@@ -82,7 +89,6 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         txtParasResult.setToolTipText("");
         txtParasResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtParasResult.setName(""); // NOI18N
-        txtParasResult.setNextFocusableComponent(txaParasObs);
         txtParasResult.setOpaque(false);
         txtParasResult.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtParasResult.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +107,6 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         txaParasObs.setLineWrap(true);
         txaParasObs.setRows(5);
         txaParasObs.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5)));
-        txaParasObs.setNextFocusableComponent(rbAusente);
         jScrollPane1.setViewportView(txaParasObs);
 
         jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -112,20 +117,16 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         jLabel52.setForeground(new java.awt.Color(11, 19, 25));
         jLabel52.setText("Resultado");
 
-        grbSangueFezes.add(rbAusente);
         rbAusente.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         rbAusente.setForeground(new java.awt.Color(11, 19, 25));
         rbAusente.setText("AUSENTE");
         rbAusente.setFocusPainted(false);
-        rbAusente.setNextFocusableComponent(rbPresente);
         rbAusente.setOpaque(false);
 
-        grbSangueFezes.add(rbPresente);
         rbPresente.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         rbPresente.setForeground(new java.awt.Color(11, 19, 25));
         rbPresente.setText("PRESENTE");
         rbPresente.setFocusPainted(false);
-        rbPresente.setNextFocusableComponent(txaSangOculObs);
         rbPresente.setOpaque(false);
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -138,7 +139,6 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         txaSangOculObs.setLineWrap(true);
         txaSangOculObs.setRows(5);
         txaSangOculObs.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5)));
-        txaSangOculObs.setNextFocusableComponent(btnSalvar);
         jScrollPane2.setViewportView(txaSangOculObs);
 
         btnSalvar.setBackground(new java.awt.Color(40, 124, 162));
@@ -150,7 +150,6 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         btnSalvar.setContentAreaFilled(false);
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalvar.setFocusPainted(false);
-        btnSalvar.setNextFocusableComponent(btnCancelar);
         btnSalvar.setOpaque(true);
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +166,6 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         btnCancelar.setContentAreaFilled(false);
         btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancelar.setFocusPainted(false);
-        btnCancelar.setNextFocusableComponent(txtParasResult);
         btnCancelar.setOpaque(true);
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,9 +246,30 @@ public class ExameSangueOculto extends javax.swing.JFrame {
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 40, 533, 560));
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 40, 520, 550));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 535, 602));
+        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
+        contMasq.setLayout(contMasqLayout);
+        contMasqLayout.setHorizontalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1110, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        contMasqLayout.setVerticalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(contMasq, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -266,8 +285,18 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-
+    
+    private void formConfig(){
+        //Icone do Sistema
+        URL url = this.getClass().getResource("/imgIcons/icon.png");  
+        Image iconeTitulo;
+        iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        
+        this.setBackground(new Color(255,255,255,150));
+        
+        // Posicionamento do Frame
+        setLocationRelativeTo(null);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -290,14 +319,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ExameSangueOculto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -310,7 +332,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnCancelar;
     private javax.swing.JToggleButton btnSalvar;
-    private javax.swing.ButtonGroup grbSangueFezes;
+    private javax.swing.JPanel contMasq;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;

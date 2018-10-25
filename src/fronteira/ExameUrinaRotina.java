@@ -1,29 +1,30 @@
-
 package fronteira;
 
+import entidade.Helper;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 
-
+/**
+ *
+ * @author Elisson
+ */
 public class ExameUrinaRotina extends javax.swing.JFrame {
-
-
+    
+    Helper helper = new Helper();
+    
     public ExameUrinaRotina() {
         initComponents();
-        //Icone do Sistema
-        URL url = this.getClass().getResource("/imgIcons/icon.png");  
-        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
-        this.setIconImage(iconeTitulo);
-        setLocationRelativeTo(null);
-        setAlwaysOnTop(true);
+        
+        formConfig();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        contMasq = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -53,17 +54,24 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JToggleButton();
         btnCancelar = new javax.swing.JToggleButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Urina Rotina");
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setUndecorated(true);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setType(java.awt.Window.Type.UTILITY);
+
+        contMasq.setBackground(new java.awt.Color(255, 255, 255));
+        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
+        contMasq.setOpaque(false);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 59, 77), 1, true));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 167, 230), 2));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(61, 186, 244));
+        jPanel6.setBackground(new java.awt.Color(0, 167, 230));
         jPanel6.setLayout(new java.awt.GridBagLayout());
 
         jLabel3.setBackground(new java.awt.Color(240, 249, 253));
@@ -75,7 +83,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 490, 40));
 
-        jPanel1.setBackground(new java.awt.Color(240, 249, 253));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(11, 19, 25));
@@ -90,7 +98,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtAfCor.setToolTipText("");
         txtAfCor.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtAfCor.setName(""); // NOI18N
-        txtAfCor.setNextFocusableComponent(txtAfDens);
         txtAfCor.setOpaque(false);
         txtAfCor.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtAfCor.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +115,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtAfDens.setToolTipText("");
         txtAfDens.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtAfDens.setName(""); // NOI18N
-        txtAfDens.setNextFocusableComponent(txtAfAspecto);
         txtAfDens.setOpaque(false);
         txtAfDens.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtAfDens.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +132,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtAfAspecto.setToolTipText("");
         txtAfAspecto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtAfAspecto.setName(""); // NOI18N
-        txtAfAspecto.setNextFocusableComponent(txtAfPh);
         txtAfAspecto.setOpaque(false);
         txtAfAspecto.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtAfAspecto.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +149,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtAfPh.setToolTipText("");
         txtAfPh.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtAfPh.setName(""); // NOI18N
-        txtAfPh.setNextFocusableComponent(txtSedCelEpitel);
         txtAfPh.setOpaque(false);
         txtAfPh.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtAfPh.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +170,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtSedCelEpitel.setToolTipText("");
         txtSedCelEpitel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtSedCelEpitel.setName(""); // NOI18N
-        txtSedCelEpitel.setNextFocusableComponent(txtSedHem);
         txtSedCelEpitel.setOpaque(false);
         txtSedCelEpitel.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtSedCelEpitel.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +187,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtSedHem.setToolTipText("");
         txtSedHem.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtSedHem.setName(""); // NOI18N
-        txtSedHem.setNextFocusableComponent(txtSedLeuc);
         txtSedHem.setOpaque(false);
         txtSedHem.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtSedHem.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +204,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtSedLeuc.setToolTipText("");
         txtSedLeuc.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtSedLeuc.setName(""); // NOI18N
-        txtSedLeuc.setNextFocusableComponent(txtSedCilin);
         txtSedLeuc.setOpaque(false);
         txtSedLeuc.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtSedLeuc.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +221,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtSedCilin.setToolTipText("");
         txtSedCilin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtSedCilin.setName(""); // NOI18N
-        txtSedCilin.setNextFocusableComponent(btnSalvar);
         txtSedCilin.setOpaque(false);
         txtSedCilin.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtSedCilin.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +254,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         btnSalvar.setContentAreaFilled(false);
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalvar.setFocusPainted(false);
-        btnSalvar.setNextFocusableComponent(btnCancelar);
         btnSalvar.setOpaque(true);
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -271,7 +270,6 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         btnCancelar.setContentAreaFilled(false);
         btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancelar.setFocusPainted(false);
-        btnCancelar.setNextFocusableComponent(txtAfCor);
         btnCancelar.setOpaque(true);
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,7 +282,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -381,9 +379,30 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 40, 490, -1));
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 40, 470, 360));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 492, 403));
+        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
+        contMasq.setLayout(contMasqLayout);
+        contMasqLayout.setHorizontalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1110, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        contMasqLayout.setVerticalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(contMasq, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -392,33 +411,33 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAfCorActionPerformed
 
-    private void txtAfAspectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfAspectoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAfAspectoActionPerformed
-
     private void txtAfDensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfDensActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAfDensActionPerformed
+
+    private void txtAfAspectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfAspectoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAfAspectoActionPerformed
 
     private void txtAfPhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfPhActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAfPhActionPerformed
 
-    private void txtSedHemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSedHemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSedHemActionPerformed
-
     private void txtSedCelEpitelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSedCelEpitelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSedCelEpitelActionPerformed
 
-    private void txtSedCilinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSedCilinActionPerformed
+    private void txtSedHemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSedHemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSedCilinActionPerformed
+    }//GEN-LAST:event_txtSedHemActionPerformed
 
     private void txtSedLeucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSedLeucActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSedLeucActionPerformed
+
+    private void txtSedCilinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSedCilinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSedCilinActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         this.setVisible(false);
@@ -427,8 +446,18 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-
+    
+    private void formConfig(){
+        //Icone do Sistema
+        URL url = this.getClass().getResource("/imgIcons/icon.png");  
+        Image iconeTitulo;
+        iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        
+        this.setBackground(new Color(255,255,255,150));
+        
+        // Posicionamento do Frame
+        setLocationRelativeTo(null);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -451,14 +480,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ExameUrinaRotina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -471,6 +493,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnCancelar;
     private javax.swing.JToggleButton btnSalvar;
+    private javax.swing.JPanel contMasq;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;

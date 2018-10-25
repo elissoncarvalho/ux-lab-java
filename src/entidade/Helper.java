@@ -118,19 +118,19 @@ public class Helper {
     // Verifica se o Exame esta Ativado
     public void verificaActive(JToggleButton btn1,JToggleButton btn2,JToggleButton btn3, JToggleButton btn4){   
         // ExameHemograma
-        if(verifExaRult.isActiveHemograma() == true){
+        if(verifExaRult.isActiveHemograma() == !true){
             btn1.setEnabled(true);
         }
         // ExameBioquimica
-        if(verifExaRult.isActiveBioquimica() == true){
+        if(verifExaRult.isActiveBioquimica() == !true){
             btn2.setEnabled(true);
         }
         // Urina Rotina
-        if(verifExaRult.isActiveUrinaRotina() == true){
+        if(verifExaRult.isActiveUrinaRotina() == !true){
             btn3.setEnabled(true);
         }
         // Sangue Oculto
-        if(verifExaRult.isActiveSangueOculto() == true){
+        if(verifExaRult.isActiveSangueOculto() == !true){
             btn4.setEnabled(true);
         }
     }

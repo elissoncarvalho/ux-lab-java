@@ -1,37 +1,32 @@
-
 package fronteira;
-/**
- *
- * @author Elisson
- */
+
+import entidade.Helper;
+import entidade.VerifExaRult;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 
-import entidade.VerifExaRult;
-
+/**
+ *
+ * @author Elisson
+ */
 public class ExameHemograma extends javax.swing.JFrame {
     
-    
+    Helper helper = new Helper();
     VerifExaRult    verifExaRult    = new VerifExaRult();
-
+    
     public ExameHemograma() {
         initComponents();
         
-        //Icone do Sistema
-        URL url = this.getClass().getResource("/imgIcons/icon.png");  
-        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
-        this.setIconImage(iconeTitulo);
-        // Posicionamento do Frame
-        setLocationRelativeTo(null);
-        setAlwaysOnTop(true);
+        formConfig();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        contMasq = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -105,16 +100,22 @@ public class ExameHemograma extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Hemograma");
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setUndecorated(true);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setType(java.awt.Window.Type.UTILITY);
+
+        contMasq.setBackground(new java.awt.Color(255, 255, 255));
+        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
+        contMasq.setOpaque(false);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 59, 77), 1, true));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 167, 230), 2));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(61, 186, 244));
+        jPanel6.setBackground(new java.awt.Color(0, 167, 230));
         jPanel6.setLayout(new java.awt.GridBagLayout());
 
         jLabel3.setBackground(new java.awt.Color(240, 249, 253));
@@ -126,7 +127,7 @@ public class ExameHemograma extends javax.swing.JFrame {
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 520, 40));
 
-        jPanel1.setBackground(new java.awt.Color(240, 249, 253));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         txtHemacias.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtHemacias.setForeground(new java.awt.Color(11, 19, 25));
@@ -517,7 +518,7 @@ public class ExameHemograma extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel53)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -779,13 +780,33 @@ public class ExameHemograma extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 40, 520, -1));
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 40, 500, 550));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 522, 595));
+        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
+        contMasq.setLayout(contMasqLayout);
+        contMasqLayout.setHorizontalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1110, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        contMasqLayout.setVerticalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(contMasq, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
     // Faz a validação dos campos, se foram preenchidos corretamente 
     private void hemogramaVerificaSalvar()
     {
@@ -801,7 +822,6 @@ public class ExameHemograma extends javax.swing.JFrame {
         }
         this.setVisible(false);
     }
-    
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         hemogramaVerificaSalvar();
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -809,8 +829,18 @@ public class ExameHemograma extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-
+    
+    private void formConfig(){
+        //Icone do Sistema
+        URL url = this.getClass().getResource("/imgIcons/icon.png");  
+        Image iconeTitulo;
+        iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        
+        this.setBackground(new Color(255,255,255,150));
+        
+        // Posicionamento do Frame
+        setLocationRelativeTo(null);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -833,8 +863,7 @@ public class ExameHemograma extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ExameHemograma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -847,6 +876,7 @@ public class ExameHemograma extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnCancelar;
     private javax.swing.JToggleButton btnSalvar;
+    private javax.swing.JPanel contMasq;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

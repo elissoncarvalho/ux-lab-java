@@ -1,35 +1,30 @@
-
 package fronteira;
 
+import entidade.Helper;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
-
-import entidade.Helper;
 
 /**
  *
  * @author Elisson
  */
 public class ExameGeraRelatorio extends javax.swing.JFrame {
-
+    
     Helper helper = new Helper();
     
     public ExameGeraRelatorio() {
         initComponents();
         
-        //Icone do Sistema
-        URL url = this.getClass().getResource("/imgIcons/icon.png");  
-        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
-        // Posicionamento do Frame
-        setLocationRelativeTo(null);
-        setAlwaysOnTop(true);
+        formConfig();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        contMasq = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -38,12 +33,17 @@ public class ExameGeraRelatorio extends javax.swing.JFrame {
         btnVoltar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Detalhes do Cliente");
+        setTitle("Gerar Relátorio");
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
-        setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        setName("ClienteDetalhe"); // NOI18N
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setUndecorated(true);
         setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
+
+        contMasq.setBackground(new java.awt.Color(255, 255, 255));
+        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
+        contMasq.setOpaque(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
@@ -127,23 +127,52 @@ public class ExameGeraRelatorio extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
+        contMasq.setLayout(contMasqLayout);
+        contMasqLayout.setHorizontalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1110, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        contMasqLayout.setVerticalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(contMasq, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-
-        this.setVisible(false);
-    }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnImprimirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVoltarActionPerformed
+    
+    private void formConfig(){
+        //Icone do Sistema
+        URL url = this.getClass().getResource("/imgIcons/icon.png");  
+        Image iconeTitulo;
+        iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        
+        this.setBackground(new Color(255,255,255,150));
+        
+        // Posicionamento do Frame
+        setLocationRelativeTo(null);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -166,8 +195,7 @@ public class ExameGeraRelatorio extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ExameGeraRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -180,6 +208,7 @@ public class ExameGeraRelatorio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnImprimir;
     private javax.swing.JToggleButton btnVoltar;
+    private javax.swing.JPanel contMasq;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -1,27 +1,30 @@
-
 package fronteira;
 
+import entidade.Helper;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 
+/**
+ *
+ * @author Elisson
+ */
 public class ExameBioquimica extends javax.swing.JFrame {
-
+    
+    Helper helper = new Helper();
+    
     public ExameBioquimica() {
         initComponents();
-        //Icone do Sistema
-        URL url = this.getClass().getResource("/imgIcons/icon.png");  
-        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
-        this.setIconImage(iconeTitulo);
         
-        setLocationRelativeTo(null);
-        setAlwaysOnTop(true);
+        formConfig();
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        contMasq = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -70,16 +73,22 @@ public class ExameBioquimica extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bioquímica");
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
-        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
+
+        contMasq.setBackground(new java.awt.Color(255, 255, 255));
+        contMasq.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 167, 230)));
+        contMasq.setOpaque(false);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 59, 77), 1, true));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 167, 230), 2));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(61, 186, 244));
+        jPanel6.setBackground(new java.awt.Color(0, 167, 230));
         jPanel6.setLayout(new java.awt.GridBagLayout());
 
         jLabel3.setBackground(new java.awt.Color(240, 249, 253));
@@ -91,7 +100,7 @@ public class ExameBioquimica extends javax.swing.JFrame {
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 470, 40));
 
-        jPanel1.setBackground(new java.awt.Color(240, 249, 253));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(11, 19, 25));
@@ -574,9 +583,30 @@ public class ExameBioquimica extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 40, 470, 500));
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 40, 450, 500));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 472, 542));
+        javax.swing.GroupLayout contMasqLayout = new javax.swing.GroupLayout(contMasq);
+        contMasq.setLayout(contMasqLayout);
+        contMasqLayout.setHorizontalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1110, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        contMasqLayout.setVerticalGroup(
+            contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(contMasqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contMasqLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(contMasq, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -585,17 +615,13 @@ public class ExameBioquimica extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGlicoseJejumActionPerformed
 
-    private void txtUreiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUreiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUreiaActionPerformed
-
     private void txtAcidoUricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAcidoUricoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAcidoUricoActionPerformed
 
-    private void txtGamaGtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGamaGtActionPerformed
+    private void txtUreiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUreiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtGamaGtActionPerformed
+    }//GEN-LAST:event_txtUreiaActionPerformed
 
     private void txtCreatininaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCreatininaActionPerformed
         // TODO add your handling code here:
@@ -605,21 +631,29 @@ public class ExameBioquimica extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtColesterolTotalActionPerformed
 
-    private void txtVldlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVldlActionPerformed
+    private void txtHdlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHdlActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtVldlActionPerformed
+    }//GEN-LAST:event_txtHdlActionPerformed
 
     private void txtLdlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLdlActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLdlActionPerformed
 
+    private void txtVldlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVldlActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVldlActionPerformed
+
     private void txtTrigliceridesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTrigliceridesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTrigliceridesActionPerformed
 
-    private void txtHdlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHdlActionPerformed
+    private void txtGamaGtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGamaGtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtHdlActionPerformed
+    }//GEN-LAST:event_txtGamaGtActionPerformed
+
+    private void txtBilirrubinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBilirrubinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBilirrubinaActionPerformed
 
     private void txtTgoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTgoActionPerformed
         // TODO add your handling code here:
@@ -629,10 +663,6 @@ public class ExameBioquimica extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTgpActionPerformed
 
-    private void txtBilirrubinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBilirrubinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBilirrubinaActionPerformed
-
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -640,7 +670,18 @@ public class ExameBioquimica extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
-
+    
+    private void formConfig(){
+        //Icone do Sistema
+        URL url = this.getClass().getResource("/imgIcons/icon.png");  
+        Image iconeTitulo;
+        iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        
+        this.setBackground(new Color(255,255,255,150));
+        
+        // Posicionamento do Frame
+        setLocationRelativeTo(null);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -663,10 +704,7 @@ public class ExameBioquimica extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ExameBioquimica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -679,6 +717,7 @@ public class ExameBioquimica extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnCancelar;
     private javax.swing.JToggleButton btnSalvar;
+    private javax.swing.JPanel contMasq;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
