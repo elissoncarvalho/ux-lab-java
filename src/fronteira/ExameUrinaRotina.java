@@ -34,7 +34,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         txtAfDens = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
-        txtAfAspcto = new javax.swing.JTextField();
+        txtAfAspecto = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
         txtAfPh = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
@@ -108,7 +108,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         txtAfDens.setToolTipText("");
         txtAfDens.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtAfDens.setName(""); // NOI18N
-        txtAfDens.setNextFocusableComponent(txtAfAspcto);
+        txtAfDens.setNextFocusableComponent(txtAfAspecto);
         txtAfDens.setOpaque(false);
         txtAfDens.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtAfDens.addActionListener(new java.awt.event.ActionListener() {
@@ -121,17 +121,17 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         jLabel47.setForeground(new java.awt.Color(11, 19, 25));
         jLabel47.setText("Aspecto");
 
-        txtAfAspcto.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtAfAspcto.setForeground(new java.awt.Color(11, 19, 25));
-        txtAfAspcto.setToolTipText("");
-        txtAfAspcto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtAfAspcto.setName(""); // NOI18N
-        txtAfAspcto.setNextFocusableComponent(txtAfPh);
-        txtAfAspcto.setOpaque(false);
-        txtAfAspcto.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtAfAspcto.addActionListener(new java.awt.event.ActionListener() {
+        txtAfAspecto.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtAfAspecto.setForeground(new java.awt.Color(11, 19, 25));
+        txtAfAspecto.setToolTipText("");
+        txtAfAspecto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtAfAspecto.setName(""); // NOI18N
+        txtAfAspecto.setNextFocusableComponent(txtAfPh);
+        txtAfAspecto.setOpaque(false);
+        txtAfAspecto.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtAfAspecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAfAspctoActionPerformed(evt);
+                txtAfAspectoActionPerformed(evt);
             }
         });
 
@@ -300,7 +300,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
                             .addComponent(jLabel51)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(txtAfPh, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                .addComponent(txtAfAspcto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                                .addComponent(txtAfAspecto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                             .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +356,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addComponent(jLabel47)
                         .addGap(0, 0, 0)
-                        .addComponent(txtAfAspcto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtAfAspecto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel51)
                         .addGap(0, 0, 0)
@@ -392,9 +392,9 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAfCorActionPerformed
 
-    private void txtAfAspctoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfAspctoActionPerformed
+    private void txtAfAspectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfAspectoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAfAspctoActionPerformed
+    }//GEN-LAST:event_txtAfAspectoActionPerformed
 
     private void txtAfDensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfDensActionPerformed
         // TODO add your handling code here:
@@ -489,7 +489,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField txtAfAspcto;
+    private javax.swing.JTextField txtAfAspecto;
     private javax.swing.JTextField txtAfCor;
     private javax.swing.JTextField txtAfDens;
     private javax.swing.JTextField txtAfPh;

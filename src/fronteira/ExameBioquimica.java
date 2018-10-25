@@ -27,31 +27,31 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel45 = new javax.swing.JLabel();
-        txtConvenio18 = new javax.swing.JTextField();
+        txtGlicoseJejum = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
-        txtConvenio21 = new javax.swing.JTextField();
+        txtAcidoUrico = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
-        txtConvenio20 = new javax.swing.JTextField();
+        txtUreia = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
-        txtConvenio24 = new javax.swing.JTextField();
+        txtCreatinina = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
-        txtConvenio22 = new javax.swing.JTextField();
+        txtColesterolTotal = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
-        txtConvenio31 = new javax.swing.JTextField();
+        txtHdl = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
-        txtConvenio26 = new javax.swing.JTextField();
+        txtLdl = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        txtConvenio32 = new javax.swing.JTextField();
+        txtVldl = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
-        txtConvenio30 = new javax.swing.JTextField();
+        txtTriglicerides = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
-        txtConvenio23 = new javax.swing.JTextField();
+        txtGamaGt = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
-        txtConvenio29 = new javax.swing.JTextField();
+        txtBilirrubina = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
-        txtTGO = new javax.swing.JTextField();
+        txtTgo = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
-        txtConvenio28 = new javax.swing.JTextField();
+        txtTgp = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -97,16 +97,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel45.setForeground(new java.awt.Color(11, 19, 25));
         jLabel45.setText("Glicose em jejum");
 
-        txtConvenio18.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio18.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio18.setToolTipText("");
-        txtConvenio18.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio18.setName(""); // NOI18N
-        txtConvenio18.setOpaque(false);
-        txtConvenio18.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio18.addActionListener(new java.awt.event.ActionListener() {
+        txtGlicoseJejum.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtGlicoseJejum.setForeground(new java.awt.Color(11, 19, 25));
+        txtGlicoseJejum.setToolTipText("");
+        txtGlicoseJejum.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtGlicoseJejum.setName(""); // NOI18N
+        txtGlicoseJejum.setOpaque(false);
+        txtGlicoseJejum.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtGlicoseJejum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio18ActionPerformed(evt);
+                txtGlicoseJejumActionPerformed(evt);
             }
         });
 
@@ -114,16 +114,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel48.setForeground(new java.awt.Color(11, 19, 25));
         jLabel48.setText("Ácido úrico");
 
-        txtConvenio21.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio21.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio21.setToolTipText("");
-        txtConvenio21.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio21.setName(""); // NOI18N
-        txtConvenio21.setOpaque(false);
-        txtConvenio21.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio21.addActionListener(new java.awt.event.ActionListener() {
+        txtAcidoUrico.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtAcidoUrico.setForeground(new java.awt.Color(11, 19, 25));
+        txtAcidoUrico.setToolTipText("");
+        txtAcidoUrico.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtAcidoUrico.setName(""); // NOI18N
+        txtAcidoUrico.setOpaque(false);
+        txtAcidoUrico.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtAcidoUrico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio21ActionPerformed(evt);
+                txtAcidoUricoActionPerformed(evt);
             }
         });
 
@@ -131,16 +131,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel47.setForeground(new java.awt.Color(11, 19, 25));
         jLabel47.setText("Uréia");
 
-        txtConvenio20.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio20.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio20.setToolTipText("");
-        txtConvenio20.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio20.setName(""); // NOI18N
-        txtConvenio20.setOpaque(false);
-        txtConvenio20.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio20.addActionListener(new java.awt.event.ActionListener() {
+        txtUreia.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtUreia.setForeground(new java.awt.Color(11, 19, 25));
+        txtUreia.setToolTipText("");
+        txtUreia.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtUreia.setName(""); // NOI18N
+        txtUreia.setOpaque(false);
+        txtUreia.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtUreia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio20ActionPerformed(evt);
+                txtUreiaActionPerformed(evt);
             }
         });
 
@@ -148,16 +148,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel51.setForeground(new java.awt.Color(11, 19, 25));
         jLabel51.setText("Creatinina");
 
-        txtConvenio24.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio24.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio24.setToolTipText("");
-        txtConvenio24.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio24.setName(""); // NOI18N
-        txtConvenio24.setOpaque(false);
-        txtConvenio24.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio24.addActionListener(new java.awt.event.ActionListener() {
+        txtCreatinina.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtCreatinina.setForeground(new java.awt.Color(11, 19, 25));
+        txtCreatinina.setToolTipText("");
+        txtCreatinina.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtCreatinina.setName(""); // NOI18N
+        txtCreatinina.setOpaque(false);
+        txtCreatinina.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtCreatinina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio24ActionPerformed(evt);
+                txtCreatininaActionPerformed(evt);
             }
         });
 
@@ -165,16 +165,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel49.setForeground(new java.awt.Color(11, 19, 25));
         jLabel49.setText("Colesterol total");
 
-        txtConvenio22.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio22.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio22.setToolTipText("");
-        txtConvenio22.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio22.setName(""); // NOI18N
-        txtConvenio22.setOpaque(false);
-        txtConvenio22.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio22.addActionListener(new java.awt.event.ActionListener() {
+        txtColesterolTotal.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtColesterolTotal.setForeground(new java.awt.Color(11, 19, 25));
+        txtColesterolTotal.setToolTipText("");
+        txtColesterolTotal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtColesterolTotal.setName(""); // NOI18N
+        txtColesterolTotal.setOpaque(false);
+        txtColesterolTotal.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtColesterolTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio22ActionPerformed(evt);
+                txtColesterolTotalActionPerformed(evt);
             }
         });
 
@@ -182,16 +182,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel54.setForeground(new java.awt.Color(11, 19, 25));
         jLabel54.setText("HDL");
 
-        txtConvenio31.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio31.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio31.setToolTipText("");
-        txtConvenio31.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio31.setName(""); // NOI18N
-        txtConvenio31.setOpaque(false);
-        txtConvenio31.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio31.addActionListener(new java.awt.event.ActionListener() {
+        txtHdl.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtHdl.setForeground(new java.awt.Color(11, 19, 25));
+        txtHdl.setToolTipText("");
+        txtHdl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtHdl.setName(""); // NOI18N
+        txtHdl.setOpaque(false);
+        txtHdl.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtHdl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio31ActionPerformed(evt);
+                txtHdlActionPerformed(evt);
             }
         });
 
@@ -199,16 +199,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel56.setForeground(new java.awt.Color(11, 19, 25));
         jLabel56.setText("LDL");
 
-        txtConvenio26.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio26.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio26.setToolTipText("");
-        txtConvenio26.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio26.setName(""); // NOI18N
-        txtConvenio26.setOpaque(false);
-        txtConvenio26.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio26.addActionListener(new java.awt.event.ActionListener() {
+        txtLdl.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtLdl.setForeground(new java.awt.Color(11, 19, 25));
+        txtLdl.setToolTipText("");
+        txtLdl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtLdl.setName(""); // NOI18N
+        txtLdl.setOpaque(false);
+        txtLdl.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtLdl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio26ActionPerformed(evt);
+                txtLdlActionPerformed(evt);
             }
         });
 
@@ -216,16 +216,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel58.setForeground(new java.awt.Color(11, 19, 25));
         jLabel58.setText("VLDL");
 
-        txtConvenio32.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio32.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio32.setToolTipText("");
-        txtConvenio32.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio32.setName(""); // NOI18N
-        txtConvenio32.setOpaque(false);
-        txtConvenio32.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio32.addActionListener(new java.awt.event.ActionListener() {
+        txtVldl.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtVldl.setForeground(new java.awt.Color(11, 19, 25));
+        txtVldl.setToolTipText("");
+        txtVldl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtVldl.setName(""); // NOI18N
+        txtVldl.setOpaque(false);
+        txtVldl.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtVldl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio32ActionPerformed(evt);
+                txtVldlActionPerformed(evt);
             }
         });
 
@@ -233,16 +233,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel55.setForeground(new java.awt.Color(11, 19, 25));
         jLabel55.setText("Triglicerides");
 
-        txtConvenio30.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio30.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio30.setToolTipText("");
-        txtConvenio30.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio30.setName(""); // NOI18N
-        txtConvenio30.setOpaque(false);
-        txtConvenio30.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio30.addActionListener(new java.awt.event.ActionListener() {
+        txtTriglicerides.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtTriglicerides.setForeground(new java.awt.Color(11, 19, 25));
+        txtTriglicerides.setToolTipText("");
+        txtTriglicerides.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtTriglicerides.setName(""); // NOI18N
+        txtTriglicerides.setOpaque(false);
+        txtTriglicerides.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtTriglicerides.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio30ActionPerformed(evt);
+                txtTrigliceridesActionPerformed(evt);
             }
         });
 
@@ -250,16 +250,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel50.setForeground(new java.awt.Color(11, 19, 25));
         jLabel50.setText("GAMA GT");
 
-        txtConvenio23.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio23.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio23.setToolTipText("");
-        txtConvenio23.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio23.setName(""); // NOI18N
-        txtConvenio23.setOpaque(false);
-        txtConvenio23.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio23.addActionListener(new java.awt.event.ActionListener() {
+        txtGamaGt.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtGamaGt.setForeground(new java.awt.Color(11, 19, 25));
+        txtGamaGt.setToolTipText("");
+        txtGamaGt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtGamaGt.setName(""); // NOI18N
+        txtGamaGt.setOpaque(false);
+        txtGamaGt.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtGamaGt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio23ActionPerformed(evt);
+                txtGamaGtActionPerformed(evt);
             }
         });
 
@@ -267,16 +267,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel53.setForeground(new java.awt.Color(11, 19, 25));
         jLabel53.setText("Bilirrubina");
 
-        txtConvenio29.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio29.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio29.setToolTipText("");
-        txtConvenio29.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio29.setName(""); // NOI18N
-        txtConvenio29.setOpaque(false);
-        txtConvenio29.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio29.addActionListener(new java.awt.event.ActionListener() {
+        txtBilirrubina.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtBilirrubina.setForeground(new java.awt.Color(11, 19, 25));
+        txtBilirrubina.setToolTipText("");
+        txtBilirrubina.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtBilirrubina.setName(""); // NOI18N
+        txtBilirrubina.setOpaque(false);
+        txtBilirrubina.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtBilirrubina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio29ActionPerformed(evt);
+                txtBilirrubinaActionPerformed(evt);
             }
         });
 
@@ -284,16 +284,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel59.setForeground(new java.awt.Color(11, 19, 25));
         jLabel59.setText("TGO");
 
-        txtTGO.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtTGO.setForeground(new java.awt.Color(11, 19, 25));
-        txtTGO.setToolTipText("");
-        txtTGO.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtTGO.setName(""); // NOI18N
-        txtTGO.setOpaque(false);
-        txtTGO.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtTGO.addActionListener(new java.awt.event.ActionListener() {
+        txtTgo.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtTgo.setForeground(new java.awt.Color(11, 19, 25));
+        txtTgo.setToolTipText("");
+        txtTgo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtTgo.setName(""); // NOI18N
+        txtTgo.setOpaque(false);
+        txtTgo.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtTgo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTGOActionPerformed(evt);
+                txtTgoActionPerformed(evt);
             }
         });
 
@@ -301,16 +301,16 @@ public class ExameBioquimica extends javax.swing.JFrame {
         jLabel57.setForeground(new java.awt.Color(11, 19, 25));
         jLabel57.setText("TGP");
 
-        txtConvenio28.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio28.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio28.setToolTipText("");
-        txtConvenio28.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio28.setName(""); // NOI18N
-        txtConvenio28.setOpaque(false);
-        txtConvenio28.setSelectionColor(new java.awt.Color(35, 59, 77));
-        txtConvenio28.addActionListener(new java.awt.event.ActionListener() {
+        txtTgp.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtTgp.setForeground(new java.awt.Color(11, 19, 25));
+        txtTgp.setToolTipText("");
+        txtTgp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtTgp.setName(""); // NOI18N
+        txtTgp.setOpaque(false);
+        txtTgp.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtTgp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConvenio28ActionPerformed(evt);
+                txtTgpActionPerformed(evt);
             }
         });
 
@@ -409,22 +409,22 @@ public class ExameBioquimica extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtGlicoseJejum, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel48)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtAcidoUrico, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtUreia, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio24, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCreatinina, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(100, 100, 100)
@@ -438,44 +438,44 @@ public class ExameBioquimica extends javax.swing.JFrame {
                                     .addComponent(jLabel58)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(txtConvenio32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                                            .addComponent(txtConvenio26, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtConvenio31, javax.swing.GroupLayout.Alignment.LEADING))
+                                            .addComponent(txtVldl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                                            .addComponent(txtLdl, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtHdl, javax.swing.GroupLayout.Alignment.LEADING))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio22, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtColesterolTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio30, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTriglicerides, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio23, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtGamaGt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel53)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio29, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtBilirrubina, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtConvenio28, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTgp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel59)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTGO, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTgo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel57)))
@@ -493,13 +493,13 @@ public class ExameBioquimica extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGlicoseJejum, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel49)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio22, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtColesterolTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -507,44 +507,44 @@ public class ExameBioquimica extends javax.swing.JFrame {
                         .addComponent(jLabel48)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAcidoUrico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel47)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio20, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUreia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel51)
                         .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio24, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCreatinina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel54)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHdl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel56)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio26, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLdl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel58)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio32, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtVldl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel55)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio30, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTriglicerides, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11))))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -552,9 +552,9 @@ public class ExameBioquimica extends javax.swing.JFrame {
                     .addComponent(jLabel59))
                 .addGap(0, 0, 0)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtConvenio23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtGamaGt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(txtTGO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTgo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -563,9 +563,9 @@ public class ExameBioquimica extends javax.swing.JFrame {
                         .addComponent(jLabel53)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio29, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBilirrubina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13)
-                            .addComponent(txtConvenio28, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTgp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,57 +581,57 @@ public class ExameBioquimica extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtConvenio18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio18ActionPerformed
+    private void txtGlicoseJejumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGlicoseJejumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio18ActionPerformed
+    }//GEN-LAST:event_txtGlicoseJejumActionPerformed
 
-    private void txtConvenio20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio20ActionPerformed
+    private void txtUreiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUreiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio20ActionPerformed
+    }//GEN-LAST:event_txtUreiaActionPerformed
 
-    private void txtConvenio21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio21ActionPerformed
+    private void txtAcidoUricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAcidoUricoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio21ActionPerformed
+    }//GEN-LAST:event_txtAcidoUricoActionPerformed
 
-    private void txtConvenio23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio23ActionPerformed
+    private void txtGamaGtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGamaGtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio23ActionPerformed
+    }//GEN-LAST:event_txtGamaGtActionPerformed
 
-    private void txtConvenio24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio24ActionPerformed
+    private void txtCreatininaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCreatininaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio24ActionPerformed
+    }//GEN-LAST:event_txtCreatininaActionPerformed
 
-    private void txtConvenio22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio22ActionPerformed
+    private void txtColesterolTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColesterolTotalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio22ActionPerformed
+    }//GEN-LAST:event_txtColesterolTotalActionPerformed
 
-    private void txtConvenio32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio32ActionPerformed
+    private void txtVldlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVldlActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio32ActionPerformed
+    }//GEN-LAST:event_txtVldlActionPerformed
 
-    private void txtConvenio26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio26ActionPerformed
+    private void txtLdlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLdlActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio26ActionPerformed
+    }//GEN-LAST:event_txtLdlActionPerformed
 
-    private void txtConvenio30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio30ActionPerformed
+    private void txtTrigliceridesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTrigliceridesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio30ActionPerformed
+    }//GEN-LAST:event_txtTrigliceridesActionPerformed
 
-    private void txtConvenio31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio31ActionPerformed
+    private void txtHdlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHdlActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio31ActionPerformed
+    }//GEN-LAST:event_txtHdlActionPerformed
 
-    private void txtTGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTGOActionPerformed
+    private void txtTgoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTgoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTGOActionPerformed
+    }//GEN-LAST:event_txtTgoActionPerformed
 
-    private void txtConvenio28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio28ActionPerformed
+    private void txtTgpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTgpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio28ActionPerformed
+    }//GEN-LAST:event_txtTgpActionPerformed
 
-    private void txtConvenio29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvenio29ActionPerformed
+    private void txtBilirrubinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBilirrubinaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConvenio29ActionPerformed
+    }//GEN-LAST:event_txtBilirrubinaActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         this.setVisible(false);
@@ -709,18 +709,18 @@ public class ExameBioquimica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField txtConvenio18;
-    private javax.swing.JTextField txtConvenio20;
-    private javax.swing.JTextField txtConvenio21;
-    private javax.swing.JTextField txtConvenio22;
-    private javax.swing.JTextField txtConvenio23;
-    private javax.swing.JTextField txtConvenio24;
-    private javax.swing.JTextField txtConvenio26;
-    private javax.swing.JTextField txtConvenio28;
-    private javax.swing.JTextField txtConvenio29;
-    private javax.swing.JTextField txtConvenio30;
-    private javax.swing.JTextField txtConvenio31;
-    private javax.swing.JTextField txtConvenio32;
-    private javax.swing.JTextField txtTGO;
+    private javax.swing.JTextField txtAcidoUrico;
+    private javax.swing.JTextField txtBilirrubina;
+    private javax.swing.JTextField txtColesterolTotal;
+    private javax.swing.JTextField txtCreatinina;
+    private javax.swing.JTextField txtGamaGt;
+    private javax.swing.JTextField txtGlicoseJejum;
+    private javax.swing.JTextField txtHdl;
+    private javax.swing.JTextField txtLdl;
+    private javax.swing.JTextField txtTgo;
+    private javax.swing.JTextField txtTgp;
+    private javax.swing.JTextField txtTriglicerides;
+    private javax.swing.JTextField txtUreia;
+    private javax.swing.JTextField txtVldl;
     // End of variables declaration//GEN-END:variables
 }

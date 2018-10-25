@@ -22,7 +22,7 @@ public class HemogramaDAO {
             + "RDW = ?, LEUCOCITOS = ?, NEUTROFILOS = ?, SEGMENTADOS = ?, "
             + "BASTONETES = ?, EOSINOFILOS = ?, BASOFILOS = ?, LINFOCITOS = ?, "
             + "MONOCITOS = ?, CONTAGEMPLAQUETAS = ? WHERE CODIGOH = ?";
-    private String deleteHemo = "UPDATE HEMOGRAMA SET DELET = ? WHERE DELET = ?";
+    private String deleteHemo = "UPDATE HEMOGRAMA SET DELET = ? WHERE ID_PEDIDO_FK = ID_PEDIDO";
 
     public void cadastraHemo(Hemograma hemo){
         try {
