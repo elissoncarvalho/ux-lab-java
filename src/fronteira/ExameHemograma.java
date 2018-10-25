@@ -36,19 +36,19 @@ public class ExameHemograma extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        txtConvenio18 = new javax.swing.JTextField();
+        txtHemacias = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
-        txtConvenio19 = new javax.swing.JTextField();
+        txtHemoglobina = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
-        txtConvenio20 = new javax.swing.JTextField();
+        txtVCM = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
-        txtConvenio21 = new javax.swing.JTextField();
+        txtHematocrito = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
-        txtConvenio23 = new javax.swing.JTextField();
+        txtRDW = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
-        txtConvenio24 = new javax.swing.JTextField();
+        txtHCM = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
-        txtConvenio25 = new javax.swing.JTextField();
+        txtCHCM = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         txtConvenio22 = new javax.swing.JTextField();
@@ -128,85 +128,85 @@ public class ExameHemograma extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(240, 249, 253));
 
-        txtConvenio18.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio18.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio18.setToolTipText("");
-        txtConvenio18.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio18.setName(""); // NOI18N
-        txtConvenio18.setOpaque(false);
-        txtConvenio18.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtHemacias.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtHemacias.setForeground(new java.awt.Color(11, 19, 25));
+        txtHemacias.setToolTipText("");
+        txtHemacias.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtHemacias.setName(""); // NOI18N
+        txtHemacias.setOpaque(false);
+        txtHemacias.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(11, 19, 25));
         jLabel45.setText("Hemácias");
 
-        txtConvenio19.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio19.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio19.setToolTipText("");
-        txtConvenio19.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio19.setName(""); // NOI18N
-        txtConvenio19.setOpaque(false);
-        txtConvenio19.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtHemoglobina.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtHemoglobina.setForeground(new java.awt.Color(11, 19, 25));
+        txtHemoglobina.setToolTipText("");
+        txtHemoglobina.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtHemoglobina.setName(""); // NOI18N
+        txtHemoglobina.setOpaque(false);
+        txtHemoglobina.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(11, 19, 25));
         jLabel46.setText("Hemoglobina");
 
-        txtConvenio20.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio20.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio20.setToolTipText("");
-        txtConvenio20.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio20.setName(""); // NOI18N
-        txtConvenio20.setOpaque(false);
-        txtConvenio20.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtVCM.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtVCM.setForeground(new java.awt.Color(11, 19, 25));
+        txtVCM.setToolTipText("");
+        txtVCM.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtVCM.setName(""); // NOI18N
+        txtVCM.setOpaque(false);
+        txtVCM.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(11, 19, 25));
         jLabel47.setText("VCM");
 
-        txtConvenio21.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio21.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio21.setToolTipText("");
-        txtConvenio21.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio21.setName(""); // NOI18N
-        txtConvenio21.setOpaque(false);
-        txtConvenio21.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtHematocrito.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtHematocrito.setForeground(new java.awt.Color(11, 19, 25));
+        txtHematocrito.setToolTipText("");
+        txtHematocrito.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtHematocrito.setName(""); // NOI18N
+        txtHematocrito.setOpaque(false);
+        txtHematocrito.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(11, 19, 25));
         jLabel48.setText("Hematócrito");
 
-        txtConvenio23.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio23.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio23.setToolTipText("");
-        txtConvenio23.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio23.setName(""); // NOI18N
-        txtConvenio23.setOpaque(false);
-        txtConvenio23.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtRDW.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtRDW.setForeground(new java.awt.Color(11, 19, 25));
+        txtRDW.setToolTipText("");
+        txtRDW.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtRDW.setName(""); // NOI18N
+        txtRDW.setOpaque(false);
+        txtRDW.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(11, 19, 25));
         jLabel50.setText("RDW");
 
-        txtConvenio24.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio24.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio24.setToolTipText("");
-        txtConvenio24.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio24.setName(""); // NOI18N
-        txtConvenio24.setOpaque(false);
-        txtConvenio24.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtHCM.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtHCM.setForeground(new java.awt.Color(11, 19, 25));
+        txtHCM.setToolTipText("");
+        txtHCM.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtHCM.setName(""); // NOI18N
+        txtHCM.setOpaque(false);
+        txtHCM.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(11, 19, 25));
         jLabel51.setText("HCM");
 
-        txtConvenio25.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenio25.setForeground(new java.awt.Color(11, 19, 25));
-        txtConvenio25.setToolTipText("");
-        txtConvenio25.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenio25.setName(""); // NOI18N
-        txtConvenio25.setOpaque(false);
-        txtConvenio25.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtCHCM.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtCHCM.setForeground(new java.awt.Color(11, 19, 25));
+        txtCHCM.setToolTipText("");
+        txtCHCM.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtCHCM.setName(""); // NOI18N
+        txtCHCM.setOpaque(false);
+        txtCHCM.setSelectionColor(new java.awt.Color(35, 59, 77));
 
         jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(11, 19, 25));
@@ -528,11 +528,11 @@ public class ExameHemograma extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(txtConvenio19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtHemoglobina, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(txtConvenio18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtHemacias, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel45))
@@ -638,23 +638,23 @@ public class ExameHemograma extends javax.swing.JFrame {
                                 .addComponent(jLabel47)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtConvenio23, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtRDW, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtConvenio25, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtCHCM, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtConvenio24, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtHCM, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtConvenio20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtVCM, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtConvenio21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtHematocrito, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(18, 18, 18)
@@ -682,7 +682,7 @@ public class ExameHemograma extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHemacias, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -692,7 +692,7 @@ public class ExameHemograma extends javax.swing.JFrame {
                             .addComponent(jLabel54))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(txtConvenio19, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtHemoglobina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtConvenio35, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtConvenio31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -704,7 +704,7 @@ public class ExameHemograma extends javax.swing.JFrame {
                     .addComponent(jLabel48))
                 .addGap(0, 0, 0)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtConvenio21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHematocrito, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(txtConvenio26, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
@@ -716,7 +716,7 @@ public class ExameHemograma extends javax.swing.JFrame {
                     .addComponent(jLabel58))
                 .addGap(0, 0, 0)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtConvenio20, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVCM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(txtConvenio32, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
@@ -728,7 +728,7 @@ public class ExameHemograma extends javax.swing.JFrame {
                         .addComponent(jLabel51)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio24, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHCM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
                             .addComponent(txtConvenio43, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtConvenio42, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -741,7 +741,7 @@ public class ExameHemograma extends javax.swing.JFrame {
                         .addComponent(jLabel52)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio25, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCHCM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)
                             .addComponent(txtConvenio45, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtConvenio44, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -754,7 +754,7 @@ public class ExameHemograma extends javax.swing.JFrame {
                         .addComponent(jLabel50)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtConvenio23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRDW, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(txtConvenio47, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtConvenio46, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -891,14 +891,8 @@ public class ExameHemograma extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField txtConvenio18;
-    private javax.swing.JTextField txtConvenio19;
-    private javax.swing.JTextField txtConvenio20;
-    private javax.swing.JTextField txtConvenio21;
+    private javax.swing.JTextField txtCHCM;
     private javax.swing.JTextField txtConvenio22;
-    private javax.swing.JTextField txtConvenio23;
-    private javax.swing.JTextField txtConvenio24;
-    private javax.swing.JTextField txtConvenio25;
     private javax.swing.JTextField txtConvenio26;
     private javax.swing.JTextField txtConvenio29;
     private javax.swing.JTextField txtConvenio31;
@@ -915,5 +909,11 @@ public class ExameHemograma extends javax.swing.JFrame {
     private javax.swing.JTextField txtConvenio47;
     private javax.swing.JTextField txtConvenio48;
     private javax.swing.JTextField txtConvenio49;
+    private javax.swing.JTextField txtHCM;
+    private javax.swing.JTextField txtHemacias;
+    private javax.swing.JTextField txtHematocrito;
+    private javax.swing.JTextField txtHemoglobina;
+    private javax.swing.JTextField txtRDW;
+    private javax.swing.JTextField txtVCM;
     // End of variables declaration//GEN-END:variables
 }

@@ -118,12 +118,12 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="txtConvenio19" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="txtHemoglobina" min="-2" pref="80" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel4" min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="txtConvenio18" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="txtHemacias" min="-2" pref="80" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel17" min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
@@ -250,27 +250,27 @@
                                       <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="txtConvenio23" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtRDW" min="-2" pref="80" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel5" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="txtConvenio25" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtCHCM" min="-2" pref="80" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel1" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="txtConvenio24" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtHCM" min="-2" pref="80" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel7" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="txtConvenio20" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtVCM" min="-2" pref="80" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel6" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="txtConvenio21" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtHematocrito" min="-2" pref="80" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel9" min="-2" pref="80" max="-2" attributes="0"/>
                                           </Group>
@@ -310,7 +310,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtConvenio18" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="txtHemacias" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -324,7 +324,7 @@
                               </Group>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtConvenio19" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="txtHemoglobina" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -341,7 +341,7 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtConvenio21" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtHematocrito" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtConvenio26" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -355,7 +355,7 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtConvenio20" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtVCM" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtConvenio32" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -368,7 +368,7 @@
                               <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtConvenio24" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="txtHCM" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtConvenio43" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="txtConvenio42" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -384,7 +384,7 @@
                               <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtConvenio25" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="txtCHCM" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtConvenio45" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="txtConvenio44" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -400,7 +400,7 @@
                               <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtConvenio23" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="txtRDW" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtConvenio47" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="txtConvenio46" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -433,7 +433,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txtConvenio18">
+            <Component class="javax.swing.JTextField" name="txtHemacias">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="12" style="0"/>
@@ -467,7 +467,7 @@
                 <Property name="text" type="java.lang.String" value="Hem&#xe1;cias"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConvenio19">
+            <Component class="javax.swing.JTextField" name="txtHemoglobina">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="12" style="0"/>
@@ -501,7 +501,7 @@
                 <Property name="text" type="java.lang.String" value="Hemoglobina"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConvenio20">
+            <Component class="javax.swing.JTextField" name="txtVCM">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="12" style="0"/>
@@ -535,7 +535,7 @@
                 <Property name="text" type="java.lang.String" value="VCM"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConvenio21">
+            <Component class="javax.swing.JTextField" name="txtHematocrito">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="12" style="0"/>
@@ -569,7 +569,7 @@
                 <Property name="text" type="java.lang.String" value="Hemat&#xf3;crito"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConvenio23">
+            <Component class="javax.swing.JTextField" name="txtRDW">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="12" style="0"/>
@@ -603,7 +603,7 @@
                 <Property name="text" type="java.lang.String" value="RDW"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConvenio24">
+            <Component class="javax.swing.JTextField" name="txtHCM">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="12" style="0"/>
@@ -637,7 +637,7 @@
                 <Property name="text" type="java.lang.String" value="HCM"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConvenio25">
+            <Component class="javax.swing.JTextField" name="txtCHCM">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="12" style="0"/>
