@@ -7,10 +7,11 @@ import java.net.URL;
 import javax.swing.JFrame;
 
 import entidade.*;
+import javax.swing.JOptionPane;
 
 public class Principal extends javax.swing.JFrame {
     
-    
+    Helper              helper          = new Helper();
     ExameHemograma      hemograma       = new ExameHemograma();
     ExameBioquimica     bioquimica      = new ExameBioquimica();
     ExameUrinaRotina    urinaRotina     = new ExameUrinaRotina();
@@ -19,7 +20,10 @@ public class Principal extends javax.swing.JFrame {
     ClienteDetalhe      clienteDetalhe  = new ClienteDetalhe();
     ConfAddUser         confAddUser     = new ConfAddUser();
     ConfEdtUser         confEdtUser     = new ConfEdtUser();
-    Helper              helper          = new Helper();
+    ConfNewBackup       confNewBackup   = new ConfNewBackup();
+    ConfRestBeckup      confRestBeckup  = new ConfRestBeckup();
+    ConfAplicacao       confAplicacao   = new ConfAplicacao();
+    ConfRelatorio       confRelatorio   = new ConfRelatorio();
     
     private String iconsBg;
 
@@ -66,21 +70,6 @@ public class Principal extends javax.swing.JFrame {
         btnCadastraPedido = new javax.swing.JToggleButton();
         btnCadastraResultado = new javax.swing.JToggleButton();
         btnRelatorioExame = new javax.swing.JToggleButton();
-        divCadastraResultado = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
-        txtCodPedidoResult = new javax.swing.JTextField();
-        jLabel27 = new javax.swing.JLabel();
-        txtDataPedidoResult = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        txtConvenioResult = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
-        txtCodClienteResult = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        txtNomeResult = new javax.swing.JTextField();
-        btnHemograma = new javax.swing.JToggleButton();
-        btnBioquimica = new javax.swing.JToggleButton();
-        btnUrinaRotina = new javax.swing.JToggleButton();
-        btnSangueOculto = new javax.swing.JToggleButton();
         divCadastraExame = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         txtExPedCodPedido = new javax.swing.JTextField();
@@ -109,6 +98,21 @@ public class Principal extends javax.swing.JFrame {
         cbxSangueOculto = new javax.swing.JCheckBox();
         btnHemoPedSalvar = new javax.swing.JToggleButton();
         btnHemoPedCancelar = new javax.swing.JToggleButton();
+        divCadastraResultado = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        txtCodPedidoResult = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        txtDataPedidoResult = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        txtConvenioResult = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        txtCodClienteResult = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txtNomeResult = new javax.swing.JTextField();
+        btnHemograma = new javax.swing.JToggleButton();
+        btnBioquimica = new javax.swing.JToggleButton();
+        btnUrinaRotina = new javax.swing.JToggleButton();
+        btnSangueOculto = new javax.swing.JToggleButton();
         divRelatorioExame = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -295,11 +299,6 @@ public class Principal extends javax.swing.JFrame {
         lblNomeUsuario.setText("$NomeDeUsuario");
         lblNomeUsuario.setToolTipText("Usuário");
         lblNomeUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        lblNomeUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblNomeUsuarioMouseClicked(evt);
-            }
-        });
         barNotifq.add(lblNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 180, 50));
 
         lblNivelAcesso.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -399,7 +398,7 @@ public class Principal extends javax.swing.JFrame {
         btnInicioCadsResulExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgIcons/icons8_Edit_File_32px.png"))); // NOI18N
         btnInicioCadsResulExam.setText("Cadastrar Resultado");
         btnInicioCadsResulExam.setToolTipText("");
-        btnInicioCadsResulExam.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 15, 1, 1)));
+        btnInicioCadsResulExam.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1)));
         btnInicioCadsResulExam.setContentAreaFilled(false);
         btnInicioCadsResulExam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInicioCadsResulExam.setFocusable(false);
@@ -535,251 +534,6 @@ public class Principal extends javax.swing.JFrame {
         divNavExame.add(btnRelatorioExame, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 140, 50));
 
         divExame.add(divNavExame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 50));
-
-        divCadastraResultado.setBackground(new java.awt.Color(255, 255, 255));
-        divCadastraResultado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(35, 59, 77));
-        jLabel24.setText("Cód. Pedido");
-
-        txtCodPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtCodPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
-        txtCodPedidoResult.setToolTipText("");
-        txtCodPedidoResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtCodPedidoResult.setName(""); // NOI18N
-        txtCodPedidoResult.setOpaque(false);
-        txtCodPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(35, 59, 77));
-        jLabel27.setText("Data do Pedido");
-
-        txtDataPedidoResult.setEditable(false);
-        txtDataPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtDataPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
-        txtDataPedidoResult.setToolTipText("");
-        txtDataPedidoResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtDataPedidoResult.setName(""); // NOI18N
-        txtDataPedidoResult.setOpaque(false);
-        txtDataPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
-
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(35, 59, 77));
-        jLabel28.setText("Convênio");
-
-        txtConvenioResult.setEditable(false);
-        txtConvenioResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtConvenioResult.setForeground(new java.awt.Color(35, 59, 77));
-        txtConvenioResult.setToolTipText("");
-        txtConvenioResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtConvenioResult.setName(""); // NOI18N
-        txtConvenioResult.setOpaque(false);
-        txtConvenioResult.setSelectionColor(new java.awt.Color(35, 59, 77));
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(35, 59, 77));
-        jLabel25.setText("Cód. Cliente");
-
-        txtCodClienteResult.setEditable(false);
-        txtCodClienteResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtCodClienteResult.setForeground(new java.awt.Color(35, 59, 77));
-        txtCodClienteResult.setToolTipText("");
-        txtCodClienteResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtCodClienteResult.setName(""); // NOI18N
-        txtCodClienteResult.setOpaque(false);
-        txtCodClienteResult.setSelectionColor(new java.awt.Color(35, 59, 77));
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(35, 59, 77));
-        jLabel26.setText("Nome Completo");
-
-        txtNomeResult.setEditable(false);
-        txtNomeResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtNomeResult.setForeground(new java.awt.Color(35, 59, 77));
-        txtNomeResult.setToolTipText("");
-        txtNomeResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtNomeResult.setName(""); // NOI18N
-        txtNomeResult.setOpaque(false);
-        txtNomeResult.setSelectionColor(new java.awt.Color(35, 59, 77));
-
-        btnHemograma.setBackground(new java.awt.Color(255, 255, 255));
-        btnHemograma.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnHemograma.setForeground(new java.awt.Color(35, 59, 77));
-        btnHemograma.setText("Hemograma");
-        btnHemograma.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
-        btnHemograma.setContentAreaFilled(false);
-        btnHemograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnHemograma.setEnabled(false);
-        btnHemograma.setFocusPainted(false);
-        btnHemograma.setNextFocusableComponent(btnCadastraResultado);
-        btnHemograma.setOpaque(true);
-        btnHemograma.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnHemogramaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnHemogramaMouseExited(evt);
-            }
-        });
-        btnHemograma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHemogramaActionPerformed(evt);
-            }
-        });
-
-        btnBioquimica.setBackground(new java.awt.Color(255, 255, 255));
-        btnBioquimica.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnBioquimica.setForeground(new java.awt.Color(35, 59, 77));
-        btnBioquimica.setText("Bioquímica");
-        btnBioquimica.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
-        btnBioquimica.setContentAreaFilled(false);
-        btnBioquimica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBioquimica.setEnabled(false);
-        btnBioquimica.setFocusPainted(false);
-        btnBioquimica.setNextFocusableComponent(btnCadastraResultado);
-        btnBioquimica.setOpaque(true);
-        btnBioquimica.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnBioquimicaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnBioquimicaMouseExited(evt);
-            }
-        });
-        btnBioquimica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBioquimicaActionPerformed(evt);
-            }
-        });
-
-        btnUrinaRotina.setBackground(new java.awt.Color(255, 255, 255));
-        btnUrinaRotina.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnUrinaRotina.setForeground(new java.awt.Color(35, 59, 77));
-        btnUrinaRotina.setText("Urina Rotina");
-        btnUrinaRotina.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
-        btnUrinaRotina.setContentAreaFilled(false);
-        btnUrinaRotina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnUrinaRotina.setEnabled(false);
-        btnUrinaRotina.setFocusPainted(false);
-        btnUrinaRotina.setNextFocusableComponent(btnCadastraResultado);
-        btnUrinaRotina.setOpaque(true);
-        btnUrinaRotina.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnUrinaRotinaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnUrinaRotinaMouseExited(evt);
-            }
-        });
-        btnUrinaRotina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUrinaRotinaActionPerformed(evt);
-            }
-        });
-
-        btnSangueOculto.setBackground(new java.awt.Color(255, 255, 255));
-        btnSangueOculto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnSangueOculto.setForeground(new java.awt.Color(35, 59, 77));
-        btnSangueOculto.setText("<html>EPF\n<p>Sangue Oculto</p>");
-        btnSangueOculto.setActionCommand("<html>\n<p><center> EPF</center></p>\n\n<p>Sangue Oculto</p>\n\n</html");
-        btnSangueOculto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
-        btnSangueOculto.setContentAreaFilled(false);
-        btnSangueOculto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSangueOculto.setEnabled(false);
-        btnSangueOculto.setFocusPainted(false);
-        btnSangueOculto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnSangueOculto.setNextFocusableComponent(btnCadastraResultado);
-        btnSangueOculto.setOpaque(true);
-        btnSangueOculto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnSangueOcultoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnSangueOcultoMouseExited(evt);
-            }
-        });
-        btnSangueOculto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSangueOcultoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout divCadastraResultadoLayout = new javax.swing.GroupLayout(divCadastraResultado);
-        divCadastraResultado.setLayout(divCadastraResultadoLayout);
-        divCadastraResultadoLayout.setHorizontalGroup(
-            divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(btnHemograma, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(btnBioquimica, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(btnUrinaRotina, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(btnSangueOculto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel26)
-                            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel24))
-                                .addGap(22, 22, 22)
-                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel25)
-                                    .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(22, 22, 22)
-                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divCadastraResultadoLayout.createSequentialGroup()
-                                        .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(22, 22, 22))
-                                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                                        .addComponent(jLabel27)
-                                        .addGap(61, 61, 61)))
-                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel28)
-                                    .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(147, 147, 147))
-        );
-        divCadastraResultadoLayout.setVerticalGroup(
-            divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel28))
-                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addGap(0, 0, 0)
-                        .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(22, 22, 22)
-                .addComponent(jLabel26)
-                .addGap(0, 0, 0)
-                .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnHemograma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBioquimica, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUrinaRotina, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSangueOculto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        divExame.add(divCadastraResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 830, 520));
 
         divCadastraExame.setBackground(new java.awt.Color(255, 255, 255));
         divCadastraExame.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -1328,6 +1082,251 @@ public class Principal extends javax.swing.JFrame {
 
         divExame.add(divCadastraExame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 830, 520));
 
+        divCadastraResultado.setBackground(new java.awt.Color(255, 255, 255));
+        divCadastraResultado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel24.setText("Cód. Pedido");
+
+        txtCodPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtCodPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtCodPedidoResult.setToolTipText("");
+        txtCodPedidoResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtCodPedidoResult.setName(""); // NOI18N
+        txtCodPedidoResult.setOpaque(false);
+        txtCodPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel27.setText("Data do Pedido");
+
+        txtDataPedidoResult.setEditable(false);
+        txtDataPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtDataPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtDataPedidoResult.setToolTipText("");
+        txtDataPedidoResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtDataPedidoResult.setName(""); // NOI18N
+        txtDataPedidoResult.setOpaque(false);
+        txtDataPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel28.setText("Convênio");
+
+        txtConvenioResult.setEditable(false);
+        txtConvenioResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtConvenioResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtConvenioResult.setToolTipText("");
+        txtConvenioResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtConvenioResult.setName(""); // NOI18N
+        txtConvenioResult.setOpaque(false);
+        txtConvenioResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel25.setText("Cód. Cliente");
+
+        txtCodClienteResult.setEditable(false);
+        txtCodClienteResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtCodClienteResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtCodClienteResult.setToolTipText("");
+        txtCodClienteResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtCodClienteResult.setName(""); // NOI18N
+        txtCodClienteResult.setOpaque(false);
+        txtCodClienteResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(35, 59, 77));
+        jLabel26.setText("Nome Completo");
+
+        txtNomeResult.setEditable(false);
+        txtNomeResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtNomeResult.setForeground(new java.awt.Color(35, 59, 77));
+        txtNomeResult.setToolTipText("");
+        txtNomeResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtNomeResult.setName(""); // NOI18N
+        txtNomeResult.setOpaque(false);
+        txtNomeResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+
+        btnHemograma.setBackground(new java.awt.Color(255, 255, 255));
+        btnHemograma.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnHemograma.setForeground(new java.awt.Color(35, 59, 77));
+        btnHemograma.setText("Hemograma");
+        btnHemograma.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
+        btnHemograma.setContentAreaFilled(false);
+        btnHemograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHemograma.setEnabled(false);
+        btnHemograma.setFocusPainted(false);
+        btnHemograma.setNextFocusableComponent(btnCadastraResultado);
+        btnHemograma.setOpaque(true);
+        btnHemograma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHemogramaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHemogramaMouseExited(evt);
+            }
+        });
+        btnHemograma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHemogramaActionPerformed(evt);
+            }
+        });
+
+        btnBioquimica.setBackground(new java.awt.Color(255, 255, 255));
+        btnBioquimica.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnBioquimica.setForeground(new java.awt.Color(35, 59, 77));
+        btnBioquimica.setText("Bioquímica");
+        btnBioquimica.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
+        btnBioquimica.setContentAreaFilled(false);
+        btnBioquimica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBioquimica.setEnabled(false);
+        btnBioquimica.setFocusPainted(false);
+        btnBioquimica.setNextFocusableComponent(btnCadastraResultado);
+        btnBioquimica.setOpaque(true);
+        btnBioquimica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBioquimicaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBioquimicaMouseExited(evt);
+            }
+        });
+        btnBioquimica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBioquimicaActionPerformed(evt);
+            }
+        });
+
+        btnUrinaRotina.setBackground(new java.awt.Color(255, 255, 255));
+        btnUrinaRotina.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnUrinaRotina.setForeground(new java.awt.Color(35, 59, 77));
+        btnUrinaRotina.setText("Urina Rotina");
+        btnUrinaRotina.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
+        btnUrinaRotina.setContentAreaFilled(false);
+        btnUrinaRotina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUrinaRotina.setEnabled(false);
+        btnUrinaRotina.setFocusPainted(false);
+        btnUrinaRotina.setNextFocusableComponent(btnCadastraResultado);
+        btnUrinaRotina.setOpaque(true);
+        btnUrinaRotina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnUrinaRotinaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUrinaRotinaMouseExited(evt);
+            }
+        });
+        btnUrinaRotina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUrinaRotinaActionPerformed(evt);
+            }
+        });
+
+        btnSangueOculto.setBackground(new java.awt.Color(255, 255, 255));
+        btnSangueOculto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnSangueOculto.setForeground(new java.awt.Color(35, 59, 77));
+        btnSangueOculto.setText("<html>EPF\n<p>Sangue Oculto</p>");
+        btnSangueOculto.setActionCommand("<html>\n<p><center> EPF</center></p>\n\n<p>Sangue Oculto</p>\n\n</html");
+        btnSangueOculto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
+        btnSangueOculto.setContentAreaFilled(false);
+        btnSangueOculto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSangueOculto.setEnabled(false);
+        btnSangueOculto.setFocusPainted(false);
+        btnSangueOculto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSangueOculto.setNextFocusableComponent(btnCadastraResultado);
+        btnSangueOculto.setOpaque(true);
+        btnSangueOculto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSangueOcultoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSangueOcultoMouseExited(evt);
+            }
+        });
+        btnSangueOculto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSangueOcultoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout divCadastraResultadoLayout = new javax.swing.GroupLayout(divCadastraResultado);
+        divCadastraResultado.setLayout(divCadastraResultadoLayout);
+        divCadastraResultadoLayout.setHorizontalGroup(
+            divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(btnHemograma, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addComponent(btnBioquimica, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(btnUrinaRotina, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addComponent(btnSangueOculto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel26)
+                            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel24))
+                                .addGap(22, 22, 22)
+                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25)
+                                    .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(22, 22, 22)
+                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divCadastraResultadoLayout.createSequentialGroup()
+                                        .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(22, 22, 22))
+                                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                                        .addComponent(jLabel27)
+                                        .addGap(61, 61, 61)))
+                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel28)
+                                    .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(147, 147, 147))
+        );
+        divCadastraResultadoLayout.setVerticalGroup(
+            divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel28))
+                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel26)
+                .addGap(0, 0, 0)
+                .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHemograma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBioquimica, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUrinaRotina, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSangueOculto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        divExame.add(divCadastraResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 830, 520));
+
         divRelatorioExame.setBackground(new java.awt.Color(255, 255, 255));
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
@@ -1382,6 +1381,11 @@ public class Principal extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnExameDetalheMouseExited(evt);
+            }
+        });
+        btnExameDetalhe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExameDetalheActionPerformed(evt);
             }
         });
 
@@ -2472,11 +2476,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClienteLimparForActionPerformed
 
     private void btnExameExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameExcluirActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(rootPane, "Você realmente deseja realizar essa ação!?", "confirmar", WIDTH);
     }//GEN-LAST:event_btnExameExcluirActionPerformed
 
     private void btnExameEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameEditActionPerformed
-        // TODO add your handling code here:
+        clickMouseExameCadastra();
     }//GEN-LAST:event_btnExameEditActionPerformed
     
     // Inicio Cadastrar Pedidos 
@@ -2619,11 +2623,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioCadsResulExamActionPerformed
 
     private void btnConfBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfBackupActionPerformed
-        // TODO add your handling code here:
+        confNewBackup.setVisible(true);
     }//GEN-LAST:event_btnConfBackupActionPerformed
 
     private void btnConfRestBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfRestBackupActionPerformed
-        // TODO add your handling code here:
+        confRestBeckup.setVisible(true);
     }//GEN-LAST:event_btnConfRestBackupActionPerformed
 
     private void btnConfAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfAddUserActionPerformed
@@ -2635,11 +2639,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfEdtUserActionPerformed
 
     private void btnConfAplicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfAplicActionPerformed
-        // TODO add your handling code here:
+        confAplicacao.setVisible(true);
     }//GEN-LAST:event_btnConfAplicActionPerformed
 
     private void btnConfRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfRelatorioActionPerformed
-        // TODO add your handling code here:
+        confRelatorio.setVisible(true);
     }//GEN-LAST:event_btnConfRelatorioActionPerformed
 
     private void btnHemoPedSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHemoPedSalvarActionPerformed
@@ -3023,11 +3027,9 @@ public class Principal extends javax.swing.JFrame {
         helper.resMouseBtnFormMoved(btnClienteCadastra, 1, null);
     }//GEN-LAST:event_btnClienteCadastraMouseExited
 
-    private void lblNomeUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNomeUsuarioMouseClicked
-        
-        //setMascara();
-        confEdtUser.setVisible(true);
-    }//GEN-LAST:event_lblNomeUsuarioMouseClicked
+    private void btnExameDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameDetalheActionPerformed
+        exameGeraRel.setVisible(true);
+    }//GEN-LAST:event_btnExameDetalheActionPerformed
     
     
     
