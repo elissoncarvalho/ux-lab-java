@@ -28,12 +28,12 @@ public class HemogramaDAO {
     
     private String deleteHemo = "UPDATE HEMOGRAMA SET DELET = ? WHERE ID_PEDIDO_FK = ID_PEDIDO";
 
-    public List<Hemograma> listarHemo (Int CodigoH){
+    public List<Hemograma> listarHemo (Integer CodigoH){
         List<Hemograma> listaHemo = new ArrayList<Hemograma>();
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(consultaHemo);
-            pstm.setString(1, CodigoH);
+            pstm.setInt(1, CodigoH);
             rs = pstm.executeQuery();
             while (rs.next()) {
                 hemo = new Hemograma();
