@@ -28,6 +28,42 @@ public class HemogramaDAO {
     
     private String deleteHemo = "UPDATE HEMOGRAMA SET DELET = ? WHERE ID_PEDIDO_FK = ID_PEDIDO";
 
+    public List<Hemograma> listarHemo (Int CodigoH){
+        List<Hemograma> listaHemo = new ArrayList<Hemograma>();
+        try {
+            bd = new BaseDeDados();
+            pstm = bd.conecta().prepareStatement(consultaHemo);
+            pstm.setString(1, CodigoH);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                hemo = new Hemograma();
+                hemo.setCodigoH(rs.getInt("codigoh"));
+                hemo.setHemacias(rs.getDouble("hemacias"));
+                hemo.setHemoglobina(rs.getDouble("hemoglobina"));
+                hemo.setHematocrito(rs.getDouble("hematocrito"));
+                hemo.setVcm(rs.getDouble("vcm"));
+                hemo.setHcm(rs.getDouble("hcm"));
+                hemo.setChcm(rs.getDouble("chcm"));
+                hemo.setRdw(rs.getDouble("rdw"));
+                hemo.setLeucocitos(rs.getDouble("leucocitos"));
+                hemo.setNeutrofilos(rs.getDouble("neutrofilos"));
+                hemo.setSegmentados(rs.getDouble("segmentados"));
+                hemo.setBastonetes(rs.getDouble("bastonetes"));
+                hemo.setEosinofilos(rs.getDouble("eosinofilos"));
+                hemo.setBasofilos(rs.getDouble("basofilos"));
+                hemo.setLinfocitos(rs.getDouble("linfocitos"));
+                hemo.setMonocitos(rs.getDouble("monocitos"));
+                hemo.setContagemPlaquetas(rs.getDouble("contagemplaquetas"));
+                listaHemo.add(hemo);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        bd.desconecta();
+        return listaHemo;
+    }
+    
     public void cadastraHemo(Hemograma hemo){
         try {
             bd = new BaseDeDados();
