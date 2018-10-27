@@ -26,7 +26,7 @@ public class FezesDAO {
     
     private String excluiFezes = "Delete  from fezes where id_fezes = ?";
     
-        public List<Fezes> listarClientes (String nome){
+        public List<Fezes> listarFezes (String nome){
         List<Fezes> listaFezes = new ArrayList<Fezes>();
         try{
             bd = new BaseDeDados();
@@ -59,7 +59,7 @@ public class FezesDAO {
         }
     }
     
-    public void alteraCliente (Fezes fezes){
+    public void alteraFezes (Fezes fezes){
         try{
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(alteraFezes);
@@ -72,7 +72,7 @@ public class FezesDAO {
         }
     }
     
-    public void excluirCliente(Fezes fezes){
+    public void excluirFezes(Fezes fezes){
         try{
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(excluiFezes);
