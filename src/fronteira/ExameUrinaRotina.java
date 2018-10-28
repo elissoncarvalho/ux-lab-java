@@ -1,10 +1,13 @@
 package fronteira;
 
 import entidade.Helper;
+import entidade.UrinaRotina;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import javax.swing.JOptionPane;
+import persistencia.UrinaRotinaDAO;
 
 /**
  *
@@ -18,6 +21,25 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         initComponents();
         
         formConfig();
+    }
+    
+    
+     private void UpdateUrinaRotina(){
+        UrinaRotina ur = new UrinaRotina();
+      
+        ur.setCor(txtAfCor.getText().trim());
+        ur.setDensidade(txtAfDens.getText().trim());
+        ur.setAspecto(txtAfAspecto.getText().trim());
+        ur.setPh(Double.valueOf(txtAfPh.getText()));
+        ur.setCelEpiteliais(txtSedCelEpitel.getText().trim());
+        ur.setLeucocitos(txtSedLeuc.getText().trim());
+        ur.setHemacias(txtSedHem.getText().trim());
+        ur.setCilindros(txtSedCilin.getText().trim());
+        
+       UrinaRotinaDAO urDAO = new UrinaRotinaDAO();
+       urDAO.alteraUrinaRotina(ur);
+       JOptionPane.showMessageDialog(null, "Exame cadastrado com sucesso", 
+            "Registro de Exames", JOptionPane.INFORMATION_MESSAGE);
     }
 
     @SuppressWarnings("unchecked")
@@ -476,6 +498,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         this.setVisible(false);
+        UpdateUrinaRotina();
     }//GEN-LAST:event_btnSalvarActionPerformed
     
     private void formConfig(){
