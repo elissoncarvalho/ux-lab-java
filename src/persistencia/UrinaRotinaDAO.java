@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 /**
- 
-
  * @author WESLEY JUNIO
  */
 public class UrinaRotinaDAO {
