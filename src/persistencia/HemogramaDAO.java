@@ -5,34 +5,37 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
 import entidade.Hemograma;
-
+/**
+ *
+ * @author Isabela
+ */
 public class HemogramaDAO {
     private BaseDeDados bd;
     private PreparedStatement pstm;
     private ResultSet rs;
     private Hemograma hemo;
     
-    private String consultaHemo = "SELECT CODIGOH FROM HEMOGRAMA WHERE CODIGOH LIKE ?";
-    
+    private String buscarHemo = "SELECT * FROM hemograma WHERE id_pedido_fk = ? LIMIT 1";
+    /*
     private String cadastraHemo = "INSERT INTO HEMOGRAMA (CODIGOH, HEMACIAS, "
             + "HEMOGLOBINA, HEMATOCRITO, VCM, HCM, CHCM, RDW, LEUCOCITOS, "
             + "NEUTROFILOS, SEGMENTADOS, BASTONETES, EOSINOFILOS, BASOFILOS, "
             + "LINFOCITOS, MONOCITOS, CONTAGEMPLAQUETAS) "
             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    
-    private String alteraHemo = "UPDATE HEMOGRAMA SET CODIGOH = ?, HEMACIAS = ?, "
+    */
+    private String salvarHemo = "UPDATE hemograma SET HEMACIAS = ?, "
             + "HEMOGLOBINA = ?, HEMATOCRITO = ?, VCM = ?, HCM = ?, CHCM = ?, "
             + "RDW = ?, LEUCOCITOS = ?, NEUTROFILOS = ?, SEGMENTADOS = ?, "
             + "BASTONETES = ?, EOSINOFILOS = ?, BASOFILOS = ?, LINFOCITOS = ?, "
-            + "MONOCITOS = ?, CONTAGEMPLAQUETAS = ? WHERE CODIGOH = ?";
+            + "MONOCITOS = ?, CONTAGEMPLAQUETAS = ? WHERE id_pedido_fk = ?";
     
-    private String deleteHemo = "UPDATE HEMOGRAMA SET DELET = ? WHERE ID_PEDIDO_FK = ID_PEDIDO";
+    //private String deleteHemo = "UPDATE HEMOGRAMA SET DELET = ? WHERE ID_PEDIDO_FK = ID_PEDIDO";
 
     public List<Hemograma> listarHemo (Integer CodigoH){
         List<Hemograma> listaHemo = new ArrayList<Hemograma>();
         try {
             bd = new BaseDeDados();
-            pstm = bd.conecta().prepareStatement(consultaHemo);
+            pstm = bd.conecta().prepareStatement(buscarHemo);
             pstm.setInt(1, CodigoH);
             rs = pstm.executeQuery();
             while (rs.next()) {
@@ -63,7 +66,7 @@ public class HemogramaDAO {
         bd.desconecta();
         return listaHemo;
     }
-    
+    /*
     public void cadastraHemo(Hemograma hemo){
         try {
             bd = new BaseDeDados();
@@ -91,11 +94,11 @@ public class HemogramaDAO {
             e.printStackTrace();
         }
     }
-    
-    public void alteraHemo(Hemograma hemo){
+    */
+    public void salvarHemo(Hemograma hemo){
         try {
             bd = new BaseDeDados();
-            pstm = bd.conecta().prepareStatement(alteraHemo);
+            pstm = bd.conecta().prepareStatement(salvarHemo);
             pstm.setDouble(1, hemo.getHemacias());
             pstm.setDouble(2, hemo.getHemoglobina());
             pstm.setDouble(3, hemo.getHematocrito());
@@ -121,7 +124,4 @@ public class HemogramaDAO {
         }
     }
     
-    public void deleteHemo(Hemograma hemo){
-        
-    }
 }
