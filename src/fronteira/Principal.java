@@ -17,6 +17,7 @@ public class Principal extends javax.swing.JFrame {
     ExameUrinaRotina    urinaRotina     = new ExameUrinaRotina();
     ExameSangueOculto   sangueOculto    = new ExameSangueOculto();
     ExameGeraRelatorio  exameGeraRel    = new ExameGeraRelatorio();
+    ClienteCadastra     clienteCadastra = new ClienteCadastra();
     ClienteDetalhe      clienteDetalhe  = new ClienteDetalhe();
     ConfAddUser         confAddUser     = new ConfAddUser();
     ConfEdtUser         confEdtUser     = new ConfEdtUser();
@@ -123,6 +124,12 @@ public class Principal extends javax.swing.JFrame {
         divNavCliente = new javax.swing.JPanel();
         btnconsultaCliente = new javax.swing.JToggleButton();
         btnCadastraCliente = new javax.swing.JToggleButton();
+        divConsultaCliente = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btnClienteDetalhe = new javax.swing.JToggleButton();
+        btnClienteEdit = new javax.swing.JToggleButton();
+        btnClienteExcluir = new javax.swing.JToggleButton();
         divCadastraCliente = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         txtClienteCod = new javax.swing.JTextField();
@@ -153,12 +160,6 @@ public class Principal extends javax.swing.JFrame {
         cbxClienteUf = new javax.swing.JComboBox<>();
         btnClienteLimparFor = new javax.swing.JToggleButton();
         btnClienteCadastra = new javax.swing.JToggleButton();
-        divConsultaCliente = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        btnClienteDetalhe = new javax.swing.JToggleButton();
-        btnClienteEdit = new javax.swing.JToggleButton();
-        btnClienteExcluir = new javax.swing.JToggleButton();
         divConfigura = new javax.swing.JPanel();
         btnConfAddUser = new javax.swing.JToggleButton();
         btnConfEdtUser = new javax.swing.JToggleButton();
@@ -1514,6 +1515,186 @@ public class Principal extends javax.swing.JFrame {
 
         divCliente.add(divNavCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 50));
 
+        divConsultaCliente.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(255, 255, 255)));
+        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setOpaque(false);
+
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(18, 12, 30));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"# 1412", "Elisson Carvalho de Araujo", "Rua Brasil, Nª 09", "Flavio de Oliveira"},
+                {"# 1413", "Elisson Carvalho de Araujo", "Rua Brasil, Nª 09", "Flavio de Oliveira"},
+                {"# 1413", "Elisson Carvalho de Araujo", "Rua Brasil, Nª 09", "Flavio de Oliveira"},
+                {"# 1413", "Elisson Carvalho de Araujo", "Rua Brasil, Nª 09", "Flavio de Oliveira"},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "# Código", "Nome", "Endereço", "Bairro"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable1.setRowHeight(25);
+        jTable1.setRowMargin(2);
+        jTable1.setSelectionBackground(new java.awt.Color(0, 128, 200));
+        jTable1.setSelectionForeground(new java.awt.Color(232, 230, 236));
+        jTable1.setShowHorizontalLines(false);
+        jTable1.setShowVerticalLines(false);
+        jTable1.getTableHeader().setResizingAllowed(false);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
+
+        btnClienteDetalhe.setBackground(new java.awt.Color(255, 255, 255));
+        btnClienteDetalhe.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnClienteDetalhe.setForeground(new java.awt.Color(0, 128, 200));
+        btnClienteDetalhe.setText("Detalhes");
+        btnClienteDetalhe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
+        btnClienteDetalhe.setBorderPainted(false);
+        btnClienteDetalhe.setContentAreaFilled(false);
+        btnClienteDetalhe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClienteDetalhe.setFocusPainted(false);
+        btnClienteDetalhe.setFocusable(false);
+        btnClienteDetalhe.setNextFocusableComponent(btnCadastraResultado);
+        btnClienteDetalhe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClienteDetalheMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClienteDetalheMouseExited(evt);
+            }
+        });
+        btnClienteDetalhe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteDetalheActionPerformed(evt);
+            }
+        });
+
+        btnClienteEdit.setBackground(new java.awt.Color(255, 255, 255));
+        btnClienteEdit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnClienteEdit.setForeground(new java.awt.Color(0, 128, 200));
+        btnClienteEdit.setText("Editar");
+        btnClienteEdit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 128, 200)));
+        btnClienteEdit.setContentAreaFilled(false);
+        btnClienteEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClienteEdit.setFocusPainted(false);
+        btnClienteEdit.setNextFocusableComponent(btnCadastraResultado);
+        btnClienteEdit.setOpaque(true);
+        btnClienteEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClienteEditMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClienteEditMouseExited(evt);
+            }
+        });
+        btnClienteEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteEditActionPerformed(evt);
+            }
+        });
+
+        btnClienteExcluir.setBackground(new java.awt.Color(255, 255, 255));
+        btnClienteExcluir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnClienteExcluir.setForeground(new java.awt.Color(190, 75, 73));
+        btnClienteExcluir.setText("Excluir");
+        btnClienteExcluir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(190, 75, 73)));
+        btnClienteExcluir.setContentAreaFilled(false);
+        btnClienteExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClienteExcluir.setFocusPainted(false);
+        btnClienteExcluir.setNextFocusableComponent(btnCadastraResultado);
+        btnClienteExcluir.setOpaque(true);
+        btnClienteExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClienteExcluirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClienteExcluirMouseExited(evt);
+            }
+        });
+        btnClienteExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteExcluirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout divConsultaClienteLayout = new javax.swing.GroupLayout(divConsultaCliente);
+        divConsultaCliente.setLayout(divConsultaClienteLayout);
+        divConsultaClienteLayout.setHorizontalGroup(
+            divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(divConsultaClienteLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(divConsultaClienteLayout.createSequentialGroup()
+                        .addComponent(btnClienteDetalhe, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnClienteEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnClienteExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38))
+        );
+        divConsultaClienteLayout.setVerticalGroup(
+            divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(divConsultaClienteLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnClienteDetalhe, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnClienteEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnClienteExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20))
+        );
+
+        divCliente.add(divConsultaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 830, 520));
+
         divCadastraCliente.setBackground(new java.awt.Color(255, 255, 255));
         divCadastraCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
@@ -1877,186 +2058,6 @@ public class Principal extends javax.swing.JFrame {
         );
 
         divCliente.add(divCadastraCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 830, 520));
-
-        divConsultaCliente.setBackground(new java.awt.Color(255, 255, 255));
-
-        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(255, 255, 255)));
-        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setOpaque(false);
-
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(18, 12, 30));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"# 1412", "Elisson Carvalho de Araujo", "Rua Brasil, Nª 09", "Flavio de Oliveira"},
-                {"# 1413", "Elisson Carvalho de Araujo", "Rua Brasil, Nª 09", "Flavio de Oliveira"},
-                {"# 1413", "Elisson Carvalho de Araujo", "Rua Brasil, Nª 09", "Flavio de Oliveira"},
-                {"# 1413", "Elisson Carvalho de Araujo", "Rua Brasil, Nª 09", "Flavio de Oliveira"},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "# Código", "Nome", "Endereço", "Bairro"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setRowHeight(25);
-        jTable1.setRowMargin(2);
-        jTable1.setSelectionBackground(new java.awt.Color(0, 128, 200));
-        jTable1.setSelectionForeground(new java.awt.Color(232, 230, 236));
-        jTable1.setShowHorizontalLines(false);
-        jTable1.setShowVerticalLines(false);
-        jTable1.getTableHeader().setResizingAllowed(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-
-        btnClienteDetalhe.setBackground(new java.awt.Color(255, 255, 255));
-        btnClienteDetalhe.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnClienteDetalhe.setForeground(new java.awt.Color(0, 128, 200));
-        btnClienteDetalhe.setText("Detalhes");
-        btnClienteDetalhe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 124, 162), 2));
-        btnClienteDetalhe.setBorderPainted(false);
-        btnClienteDetalhe.setContentAreaFilled(false);
-        btnClienteDetalhe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnClienteDetalhe.setFocusPainted(false);
-        btnClienteDetalhe.setFocusable(false);
-        btnClienteDetalhe.setNextFocusableComponent(btnCadastraResultado);
-        btnClienteDetalhe.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnClienteDetalheMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnClienteDetalheMouseExited(evt);
-            }
-        });
-        btnClienteDetalhe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClienteDetalheActionPerformed(evt);
-            }
-        });
-
-        btnClienteEdit.setBackground(new java.awt.Color(255, 255, 255));
-        btnClienteEdit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnClienteEdit.setForeground(new java.awt.Color(0, 128, 200));
-        btnClienteEdit.setText("Editar");
-        btnClienteEdit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 128, 200)));
-        btnClienteEdit.setContentAreaFilled(false);
-        btnClienteEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnClienteEdit.setFocusPainted(false);
-        btnClienteEdit.setNextFocusableComponent(btnCadastraResultado);
-        btnClienteEdit.setOpaque(true);
-        btnClienteEdit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnClienteEditMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnClienteEditMouseExited(evt);
-            }
-        });
-        btnClienteEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClienteEditActionPerformed(evt);
-            }
-        });
-
-        btnClienteExcluir.setBackground(new java.awt.Color(255, 255, 255));
-        btnClienteExcluir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnClienteExcluir.setForeground(new java.awt.Color(190, 75, 73));
-        btnClienteExcluir.setText("Excluir");
-        btnClienteExcluir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(190, 75, 73)));
-        btnClienteExcluir.setContentAreaFilled(false);
-        btnClienteExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnClienteExcluir.setFocusPainted(false);
-        btnClienteExcluir.setNextFocusableComponent(btnCadastraResultado);
-        btnClienteExcluir.setOpaque(true);
-        btnClienteExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnClienteExcluirMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnClienteExcluirMouseExited(evt);
-            }
-        });
-        btnClienteExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClienteExcluirActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout divConsultaClienteLayout = new javax.swing.GroupLayout(divConsultaCliente);
-        divConsultaCliente.setLayout(divConsultaClienteLayout);
-        divConsultaClienteLayout.setHorizontalGroup(
-            divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divConsultaClienteLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(divConsultaClienteLayout.createSequentialGroup()
-                        .addComponent(btnClienteDetalhe, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnClienteEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnClienteExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38))
-        );
-        divConsultaClienteLayout.setVerticalGroup(
-            divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divConsultaClienteLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnClienteDetalhe, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(divConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnClienteEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnClienteExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20))
-        );
-
-        divCliente.add(divConsultaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 830, 520));
 
         contBorda.add(divCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 52, 830, 570));
 
@@ -2422,6 +2423,36 @@ public class Principal extends javax.swing.JFrame {
         txtExPedDataPedido.setText("");
         txtExPedConvenio.setText("");
     }
+    private void limparClienteCadastro(){
+        txtClienteNome.setText("");
+        txtClienteDataNasc.setText("");
+        txtClienteCPF.setText("");
+        txtClienteRG.setText("");
+        txtClienteTel.setText("");
+        txtClienteConv.setText("");
+        txtClienteEnder.setText("");
+        txtClienteBairro.setText("");
+        txtClienteCEP.setText("");
+        txtClienteCidade.setText("");
+        cbxClienteUf.setSelectedIndex(8);
+        //resetar radio buttons
+    }
+    private void clienteCadastrar(){
+        clienteCadastra.setCodigo(Integer.valueOf(txtClienteCod.getText().trim()));
+        clienteCadastra.setNome(txtClienteNome.getText().trim());
+        clienteCadastra.setData_nasc(txtClienteDataNasc.getText().trim());
+        clienteCadastra.setCpf(txtClienteCPF.getText().trim());
+        clienteCadastra.setRg(txtClienteRG.getText().trim());
+        clienteCadastra.setTelefone(txtClienteTel.getText().trim());
+        clienteCadastra.setConvenio(txtClienteConv.getText().trim());
+        clienteCadastra.setEndereco(txtClienteEnder.getText().trim());
+        clienteCadastra.setBairro(txtClienteBairro.getText().trim());
+        clienteCadastra.setCep(txtClienteCEP.getText().trim());
+        clienteCadastra.setCidade(txtClienteCidade.getText().trim());
+        clienteCadastra.setUf((String) cbxClienteUf.getSelectedItem());
+        clienteCadastra.setSexo(String.valueOf(rbgSexo.getSelection()));
+        
+    }
     
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
         this.setExtendedState(JFrame.ICONIFIED);
@@ -2468,11 +2499,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastraClienteActionPerformed
 
     private void btnClienteCadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteCadastraActionPerformed
-        // TODO add your handling code here:
+        clienteCadastrar();
     }//GEN-LAST:event_btnClienteCadastraActionPerformed
 
     private void btnClienteLimparForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteLimparForActionPerformed
-        // TODO add your handling code here:
+        limparClienteCadastro();
     }//GEN-LAST:event_btnClienteLimparForActionPerformed
 
     private void btnExameExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameExcluirActionPerformed

@@ -1,11 +1,12 @@
 
 package entidade;
 
-public class Cliente {
+public class ClienteCadastra {
     private int codigo;
     private String nome;
     private String endereco;
     private String telefone;
+    private String convenio;
     private String bairro;
     private String cidade;
     private String cep;
@@ -14,7 +15,14 @@ public class Cliente {
     private String cpf;
     private String data_nasc;
     private String sexo;
+   
+    public String getConvenio() {
+        return convenio;
+    }
 
+    public void setConvenio(String convenio) {
+        this.convenio = convenio;
+    }
     public int getCodigo() {
         return codigo;
     }
