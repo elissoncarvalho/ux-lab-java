@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-/**
- * @author WESLEY JUNIO
- */
+
+/* Autor WESLEY JUNIO */
+
 public class UrinaRotinaDAO {
     private BaseDeDados bd;
     private PreparedStatement pstm;

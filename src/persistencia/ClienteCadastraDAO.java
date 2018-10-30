@@ -1,8 +1,7 @@
 package persistencia;
-/**
- *
- * @author Elisson
- */
+
+/* Autor Elisson */
+
 public class ClienteCadastraDAO 
 {
     
