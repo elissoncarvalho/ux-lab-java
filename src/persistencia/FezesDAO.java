@@ -22,8 +22,6 @@ public class FezesDAO {
             + "Delet = ?, Parasitologico = ?, Sangue_oculto = ? "
             + "where id_fezes = ?";
     
-    private String deletFezes = "UPDATE fezes SET DELET = ? where id_fezes = id_fezes";
-    
     public List<Fezes> listarFezes (String nome){
        List<Fezes> listaFezes = new ArrayList<Fezes>();
        try{
