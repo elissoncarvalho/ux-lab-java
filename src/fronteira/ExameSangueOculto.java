@@ -1,10 +1,13 @@
 package fronteira;
 
+import entidade.Fezes;
 import entidade.Helper;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import javax.swing.JOptionPane;
+import persistencia.FezesDAO;
 
 /**
  *
@@ -292,7 +295,25 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     
+=======
+     private void UpdateSangueOculto(){
+         
+        Fezes fez = new Fezes();
+      
+        fez.setParasitologico(txtParasResult.getText().trim());
+        fez.setParasitologico(txaParasObs.getText().trim());
+        fez.setSangueOculto(rbAusente.getText().trim());
+        fez.setSangueOculto(rbPresente.getText().trim());
+        fez.setSangueOculto(txaSangOculObs.getText().trim());
+        
+       FezesDAO fezDAO= new FezesDAO();
+       fezDAO.alteraFezes(fez);
+       JOptionPane.showMessageDialog(null, "Exame cadastrado com sucesso",
+               "Registro de Exames", JOptionPane.INFORMATION_MESSAGE);
+    }
+>>>>>>> origin/master
     private void txtParasResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParasResultActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtParasResultActionPerformed
@@ -319,7 +340,11 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMouseExited
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+<<<<<<< HEAD
         
+=======
+        UpdateSangueOculto();
+>>>>>>> origin/master
         this.setVisible(false);
     }//GEN-LAST:event_btnSalvarActionPerformed
     

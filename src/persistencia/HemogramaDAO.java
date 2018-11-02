@@ -5,10 +5,9 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
 import entidade.Hemograma;
-/**
- *
- * @author Isabela
- */
+
+/* Autor Isabelle */
+
 public class HemogramaDAO {
     private BaseDeDados bd;
     private PreparedStatement pstm;
