@@ -292,6 +292,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void txtParasResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParasResultActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtParasResultActionPerformed
@@ -318,6 +319,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMouseExited
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
         this.setVisible(false);
     }//GEN-LAST:event_btnSalvarActionPerformed
     

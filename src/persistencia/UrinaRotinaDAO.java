@@ -20,7 +20,7 @@ public class UrinaRotinaDAO {
             + "DENSIDADE=?, ASPECTO=?, PH=?, CELEPITELIAIS=?, LEUCOCITOS=?, "
             + " HEMACIAS=?, CILINDROS=? WHERE CODIGOR = ?";
     
-    private String deletUrinaRotina = "UPDATE URINAROTINA SET DELET = ? WHERE ID_PEDIDO_FK = ID_PEDIDO";
+    //private String deletUrinaRotina = "UPDATE URINAROTINA SET DELET = ? WHERE ID_PEDIDO_FK = ID_PEDIDO";
     
     public List<UrinaRotina> listarUrinaRotina (Integer CodigoR){
         List<UrinaRotina> listaUR = new ArrayList<UrinaRotina>();

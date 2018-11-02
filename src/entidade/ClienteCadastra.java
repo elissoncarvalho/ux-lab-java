@@ -4,18 +4,25 @@ package entidade;
 public class ClienteCadastra {
     private int codigo;
     private String nome;
-    private String endereco;
+    private String data_nasc;
+    private String cpf;
+    private String rg;
     private String telefone;
     private String convenio;
+    private String endereco;
     private String bairro;
-    private String cidade;
     private String cep;
+    private String cidade;
     private String uf;
-    private String rg;
-    private String cpf;
-    private String data_nasc;
-    private String sexo;
-   
+    private boolean sexo;
+
+    public String getData_nasc() {
+        return data_nasc;
+    }
+
+    public void setData_nasc(String data_nasc) {
+        this.data_nasc = data_nasc;
+    }
     public String getConvenio() {
         return convenio;
     }
@@ -103,20 +110,14 @@ public class ClienteCadastra {
         this.cpf = cpf;
     }
 
-    public String getData_nasc() {
-        return data_nasc;
-    }
-
-    public void setData_nasc(String data_nasc) {
-        this.data_nasc = data_nasc;
-    }
-
-    public String getSexo() {
+    public boolean isSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(boolean sexo) {
         this.sexo = sexo;
     }
+
+ 
     
 }
