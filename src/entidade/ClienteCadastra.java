@@ -1,14 +1,15 @@
 
 package entidade;
 
+import java.sql.Date;
+
 public class ClienteCadastra {
     private int codigo;
     private String nome;
-    private String data_nasc;
+    private Date data_nasc;
     private String cpf;
     private String rg;
     private String telefone;
-    private String convenio;
     private String endereco;
     private String bairro;
     private String cep;
@@ -16,19 +17,12 @@ public class ClienteCadastra {
     private String uf;
     private boolean sexo;
 
-    public String getData_nasc() {
+    public Date getData_nasc() {
         return data_nasc;
     }
 
-    public void setData_nasc(String data_nasc) {
+    public void setData_nasc(Date data_nasc) {
         this.data_nasc = data_nasc;
-    }
-    public String getConvenio() {
-        return convenio;
-    }
-
-    public void setConvenio(String convenio) {
-        this.convenio = convenio;
     }
     public int getCodigo() {
         return codigo;

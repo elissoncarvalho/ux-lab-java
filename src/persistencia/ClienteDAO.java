@@ -16,14 +16,15 @@ public class ClienteDAO {
     
     private String cadastraCliente = "INSERT INTO CLIENTE (ID_CLIENTE, NOME, DATA_NASC, CPF, RG, SEXO, TELEFONE, "
             + "ENDERECO, CEP, BAIRRO, CIDADE, UF, DELET) "
-            + "VALUES (null, ?, DATE_FORMAT(str_to_date('?', '%d/%m/%Y'), '%Y-%m-%d'), ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)";
+            + "VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)";
+    
     
     public void cadastra(ClienteCadastra cliente){
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(cadastraCliente);
             pstm.setString(1, cliente.getNome());
-            pstm.setString(2, cliente.getData_nasc());
+            pstm.setDate(2, cliente.getData_nasc());
             pstm.setString(3, cliente.getCpf());
             pstm.setString(4, cliente.getRg());
             pstm.setBoolean(5, cliente.isSexo());
@@ -33,6 +34,7 @@ public class ClienteDAO {
             pstm.setString(9, cliente.getBairro());
             pstm.setString(10, cliente.getCidade());
             pstm.setString(11, cliente.getUf());
+            
             pstm.executeUpdate();
             bd.desconecta();
         }

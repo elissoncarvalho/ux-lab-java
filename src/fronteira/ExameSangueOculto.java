@@ -295,9 +295,6 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-    
-=======
      private void UpdateSangueOculto(){
          
         Fezes fez = new Fezes();
@@ -313,7 +310,6 @@ public class ExameSangueOculto extends javax.swing.JFrame {
        JOptionPane.showMessageDialog(null, "Exame cadastrado com sucesso",
                "Registro de Exames", JOptionPane.INFORMATION_MESSAGE);
     }
->>>>>>> origin/master
     private void txtParasResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParasResultActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtParasResultActionPerformed
@@ -340,11 +336,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMouseExited
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-<<<<<<< HEAD
-        
-=======
         UpdateSangueOculto();
->>>>>>> origin/master
         this.setVisible(false);
     }//GEN-LAST:event_btnSalvarActionPerformed
     
