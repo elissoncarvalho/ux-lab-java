@@ -9,6 +9,9 @@ import entidade.*;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import persistencia.ClienteDAO;
 
@@ -134,15 +137,6 @@ public class Principal extends javax.swing.JFrame {
         divConsultaCliente = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCliente = new javax.swing.JTable();
-        /*tblCliente.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        lsmCliente = tblCliente.getSelectionModel();
-        lsmCliente.addListSelectionListener (new ListSelectionListener()){
-            public void valueChanged(ListSelectionEvent e){
-                if(!e.getValueIsADJusting()){
-                    tblClienteLinhaSelecionada(tblCliente);
-                }
-            }
-        }*/
         btnClienteDetalhe = new javax.swing.JToggleButton();
         btnClienteEdit = new javax.swing.JToggleButton();
         btnClienteExcluir = new javax.swing.JToggleButton();
@@ -1548,6 +1542,15 @@ public class Principal extends javax.swing.JFrame {
         tblCliente.setShowVerticalLines(false);
         tblCliente.getTableHeader().setResizingAllowed(false);
         tblCliente.getTableHeader().setReorderingAllowed(false);
+        tblCliente.setSelectionModel(ListSelectionModel.SINGLE_SELECTION);
+        lsmCliente = tblCliente.getSelectionModel();
+        lsmCliente.addListSelectionListener(new ListSelectionListener(){
+            public void valueChanged(ListSelectionEvent e){
+                if(!e.getValueIsAdJusting()){
+                    tblClienteLinhaSelecionada(tblCliente);
+                }
+            }
+        });
         jScrollPane1.setViewportView(tblCliente);
 
         btnClienteDetalhe.setBackground(new java.awt.Color(255, 255, 255));
@@ -2202,6 +2205,11 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //teste tabela
+    private void tblClienteLinhaSelecionada(){
+        //tmCliente.add
+    }
+    
     private void divNaoInicia(){   
         // Paineis Divisorios que por padrão não inicia junto com o jFrame principal,
         // Para não causar conflitos na visão do usuario.
@@ -2626,8 +2634,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHemoPedCancelarActionPerformed
 
     private void btnClienteDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteDetalheActionPerformed
-        clienteDetalhe.habilitaCampo(!true);
-        clienteDetalhe.setVisible(true);
+        
+
+        //clienteDetalhe.habilitaCampo(!true);
+        //clienteDetalhe.setVisible(true);
     }//GEN-LAST:event_btnClienteDetalheActionPerformed
 
     private void btnClienteEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteEditActionPerformed
