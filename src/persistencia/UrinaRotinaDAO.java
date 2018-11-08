@@ -14,13 +14,11 @@ public class UrinaRotinaDAO {
     private ResultSet rs;
     private UrinaRotina urinaR; 
     
-    private String consultaUrinaRotina = "SELECT * FROM URINAROTINA WHERE ID_PEDIDO_FK=? LIMIT 1";
+    private String consultaUrinaRotina = "SELECT * FROM URINA_ROTINA WHERE DELET = 0 AND ID_PEDIDO_FK = ? LIMIT 1";
      
-    private String alteraUrinaRotina = "UPDATE URINAROTINA SET CODIGOR = ?, COR=?,"
-            + "DENSIDADE=?, ASPECTO=?, PH=?, CELEPITELIAIS=?, LEUCOCITOS=?, "
-            + " HEMACIAS=?, CILINDROS=? WHERE CODIGOR = ?";
-    
-    //private String deletUrinaRotina = "UPDATE URINAROTINA SET DELET = ? WHERE ID_PEDIDO_FK = ID_PEDIDO";
+    private String alteraUrinaRotina = "UPDATE URINA_ROTINA SET ID_PEDIDO_FK = ?, COR = ?,"
+            + "DENSIDADE = ?, ASPECTO = ?, PH = ?, CEL_EPITELIAIS = ?, LEUCOCITOS = ?, "
+            + " HEMACIAS = ?, CILINDROS = ? WHERE ID_PEDIDO_FK = ?";
     
     public List<UrinaRotina> listarUrinaRotina (Integer CodigoR){
         List<UrinaRotina> listaUR = new ArrayList<UrinaRotina>();
@@ -31,7 +29,7 @@ public class UrinaRotinaDAO {
             rs = pstm.executeQuery();
             while (rs.next()) {
                 urinaR = new UrinaRotina();
-                urinaR.setCodigoUR(rs.getInt("codigoR"));
+                urinaR.setCodigoUR(rs.getInt("codigoUR"));
                 urinaR.setCor(rs.getString("cor"));
                 urinaR.setDensidade(rs.getString("densidade"));
                 urinaR.setAspecto(rs.getString("aspecto"));
@@ -56,7 +54,7 @@ public class UrinaRotinaDAO {
             pstm.setString(1, urinaR.getCor().trim());
             pstm.setString(2, urinaR.getDensidade().trim());
             pstm.setString(3, urinaR.getAspecto().trim());
-            pstm.setDouble(4,urinaR.getPh());
+            pstm.setDouble(4, urinaR.getPh());
             pstm.setString(5, urinaR.getCelEpiteliais());
             pstm.setString(6, urinaR.getLeucocitos());
             pstm.setString(7, urinaR.getHemacias());
