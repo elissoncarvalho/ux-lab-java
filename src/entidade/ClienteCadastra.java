@@ -4,7 +4,6 @@ package entidade;
 import java.sql.Date;
 
 public class ClienteCadastra {
-    private int codigo;
     private String nome;
     private Date data_nasc;
     private String cpf;
@@ -23,13 +22,6 @@ public class ClienteCadastra {
 
     public void setData_nasc(Date data_nasc) {
         this.data_nasc = data_nasc;
-    }
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public String getNome() {

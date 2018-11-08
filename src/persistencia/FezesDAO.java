@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
 
-/* Autor Déborah */
+/* Autor Doborah */
 
 public class FezesDAO {
     
@@ -47,7 +47,7 @@ public class FezesDAO {
             pstm.setString(1, fezes.getParasitologico());
             pstm.setString(2, fezes.getSangueOculto());
             //Verificar linha de codigo abaixo
-            pstm.setInt(3, fezes.getIdPedidoFk());
+            //pstm.setInt(3, fezes.getIdPedidoFk());
             pstm.executeUpdate();
             bd.desconecta();
         }catch (Exception e){
