@@ -19,32 +19,28 @@ public class ClienteDAO {
     private ClienteCadastra cliente;
     
     
-    private String consultaCliente = "SELECT * FROM CLIENTE WHERE DELET = '0'";
+    private String listaCliente = "SELECT ID_CLIENTE, NOME, CPF, RG, TELEFONE, ENDERECO FROM CLIENTE WHERE DELET = '0'";
+    //private String consultaCliente = "SELECT * FROM CLIENTE WHERE DELET = '0' AND ID_CLIENTE = ?";
     private String cadastraCliente = "INSERT INTO CLIENTE (ID_CLIENTE, NOME, DATA_NASC, CPF, RG, SEXO, TELEFONE, "
             + "ENDERECO, CEP, BAIRRO, CIDADE, UF, DELET) "
             + "VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)";
-    
-    public List<ClientePesquisa> listarClientes(){
-        List<ClientePesquisa> listaCliente = new ArrayList<>();
+    /*
+    public List<ClienteConsulta> consultaClientes(){
+        List<ClienteConsulta> listaCliente = new ArrayList<>();
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(consultaCliente);
+            pstm.setInt(1, clientePesquisa.getIdCliente());
             rs = pstm.executeQuery();
             while(rs.next()){
                 clientePesquisa = new ClientePesquisa();
                         
                 clientePesquisa.setIdCliente(rs.getInt("ID_CLIENTE"));
                 clientePesquisa.setNome(rs.getString("NOME"));
-                clientePesquisa.setData_nasc(rs.getDate("DATA_NASC"));
                 clientePesquisa.setCpf(rs.getString("CPF"));
                 clientePesquisa.setRg(rs.getString("RG"));
-                clientePesquisa.setSexo(rs.getBoolean("SEXO"));
                 clientePesquisa.setTelefone(rs.getString("TELEFONE"));
                 clientePesquisa.setEndereco(rs.getString("ENDERECO"));
-                clientePesquisa.setTelefone(rs.getString("CEP"));
-                clientePesquisa.setBairro(rs.getString("BAIRRO"));
-                clientePesquisa.setCidade(rs.getString("CIDADE"));
-                clientePesquisa.setUf(rs.getString("UF"));
                 listaCliente.add(clientePesquisa);
             }
         }
@@ -55,7 +51,32 @@ public class ClienteDAO {
         bd.desconecta();
         return listaCliente;
     }
-    
+    */
+    public List<ClientePesquisa> listarClientes(){
+        List<ClientePesquisa> listaCliente = new ArrayList<>();
+        try {
+            bd = new BaseDeDados();
+            pstm = bd.conecta().prepareStatement(listaCliente);
+            rs = pstm.executeQuery();
+            while(rs.next()){
+                clientePesquisa = new ClientePesquisa();
+                        
+                clientePesquisa.setIdCliente(rs.getInt("ID_CLIENTE"));
+                clientePesquisa.setNome(rs.getString("NOME"));
+                clientePesquisa.setCpf(rs.getString("CPF"));
+                clientePesquisa.setRg(rs.getString("RG"));
+                clientePesquisa.setTelefone(rs.getString("TELEFONE"));
+                clientePesquisa.setEndereco(rs.getString("ENDERECO"));
+                listaCliente.add(clientePesquisa);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            //return null;
+        }
+        bd.desconecta();
+        return listaCliente;
+    }
     public boolean cadastra(ClienteCadastra cliente){
         try {
             bd = new BaseDeDados();
