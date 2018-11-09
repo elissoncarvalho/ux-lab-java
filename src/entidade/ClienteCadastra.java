@@ -4,17 +4,26 @@ package entidade;
 import java.sql.Date;
 
 public class ClienteCadastra {
+    private int idCliente;
     private String nome;
     private Date data_nasc;
     private String cpf;
     private String rg;
+    private boolean sexo;
     private String telefone;
     private String endereco;
-    private String bairro;
     private String cep;
+    private String bairro;
     private String cidade;
     private String uf;
-    private boolean sexo;
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
 
     public Date getData_nasc() {
         return data_nasc;

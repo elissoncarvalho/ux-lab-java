@@ -24,14 +24,15 @@ public class ClienteDAO {
             + "ENDERECO, CEP, BAIRRO, CIDADE, UF, DELET) "
             + "VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)";
     
-    public List<ClientePesquisa> listarCliente(String nome){
-        List<ClientePesquisa> listaCliente = new ArrayList<ClientePesquisa>();
+    public List<ClientePesquisa> listarClientes(){
+        List<ClientePesquisa> listaCliente = new ArrayList<>();
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(consultaCliente);
-            pstm.setString(1, nome);
             rs = pstm.executeQuery();
             while(rs.next()){
+                clientePesquisa = new ClientePesquisa();
+                        
                 clientePesquisa.setIdCliente(rs.getInt("ID_CLIENTE"));
                 clientePesquisa.setNome(rs.getString("NOME"));
                 clientePesquisa.setData_nasc(rs.getDate("DATA_NASC"));
@@ -49,6 +50,7 @@ public class ClienteDAO {
         }
         catch(Exception e){
             e.printStackTrace();
+            //return null;
         }
         bd.desconecta();
         return listaCliente;

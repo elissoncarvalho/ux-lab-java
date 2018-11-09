@@ -8,7 +8,9 @@ import javax.swing.JFrame;
 import entidade.*;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -34,9 +36,15 @@ public class Principal extends javax.swing.JFrame {
     ClienteDAO          clienteDAO      = new ClienteDAO();
     
     
+    
+    
+    
     private String iconsBg;
+    
     private String[] coluna = new String[]{"Código", "Nome", "CPF"};
     private DefaultTableModel tmCliente = new DefaultTableModel(null, coluna);
+    private List<ClientePesquisa> listaCliente;
+    private ListSelectionModel lsmCliente;
     
     public Principal(){
         initComponents();
@@ -1542,11 +1550,11 @@ public class Principal extends javax.swing.JFrame {
         tblCliente.setShowVerticalLines(false);
         tblCliente.getTableHeader().setResizingAllowed(false);
         tblCliente.getTableHeader().setReorderingAllowed(false);
-        tblCliente.setSelectionModel(ListSelectionModel.SINGLE_SELECTION);
+        tblCliente.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         lsmCliente = tblCliente.getSelectionModel();
         lsmCliente.addListSelectionListener(new ListSelectionListener(){
             public void valueChanged(ListSelectionEvent e){
-                if(!e.getValueIsAdJusting()){
+                if(! e.getValueIsAdjusting()){
                     tblClienteLinhaSelecionada(tblCliente);
                 }
             }
@@ -2206,8 +2214,38 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //teste tabela
-    private void tblClienteLinhaSelecionada(){
-        //tmCliente.add
+    private void mostrarClientes(){
+        listaCliente = clienteDAO.listarClientes();
+              
+        while(tmCliente.getRowCount() > 0) {
+            tmCliente.removeRow(0);
+        }
+        
+        if(listaCliente.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Nenhum cliente foi encontrado!");
+        }else{
+            for(int i = 0; i < listaCliente.size(); i++){
+                tmCliente.addRow(coluna);
+                tmCliente.setValueAt(listaCliente.get(i).getIdCliente(), i, 0);
+                tmCliente.setValueAt(listaCliente.get(i).getNome(), i, 1);
+                tmCliente.setValueAt(listaCliente.get(i).getCpf(), i, 2);
+            }
+        }
+    }
+    private void listarCliente(){
+        
+        
+        //mostrarClientes(listaCliente);
+    }
+    private void tblClienteLinhaSelecionada(JTable tbl){
+        int linhaSelecionada = tbl.getSelectedRow();
+        
+        if(linhaSelecionada != -1){
+            
+        }
+        else{
+            limparClienteCadastro();
+        }
     }
     
     private void divNaoInicia(){   
@@ -2245,6 +2283,7 @@ public class Principal extends javax.swing.JFrame {
                 
                 helper.setBtnColor(btnCliente);
                 divCliente.setVisible(true);
+                clickMouseClienteConsulta();
                 
                 break;
                 
@@ -2298,6 +2337,7 @@ public class Principal extends javax.swing.JFrame {
         divCadastraCliente.setVisible(!true);
         helper.setBtnColor(btnconsultaCliente);
         helper.resetBtnColor(btnCadastraCliente);
+        mostrarClientes();
     }
     private void clickMouseClienteCadastra(){
         divConsultaCliente.setVisible(!true);
@@ -2634,10 +2674,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHemoPedCancelarActionPerformed
 
     private void btnClienteDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteDetalheActionPerformed
-        
-
-        //clienteDetalhe.habilitaCampo(!true);
-        //clienteDetalhe.setVisible(true);
+        clienteDetalhe.habilitaCampo(!true);
+        clienteDetalhe.setVisible(true);
     }//GEN-LAST:event_btnClienteDetalheActionPerformed
 
     private void btnClienteEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteEditActionPerformed

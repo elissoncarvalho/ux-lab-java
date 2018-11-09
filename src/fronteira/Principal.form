@@ -2720,7 +2720,7 @@
                         </Property>
                       </Properties>
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tblCliente.setSelectionModel(ListSelectionModel.SINGLE_SELECTION);&#xa;lsmCliente = tblCliente.getSelectionModel();&#xa;lsmCliente.addListSelectionListener(new ListSelectionListener(){&#xa;    public void valueChanged(ListSelectionEvent e){&#xa;        if(!e.getValueIsAdJusting()){&#xa;            tblClienteLinhaSelecionada(tblCliente);&#xa;        }&#xa;    }&#xa;});"/>
+                        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tblCliente.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);&#xa;lsmCliente = tblCliente.getSelectionModel();&#xa;lsmCliente.addListSelectionListener(new ListSelectionListener(){&#xa;    public void valueChanged(ListSelectionEvent e){&#xa;        if(! e.getValueIsAdjusting()){&#xa;            tblClienteLinhaSelecionada(tblCliente);&#xa;        }&#xa;    }&#xa;});"/>
                       </AuxValues>
                     </Component>
                   </SubComponents>
