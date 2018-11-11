@@ -25,25 +25,18 @@ public class Principal extends javax.swing.JFrame {
     ExameUrinaRotina    urinaRotina     = new ExameUrinaRotina();
     ExameSangueOculto   sangueOculto    = new ExameSangueOculto();
     ExameGeraRelatorio  exameGeraRel    = new ExameGeraRelatorio();
-    ClienteCadastra     clienteCadastra = new ClienteCadastra();
-    ClienteDetalhe      clienteDetalhe  = new ClienteDetalhe();
     ConfAddUser         confAddUser     = new ConfAddUser();
     ConfEdtUser         confEdtUser     = new ConfEdtUser();
     ConfNewBackup       confNewBackup   = new ConfNewBackup();
     ConfRestBeckup      confRestBeckup  = new ConfRestBeckup();
     ConfAplicacao       confAplicacao   = new ConfAplicacao();
     ConfRelatorio       confRelatorio   = new ConfRelatorio();
-    ClienteDAO          clienteDAO      = new ClienteDAO();
-    
-    
-    
-    
-    
+
     private String iconsBg;
     
-    private String[] coluna = new String[]{"Código", "Nome", "CPF"};
-    private DefaultTableModel tmCliente = new DefaultTableModel(null, coluna);
-    private List<ClientePesquisa> listaCliente;
+    private final String[] coluna = new String[]{"Código", "Nome", "CPF", "RG", "Telefone"};
+    private final DefaultTableModel tmCliente = new DefaultTableModel(null, coluna);
+    private List<Cliente> listaCliente;
     private ListSelectionModel lsmCliente;
     
     public Principal(){
@@ -1555,7 +1548,7 @@ public class Principal extends javax.swing.JFrame {
         lsmCliente.addListSelectionListener(new ListSelectionListener(){
             public void valueChanged(ListSelectionEvent e){
                 if(! e.getValueIsAdjusting()){
-                    tblClienteLinhaSelecionada(tblCliente);
+                    //tblClienteLinhaSelecionada(tblCliente);
                 }
             }
         });
@@ -1912,22 +1905,24 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(txtClienteNome)
                             .addGroup(divCadastraClienteLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnClienteLimparFor, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnClienteCadastra, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(divCadastraClienteLayout.createSequentialGroup()
+                                .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
                                     .addGroup(divCadastraClienteLayout.createSequentialGroup()
-                                        .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel15)
-                                            .addGroup(divCadastraClienteLayout.createSequentialGroup()
-                                                .addComponent(rbClienteMasc, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(rbClienteFemi)))
-                                        .addGap(73, 73, 73)
-                                        .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtClienteTel, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel16)))
-                                    .addGroup(divCadastraClienteLayout.createSequentialGroup()
-                                        .addComponent(btnClienteLimparFor, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rbClienteMasc, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnClienteCadastra, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(rbClienteFemi)))
+                                .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(divCadastraClienteLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                                        .addComponent(jLabel16)
+                                        .addGap(206, 206, 206))
+                                    .addGroup(divCadastraClienteLayout.createSequentialGroup()
+                                        .addGap(75, 75, 75)
+                                        .addComponent(txtClienteTel)))))
                         .addGap(147, 147, 147))))
         );
         divCadastraClienteLayout.setVerticalGroup(
@@ -1952,7 +1947,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addGap(30, 30, 30))))
                 .addGap(22, 22, 22)
-                .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(divCadastraClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(divCadastraClienteLayout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addGap(0, 0, 0)
@@ -2212,41 +2207,6 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    //teste tabela
-    private void mostrarClientes(){
-        listaCliente = clienteDAO.listarClientes();
-              
-        while(tmCliente.getRowCount() > 0) {
-            tmCliente.removeRow(0);
-        }
-        
-        if(listaCliente.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Nenhum cliente foi encontrado!");
-        }else{
-            for(int i = 0; i < listaCliente.size(); i++){
-                tmCliente.addRow(coluna);
-                tmCliente.setValueAt(listaCliente.get(i).getIdCliente(), i, 0);
-                tmCliente.setValueAt(listaCliente.get(i).getNome(), i, 1);
-                tmCliente.setValueAt(listaCliente.get(i).getCpf(), i, 2);
-            }
-        }
-    }
-    private void listarCliente(){
-        
-        
-        //mostrarClientes(listaCliente);
-    }
-    private void tblClienteLinhaSelecionada(JTable tbl){
-        int linhaSelecionada = tbl.getSelectedRow();
-        
-        if(linhaSelecionada != -1){
-            
-        }
-        else{
-            limparClienteCadastro();
-        }
-    }
     
     private void divNaoInicia(){   
         // Paineis Divisorios que por padrão não inicia junto com o jFrame principal,
@@ -2410,6 +2370,60 @@ public class Principal extends javax.swing.JFrame {
         cbxClienteUf.setSelectedIndex(12);
         //resetar radio buttons
     }
+    //Lista, Cadastra, Detalhes, Cliente.
+    public void mostrarClientes(){
+        
+        ClienteDAO clienteDAO = new ClienteDAO();
+        listaCliente = clienteDAO.listarClientes();
+              
+        while(tmCliente.getRowCount() > 0) {
+            tmCliente.removeRow(0);
+        }
+        
+        if(listaCliente.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Nenhum cliente foi encontrado!");
+        }else{
+            for(int i = 0; i < listaCliente.size(); i++){
+                tmCliente.addRow(coluna);
+                tmCliente.setValueAt(listaCliente.get(i).getIdCliente(), i, 0);
+                tmCliente.setValueAt(listaCliente.get(i).getNome(), i, 1);
+                tmCliente.setValueAt(listaCliente.get(i).getCpf(), i, 2);
+                tmCliente.setValueAt(listaCliente.get(i).getRg(), i, 3);
+                tmCliente.setValueAt(listaCliente.get(i).getTelefone(), i, 4);
+            }
+        }
+    }
+    
+    private void tblClienteLinhaSelecionada(JTable tbl, boolean habilita){
+        
+        int linhaSelecionada = tbl.getSelectedRow();
+        
+        if(linhaSelecionada != -1){
+            
+            Cliente cliente = new Cliente();
+            
+            cliente.setIdCliente(listaCliente.get(linhaSelecionada).getIdCliente());
+            cliente.setNome(listaCliente.get(linhaSelecionada).getNome());
+            cliente.setData_nasc(listaCliente.get(linhaSelecionada).getData_nasc());
+            cliente.setCpf(listaCliente.get(linhaSelecionada).getCpf());
+            cliente.setRg(listaCliente.get(linhaSelecionada).getRg());
+            cliente.setTelefone(listaCliente.get(linhaSelecionada).getTelefone());
+            cliente.setEndereco(listaCliente.get(linhaSelecionada).getEndereco());
+            cliente.setBairro(listaCliente.get(linhaSelecionada).getBairro());
+            cliente.setCep(listaCliente.get(linhaSelecionada).getCep());
+            cliente.setCidade(listaCliente.get(linhaSelecionada).getCidade());
+            cliente.setUf(listaCliente.get(linhaSelecionada).getUf());
+            cliente.setSexo(listaCliente.get(linhaSelecionada).isSexo());
+            
+            ClienteDetalhe      clienteDetalhe  = new ClienteDetalhe();
+            clienteDetalhe.consultaCliente(cliente);
+            
+            clienteDetalhe.habilitaCampo(habilita);
+            clienteDetalhe.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Selecione um cliente.");
+        }
+    }
     private void clienteCadastrar(){
         
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
@@ -2418,23 +2432,44 @@ public class Principal extends javax.swing.JFrame {
         boolean sexo;
         sexo = !rbClienteMasc.isSelected();
         
-        clienteCadastra.setNome(txtClienteNome.getText().trim());
-        clienteCadastra.setData_nasc(dataFormatada);
-        clienteCadastra.setCpf(txtClienteCPF.getText().trim());
-        clienteCadastra.setRg(txtClienteRG.getText().trim());
-        clienteCadastra.setTelefone(txtClienteTel.getText().trim());
-        clienteCadastra.setEndereco(txtClienteEnder.getText().trim());
-        clienteCadastra.setBairro(txtClienteBairro.getText().trim());
-        clienteCadastra.setCep(txtClienteCEP.getText().trim());
-        clienteCadastra.setCidade(txtClienteCidade.getText().trim());
-        clienteCadastra.setUf(String.valueOf(cbxClienteUf.getSelectedItem()));
-        clienteCadastra.setSexo(sexo);
+        Cliente cliente = new Cliente();
+    
+        cliente.setNome(txtClienteNome.getText().trim());
+        cliente.setData_nasc(dataFormatada);
+        cliente.setCpf(txtClienteCPF.getText().trim());
+        cliente.setRg(txtClienteRG.getText().trim());
+        cliente.setTelefone(txtClienteTel.getText().trim());
+        cliente.setEndereco(txtClienteEnder.getText().trim());
+        cliente.setBairro(txtClienteBairro.getText().trim());
+        cliente.setCep(txtClienteCEP.getText().trim());
+        cliente.setCidade(txtClienteCidade.getText().trim());
+        cliente.setUf(String.valueOf(cbxClienteUf.getSelectedItem()));
+        cliente.setSexo(sexo);
         
-        if(clienteDAO.cadastra(clienteCadastra)){
+        ClienteDAO clienteDAO = new ClienteDAO();
+        
+        if(clienteDAO.cadastra(cliente)){
             limparClienteCadastro();
             JOptionPane.showMessageDialog(rootPane, "Cadastro realizado com sucesso!");
         }else{
             JOptionPane.showMessageDialog(rootPane, "Falha no Cadastro");
+        }
+    }
+    private void desabilitaCliente(JTable tbl){
+        if(tblCliente.getSelectedRow() != -1){
+            if(JOptionPane.showConfirmDialog(this, "Deseja realmente excluir o cliente [" +
+                listaCliente.get(tblCliente.getSelectedRow()).getNome() + "] ?", 
+                "Confirmação", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+                
+                Cliente cliente = new Cliente();
+                cliente.setIdCliente(listaCliente.get(tblCliente.getSelectedRow()).getIdCliente());
+                ClienteDAO clienteDAO = new ClienteDAO();
+                clienteDAO.delet(cliente);
+                JOptionPane.showMessageDialog(this, "Cliente excluido com sucesso");
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(this, "Selecione um cliente para ser excluido!");
         }
     }
     
@@ -2674,17 +2709,17 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHemoPedCancelarActionPerformed
 
     private void btnClienteDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteDetalheActionPerformed
-        clienteDetalhe.habilitaCampo(!true);
-        clienteDetalhe.setVisible(true);
+        tblClienteLinhaSelecionada(tblCliente, false);
     }//GEN-LAST:event_btnClienteDetalheActionPerformed
 
     private void btnClienteEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteEditActionPerformed
-        clienteDetalhe.habilitaCampo(true);
-        clienteDetalhe.setVisible(true);
+        tblClienteLinhaSelecionada(tblCliente, true);
+        mostrarClientes();
     }//GEN-LAST:event_btnClienteEditActionPerformed
 
     private void btnClienteExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteExcluirActionPerformed
-        // TODO add your handling code here:
+        desabilitaCliente(tblCliente);
+        mostrarClientes();
     }//GEN-LAST:event_btnClienteExcluirActionPerformed
 
     private void btnSairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseEntered

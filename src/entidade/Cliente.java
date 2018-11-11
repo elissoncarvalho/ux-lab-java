@@ -6,7 +6,7 @@ import java.sql.Date;
  *
  * @author elisson
  */
-public class ClientePesquisa {
+public class Cliente {
     private int idCliente;
     private String nome;
     private Date data_nasc;
