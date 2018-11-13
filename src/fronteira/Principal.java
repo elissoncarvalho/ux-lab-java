@@ -16,6 +16,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import persistencia.ClienteDAO;
+import persistencia.PedidoDAO;
 
 public class Principal extends javax.swing.JFrame {
     
@@ -34,10 +35,14 @@ public class Principal extends javax.swing.JFrame {
 
     private String iconsBg;
     
-    private final String[] coluna = new String[]{"Código", "Nome", "CPF", "RG", "Telefone"};
-    private final DefaultTableModel tmCliente = new DefaultTableModel(null, coluna);
+    private final String[] colunaCliente = new String[]{"Código", "Nome", "CPF", "RG", "Telefone"};
+    private final String[] colunaExame = new String[]{"Código", "Cód. Cliente", "Nome Completo", "CPF", "Status"};
+    private final DefaultTableModel tmCliente = new DefaultTableModel(null, colunaCliente);
+    private final DefaultTableModel tmExame = new DefaultTableModel(null, colunaExame);
     private List<Cliente> listaCliente;
+    private List<Pedido> listarPedido;
     private ListSelectionModel lsmCliente;
+    private ListSelectionModel lsmExame;
     
     public Principal(){
         initComponents();
@@ -90,7 +95,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         txtExPedNome = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        txtExPedDataPedido = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         txtExPedConvenio = new javax.swing.JTextField();
         jpnExames = new javax.swing.JPanel();
@@ -110,11 +114,12 @@ public class Principal extends javax.swing.JFrame {
         cbxSangueOculto = new javax.swing.JCheckBox();
         btnHemoPedSalvar = new javax.swing.JToggleButton();
         btnHemoPedCancelar = new javax.swing.JToggleButton();
+        txtExPedDataPedido = new javax.swing.JFormattedTextField();
         divCadastraResultado = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         txtCodPedidoResult = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        txtDataPedidoResult = new javax.swing.JTextField();
+        txtDataPedidoResult = new javax.swing.JFormattedTextField();
         jLabel28 = new javax.swing.JLabel();
         txtConvenioResult = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
@@ -127,7 +132,7 @@ public class Principal extends javax.swing.JFrame {
         btnSangueOculto = new javax.swing.JToggleButton();
         divRelatorioExame = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblExame = new javax.swing.JTable();
         btnExameDetalhe = new javax.swing.JToggleButton();
         btnExameEdit = new javax.swing.JToggleButton();
         btnExameExcluir = new javax.swing.JToggleButton();
@@ -553,7 +558,6 @@ public class Principal extends javax.swing.JFrame {
         txtExPedCodPedido.setEditable(false);
         txtExPedCodPedido.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtExPedCodPedido.setForeground(new java.awt.Color(35, 59, 77));
-        txtExPedCodPedido.setText("# 000087");
         txtExPedCodPedido.setToolTipText("");
         txtExPedCodPedido.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtExPedCodPedido.setName(""); // NOI18N
@@ -571,6 +575,11 @@ public class Principal extends javax.swing.JFrame {
         txtExPedCodCliente.setName(""); // NOI18N
         txtExPedCodCliente.setOpaque(false);
         txtExPedCodCliente.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtExPedCodCliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtExPedCodClienteFocusLost(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(35, 59, 77));
@@ -589,20 +598,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel21.setForeground(new java.awt.Color(35, 59, 77));
         jLabel21.setText("Data do Pedido");
 
-        txtExPedDataPedido.setEditable(false);
-        txtExPedDataPedido.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtExPedDataPedido.setForeground(new java.awt.Color(35, 59, 77));
-        txtExPedDataPedido.setToolTipText("");
-        txtExPedDataPedido.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtExPedDataPedido.setName(""); // NOI18N
-        txtExPedDataPedido.setOpaque(false);
-        txtExPedDataPedido.setSelectionColor(new java.awt.Color(35, 59, 77));
-
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(35, 59, 77));
         jLabel23.setText("Convênio");
 
-        txtExPedConvenio.setEditable(false);
         txtExPedConvenio.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtExPedConvenio.setForeground(new java.awt.Color(35, 59, 77));
         txtExPedConvenio.setToolTipText("");
@@ -1026,6 +1025,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        txtExPedDataPedido.setEditable(false);
+        txtExPedDataPedido.setBackground(new java.awt.Color(255, 255, 255));
+        txtExPedDataPedido.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
+        txtExPedDataPedido.setForeground(new java.awt.Color(35, 59, 77));
+        try {
+            txtExPedDataPedido.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtExPedDataPedido.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout divCadastraExameLayout = new javax.swing.GroupLayout(divCadastraExame);
         divCadastraExame.setLayout(divCadastraExameLayout);
         divCadastraExameLayout.setHorizontalGroup(
@@ -1048,6 +1058,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel21)
                             .addGap(55, 55, 55)
                             .addComponent(jLabel23))
+                        .addComponent(jpnExames, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(divCadastraExameLayout.createSequentialGroup()
                             .addComponent(txtExPedCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
@@ -1056,9 +1067,8 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(txtExPedNome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(txtExPedDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtExPedConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jpnExames, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtExPedConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(38, 38, 38))
         );
         divCadastraExameLayout.setVerticalGroup(
@@ -1072,13 +1082,12 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel21)
                         .addComponent(jLabel23)))
-                .addGap(0, 0, 0)
                 .addGroup(divCadastraExameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtExPedCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtExPedCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtExPedNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExPedDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExPedConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtExPedConvenio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtExPedDataPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addComponent(jpnExames, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -1104,19 +1113,26 @@ public class Principal extends javax.swing.JFrame {
         txtCodPedidoResult.setName(""); // NOI18N
         txtCodPedidoResult.setOpaque(false);
         txtCodPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtCodPedidoResult.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCodPedidoResultFocusLost(evt);
+            }
+        });
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(35, 59, 77));
         jLabel27.setText("Data do Pedido");
 
         txtDataPedidoResult.setEditable(false);
-        txtDataPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        txtDataPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
-        txtDataPedidoResult.setToolTipText("");
+        txtDataPedidoResult.setBackground(new java.awt.Color(255, 255, 255));
         txtDataPedidoResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
-        txtDataPedidoResult.setName(""); // NOI18N
-        txtDataPedidoResult.setOpaque(false);
-        txtDataPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+        txtDataPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
+        try {
+            txtDataPedidoResult.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtDataPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(35, 59, 77));
@@ -1287,14 +1303,14 @@ public class Principal extends javax.swing.JFrame {
                                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel25)
                                     .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(22, 22, 22)
                                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divCadastraResultadoLayout.createSequentialGroup()
-                                        .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(22, 22, 22))
                                     .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                                        .addComponent(jLabel27)
-                                        .addGap(61, 61, 61)))
+                                        .addGap(22, 22, 22)
+                                        .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(jLabel27)))
+                                .addGap(22, 22, 22)
                                 .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel28)
                                     .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1313,12 +1329,13 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel28))
                         .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(divCadastraResultadoLayout.createSequentialGroup()
                         .addComponent(jLabel25)
                         .addGap(0, 0, 0)
-                        .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(22, 22, 22)
                 .addComponent(jLabel26)
                 .addGap(0, 0, 0)
@@ -1341,35 +1358,29 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(255, 255, 255)));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setOpaque(false);
 
-        jTable2.setAutoCreateRowSorter(true);
-        jTable2.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        jTable2.setForeground(new java.awt.Color(18, 12, 30));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"123", "0001", "Elisson Carvalho de Araujo", "123.123.123.12", "Pendente"},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Cód. Pedido", "Cód. Cliente", "Nome Completo", "CPF", "Status"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        tblExame.setAutoCreateRowSorter(true);
+        tblExame.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        tblExame.setForeground(new java.awt.Color(18, 12, 30));
+        tblExame.setModel(tmExame);
+        tblExame.setGridColor(new java.awt.Color(255, 255, 255));
+        tblExame.setRowHeight(25);
+        tblExame.setRowMargin(2);
+        tblExame.setSelectionBackground(new java.awt.Color(0, 128, 200));
+        tblExame.setShowHorizontalLines(false);
+        tblExame.setShowVerticalLines(false);
+        tblExame.getTableHeader().setReorderingAllowed(false);
+        tblExame.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        lsmExame = tblExame.getSelectionModel();
+        lsmExame.addListSelectionListener(new ListSelectionListener(){
+            public void valueChanged(ListSelectionEvent e){
+                if(! e.getValueIsAdjusting()){
+                    //tblExameLinhaSelecionada(tblExame);
+                }
             }
         });
-        jTable2.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable2.setRowHeight(25);
-        jTable2.setRowMargin(2);
-        jTable2.setSelectionBackground(new java.awt.Color(0, 128, 200));
-        jTable2.setShowHorizontalLines(false);
-        jTable2.setShowVerticalLines(false);
-        jTable2.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblExame);
 
         btnExameDetalhe.setBackground(new java.awt.Color(255, 255, 255));
         btnExameDetalhe.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -2232,6 +2243,7 @@ public class Principal extends javax.swing.JFrame {
                 
             case 2:
                 helperMenuDesabilita();
+                buscaNumeroPedido();
                 
                 helper.setBtnColor(btnExame);
                 divExame.setVisible(true);
@@ -2273,6 +2285,7 @@ public class Principal extends javax.swing.JFrame {
         divCadastraExame.setVisible(true);
         divCadastraResultado.setVisible(!true);
         divRelatorioExame.setVisible(!true);
+        buscaNumeroPedido();
         txtExPedCodCliente.requestFocusInWindow();
     }
     private void clickMouseExameCadastra(){
@@ -2290,6 +2303,7 @@ public class Principal extends javax.swing.JFrame {
         helper.resetBtnColor(btnCadastraResultado);
         divCadastraExame.setVisible(!true);
         divCadastraResultado.setVisible(!true);
+        mostrarExames();
         divRelatorioExame.setVisible(true);
     }
     private void clickMouseClienteConsulta(){
@@ -2356,6 +2370,7 @@ public class Principal extends javax.swing.JFrame {
         txtExPedNome.setText("");
         txtExPedDataPedido.setText("");
         txtExPedConvenio.setText("");
+        
     }
     private void limparClienteCadastro(){
         txtClienteNome.setText("");
@@ -2384,7 +2399,7 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Nenhum cliente foi encontrado!");
         }else{
             for(int i = 0; i < listaCliente.size(); i++){
-                tmCliente.addRow(coluna);
+                tmCliente.addRow(colunaCliente);
                 tmCliente.setValueAt(listaCliente.get(i).getIdCliente(), i, 0);
                 tmCliente.setValueAt(listaCliente.get(i).getNome(), i, 1);
                 tmCliente.setValueAt(listaCliente.get(i).getCpf(), i, 2);
@@ -2456,7 +2471,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }
     private void desabilitaCliente(JTable tbl){
-        if(tblCliente.getSelectedRow() != -1){
+        if(tbl.getSelectedRow() != -1){
             if(JOptionPane.showConfirmDialog(this, "Deseja realmente excluir o cliente [" +
                 listaCliente.get(tblCliente.getSelectedRow()).getNome() + "] ?", 
                 "Confirmação", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
@@ -2470,6 +2485,115 @@ public class Principal extends javax.swing.JFrame {
         }
         else {
             JOptionPane.showMessageDialog(this, "Selecione um cliente para ser excluido!");
+        }
+    }
+    private void buscaNumeroPedido(){
+        PedidoDAO pedidoDAO = new PedidoDAO();
+        txtExPedCodPedido.setText(String.valueOf(pedidoDAO.buscaNumeroPedido() + 1));
+    }
+    private void buscaClienteExame(){
+        if(!txtExPedCodCliente.getText().isEmpty()){
+            //buscando a data atual
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            java.util.Date dataString = new java.util.Date();
+            String dataFormatada = String.valueOf(formato.format(dataString));
+            txtExPedDataPedido.setText(dataFormatada);
+
+            PedidoDAO pedidoDAO = new PedidoDAO();
+
+            txtExPedNome.setText(pedidoDAO.buscaCliente(Integer.valueOf(txtExPedCodCliente.getText().trim())));
+        }
+    }
+    // Novo Exame
+    private void novoExame(){
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date dataAtual = new java.util.Date(txtExPedDataPedido.getText().trim());
+        Date dataFormatada = Date.valueOf(formato.format(dataAtual));
+        
+        Pedido pedido = new Pedido();
+        pedido.setIdPedido(Integer.valueOf(txtExPedCodCliente.getText().trim()));
+        pedido.setIdCliente(Integer.valueOf(txtExPedCodCliente.getText().trim()));
+        pedido.setDataPedido(dataFormatada);
+        pedido.setConvenio(txtExPedConvenio.getText().trim());
+        
+        PedidoDAO pedidoDAO = new PedidoDAO();
+        
+        if(pedidoDAO.geraPedido(pedido)){
+            
+            if (cbxHemograma.isSelected()){
+                if(pedidoDAO.geraHemogr(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
+                    
+                    JOptionPane.showMessageDialog(rootPane, "hemograma");  
+                }
+            }
+            if (cbxUrinaRotina.isSelected()) {
+                if(pedidoDAO.geraUriRot(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
+                    
+                    JOptionPane.showMessageDialog(rootPane, "urina rotina");  
+                }
+            }
+            if (cbxSangueOculto.isSelected() || cbxEpf.isSelected()) {
+                if(pedidoDAO.geraSangOc(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
+                    
+                    JOptionPane.showMessageDialog(rootPane, "sangue oculto");  
+                }
+            }
+            if (cbxGlicose.isSelected() || cbxAcidoUrico.isSelected() || cbxGamaGt.isSelected() || 
+                cbxColesterolTotal.isSelected() || cbxBilirrubina.isSelected() || cbxUreia.isSelected() ||
+                cbxColesterolFracionado.isSelected() || cbxTgoTgp.isSelected() || cbxCoatinina.isSelected() ||
+                cbxTriglicerides.isSelected()) 
+            {
+                if(pedidoDAO.geraBioqui(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
+                    
+                    JOptionPane.showMessageDialog(rootPane, "bioquimica");  
+                }
+            }
+            
+            JOptionPane.showMessageDialog(rootPane, "Pedido gerado com sucesso!");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Falha no Cadastro do pedido");
+        }
+        
+        
+    }
+    // Fim Novo Exame
+    // Listar Pedidos
+    public void mostrarExames(){
+        
+        PedidoDAO pedidoDAO = new PedidoDAO();
+        listarPedido = pedidoDAO.listarPedidos();
+              
+        while(tmExame.getRowCount() > 0) {
+            tmExame.removeRow(0);
+        }
+        
+        if(listarPedido.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Nenhum Exame foi encontrado!");
+        }else{
+            for(int i = 0; i < listarPedido.size(); i++){
+                tmExame.addRow(colunaExame);
+                tmExame.setValueAt(listarPedido.get(i).getIdPedido(), i, 0);
+                tmExame.setValueAt(listarPedido.get(i).getIdCliente(), i, 1);
+                tmExame.setValueAt(listarPedido.get(i).getNome(), i, 2);
+                tmExame.setValueAt(listarPedido.get(i).getCpf(), i, 3);
+                tmExame.setValueAt(listarPedido.get(i).isStatus(), i, 4);
+                
+            }
+        }
+    }
+    // Fim Listar Pedidos
+    // Inicio Busca Pedido Exame
+    private void buscaPedidoExame(){
+        if(!txtCodPedidoResult.getText().isEmpty()){
+            //buscando a data atual
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            java.util.Date dataString = new java.util.Date();
+            String dataFormatada = String.valueOf(formato.format(dataString));
+            txtExPedDataPedido.setText(dataFormatada);
+
+            PedidoDAO pedidoDAO = new PedidoDAO();
+
+            txtExPedNome.setText(pedidoDAO.buscaCliente(Integer.valueOf(txtExPedCodCliente.getText().trim())));
         }
     }
     
@@ -2701,7 +2825,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfRelatorioActionPerformed
 
     private void btnHemoPedSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHemoPedSalvarActionPerformed
-        // TODO add your handling code here:
+        novoExame();
     }//GEN-LAST:event_btnHemoPedSalvarActionPerformed
 
     private void btnHemoPedCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHemoPedCancelarActionPerformed
@@ -3084,6 +3208,14 @@ public class Principal extends javax.swing.JFrame {
     private void btnExameDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameDetalheActionPerformed
         exameGeraRel.setVisible(true);
     }//GEN-LAST:event_btnExameDetalheActionPerformed
+
+    private void txtExPedCodClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtExPedCodClienteFocusLost
+        buscaClienteExame();
+    }//GEN-LAST:event_txtExPedCodClienteFocusLost
+
+    private void txtCodPedidoResultFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCodPedidoResultFocusLost
+        buscaPedidoExame();
+    }//GEN-LAST:event_txtCodPedidoResultFocusLost
     
     
     
@@ -3209,7 +3341,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel82;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     private javax.swing.JPanel jpnExames;
     private javax.swing.JLabel lblNivelAcesso;
     private javax.swing.JLabel lblNomeUsuario;
@@ -3218,6 +3349,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbClienteMasc;
     private javax.swing.ButtonGroup rbgSexo;
     private javax.swing.JTable tblCliente;
+    private javax.swing.JTable tblExame;
     private javax.swing.JTextField txtClienteBairro;
     private javax.swing.JFormattedTextField txtClienteCEP;
     private javax.swing.JFormattedTextField txtClienteCPF;
@@ -3230,11 +3362,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodClienteResult;
     private javax.swing.JTextField txtCodPedidoResult;
     private javax.swing.JTextField txtConvenioResult;
-    private javax.swing.JTextField txtDataPedidoResult;
+    private javax.swing.JFormattedTextField txtDataPedidoResult;
     private javax.swing.JTextField txtExPedCodCliente;
     private javax.swing.JTextField txtExPedCodPedido;
     private javax.swing.JTextField txtExPedConvenio;
-    private javax.swing.JTextField txtExPedDataPedido;
+    private javax.swing.JFormattedTextField txtExPedDataPedido;
     private javax.swing.JTextField txtExPedNome;
     private javax.swing.JTextField txtNomeResult;
     // End of variables declaration//GEN-END:variables

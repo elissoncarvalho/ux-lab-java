@@ -10,8 +10,35 @@ import java.sql.Date;
 public class Pedido {
     private int idPedido;
     private int idCliente;
+    private String nome;
     private Date DataPedido;
+    private String cpf;
     private String convenio;
+    private boolean status;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 
     public int getIdPedido() {
         return idPedido;

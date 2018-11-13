@@ -15,7 +15,6 @@ public class PedidoDAO {
     private BaseDeDados bd;
     private PreparedStatement pstm;
     private ResultSet rs;
-    private Cliente cliente;
     private Pedido pedido;
     
     private final String buscaIdPedido = "SELECT ID_N_PEDIDO FROM pedido ORDER BY ID_N_PEDIDO DESC LIMIT 1";
@@ -157,8 +156,9 @@ public class PedidoDAO {
                         
                 pedido.setIdPedido(rs.getInt("ID_N_PEDIDO"));
                 pedido.setIdCliente(rs.getInt("COD_CLIENTE_FK"));
-                pedido.setDataPedido(rs.getDate("DATA_PEDIDO"));
-                pedido.setConvenio(rs.getString("CONVENIO"));
+                pedido.setNome(rs.getString("NOME"));
+                pedido.setCpf(rs.getString("CPF"));
+                pedido.setStatus(true);
                
                 listarPedido.add(pedido);
             }
@@ -169,5 +169,30 @@ public class PedidoDAO {
         }
         bd.desconecta();
         return listarPedido;
+    }
+    public List<Pedido> buscaPedidoExame (){
+        List<Pedido> listarPedido = new ArrayList<>();
+        try {
+            bd = new BaseDeDados();
+            pstm = bd.conecta().prepareStatement(buscaIdPedido);
+            rs = pstm.executeQuery();
+            if(rs.next()){
+                pedido = new Pedido();
+                        
+                pedido.setIdPedido(rs.getInt("ID_N_PEDIDO"));
+                pedido.setIdCliente(rs.getInt("COD_CLIENTE_FK"));
+                pedido.setNome(rs.getString("NOME"));
+                pedido.setCpf(rs.getString("CPF"));
+                pedido.setStatus(true);
+               
+                listarPedido.add(pedido);
+            }
+            bd.desconecta();
+            return listarPedido;
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            return listarPedido;
+        }
     }
 }
