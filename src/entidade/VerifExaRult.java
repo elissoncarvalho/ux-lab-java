@@ -6,8 +6,7 @@ package entidade;
  *  A classe faz a verificação se os exames estaão habilitados ou concluidos
  *  passando para Fronteira verdade ou falso.
  */
-public class VerifExaRult 
-{   
+public class VerifExaRult {   
             
     // Variaveis de verificação de Status no Cadastro do Resultado de Exame 
     private boolean activeHemograma     = false;

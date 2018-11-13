@@ -474,7 +474,7 @@ public class ClienteDetalhe extends javax.swing.JFrame {
         Date data = cliente.getData_nasc();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         java.util.Date dataString = (java.util.Date) data;
-        String dataFormatada = String.valueOf(formato.format(dataString));;
+        String dataFormatada = String.valueOf(formato.format(dataString));
                 
         ClienteDAO clienteDAO = new ClienteDAO();
         clienteDAO.listarClientes();

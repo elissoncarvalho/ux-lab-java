@@ -27,6 +27,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rbgSangOcultFazes = new javax.swing.ButtonGroup();
         contMasq = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -120,12 +121,14 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         jLabel52.setForeground(new java.awt.Color(11, 19, 25));
         jLabel52.setText("Resultado");
 
+        rbgSangOcultFazes.add(rbAusente);
         rbAusente.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         rbAusente.setForeground(new java.awt.Color(11, 19, 25));
         rbAusente.setText("AUSENTE");
         rbAusente.setFocusPainted(false);
         rbAusente.setOpaque(false);
 
+        rbgSangOcultFazes.add(rbPresente);
         rbPresente.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         rbPresente.setForeground(new java.awt.Color(11, 19, 25));
         rbPresente.setText("PRESENTE");
@@ -401,6 +404,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JRadioButton rbAusente;
     private javax.swing.JRadioButton rbPresente;
+    private javax.swing.ButtonGroup rbgSangOcultFazes;
     private javax.swing.JTextArea txaParasObs;
     private javax.swing.JTextArea txaSangOculObs;
     private javax.swing.JTextField txtParasResult;
