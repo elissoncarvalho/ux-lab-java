@@ -28,7 +28,7 @@ public class Principal extends javax.swing.JFrame {
     ConfAddUser         confAddUser     = new ConfAddUser();
     ConfEdtUser         confEdtUser     = new ConfEdtUser();
     ConfNewBackup       confNewBackup   = new ConfNewBackup();
-    ConfRestBeckup      confRestBeckup  = new ConfRestBeckup();
+    ConfRestBackup      confRestBeckup  = new ConfRestBackup();
     ConfAplicacao       confAplicacao   = new ConfAplicacao();
     ConfRelatorio       confRelatorio   = new ConfRelatorio();
 
