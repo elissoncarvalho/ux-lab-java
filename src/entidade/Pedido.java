@@ -15,6 +15,43 @@ public class Pedido {
     private String cpf;
     private String convenio;
     private boolean status;
+    
+    private boolean activeHemograma;
+    private boolean activeBioquimica;
+    private boolean activeUrinaRotina;
+    private boolean activeSangueOculto;
+
+    public boolean isActiveHemograma() {
+        return activeHemograma;
+    }
+
+    public void setActiveHemograma(boolean activeHemograma) {
+        this.activeHemograma = activeHemograma;
+    }
+
+    public boolean isActiveBioquimica() {
+        return activeBioquimica;
+    }
+
+    public void setActiveBioquimica(boolean activeBioquimica) {
+        this.activeBioquimica = activeBioquimica;
+    }
+
+    public boolean isActiveUrinaRotina() {
+        return activeUrinaRotina;
+    }
+
+    public void setActiveUrinaRotina(boolean activeUrinaRotina) {
+        this.activeUrinaRotina = activeUrinaRotina;
+    }
+
+    public boolean isActiveSangueOculto() {
+        return activeSangueOculto;
+    }
+
+    public void setActiveSangueOculto(boolean activeSangueOculto) {
+        this.activeSangueOculto = activeSangueOculto;
+    }
 
     public String getNome() {
         return nome;

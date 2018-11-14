@@ -2521,6 +2521,7 @@ public class Principal extends javax.swing.JFrame {
         if(pedidoDAO.geraPedido(pedido)){
             
             if (cbxHemograma.isSelected()){
+                
                 if(pedidoDAO.geraHemogr(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
                     
                     JOptionPane.showMessageDialog(rootPane, "hemograma");  
