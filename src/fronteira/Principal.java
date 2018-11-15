@@ -2515,6 +2515,9 @@ public class Principal extends javax.swing.JFrame {
         pedido.setIdCliente(Integer.valueOf(txtExPedCodCliente.getText().trim()));
         pedido.setDataPedido(dataFormatada);
         pedido.setConvenio(txtExPedConvenio.getText().trim());
+//        case
+           
+  //      pedido.setActiveHemograma(Boolean.valueOf(txtExPedCodCliente.getText().trim()));
         
         PedidoDAO pedidoDAO = new PedidoDAO();
         
