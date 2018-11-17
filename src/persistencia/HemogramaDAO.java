@@ -14,9 +14,9 @@ public class HemogramaDAO {
     private ResultSet rs;
     private Hemograma hemo;
     
-    private String buscarHemo = "SELECT * FROM hemograma WHERE id_pedido_fk = ? LIMIT 1";
+    private final String buscarHemo = "SELECT * FROM hemograma WHERE id_pedido_fk = ? LIMIT 1";
     
-    private String salvarHemo = "UPDATE hemograma SET HEMACIAS = ?, "
+    private final String salvarHemo = "UPDATE hemograma SET HEMACIAS = ?, "
             + "HEMOGLOBINA = ?, HEMATOCRITO = ?, VCM = ?, HCM = ?, CHCM = ?, "
             + "RDW = ?, LEUCOCITOS = ?, NEUTROFILOS = ?, SEGMENTADOS = ?, "
             + "BASTONETES = ?, EOSINOFILOS = ?, BASOFILOS = ?, LINFOCITOS = ?, "
@@ -25,48 +25,45 @@ public class HemogramaDAO {
             + "BASOFILOS1 = ?, LINFOCITOS1 = ?, MONOCITOS1 = ?, "
             + "CONTAGEMPLAQUETAS = ? WHERE id_pedido_fk = ?";
 
-    public List<Hemograma> listarHemo (Integer CodigoH){
-        List<Hemograma> listaHemo = new ArrayList<Hemograma>();
+    public Hemograma listarHemo (Hemograma hemo){
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(buscarHemo);
-            pstm.setInt(1, CodigoH);
+            pstm.setInt(1, hemo.getCodigoH());
             rs = pstm.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
                 hemo = new Hemograma();
-                hemo.setCodigoH(rs.getInt("codigoh"));
-                hemo.setHemacias(rs.getDouble("hemacias"));
-                hemo.setHemoglobina(rs.getDouble("hemoglobina"));
-                hemo.setHematocrito(rs.getDouble("hematocrito"));
-                hemo.setVcm(rs.getDouble("vcm"));
-                hemo.setHcm(rs.getDouble("hcm"));
-                hemo.setChcm(rs.getDouble("chcm"));
-                hemo.setRdw(rs.getDouble("rdw"));
-                hemo.setLeucocitos(rs.getDouble("leucocitos"));
-                hemo.setNeutrofilos(rs.getDouble("neutrofilos"));
-                hemo.setSegmentados(rs.getDouble("segmentados"));
-                hemo.setBastonetes(rs.getDouble("bastonetes"));
-                hemo.setEosinofilos(rs.getDouble("eosinofilos"));
-                hemo.setBasofilos(rs.getDouble("basofilos"));
-                hemo.setLinfocitos(rs.getDouble("linfocitos"));
-                hemo.setMonocitos(rs.getDouble("monocitos"));
-                hemo.setLeucocitos1(rs.getDouble("leucocitos1"));
-                hemo.setNeutrofilos1(rs.getDouble("neutrofilos1"));
-                hemo.setSegmentados1(rs.getDouble("segmentados1"));
-                hemo.setBastonetes1(rs.getDouble("bastonetes1"));
-                hemo.setEosinofilos1(rs.getDouble("eosinofilos1"));
-                hemo.setBasofilos1(rs.getDouble("basofilos1"));
-                hemo.setLinfocitos1(rs.getDouble("linfocitos1"));
-                hemo.setMonocitos1(rs.getDouble("monocitos1"));
-                hemo.setContagemPlaquetas(rs.getDouble("contagemplaquetas"));
-                listaHemo.add(hemo);
+                hemo.setHemacias(rs.getDouble("HEMACIAS"));
+                hemo.setHemoglobina(rs.getDouble("HEMOGLOBINA"));
+                hemo.setHematocrito(rs.getDouble("HEMATOCRITO"));
+                hemo.setVcm(rs.getDouble("VCM"));
+                hemo.setHcm(rs.getDouble("HCM"));
+                hemo.setChcm(rs.getDouble("CHCM"));
+                hemo.setRdw(rs.getDouble("RDW"));
+                hemo.setLeucocitos(rs.getDouble("LEUCOCITOS"));
+                hemo.setNeutrofilos(rs.getDouble("NEUTROFILOS"));
+                hemo.setSegmentados(rs.getDouble("SEGMENTADOS"));
+                hemo.setBastonetes(rs.getDouble("BASTONETES"));
+                hemo.setEosinofilos(rs.getDouble("EOSINOFILOS"));
+                hemo.setBasofilos(rs.getDouble("BASOFILOS"));
+                hemo.setLinfocitos(rs.getDouble("LINFOCITOS"));
+                hemo.setMonocitos(rs.getDouble("MONOCITOS"));
+                hemo.setLeucocitos1(rs.getDouble("LEUCOCITOS1"));
+                hemo.setNeutrofilos1(rs.getDouble("NEUTROFILOS1"));
+                hemo.setSegmentados1(rs.getDouble("SEGMENTADOS1"));
+                hemo.setBastonetes1(rs.getDouble("BASTONETES1"));
+                hemo.setEosinofilos1(rs.getDouble("EOSINOFILOS1"));
+                hemo.setBasofilos1(rs.getDouble("BASOFILOS1"));
+                hemo.setLinfocitos1(rs.getDouble("LINFOCITOS1"));
+                hemo.setMonocitos1(rs.getDouble("MONOCITOS1"));
+                hemo.setContagemPlaquetas(rs.getDouble("CONTAGEM_PLAQUETAS"));
             }
         }
         catch (Exception e){
             e.printStackTrace();
         }
         bd.desconecta();
-        return listaHemo;
+        return hemo;
     }
     
     public void salvarHemo(Hemograma hemo){

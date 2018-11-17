@@ -1,25 +1,27 @@
 package fronteira;
 
 import entidade.Helper;
-import entidade.VerifExaRult;
+import entidade.Hemograma;
+import entidade.Pedido;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import persistencia.HemogramaDAO;
 
 /**
  *
  * @author Elisson
  */
-public class ExameHemograma extends javax.swing.JFrame {
+public final class ExameHemograma extends javax.swing.JFrame {
     
     Helper helper = new Helper();
-    VerifExaRult    verifExaRult    = new VerifExaRult();
     
-    public ExameHemograma() {
+    public ExameHemograma(int h) {
+        h = 1;
         initComponents();
-        
         formConfig();
+        listarHemo(h);
     }
 
     @SuppressWarnings("unchecked")
@@ -823,7 +825,67 @@ public class ExameHemograma extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void listarHemo(int h){
+        Hemograma hemo = new Hemograma();
+        hemo.setCodigoH(h);
+        
+        HemogramaDAO hemogramaDAO = new HemogramaDAO();
+        hemogramaDAO.listarHemo(hemo);
+        
+        txtHemacias.setText(String.valueOf(hemo.getHemacias()));
+        txtHemoglobina.setText(String.valueOf(hemo.getHemoglobina()));
+        txtHematocrito.setText(String.valueOf(hemo.getHematocrito()));
+        txtVcm.setText(String.valueOf(hemo.getVcm()));
+        txtHcm.setText(String.valueOf(hemo.getHcm()));
+        txtChcm.setText(String.valueOf(hemo.getChcm()));
+        txtRdw.setText(String.valueOf(hemo.getRdw()));
+        txtLeucocitos.setText(String.valueOf(hemo.getLeucocitos()));
+        txtLeucocitos1.setText(String.valueOf(hemo.getLeucocitos1()));
+        txtNeutrofilos.setText(String.valueOf(hemo.getNeutrofilos()));
+        txtNeutrofilos1.setText(String.valueOf(hemo.getNeutrofilos1()));
+        txtSegmentados.setText(String.valueOf(hemo.getSegmentados()));
+        txtSegmentados1.setText(String.valueOf(hemo.getSegmentados1()));
+        txtBastonetes.setText(String.valueOf(hemo.getBastonetes()));
+        txtBastonetes1.setText(String.valueOf(hemo.getBastonetes1()));
+        txtEosinofilos.setText(String.valueOf(hemo.getEosinofilos()));
+        txtEosinofilos1.setText(String.valueOf(hemo.getEosinofilos1()));
+        txtBasofilos.setText(String.valueOf(hemo.getBasofilos()));
+        txtBasofilos1.setText(String.valueOf(hemo.getBasofilos1()));
+        txtLinfocitos.setText(String.valueOf(hemo.getLinfocitos()));
+        txtLinfocitos1.setText(String.valueOf(hemo.getLinfocitos1()));
+        txtMonocitos.setText(String.valueOf(hemo.getMonocitos()));
+        txtMonocitos1.setText(String.valueOf(hemo.getMonocitos1()));
+        txtContagemPlaquetas.setText(String.valueOf(hemo.getContagemPlaquetas()));
+    }
+    
+    // Faz a validação dos campos, se foram preenchidos corretamente 
+    private void  verificaSalvar(){
+        Pedido pedido = new Pedido();
+        if(1/*CONDICAO VERDADE AQUI*/ == 1)
+        {   
+            pedido.setStatusHemograma(true);
+            //principal.verificaStatus();
+        }
+        else
+        {
+            pedido.setStatusHemograma(!true);
+           // principal.verificaStatus();
+        }
+        this.setVisible(false);
+    }    
+    private void formConfig(){
+        //Icone do Sistema
+        URL url = this.getClass().getResource("/imgIcons/icon.png");  
+        Image iconeTitulo;
+        iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        
+        this.setBackground(new Color(255,255,255,150));
+        
+        // Posicionamento do Frame
+        setLocationRelativeTo(null);
+    }
+    
     private void btnCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseEntered
         helper.setMouseBtnFormMoved(btnCancelar, 2, null);
     }//GEN-LAST:event_btnCancelarMouseEntered
@@ -848,32 +910,7 @@ public class ExameHemograma extends javax.swing.JFrame {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnSalvarActionPerformed
-    // Faz a validação dos campos, se foram preenchidos corretamente 
-    private void hemogramaVerificaSalvar()
-    {
-        if(1/*CONDICAO VERDADE AQUI*/ == 1)
-        {   
-            verifExaRult.setStatusHemograma(true);
-            //principal.verificaStatus();
-        }
-        else
-        {
-            verifExaRult.setStatusHemograma(!true);
-           // principal.verificaStatus();
-        }
-        this.setVisible(false);
-    }    
-    private void formConfig(){
-        //Icone do Sistema
-        URL url = this.getClass().getResource("/imgIcons/icon.png");  
-        Image iconeTitulo;
-        iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
-        
-        this.setBackground(new Color(255,255,255,150));
-        
-        // Posicionamento do Frame
-        setLocationRelativeTo(null);
-    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -901,7 +938,7 @@ public class ExameHemograma extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ExameHemograma().setVisible(true);
+                new ExameHemograma(0).setVisible(true);
             }
         });
     }

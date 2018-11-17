@@ -8,30 +8,6 @@ import javax.swing.JToggleButton;
  * @author elisson
  */
 public class Helper {
-    /*
-    Analizar a viabilidade d implementação
-    
-    private boolean statusMasq = true;
-
-    public boolean isStatusMasq() {
-        return statusMasq;
-    }
-
-    public void setStatusMasq(boolean statusMasq){
-        this.statusMasq = statusMasq;
-    }
-
-    public void showMasq(JPanel panelA, JPanel panelB){   // Efeito Mascara Branca
-        panelA.setVisible(!true);
-        panelB.setVisible(true);
-        this.statusMasq = !true;
-    }
-    private void resetMasq(JPanel panelA, JPanel panelB){   // Volta ao estado anterior da Mascara
-        
-        statusMasq = true;
-    }
-    */
-    VerifExaRult        verifExaRult    = new VerifExaRult();
     
     // Transicoes de cor ao passar o mouse por cima
     public void setMouseBtnSMMoved(JToggleButton btn){
@@ -116,46 +92,64 @@ public class Helper {
     // Fim Transisções
     
     // Verifica se o Exame esta Ativado
-    public void verificaActive(JToggleButton btn1,JToggleButton btn2,JToggleButton btn3, JToggleButton btn4){   
+    public void verificaActive(JToggleButton btn1, JToggleButton btn2, JToggleButton btn3, JToggleButton btn4, Pedido pedido){  
+        
         // ExameHemograma
-        if(verifExaRult.isActiveHemograma() == !true){
+        if(pedido.isActiveHemograma() == true){
+            btn1.setVisible(true);
             btn1.setEnabled(true);
+        }else{
+            btn1.setVisible(false);
+            btn1.setEnabled(false);
         }
         // ExameBioquimica
-        if(verifExaRult.isActiveBioquimica() == !true){
+        if(pedido.isActiveBioquimica() == true){
+            btn2.setVisible(true);
             btn2.setEnabled(true);
+        }else{
+            btn2.setVisible(false);
+            btn2.setEnabled(false);
         }
         // Urina Rotina
-        if(verifExaRult.isActiveUrinaRotina() == !true){
+        if(pedido.isActiveUrinaRotina() == true){
+            btn3.setVisible(true);
             btn3.setEnabled(true);
+        }else{
+            btn3.setVisible(false);
+            btn3.setEnabled(false);
         }
         // Sangue Oculto
-        if(verifExaRult.isActiveSangueOculto() == !true){
+        if(pedido.isActiveSangueOculto() == true){
+            btn4.setVisible(true);
             btn4.setEnabled(true);
+        }else{
+            btn4.setVisible(false);
+            btn4.setEnabled(false);
         }
     }
     // Verifica se o Exame esta Concluido
-    public void verificaStatus(JToggleButton btn1,JToggleButton btn2,JToggleButton btn3, JToggleButton btn4){   
+    public void verificaStatus(JToggleButton btn1,JToggleButton btn2,JToggleButton btn3, JToggleButton btn4){  
+        Pedido pedido = new Pedido();
         // ExameHemograma
-        if(verifExaRult.isStatusHemograma() == true){
+        if(pedido.isStatusHemograma() == true){
             setColorBtnExameCadReslt(btn1);
         } else {
             restColorBtnExameCadReslt(btn1);
         }
         // ExameBioquimica
-        if(verifExaRult.isStatusBioquimica() == true){
+        if(pedido.isStatusBioquimica() == true){
             setColorBtnExameCadReslt(btn2);
         } else {
             restColorBtnExameCadReslt(btn2);
         }
         // Urina Rotina
-        if(verifExaRult.isStatusUrinaRotina() == true){
+        if(pedido.isStatusUrinaRotina() == true){
             setColorBtnExameCadReslt(btn3);
         } else {
             restColorBtnExameCadReslt(btn3);
         }
         // Sangue Oculto
-        if(verifExaRult.isStatusSangueOculto() == true){
+        if(pedido.isStatusSangueOculto() == true){
             setColorBtnExameCadReslt(btn4);
         } else {
             restColorBtnExameCadReslt(btn4);

@@ -20,6 +20,43 @@ public class Pedido {
     private boolean activeBioquimica;
     private boolean activeUrinaRotina;
     private boolean activeSangueOculto;
+    
+    private boolean statusHemograma;
+    private boolean statusBioquimica;
+    private boolean statusUrinaRotina;
+    private boolean statusSangueOculto;
+
+    public boolean isStatusHemograma() {
+        return statusHemograma;
+    }
+
+    public void setStatusHemograma(boolean statusHemograma) {
+        this.statusHemograma = statusHemograma;
+    }
+
+    public boolean isStatusBioquimica() {
+        return statusBioquimica;
+    }
+
+    public void setStatusBioquimica(boolean statusBioquimica) {
+        this.statusBioquimica = statusBioquimica;
+    }
+
+    public boolean isStatusUrinaRotina() {
+        return statusUrinaRotina;
+    }
+
+    public void setStatusUrinaRotina(boolean statusUrinaRotina) {
+        this.statusUrinaRotina = statusUrinaRotina;
+    }
+
+    public boolean isStatusSangueOculto() {
+        return statusSangueOculto;
+    }
+
+    public void setStatusSangueOculto(boolean statusSangueOculto) {
+        this.statusSangueOculto = statusSangueOculto;
+    }
 
     public boolean isActiveHemograma() {
         return activeHemograma;

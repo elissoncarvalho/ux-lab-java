@@ -21,10 +21,6 @@ import persistencia.PedidoDAO;
 public class Principal extends javax.swing.JFrame {
     
     Helper              helper          = new Helper();
-    ExameHemograma      hemograma       = new ExameHemograma();
-    ExameBioquimica     bioquimica      = new ExameBioquimica();
-    ExameUrinaRotina    urinaRotina     = new ExameUrinaRotina();
-    ExameSangueOculto   sangueOculto    = new ExameSangueOculto();
     ExameGeraRelatorio  exameGeraRel    = new ExameGeraRelatorio();
     ConfAddUser         confAddUser     = new ConfAddUser();
     ConfEdtUser         confEdtUser     = new ConfEdtUser();
@@ -52,11 +48,7 @@ public class Principal extends javax.swing.JFrame {
         Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);  
         this.setIconImage(iconeTitulo);
         
-        divNaoInicia();
-        helper.verificaActive(btnHemograma, btnBioquimica, btnUrinaRotina, btnSangueOculto);
-        helper.verificaStatus(btnHemograma, btnBioquimica, btnUrinaRotina, btnSangueOculto);
-        
-        
+        divNaoInicia();    
     }
     
     @SuppressWarnings("unchecked")
@@ -1101,10 +1093,12 @@ public class Principal extends javax.swing.JFrame {
 
         divCadastraResultado.setBackground(new java.awt.Color(255, 255, 255));
         divCadastraResultado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        divCadastraResultado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(35, 59, 77));
         jLabel24.setText("Cód. Pedido");
+        divCadastraResultado.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 50, -1, -1));
 
         txtCodPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtCodPedidoResult.setForeground(new java.awt.Color(35, 59, 77));
@@ -1118,10 +1112,12 @@ public class Principal extends javax.swing.JFrame {
                 txtCodPedidoResultFocusLost(evt);
             }
         });
+        divCadastraResultado.add(txtCodPedidoResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 66, 100, 30));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(35, 59, 77));
         jLabel27.setText("Data do Pedido");
+        divCadastraResultado.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 50, -1, -1));
 
         txtDataPedidoResult.setEditable(false);
         txtDataPedidoResult.setBackground(new java.awt.Color(255, 255, 255));
@@ -1133,10 +1129,12 @@ public class Principal extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         txtDataPedidoResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        divCadastraResultado.add(txtDataPedidoResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 66, 120, 30));
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(35, 59, 77));
         jLabel28.setText("Convênio");
+        divCadastraResultado.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 50, -1, -1));
 
         txtConvenioResult.setEditable(false);
         txtConvenioResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
@@ -1146,10 +1144,12 @@ public class Principal extends javax.swing.JFrame {
         txtConvenioResult.setName(""); // NOI18N
         txtConvenioResult.setOpaque(false);
         txtConvenioResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+        divCadastraResultado.add(txtConvenioResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 66, 150, 30));
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(35, 59, 77));
         jLabel25.setText("Cód. Cliente");
+        divCadastraResultado.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 50, -1, -1));
 
         txtCodClienteResult.setEditable(false);
         txtCodClienteResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
@@ -1159,10 +1159,12 @@ public class Principal extends javax.swing.JFrame {
         txtCodClienteResult.setName(""); // NOI18N
         txtCodClienteResult.setOpaque(false);
         txtCodClienteResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+        divCadastraResultado.add(txtCodClienteResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 66, 100, 30));
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(35, 59, 77));
         jLabel26.setText("Nome Completo");
+        divCadastraResultado.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 118, -1, -1));
 
         txtNomeResult.setEditable(false);
         txtNomeResult.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
@@ -1172,6 +1174,7 @@ public class Principal extends javax.swing.JFrame {
         txtNomeResult.setName(""); // NOI18N
         txtNomeResult.setOpaque(false);
         txtNomeResult.setSelectionColor(new java.awt.Color(35, 59, 77));
+        divCadastraResultado.add(txtNomeResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 134, 536, 30));
 
         btnHemograma.setBackground(new java.awt.Color(255, 255, 255));
         btnHemograma.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -1197,6 +1200,7 @@ public class Principal extends javax.swing.JFrame {
                 btnHemogramaActionPerformed(evt);
             }
         });
+        divCadastraResultado.add(btnHemograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 224, 130, 60));
 
         btnBioquimica.setBackground(new java.awt.Color(255, 255, 255));
         btnBioquimica.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -1222,6 +1226,7 @@ public class Principal extends javax.swing.JFrame {
                 btnBioquimicaActionPerformed(evt);
             }
         });
+        divCadastraResultado.add(btnBioquimica, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 224, 130, 60));
 
         btnUrinaRotina.setBackground(new java.awt.Color(255, 255, 255));
         btnUrinaRotina.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -1247,18 +1252,18 @@ public class Principal extends javax.swing.JFrame {
                 btnUrinaRotinaActionPerformed(evt);
             }
         });
+        divCadastraResultado.add(btnUrinaRotina, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 334, 130, 60));
 
         btnSangueOculto.setBackground(new java.awt.Color(255, 255, 255));
         btnSangueOculto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnSangueOculto.setForeground(new java.awt.Color(35, 59, 77));
-        btnSangueOculto.setText("<html>EPF\n<p>Sangue Oculto</p>");
-        btnSangueOculto.setActionCommand("<html>\n<p><center> EPF</center></p>\n\n<p>Sangue Oculto</p>\n\n</html");
+        btnSangueOculto.setText(" EPF / Sangue Oculto");
+        btnSangueOculto.setActionCommand(" EPF / Sangue Oculto");
         btnSangueOculto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnSangueOculto.setContentAreaFilled(false);
         btnSangueOculto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSangueOculto.setEnabled(false);
         btnSangueOculto.setFocusPainted(false);
-        btnSangueOculto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSangueOculto.setNextFocusableComponent(btnCadastraResultado);
         btnSangueOculto.setOpaque(true);
         btnSangueOculto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1274,81 +1279,7 @@ public class Principal extends javax.swing.JFrame {
                 btnSangueOcultoActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout divCadastraResultadoLayout = new javax.swing.GroupLayout(divCadastraResultado);
-        divCadastraResultado.setLayout(divCadastraResultadoLayout);
-        divCadastraResultadoLayout.setHorizontalGroup(
-            divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(btnHemograma, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(btnBioquimica, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(btnUrinaRotina, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(btnSangueOculto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel26)
-                            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel24))
-                                .addGap(22, 22, 22)
-                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel25)
-                                    .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addComponent(jLabel27)))
-                                .addGap(22, 22, 22)
-                                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel28)
-                                    .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(147, 147, 147))
-        );
-        divCadastraResultadoLayout.setVerticalGroup(
-            divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel28))
-                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtConvenioResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(divCadastraResultadoLayout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addGap(0, 0, 0)
-                        .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCodClienteResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDataPedidoResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(22, 22, 22)
-                .addComponent(jLabel26)
-                .addGap(0, 0, 0)
-                .addComponent(txtNomeResult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnHemograma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBioquimica, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(divCadastraResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUrinaRotina, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSangueOculto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        divCadastraResultado.add(btnSangueOculto, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 334, 130, 60));
 
         divExame.add(divCadastraResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 830, 520));
 
@@ -1553,7 +1484,6 @@ public class Principal extends javax.swing.JFrame {
         tblCliente.setShowHorizontalLines(false);
         tblCliente.setShowVerticalLines(false);
         tblCliente.getTableHeader().setResizingAllowed(false);
-        tblCliente.getTableHeader().setReorderingAllowed(false);
         tblCliente.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         lsmCliente = tblCliente.getSelectionModel();
         lsmCliente.addListSelectionListener(new ListSelectionListener(){
@@ -2585,16 +2515,19 @@ public class Principal extends javax.swing.JFrame {
             pedido.setIdPedido(Integer.valueOf(txtCodPedidoResult.getText().trim()));
             PedidoDAO pedidoDAO = new PedidoDAO();
             pedidoDAO.buscaPedidoExame(pedido);
-            /*
+            
             Date data = pedido.getDataPedido();
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             java.util.Date dataString = (java.util.Date) data;
             String dataFormatada = String.valueOf(formato.format(dataString));
-            */
+            
             txtCodClienteResult.setText(String.valueOf(pedido.getIdCliente()));
-            txtDataPedidoResult.setText("20/10/2000");
+            txtDataPedidoResult.setText(dataFormatada);
             txtConvenioResult.setText(pedido.getConvenio());
             txtNomeResult.setText(pedido.getNome());
+            
+            helper.verificaActive(btnHemograma, btnBioquimica, btnUrinaRotina, btnSangueOculto, pedido);
+            helper.verificaStatus(btnHemograma, btnBioquimica, btnUrinaRotina, btnSangueOculto);
             
         }
     }
@@ -2779,18 +2712,24 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxSangueOcultoActionPerformed
 
     private void btnBioquimicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBioquimicaActionPerformed
+        ExameBioquimica bioquimica = new ExameBioquimica();
         bioquimica.setVisible(true);
     }//GEN-LAST:event_btnBioquimicaActionPerformed
 
     private void btnHemogramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHemogramaActionPerformed
-        hemograma.setVisible(true);
+        
+        ExameHemograma exameHemograma = new ExameHemograma(Integer.valueOf(txtCodPedidoResult.getText().trim()));
+        exameHemograma.setVisible(true);
+        
     }//GEN-LAST:event_btnHemogramaActionPerformed
 
     private void btnUrinaRotinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrinaRotinaActionPerformed
+        ExameUrinaRotina urinaRotina = new ExameUrinaRotina();
         urinaRotina.setVisible(true);
     }//GEN-LAST:event_btnUrinaRotinaActionPerformed
 
     private void btnSangueOcultoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSangueOcultoActionPerformed
+        ExameSangueOculto sangueOculto = new ExameSangueOculto();
         sangueOculto.setVisible(true);
     }//GEN-LAST:event_btnSangueOcultoActionPerformed
 

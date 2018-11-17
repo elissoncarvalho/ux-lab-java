@@ -25,9 +25,9 @@ public class PedidoDAO {
             + "cliente.ID_CLIENTE = pedido.COD_CLIENTE_FK WHERE pedido.DELET = 0 ORDER BY PEDIDO.ID_N_PEDIDO";
     
     private final String buscaExame = "SELECT PEDIDO.ID_N_PEDIDO, pedido.COD_CLIENTE_FK, pedido.DATA_PEDIDO, "
-            + "PEDIDO.CONVENIO, cliente.NOME , CASE WHEN pedido.ACTIVE_HEMOGRAMA = 1 THEN 'ACTIVE' END AS Hemo, "
-            + "CASE WHEN pedido.ACTIVE_BIOQUIMICA = 1 THEN 'ACTIVE' END AS bioq, CASE WHEN pedido.ACTIVE_FEZES = 1 "
-            + "THEN 'ACTIVE' END AS COCO, CASE WHEN pedido.ACTIVE_URINAROTINA = 1 THEN 'ACTIVE' END AS urina "
+            + "PEDIDO.CONVENIO, cliente.NOME , CASE WHEN pedido.ACTIVE_HEMOGRAMA = 1 THEN '1' END AS Hemo, "
+            + "CASE WHEN pedido.ACTIVE_BIOQUIMICA = 1 THEN '1' END AS bioq, CASE WHEN pedido.ACTIVE_FEZES = 1 "
+            + "THEN '1' END AS COCO, CASE WHEN pedido.ACTIVE_URINAROTINA = 1 THEN '1' END AS urina "
             + "FROM PEDIDO INNER JOIN cliente ON cliente.DELET = 0 AND cliente.ID_CLIENTE = pedido.COD_CLIENTE_FK "
             + "LEFT JOIN hemograma on hemograma.ID_PEDIDO_FK = pedido.ID_N_PEDIDO LEFT JOIN bioquimica on "
             + "bioquimica.ID_PEDIDO_FK = pedido.ID_N_PEDIDO LEFT JOIN fezes on fezes.ID_PEDIDO_FK = pedido.ID_N_PEDIDO "
@@ -116,14 +116,12 @@ public class PedidoDAO {
         return listarPedido;
     }
     public Pedido buscaPedidoExame (Pedido pedido){
-        
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(buscaExame);
             pstm.setInt(1, pedido.getIdPedido());
             rs = pstm.executeQuery();
             if(rs.next()){
-                pedido = new Pedido();
                         
                 pedido.setIdCliente(rs.getInt("COD_CLIENTE_FK"));
                 pedido.setDataPedido(rs.getDate("DATA_PEDIDO"));
@@ -135,12 +133,11 @@ public class PedidoDAO {
                 pedido.setActiveUrinaRotina(rs.getBoolean("urina"));
                 pedido.setStatus(true);
             }
-            bd.desconecta();
-            return pedido;
         }
         catch(SQLException e){
             e.printStackTrace();
-            return pedido;
         }
+        bd.desconecta();
+        return pedido;
     }
 }
