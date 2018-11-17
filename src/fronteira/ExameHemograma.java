@@ -19,10 +19,12 @@ public final class ExameHemograma extends javax.swing.JFrame {
     
     Helper helper = new Helper();
     
+    private int idExame;
+    
     public ExameHemograma(int h) {
         initComponents();
         formConfig();
-        listarHemo(h);
+        listarHemo(1);
     }
 
     @SuppressWarnings("unchecked")
@@ -826,8 +828,8 @@ public final class ExameHemograma extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    public void listarHemo(int h){
+        
+    private void listarHemo(int h){
         List<Hemograma> listaExame;
         
         HemogramaDAO hemogramaDAO = new HemogramaDAO();
@@ -835,6 +837,7 @@ public final class ExameHemograma extends javax.swing.JFrame {
         if(listaExame.isEmpty()){
             JOptionPane.showMessageDialog(this, "Exame não encontrado.");
         }else{
+            idExame = h;
             txtHemacias.setText(String.valueOf(listaExame.get(0).getHemacias()));
             txtHemoglobina.setText(String.valueOf(listaExame.get(0).getHemoglobina()));
             txtHematocrito.setText(String.valueOf(listaExame.get(0).getHematocrito()));
@@ -859,11 +862,45 @@ public final class ExameHemograma extends javax.swing.JFrame {
             txtMonocitos.setText(String.valueOf(listaExame.get(0).getMonocitos()));
             txtMonocitos1.setText(String.valueOf(listaExame.get(0).getMonocitos1()));
             txtContagemPlaquetas.setText(String.valueOf(listaExame.get(0).getContagemPlaquetas()));
-            
+        }
+    }
+    private void salvaExame(){
+        Hemograma hemograma = new Hemograma();
+        hemograma.setCodigoH(idExame);
+        hemograma.setHemacias(Double.valueOf(txtHemacias.getText().trim()));
+        hemograma.setHemoglobina(Double.valueOf(txtHemoglobina.getText().trim()));
+        hemograma.setHematocrito(Double.valueOf(txtHematocrito.getText().trim()));
+        hemograma.setVcm(Double.valueOf(txtVcm.getText().trim()));
+        hemograma.setHcm(Double.valueOf(txtHcm.getText().trim()));
+        hemograma.setChcm(Double.valueOf(txtChcm.getText().trim()));
+        hemograma.setRdw(Double.valueOf(txtRdw.getText().trim()));
+        hemograma.setLeucocitos(Double.valueOf(txtLeucocitos.getText().trim()));
+        hemograma.setLeucocitos1(Double.valueOf(txtLeucocitos1.getText().trim()));
+        hemograma.setNeutrofilos(Double.valueOf(txtNeutrofilos.getText().trim()));
+        hemograma.setNeutrofilos1(Double.valueOf(txtNeutrofilos1.getText().trim()));
+        hemograma.setSegmentados(Double.valueOf(txtSegmentados.getText().trim()));
+        hemograma.setSegmentados1(Double.valueOf(txtSegmentados1.getText().trim()));
+        hemograma.setBastonetes(Double.valueOf(txtBastonetes.getText().trim()));
+        hemograma.setBastonetes1(Double.valueOf(txtBastonetes1.getText().trim()));
+        hemograma.setEosinofilos(Double.valueOf(txtEosinofilos.getText().trim()));
+        hemograma.setEosinofilos1(Double.valueOf(txtEosinofilos1.getText().trim()));
+        hemograma.setBasofilos(Double.valueOf(txtBasofilos.getText().trim()));
+        hemograma.setBasofilos1(Double.valueOf(txtBasofilos1.getText().trim()));
+        hemograma.setLinfocitos(Double.valueOf(txtLinfocitos.getText().trim()));
+        hemograma.setLinfocitos1(Double.valueOf(txtLinfocitos1.getText().trim()));
+        hemograma.setMonocitos(Double.valueOf(txtMonocitos.getText().trim()));
+        hemograma.setMonocitos1(Double.valueOf(txtMonocitos1.getText().trim()));
+        hemograma.setContagemPlaquetas(Double.valueOf(txtContagemPlaquetas.getText().trim()));
+        
+        HemogramaDAO hemogramaDAO = new HemogramaDAO();
+        if(hemogramaDAO.salvarHemo(hemograma)){
+            JOptionPane.showMessageDialog(this, "Exame Salvo com Sucesso!");
+            this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(this, "Falha ao salvar o Exame");
         }
         
     }
-    
     // Faz a validação dos campos, se foram preenchidos corretamente 
     private void  verificaSalvar(){
         Pedido pedido = new Pedido();
@@ -913,7 +950,7 @@ public final class ExameHemograma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMouseExited
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        
+        salvaExame();
     }//GEN-LAST:event_btnSalvarActionPerformed
     
     public static void main(String args[]) {

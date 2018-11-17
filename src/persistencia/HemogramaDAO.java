@@ -23,7 +23,7 @@ public class HemogramaDAO {
             + "MONOCITOS = ?, LEUCOCITOS1 = ?, NEUTROFILOS1 = ?, "
             + "SEGMENTADOS1 = ?, BASTONETES1 = ?, EOSINOFILOS1 = ?, "
             + "BASOFILOS1 = ?, LINFOCITOS1 = ?, MONOCITOS1 = ?, "
-            + "CONTAGEMPLAQUETAS = ? WHERE id_pedido_fk = ?";
+            + "CONTAGEM_PLAQUETAS = ? WHERE id_pedido_fk = ?";
 
     public List<Hemograma> listarHemo (int idHemo){
         List<Hemograma> listaExame = new ArrayList<>();
@@ -69,7 +69,7 @@ public class HemogramaDAO {
         return listaExame;
     }
     
-    public void salvarHemo(Hemograma hemo){
+    public boolean salvarHemo(Hemograma hemo){
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(salvarHemo);
@@ -100,9 +100,11 @@ public class HemogramaDAO {
             pstm.setInt(25, hemo.getCodigoH());
             pstm.executeUpdate();
             bd.desconecta();
+            return true;
         }
         catch(Exception e){
             e.printStackTrace();
+            return false;
         }
     }
     
