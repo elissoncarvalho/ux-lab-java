@@ -3,9 +3,9 @@ import java.sql.*;
 
 public class BaseDeDados {
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3307/id2509221_uxlab";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost/id2509221_uxlab";
     private String user = "root";
-    private String password = "mra1289";
+    private String password = "";
     private Connection conn;
     
     public Connection conecta(){

@@ -2515,44 +2515,35 @@ public class Principal extends javax.swing.JFrame {
         pedido.setIdCliente(Integer.valueOf(txtExPedCodCliente.getText().trim()));
         pedido.setDataPedido(dataFormatada);
         pedido.setConvenio(txtExPedConvenio.getText().trim());
-//        case
-           
-  //      pedido.setActiveHemograma(Boolean.valueOf(txtExPedCodCliente.getText().trim()));
+        if (cbxHemograma.isSelected()){
+            pedido.setActiveHemograma(true);
+        }else{
+            pedido.setActiveHemograma(false);
+        }
+        if (cbxUrinaRotina.isSelected()) {
+            pedido.setActiveUrinaRotina(true);
+        }else{
+            pedido.setActiveUrinaRotina(false);
+        }
+        
+        if (cbxSangueOculto.isSelected() || cbxEpf.isSelected()) {
+            pedido.setActiveSangueOculto(true);
+        }else{
+            pedido.setActiveSangueOculto(false);
+        }
+        if (cbxGlicose.isSelected() || cbxAcidoUrico.isSelected() || cbxGamaGt.isSelected() || 
+            cbxColesterolTotal.isSelected() || cbxBilirrubina.isSelected() || cbxUreia.isSelected() ||
+            cbxColesterolFracionado.isSelected() || cbxTgoTgp.isSelected() || cbxCoatinina.isSelected() ||
+            cbxTriglicerides.isSelected()) 
+        {
+            pedido.setActiveBioquimica(true);
+        }else{
+            pedido.setActiveBioquimica(false);
+        }
         
         PedidoDAO pedidoDAO = new PedidoDAO();
         
         if(pedidoDAO.geraPedido(pedido)){
-            
-            if (cbxHemograma.isSelected()){
-                
-                if(pedidoDAO.geraHemogr(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
-                    
-                    JOptionPane.showMessageDialog(rootPane, "hemograma");  
-                }
-            }
-            if (cbxUrinaRotina.isSelected()) {
-                if(pedidoDAO.geraUriRot(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
-                    
-                    JOptionPane.showMessageDialog(rootPane, "urina rotina");  
-                }
-            }
-            if (cbxSangueOculto.isSelected() || cbxEpf.isSelected()) {
-                if(pedidoDAO.geraSangOc(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
-                    
-                    JOptionPane.showMessageDialog(rootPane, "sangue oculto");  
-                }
-            }
-            if (cbxGlicose.isSelected() || cbxAcidoUrico.isSelected() || cbxGamaGt.isSelected() || 
-                cbxColesterolTotal.isSelected() || cbxBilirrubina.isSelected() || cbxUreia.isSelected() ||
-                cbxColesterolFracionado.isSelected() || cbxTgoTgp.isSelected() || cbxCoatinina.isSelected() ||
-                cbxTriglicerides.isSelected()) 
-            {
-                if(pedidoDAO.geraBioqui(Integer.valueOf(txtExPedCodPedido.getText().trim()))){
-                    
-                    JOptionPane.showMessageDialog(rootPane, "bioquimica");  
-                }
-            }
-            
             JOptionPane.showMessageDialog(rootPane, "Pedido gerado com sucesso!");
         }else{
             JOptionPane.showMessageDialog(rootPane, "Falha no Cadastro do pedido");
@@ -2589,15 +2580,22 @@ public class Principal extends javax.swing.JFrame {
     // Inicio Busca Pedido Exame
     private void buscaPedidoExame(){
         if(!txtCodPedidoResult.getText().isEmpty()){
-            //buscando a data atual
-            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-            java.util.Date dataString = new java.util.Date();
-            String dataFormatada = String.valueOf(formato.format(dataString));
-            txtExPedDataPedido.setText(dataFormatada);
-
+            
+            Pedido pedido = new Pedido();
+            pedido.setIdPedido(Integer.valueOf(txtCodPedidoResult.getText().trim()));
             PedidoDAO pedidoDAO = new PedidoDAO();
-
-            txtExPedNome.setText(pedidoDAO.buscaCliente(Integer.valueOf(txtExPedCodCliente.getText().trim())));
+            pedidoDAO.buscaPedidoExame(pedido);
+            /*
+            Date data = pedido.getDataPedido();
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            java.util.Date dataString = (java.util.Date) data;
+            String dataFormatada = String.valueOf(formato.format(dataString));
+            */
+            txtCodClienteResult.setText(String.valueOf(pedido.getIdCliente()));
+            txtDataPedidoResult.setText("20/10/2000");
+            txtConvenioResult.setText(pedido.getConvenio());
+            txtNomeResult.setText(pedido.getNome());
+            
         }
     }
     
