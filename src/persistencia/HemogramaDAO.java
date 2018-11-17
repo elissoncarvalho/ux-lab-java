@@ -2,9 +2,9 @@ package persistencia;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.List;
-import java.util.ArrayList;
 import entidade.Hemograma;
+import java.util.ArrayList;
+import java.util.List;
 
 /* Autor Isabelle */
 
@@ -25,14 +25,16 @@ public class HemogramaDAO {
             + "BASOFILOS1 = ?, LINFOCITOS1 = ?, MONOCITOS1 = ?, "
             + "CONTAGEMPLAQUETAS = ? WHERE id_pedido_fk = ?";
 
-    public Hemograma listarHemo (Hemograma hemo){
+    public List<Hemograma> listarHemo (int idHemo){
+        List<Hemograma> listaExame = new ArrayList<>();
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(buscarHemo);
-            pstm.setInt(1, hemo.getCodigoH());
+            pstm.setInt(1, idHemo);
             rs = pstm.executeQuery();
             if (rs.next()) {
                 hemo = new Hemograma();
+                
                 hemo.setHemacias(rs.getDouble("HEMACIAS"));
                 hemo.setHemoglobina(rs.getDouble("HEMOGLOBINA"));
                 hemo.setHematocrito(rs.getDouble("HEMATOCRITO"));
@@ -57,13 +59,14 @@ public class HemogramaDAO {
                 hemo.setLinfocitos1(rs.getDouble("LINFOCITOS1"));
                 hemo.setMonocitos1(rs.getDouble("MONOCITOS1"));
                 hemo.setContagemPlaquetas(rs.getDouble("CONTAGEM_PLAQUETAS"));
+                listaExame.add(hemo);
             }
         }
         catch (Exception e){
             e.printStackTrace();
         }
         bd.desconecta();
-        return hemo;
+        return listaExame;
     }
     
     public void salvarHemo(Hemograma hemo){

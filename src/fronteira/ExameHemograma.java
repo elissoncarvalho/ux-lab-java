@@ -7,6 +7,8 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import java.util.List;
+import javax.swing.JOptionPane;
 import persistencia.HemogramaDAO;
 
 /**
@@ -18,7 +20,6 @@ public final class ExameHemograma extends javax.swing.JFrame {
     Helper helper = new Helper();
     
     public ExameHemograma(int h) {
-        h = 1;
         initComponents();
         formConfig();
         listarHemo(h);
@@ -827,36 +828,40 @@ public final class ExameHemograma extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     public void listarHemo(int h){
-        Hemograma hemo = new Hemograma();
-        hemo.setCodigoH(h);
+        List<Hemograma> listaExame;
         
         HemogramaDAO hemogramaDAO = new HemogramaDAO();
-        hemogramaDAO.listarHemo(hemo);
+        listaExame = hemogramaDAO.listarHemo(h);
+        if(listaExame.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Exame não encontrado.");
+        }else{
+            txtHemacias.setText(String.valueOf(listaExame.get(0).getHemacias()));
+            txtHemoglobina.setText(String.valueOf(listaExame.get(0).getHemoglobina()));
+            txtHematocrito.setText(String.valueOf(listaExame.get(0).getHematocrito()));
+            txtVcm.setText(String.valueOf(listaExame.get(0).getVcm()));
+            txtHcm.setText(String.valueOf(listaExame.get(0).getHcm()));
+            txtChcm.setText(String.valueOf(listaExame.get(0).getChcm()));
+            txtRdw.setText(String.valueOf(listaExame.get(0).getRdw()));
+            txtLeucocitos.setText(String.valueOf(listaExame.get(0).getLeucocitos()));
+            txtLeucocitos1.setText(String.valueOf(listaExame.get(0).getLeucocitos1()));
+            txtNeutrofilos.setText(String.valueOf(listaExame.get(0).getNeutrofilos()));
+            txtNeutrofilos1.setText(String.valueOf(listaExame.get(0).getNeutrofilos1()));
+            txtSegmentados.setText(String.valueOf(listaExame.get(0).getSegmentados()));
+            txtSegmentados1.setText(String.valueOf(listaExame.get(0).getSegmentados1()));
+            txtBastonetes.setText(String.valueOf(listaExame.get(0).getBastonetes()));
+            txtBastonetes1.setText(String.valueOf(listaExame.get(0).getBastonetes1()));
+            txtEosinofilos.setText(String.valueOf(listaExame.get(0).getEosinofilos()));
+            txtEosinofilos1.setText(String.valueOf(listaExame.get(0).getEosinofilos1()));
+            txtBasofilos.setText(String.valueOf(listaExame.get(0).getBasofilos()));
+            txtBasofilos1.setText(String.valueOf(listaExame.get(0).getBasofilos1()));
+            txtLinfocitos.setText(String.valueOf(listaExame.get(0).getLinfocitos()));
+            txtLinfocitos1.setText(String.valueOf(listaExame.get(0).getLinfocitos1()));
+            txtMonocitos.setText(String.valueOf(listaExame.get(0).getMonocitos()));
+            txtMonocitos1.setText(String.valueOf(listaExame.get(0).getMonocitos1()));
+            txtContagemPlaquetas.setText(String.valueOf(listaExame.get(0).getContagemPlaquetas()));
+            
+        }
         
-        txtHemacias.setText(String.valueOf(hemo.getHemacias()));
-        txtHemoglobina.setText(String.valueOf(hemo.getHemoglobina()));
-        txtHematocrito.setText(String.valueOf(hemo.getHematocrito()));
-        txtVcm.setText(String.valueOf(hemo.getVcm()));
-        txtHcm.setText(String.valueOf(hemo.getHcm()));
-        txtChcm.setText(String.valueOf(hemo.getChcm()));
-        txtRdw.setText(String.valueOf(hemo.getRdw()));
-        txtLeucocitos.setText(String.valueOf(hemo.getLeucocitos()));
-        txtLeucocitos1.setText(String.valueOf(hemo.getLeucocitos1()));
-        txtNeutrofilos.setText(String.valueOf(hemo.getNeutrofilos()));
-        txtNeutrofilos1.setText(String.valueOf(hemo.getNeutrofilos1()));
-        txtSegmentados.setText(String.valueOf(hemo.getSegmentados()));
-        txtSegmentados1.setText(String.valueOf(hemo.getSegmentados1()));
-        txtBastonetes.setText(String.valueOf(hemo.getBastonetes()));
-        txtBastonetes1.setText(String.valueOf(hemo.getBastonetes1()));
-        txtEosinofilos.setText(String.valueOf(hemo.getEosinofilos()));
-        txtEosinofilos1.setText(String.valueOf(hemo.getEosinofilos1()));
-        txtBasofilos.setText(String.valueOf(hemo.getBasofilos()));
-        txtBasofilos1.setText(String.valueOf(hemo.getBasofilos1()));
-        txtLinfocitos.setText(String.valueOf(hemo.getLinfocitos()));
-        txtLinfocitos1.setText(String.valueOf(hemo.getLinfocitos1()));
-        txtMonocitos.setText(String.valueOf(hemo.getMonocitos()));
-        txtMonocitos1.setText(String.valueOf(hemo.getMonocitos1()));
-        txtContagemPlaquetas.setText(String.valueOf(hemo.getContagemPlaquetas()));
     }
     
     // Faz a validação dos campos, se foram preenchidos corretamente 
@@ -908,7 +913,7 @@ public final class ExameHemograma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMouseExited
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        this.setVisible(false);
+        
     }//GEN-LAST:event_btnSalvarActionPerformed
     
     public static void main(String args[]) {
