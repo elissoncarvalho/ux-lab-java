@@ -20,7 +20,10 @@ public class HemogramaDAO {
             + "HEMOGLOBINA = ?, HEMATOCRITO = ?, VCM = ?, HCM = ?, CHCM = ?, "
             + "RDW = ?, LEUCOCITOS = ?, NEUTROFILOS = ?, SEGMENTADOS = ?, "
             + "BASTONETES = ?, EOSINOFILOS = ?, BASOFILOS = ?, LINFOCITOS = ?, "
-            + "MONOCITOS = ?, CONTAGEMPLAQUETAS = ? WHERE id_pedido_fk = ?";
+            + "MONOCITOS = ?, LEUCOCITOS1 = ?, NEUTROFILOS1 = ?, "
+            + "SEGMENTADOS1 = ?, BASTONETES1 = ?, EOSINOFILOS1 = ?, "
+            + "BASOFILOS1 = ?, LINFOCITOS1 = ?, MONOCITOS1 = ?, "
+            + "CONTAGEMPLAQUETAS = ? WHERE id_pedido_fk = ?";
 
     public List<Hemograma> listarHemo (Integer CodigoH){
         List<Hemograma> listaHemo = new ArrayList<Hemograma>();
@@ -47,6 +50,14 @@ public class HemogramaDAO {
                 hemo.setBasofilos(rs.getDouble("basofilos"));
                 hemo.setLinfocitos(rs.getDouble("linfocitos"));
                 hemo.setMonocitos(rs.getDouble("monocitos"));
+                hemo.setLeucocitos1(rs.getDouble("leucocitos1"));
+                hemo.setNeutrofilos1(rs.getDouble("neutrofilos1"));
+                hemo.setSegmentados1(rs.getDouble("segmentados1"));
+                hemo.setBastonetes1(rs.getDouble("bastonetes1"));
+                hemo.setEosinofilos1(rs.getDouble("eosinofilos1"));
+                hemo.setBasofilos1(rs.getDouble("basofilos1"));
+                hemo.setLinfocitos1(rs.getDouble("linfocitos1"));
+                hemo.setMonocitos1(rs.getDouble("monocitos1"));
                 hemo.setContagemPlaquetas(rs.getDouble("contagemplaquetas"));
                 listaHemo.add(hemo);
             }
@@ -77,8 +88,16 @@ public class HemogramaDAO {
             pstm.setDouble(13, hemo.getBasofilos());
             pstm.setDouble(14, hemo.getLinfocitos());
             pstm.setDouble(15, hemo.getMonocitos());
-            pstm.setDouble(16, hemo.getContagemPlaquetas());
-            pstm.setInt(17, hemo.getCodigoH());
+            pstm.setDouble(16, hemo.getLeucocitos1());
+            pstm.setDouble(17, hemo.getNeutrofilos1());
+            pstm.setDouble(18, hemo.getSegmentados1());
+            pstm.setDouble(19, hemo.getBastonetes1());
+            pstm.setDouble(20, hemo.getEosinofilos1());
+            pstm.setDouble(21, hemo.getBasofilos1());
+            pstm.setDouble(22, hemo.getLinfocitos1());
+            pstm.setDouble(23, hemo.getMonocitos1());
+            pstm.setDouble(24, hemo.getContagemPlaquetas());
+            pstm.setInt(25, hemo.getCodigoH());
             pstm.executeUpdate();
             bd.desconecta();
         }
