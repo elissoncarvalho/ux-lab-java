@@ -565,6 +565,7 @@ public class Principal extends javax.swing.JFrame {
         txtExPedCodCliente.setToolTipText("");
         txtExPedCodCliente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtExPedCodCliente.setName(""); // NOI18N
+        txtExPedCodCliente.setNextFocusableComponent(txtExPedConvenio);
         txtExPedCodCliente.setOpaque(false);
         txtExPedCodCliente.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtExPedCodCliente.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1105,6 +1106,7 @@ public class Principal extends javax.swing.JFrame {
         txtCodPedidoResult.setToolTipText("");
         txtCodPedidoResult.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(35, 59, 77)));
         txtCodPedidoResult.setName(""); // NOI18N
+        txtCodPedidoResult.setNextFocusableComponent(txtConvenioResult);
         txtCodPedidoResult.setOpaque(false);
         txtCodPedidoResult.setSelectionColor(new java.awt.Color(35, 59, 77));
         txtCodPedidoResult.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1258,7 +1260,6 @@ public class Principal extends javax.swing.JFrame {
         btnSangueOculto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnSangueOculto.setForeground(new java.awt.Color(35, 59, 77));
         btnSangueOculto.setText(" EPF / Sangue Oculto");
-        btnSangueOculto.setActionCommand(" EPF / Sangue Oculto");
         btnSangueOculto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnSangueOculto.setContentAreaFilled(false);
         btnSangueOculto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -2218,14 +2219,19 @@ public class Principal extends javax.swing.JFrame {
         buscaNumeroPedido();
         txtExPedCodCliente.requestFocusInWindow();
     }
-    private void clickMouseExameCadastra(){
+    private void clickMouseExameCadastra(int idExame){
         helper.setBtnColor(btnCadastraResultado);
         helper.resetBtnColor(btnCadastraPedido);
         helper.resetBtnColor(btnRelatorioExame);
         divCadastraExame.setVisible(!true);
         divCadastraResultado.setVisible(true);
         divRelatorioExame.setVisible(!true);
-        txtCodPedidoResult.requestFocusInWindow();
+        if(idExame != 0){
+            txtCodPedidoResult.setText(String.valueOf(idExame));
+            txtCodClienteResult.requestFocusInWindow();
+        }else{
+            txtCodPedidoResult.requestFocusInWindow();
+        }
     }
     private void clickMouseExameRelatorio(){
         helper.setBtnColor(btnRelatorioExame);
@@ -2531,7 +2537,20 @@ public class Principal extends javax.swing.JFrame {
             
         }
     }
-    
+    private void tblExameLinhaSelecionada(JTable tbl){
+        
+        int linhaSelecionada = tbl.getSelectedRow();
+        
+        if(linhaSelecionada != -1){
+            
+           
+            clickMouseExameCadastra(listarPedido.get(linhaSelecionada).getIdPedido());
+                      
+            
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Selecione um cliente.");
+        }
+    }
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
         this.setExtendedState(JFrame.ICONIFIED);
     }//GEN-LAST:event_btnMinimizarActionPerformed
@@ -2565,7 +2584,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastraPedidoActionPerformed
 
     private void btnCadastraResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastraResultadoActionPerformed
-        clickMouseExameCadastra();
+        clickMouseExameCadastra(0);
     }//GEN-LAST:event_btnCadastraResultadoActionPerformed
 
     private void btnRelatorioExameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioExameActionPerformed
@@ -2593,7 +2612,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExameExcluirActionPerformed
 
     private void btnExameEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameEditActionPerformed
-        clickMouseExameCadastra();
+        tblExameLinhaSelecionada(tblExame);
+        
     }//GEN-LAST:event_btnExameEditActionPerformed
     
     // Inicio Cadastrar Pedidos 

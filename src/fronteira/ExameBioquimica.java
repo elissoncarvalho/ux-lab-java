@@ -72,6 +72,7 @@ public class ExameBioquimica extends javax.swing.JFrame {
         BioquimicaDAO bioquimicaDAO = new BioquimicaDAO();
         if(bioquimicaDAO.salvarExame(bioquimica)){
             JOptionPane.showMessageDialog(this, "Exame Salvo com Sucesso!");
+            
             this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(this, "Falha ao salvar o Exame");
