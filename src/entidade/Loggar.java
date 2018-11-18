@@ -1,8 +1,6 @@
 
 package entidade;
 
-import persistencia.*;
-
 public class Loggar 
 {
     private String usuario;
