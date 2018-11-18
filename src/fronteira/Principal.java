@@ -2712,7 +2712,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxSangueOcultoActionPerformed
 
     private void btnBioquimicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBioquimicaActionPerformed
-        ExameBioquimica bioquimica = new ExameBioquimica();
+        ExameBioquimica bioquimica = new ExameBioquimica(Integer.valueOf(txtCodPedidoResult.getText().trim()));
         bioquimica.setVisible(true);
     }//GEN-LAST:event_btnBioquimicaActionPerformed
 

@@ -14,37 +14,36 @@ public class BioquimicaDAO {
     private ResultSet rs;
     private Bioquimica bio;
     
-    private String buscarBio = "SELECT * FROM bioquimica WHERE id_pedido_fk = ? LIMIT 1";
+    private final String buscarBio = "SELECT * FROM bioquimica WHERE id_pedido_fk = ? LIMIT 1";
     
-    private String salvarBio = "UPDATE bioquimica SET GLICOSE = ?, "
-            + "ACIDOURICO = ?, UREIA = ?, CREATININA = ?, COLESTEROLTOTAL = ?, "
-            + "COLESTEROLHDL = ?, COLESTEROLLDL = ?, COLESTEROLVLDL = ?, "
-            + "TRIGLICERIDES = ?, TGO = ?, TGP = ?, GAMAGT = ?, BILIRRUBINA = ?,"
+    private final String salvarBio = "UPDATE bioquimica SET GLICOSE = ?, "
+            + "ACIDO_URICO = ?, UREIA = ?, CREATININA = ?, COLESTEROL_TOTAL = ?, "
+            + "COLESTEROL_HDL = ?, COLESTEROL_LDL = ?, COLESTEROL_VLDL = ?, "
+            + "TRIGLICERIDES = ?, TGO = ?, TGP = ?, GAMA_GT = ?, BILIRRUBINA = ?"
             + " WHERE id_pedido_fk = ?";
 
-    public List<Bioquimica> listarBio (Integer CodigoB){
-        List<Bioquimica> listaBio = new ArrayList<Bioquimica>();
+    public List<Bioquimica> listarExame (Integer CodigoB){
+        List<Bioquimica> listaBio = new ArrayList<>();
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(buscarBio);
             pstm.setInt(1, CodigoB);
             rs = pstm.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
                 bio = new Bioquimica();
-                bio.setCodigoB(rs.getInt("codigob"));
-                bio.setGlicose(rs.getDouble("glicose"));
-                bio.setAcidoUrico(rs.getDouble("acidourico"));
-                bio.setUreia(rs.getDouble("ureia"));
-                bio.setCreatinina(rs.getDouble("creatinina"));
-                bio.setColesterolTotal(rs.getDouble("colesteroltotal"));
-                bio.setColesterolHDL(rs.getDouble("colesterolhdl"));
-                bio.setColesterolLDL(rs.getDouble("colesterolldl"));
-                bio.setColesterolVLDL(rs.getDouble("colesterolvldl"));
-                bio.setTriglicerides(rs.getDouble("triglicerides"));
-                bio.setTgo(rs.getInt("tgo"));
-                bio.setTgp(rs.getInt("tgp"));
-                bio.setGamaGT(rs.getInt("gamagt"));
-                bio.setBilirrubina(rs.getDouble("bilirrubina"));
+                bio.setGlicose(rs.getDouble("GLICOSE"));
+                bio.setAcidoUrico(rs.getDouble("ACIDO_URICO"));
+                bio.setUreia(rs.getDouble("UREIA"));
+                bio.setCreatinina(rs.getDouble("CREATININA"));
+                bio.setColesterolTotal(rs.getDouble("COLESTEROL_TOTAL"));
+                bio.setColesterolHDL(rs.getDouble("COLESTEROL_HDL"));
+                bio.setColesterolLDL(rs.getDouble("COLESTEROL_LDL"));
+                bio.setColesterolVLDL(rs.getDouble("COLESTEROL_VLDL"));
+                bio.setTriglicerides(rs.getDouble("TRIGLICERIDES"));
+                bio.setTgo(rs.getInt("TGO"));
+                bio.setTgp(rs.getInt("TGP"));
+                bio.setGamaGT(rs.getInt("GAMA_GT"));
+                bio.setBilirrubina(rs.getDouble("BILIRRUBINA"));
                 listaBio.add(bio);
             }
         }
@@ -55,7 +54,7 @@ public class BioquimicaDAO {
         return listaBio;
     }
     
-    public void salvarBio(Bioquimica bio){
+    public boolean salvarExame(Bioquimica bio){
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(salvarBio);
@@ -75,9 +74,11 @@ public class BioquimicaDAO {
             pstm.setInt(14, bio.getCodigoB());
             pstm.executeUpdate();
             bd.desconecta();
+            return true;
         }
         catch(Exception e){
             e.printStackTrace();
+            return false;
         }
     }
     

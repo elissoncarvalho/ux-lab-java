@@ -1,10 +1,16 @@
 package fronteira;
 
+import entidade.Bioquimica;
 import entidade.Helper;
+import entidade.UrinaRotina;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import java.util.List;
+import javax.swing.JOptionPane;
+import persistencia.BioquimicaDAO;
+import persistencia.UrinaRotinaDAO;
 
 /**
  *
@@ -13,13 +19,64 @@ import java.net.URL;
 public class ExameBioquimica extends javax.swing.JFrame {
     
     Helper helper = new Helper();
-    
-    public ExameBioquimica() {
+    private int idExame;
+    public ExameBioquimica(int id) {
         initComponents();
         
         formConfig();
+        listarExame(id);
     }
-
+    private void listarExame(int id){
+        List<Bioquimica> listaExame;
+        
+        BioquimicaDAO bioquimicaDAO = new BioquimicaDAO();
+        listaExame = bioquimicaDAO.listarExame(id);
+        if(listaExame.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Exame não encontrado.");
+        }else{
+            idExame = id;
+            txtGlicoseJejum.setText(String.valueOf(listaExame.get(0).getGlicose()));
+            txtAcidoUrico.setText(String.valueOf(listaExame.get(0).getAcidoUrico()));
+            txtUreia.setText(String.valueOf(listaExame.get(0).getUreia()));
+            txtCreatinina.setText(String.valueOf(listaExame.get(0).getCreatinina()));
+            txtColesterolTotal.setText(String.valueOf(listaExame.get(0).getColesterolTotal()));
+            txtHdl.setText(String.valueOf(listaExame.get(0).getColesterolHDL()));
+            txtLdl.setText(String.valueOf(listaExame.get(0).getColesterolLDL()));
+            txtVldl.setText(String.valueOf(listaExame.get(0).getColesterolVLDL()));
+            txtTriglicerides.setText(String.valueOf(listaExame.get(0).getTriglicerides()));
+            txtGamaGt.setText(String.valueOf(listaExame.get(0).getGamaGT()));
+            txtBilirrubina.setText(String.valueOf(listaExame.get(0).getBilirrubina()));
+            txtTgo.setText(String.valueOf(listaExame.get(0).getTgo()));
+            txtTgp.setText(String.valueOf(listaExame.get(0).getTgp()));
+            
+        }
+    }
+    private void salvaExame(){        
+        Bioquimica bioquimica = new Bioquimica();
+        
+        bioquimica.setCodigoB(idExame);
+        bioquimica.setGlicose(Double.valueOf(txtGlicoseJejum.getText().trim()));
+        bioquimica.setAcidoUrico(Double.valueOf(txtAcidoUrico.getText().trim()));
+        bioquimica.setUreia(Double.valueOf(txtUreia.getText().trim()));
+        bioquimica.setCreatinina(Double.valueOf(txtCreatinina.getText().trim()));
+        bioquimica.setColesterolTotal(Double.valueOf(txtColesterolTotal.getText().trim()));
+        bioquimica.setColesterolHDL(Double.valueOf(txtHdl.getText().trim()));
+        bioquimica.setColesterolLDL(Double.valueOf(txtLdl.getText().trim()));
+        bioquimica.setColesterolVLDL(Double.valueOf(txtVldl.getText().trim()));
+        bioquimica.setTriglicerides(Double.valueOf(txtTriglicerides.getText().trim()));
+        bioquimica.setGamaGT(Integer.valueOf(txtGamaGt.getText().trim()));
+        bioquimica.setBilirrubina(Double.valueOf(txtBilirrubina.getText().trim()));
+        bioquimica.setTgo(Integer.valueOf(txtTgo.getText().trim()));
+        bioquimica.setTgp(Integer.valueOf(txtTgp.getText().trim()));
+        
+        BioquimicaDAO bioquimicaDAO = new BioquimicaDAO();
+        if(bioquimicaDAO.salvarExame(bioquimica)){
+            JOptionPane.showMessageDialog(this, "Exame Salvo com Sucesso!");
+            this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(this, "Falha ao salvar o Exame");
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -620,7 +677,7 @@ public class ExameBioquimica extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void txtGlicoseJejumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGlicoseJejumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGlicoseJejumActionPerformed
@@ -682,7 +739,7 @@ public class ExameBioquimica extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMouseExited
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        this.setVisible(false);
+        salvaExame();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseEntered
@@ -736,7 +793,7 @@ public class ExameBioquimica extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ExameBioquimica().setVisible(true);
+                new ExameBioquimica(0).setVisible(true);
             }
         });
     }
