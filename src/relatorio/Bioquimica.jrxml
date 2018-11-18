@@ -3,7 +3,7 @@
 	<property name="template.type" value="columnar"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="80"/>
+	<property name="ireport.y" value="378"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -301,6 +301,58 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 		<band height="268" splitType="Stretch"/>
 	</detail>
 	<pageFooter>
-		<band height="147"/>
+		<band height="173">
+			<staticText>
+				<reportElement x="9" y="137" width="536" height="15" uuid="51865ab0-c676-4ae5-9c0e-bce61fd9aa9b"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[fisiológicos, bem como valores de referência da época, uma vez que os mesmos podem sofrer modificações devido a mudança de kits, ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="240" y="34" width="100" height="60" uuid="9dda7e18-7f7a-43ee-9cf8-e6b4467c70f4"/>
+				<imageExpression><![CDATA["C:\\Users\\isaha\\Desktop\\assin.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="16" y="24" width="150" height="70" uuid="1dc3fb3c-01a0-406a-95a4-5702afc07801"/>
+				<imageExpression><![CDATA["C:\\Users\\isaha\\Desktop\\ass.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="9" y="149" width="536" height="15" uuid="4b89c039-3f96-47f1-8254-365c599bc667"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[fabricante, metodologia, etc. Somente seu médico pode interpretá-los corretamente.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="113" width="536" height="15" uuid="1e4bbd61-2f89-4ca0-af04-a140235415f1"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Atenção! Os resultados anteriores informados são fornecidos de forma a ajudar o clínico na avaliação da evolução do paciente. Porém,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="125" width="536" height="15" uuid="89f297b2-15ee-4f39-8ea2-9c613fca8faa"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[devem ser analisados com cautela, levando-se em consideração os dados clínicos, alimentação, medicamentos, estados patologicos e]]></text>
+			</staticText>
+			<image>
+				<reportElement x="398" y="34" width="135" height="60" uuid="628f5b6e-22b9-46b0-b151-023c4951ac17"/>
+				<imageExpression><![CDATA["C:\\Users\\isaha\\Desktop\\assi.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="14" y="8" width="246" height="15" uuid="f18aff85-61c5-4dbe-9710-694793acd074"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esse Laudo foi conferido sob a assinatura digital: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="267" y="8" width="266" height="15" uuid="7b759b67-70f2-43cc-bc4a-7ab9da862451"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 </jasperReport>
