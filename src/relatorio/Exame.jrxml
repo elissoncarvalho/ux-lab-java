@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Exame" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3fb9d7a9-b18c-4cd8-a0e8-b0f214d53852">
-	<property name="ireport.zoom" value="1.2100000000000035"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Urina Rotina" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3fb9d7a9-b18c-4cd8-a0e8-b0f214d53852">
+	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="502"/>
+	<property name="ireport.y" value="0"/>
 	<queryString>
 		<![CDATA[SELECT
      urina_rotina.`ID_URINA_ROTINA` AS urina_rotina_ID_URINA_ROTINA,
@@ -645,28 +645,28 @@ FROM
 			</image>
 			<staticText>
 				<reportElement x="9" y="114" width="536" height="15" uuid="3c746ce1-cafc-400b-94a7-33e97c829dec"/>
-				<textElement>
+				<textElement textAlignment="Justified">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Atenção! Os resultados anteriores informados são fornecidos de forma a ajudar o clínico na avaliação da evolução do paciente. Porém,]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="9" y="126" width="536" height="15" uuid="b78005db-623d-4637-ae98-802700e63f92"/>
-				<textElement>
+				<textElement textAlignment="Justified">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[devem ser analisados com cautela, levando-se em consideração os dados clínicos, alimentação, medicamentos, estados patologicos e]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="9" y="138" width="536" height="15" uuid="f7f182c3-6a6e-4a59-9605-ae72f459bdf1"/>
-				<textElement>
+				<textElement textAlignment="Justified">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[fisiológicos, bem como valores de referência da época, uma vez que os mesmos podem sofrer modificações devido a mudança de kits, ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="9" y="150" width="536" height="15" uuid="fd419f73-450d-4702-b4ce-aa9b869f9694"/>
-				<textElement>
+				<textElement textAlignment="Justified">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[fabricante, metodologia, etc. Somente seu médico pode interpretá-los corretamente.]]></text>

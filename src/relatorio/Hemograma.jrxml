@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hemograma" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="156b4e77-211b-4817-87d2-bbc479cd382a">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT PEDIDO.ID_N_PEDIDO, pedido.DATA_PEDIDO, PEDIDO.CONVENIO, cliente.NOME, hemograma.HEMACIAS, hemograma.HEMOGLOBINA, hemograma.HEMATOCRITO, hemograma.VCM, hemograma.HCM, hemograma.CHCM, hemograma.RDW, hemograma.LEUCOCITOS, hemograma.NEUTROFILOS, hemograma.SEGMENTADOS, hemograma.BASTONETES, hemograma.EOSINOFILOS, hemograma.LINFOCITOS, hemograma.MONOCITOS, hemograma.LEUCOCITOS1, hemograma.NEUTROFILOS1, hemograma.SEGMENTADOS1, hemograma.BASTONETES1, hemograma.EOSINOFILOS1, hemograma.LINFOCITOS1, hemograma.MONOCITOS1, hemograma.CONTAGEM_PLAQUETAS
+FROM PEDIDO 
+	INNER JOIN cliente 
+    	ON cliente.DELET = 0 AND cliente.ID_CLIENTE = pedido.COD_CLIENTE_FK 
+    INNER JOIN hemograma 
+    	on hemograma.ID_PEDIDO_FK = pedido.ID_N_PEDIDO 
+WHERE pedido.DELET = 0 AND PEDIDO.ID_N_PEDIDO = 1 
+GROUP BY pedido.ID_N_PEDIDO]]>
+	</queryString>
+	<field name="ID_N_PEDIDO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATA_PEDIDO" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CONVENIO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HEMACIAS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HEMOGLOBINA" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HEMATOCRITO" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VCM" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HCM" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CHCM" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDW" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LEUCOCITOS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NEUTROFILOS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEGMENTADOS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BASTONETES" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EOSINOFILOS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LINFOCITOS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MONOCITOS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LEUCOCITOS1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NEUTROFILOS1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEGMENTADOS1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BASTONETES1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EOSINOFILOS1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LINFOCITOS1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MONOCITOS1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CONTAGEM_PLAQUETAS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<image>
+				<reportElement x="13" y="3" width="151" height="94" uuid="c5a6768e-8898-4e5e-b63a-2ef7bbc71557"/>
+				<imageExpression><![CDATA["C:\\Users\\eliss\\Documents\\NetBeansProjects\\uxlabjavafont\\src\\imgIcons\\bioLabLogo1.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="299" y="13" width="220" height="15" uuid="7784b08d-e1e4-46f2-a5a7-e8284b340ae9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Rua Coronel Tininho, 269 - Centro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="41" width="220" height="15" uuid="5660f17a-5d11-44c2-9f44-265e8d87367c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Cep: 35600-000 | Tel (37) 3333-9999]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="55" width="220" height="15" uuid="9738d139-3b21-4731-84f3-b96fb4574d72"/>
+				<textElement textAlignment="Center">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[E-mail: contato@biolab.com.br]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="27" width="220" height="15" uuid="df003ae9-3aaf-4c76-98f9-5111ac23e215"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Bom Despacho - MG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="69" width="220" height="15" uuid="d3b1d381-7a0f-4477-80e5-0fb740867c17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[BIOLAB - ANALISES CLINICAS LTDA.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="87">
+			<staticText>
+				<reportElement x="14" y="30" width="116" height="15" uuid="6efaae6f-92a0-4604-90a7-715ff292cfd6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data de Nascimento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="16" width="43" height="15" uuid="39a44ace-14cf-4893-a994-573d3980e924"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Número:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="58" width="56" height="15" uuid="bac3cfda-4bc1-4a20-a310-fbf6d2ea64a6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Convênio: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="421" y="16" width="32" height="14" uuid="ab876434-b48a-4583-a8a1-9d3a2c5350d9"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="31" width="74" height="13" uuid="d98403c5-58df-4d36-8e05-7ffafb6ca807"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="346" y="30" width="33" height="15" uuid="1b00724e-011b-442e-ab34-daa4698db50e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="30" width="32" height="15" uuid="46b43f09-8cac-4f3e-a749-12c019caf870"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sexo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="58" width="275" height="15" uuid="0ce0df90-df48-4038-9a89-2e8c3168a0d7"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="463" y="31" width="50" height="15" uuid="28bca9ec-81bd-475b-b0b1-3e5aec220fbf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Horario:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="44" width="116" height="15" uuid="f4c7c80c-481d-49be-bc55-58fe3b7cea72"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Solicitante Dr(a).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="16" width="75" height="15" uuid="61672b57-1896-4862-b6b6-7ee802b78e28"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Atendimento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="506" y="16" width="43" height="15" uuid="0b794f73-4e20-4129-bb0c-2fae11c44cd8"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="44" width="215" height="14" uuid="00446f9f-6fe3-469c-8853-f358d74ba8fa"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="45" width="140" height="13" uuid="a1445842-53ad-4382-a553-4401bec4304a"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="30" width="100" height="14" uuid="953abc99-89f4-4888-b2d9-dc46787bbed9"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="30" width="111" height="14" uuid="6850d911-2416-4fb7-b0ea-9b321a80e5b7"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="513" y="31" width="36" height="14" uuid="2eac9492-b390-4380-835d-5b7f2913f34b"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="58" width="140" height="15" uuid="e1c1bdf6-cc56-420f-b30d-37827bd684d7"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="346" y="58" width="63" height="15" uuid="c58e8c81-c69c-4bea-863f-91fb4fccc8ea"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Atendente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="44" width="63" height="15" uuid="5f6ea903-57a9-48ca-85be-18a335f87b10"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Impressão:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="16" width="275" height="14" uuid="38413c00-395d-48c0-9d62-0216fd7605ab"/>
+				<textFieldExpression><![CDATA[$F{urina_rotina_ID_PEDIDO_FK}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="16" width="56" height="15" uuid="99d77287-fb8f-4363-abab-0f2a59e711d6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Paciente:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="249" splitType="Stretch"/>
+	</detail>
+	<pageFooter>
+		<band height="50"/>
+	</pageFooter>
+</jasperReport>
