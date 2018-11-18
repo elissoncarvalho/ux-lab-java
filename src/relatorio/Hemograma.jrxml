@@ -3,7 +3,7 @@
 	<property name="template.type" value="columnar"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="475"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -15,7 +15,8 @@
 		</conditionalStyle>
 	</style>
 	<queryString>
-		<![CDATA[SELECT PEDIDO.ID_N_PEDIDO, pedido.DATA_PEDIDO, PEDIDO.CONVENIO, cliente.NOME, hemograma.HEMACIAS, hemograma.HEMOGLOBINA, hemograma.HEMATOCRITO, hemograma.VCM, hemograma.HCM, hemograma.CHCM, hemograma.RDW, hemograma.LEUCOCITOS, hemograma.NEUTROFILOS, hemograma.SEGMENTADOS, hemograma.BASTONETES, hemograma.EOSINOFILOS, hemograma.LINFOCITOS, hemograma.MONOCITOS, hemograma.LEUCOCITOS1, hemograma.NEUTROFILOS1, hemograma.SEGMENTADOS1, hemograma.BASTONETES1, hemograma.EOSINOFILOS1, hemograma.LINFOCITOS1, hemograma.MONOCITOS1, hemograma.CONTAGEM_PLAQUETAS
+		<![CDATA[SELECT pedido.ID_N_PEDIDO, pedido.DATA_PEDIDO, pedido.CONVENIO, cliente.NOME, cliente.DATA_NASC, 
+	CASE WHEN cliente.SEXO = 1 THEN 'Feminino' ELSE 'Masculino' END AS 'SEXO', hemograma.HEMACIAS, hemograma.HEMOGLOBINA, hemograma.HEMATOCRITO, hemograma.VCM, hemograma.HCM, hemograma.CHCM, hemograma.RDW, hemograma.LEUCOCITOS, hemograma.NEUTROFILOS, hemograma.SEGMENTADOS, hemograma.BASTONETES, hemograma.EOSINOFILOS, hemograma.LINFOCITOS, hemograma.MONOCITOS, hemograma.LEUCOCITOS1, hemograma.NEUTROFILOS1, hemograma.SEGMENTADOS1, hemograma.BASTONETES1, hemograma.EOSINOFILOS1, hemograma.LINFOCITOS1, hemograma.MONOCITOS1, hemograma.CONTAGEM_PLAQUETAS
 FROM PEDIDO 
 	INNER JOIN cliente 
     	ON cliente.DELET = 0 AND cliente.ID_CLIENTE = pedido.COD_CLIENTE_FK 
@@ -34,6 +35,12 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="NOME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATA_NASC" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEXO" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="HEMACIAS" class="java.lang.Double">
