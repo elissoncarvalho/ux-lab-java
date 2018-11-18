@@ -256,8 +256,8 @@ public class Login extends javax.swing.JFrame {
         //Verifica se os usuarios são verdadeiros
         if(verificaCampo() == false)
         {
-            msgLbl = "<html><p>Preencha todos os campos, por favor. Não me Deixe! :(.</p>";
-            lblMsg.setText("<html><p>Preencha todos os campos, por favor. Não me Deixe! :(.</p>");
+            msgLbl = "<html><p>Preencha todos os campos, por favor.</p>";
+            lblMsg.setText("<html><p>Preencha todos os campos, por favor.</p>");
             lblMsg.setOpaque(true);
             erroLogin(msgLbl);
         }
