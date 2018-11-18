@@ -198,7 +198,7 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 			</staticText>
 			<textField>
 				<reportElement x="70" y="58" width="275" height="15" uuid="0ce0df90-df48-4038-9a89-2e8c3168a0d7"/>
-				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{CONVENIO}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="463" y="31" width="50" height="15" uuid="28bca9ec-81bd-475b-b0b1-3e5aec220fbf"/>
@@ -265,7 +265,7 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 			</staticText>
 			<textField>
 				<reportElement x="70" y="16" width="275" height="14" uuid="38413c00-395d-48c0-9d62-0216fd7605ab"/>
-				<textFieldExpression><![CDATA[$F{ID_N_PEDIDO}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{NOME}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="14" y="16" width="56" height="15" uuid="99d77287-fb8f-4363-abab-0f2a59e711d6"/>
