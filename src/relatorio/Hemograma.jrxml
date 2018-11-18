@@ -180,7 +180,7 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 			</textField>
 			<textField>
 				<reportElement x="379" y="31" width="74" height="13" uuid="d98403c5-58df-4d36-8e05-7ffafb6ca807"/>
-				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{DATA_PEDIDO}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="346" y="30" width="33" height="15" uuid="1b00724e-011b-442e-ab34-daa4698db50e"/>
@@ -265,7 +265,7 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 			</staticText>
 			<textField>
 				<reportElement x="70" y="16" width="275" height="14" uuid="38413c00-395d-48c0-9d62-0216fd7605ab"/>
-				<textFieldExpression><![CDATA[$F{urina_rotina_ID_PEDIDO_FK}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ID_N_PEDIDO}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="14" y="16" width="56" height="15" uuid="99d77287-fb8f-4363-abab-0f2a59e711d6"/>
