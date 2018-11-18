@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3fb9d7a9-b18c-4cd8-a0e8-b0f214d53852">
+	<property name="ireport.zoom" value="1.2100000000000035"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="98"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="99" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="99" uuid="7c9d9718-2afa-4430-ae31-ca4a2833f47e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="299" y="41" width="220" height="15" uuid="dedb4708-5485-40be-a6fe-de96fc37cfb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Cep: 35600-000 | Tel (37) 3333-9999]]></text>
+			</staticText>
+			<image>
+				<reportElement x="13" y="3" width="151" height="94" uuid="033fe49e-b59d-4f5a-aff0-4972b8778327"/>
+				<imageExpression><![CDATA["C:\\Users\\eliss\\Documents\\NetBeansProjects\\uxlabjavafont\\src\\imgIcons\\bioLabLogo1.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="299" y="27" width="220" height="15" uuid="d5fa6cd2-26c1-4f3b-a494-69b114f7b242"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Bom Despacho - MG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="69" width="220" height="15" uuid="7136b337-824f-4923-922f-53d0ca8f6621"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[BIOLAB - ANALISES CLINICAS LTDA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="13" width="220" height="15" uuid="5c11cd31-d7ad-45e7-bd3e-d6274ea4b76e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Rua Coronel Tininho, 269 - Centro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="55" width="220" height="15" uuid="0937c149-8573-419e-815d-cb8b12ef311b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[E-mail: contato@biolab.com.br]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="86" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="86" uuid="2c4a04dd-577a-48e3-ab0d-02f623a18f4d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="14" y="29" width="227" height="15" uuid="06b89d20-e311-490b-bbc6-d5ce08edf83f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data de Nascimento: 25/05/1987]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="15" width="331" height="15" uuid="2a332242-c6bd-4080-806e-5b9a3b4c338c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Paciente: MARCOS ROBERTO APOLINARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="43" width="331" height="15" uuid="8f220613-d08b-4dc1-9fbe-c06570cdabea"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Solicitante Dr(a). PRESTADOR PADRÃO SOLICITANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="29" width="104" height="15" uuid="ab32f3c1-13bb-4dcf-8ff0-f83c1c2af1c0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sexo: Masculino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="57" width="331" height="15" uuid="81ffd7ea-fbf2-4002-a363-29b8d35252f9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Convênio: UNIMED - Único]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="15" width="107" height="15" uuid="874d471a-28a4-43a0-ac50-f4217b09b7dd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Atendimento: 0001]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="15" width="86" height="15" uuid="143247f2-8ca6-4466-bce8-ded4769da88d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Número:  0004]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="29" width="107" height="15" uuid="2c9b7421-75fe-4bef-9deb-413b4f8b5943"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data: 12/11/2018]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="29" width="86" height="15" uuid="2f520819-1324-4939-a685-3e4a40519488"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Horario: 08:47]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="43" width="203" height="15" uuid="aff4027d-f992-4ea3-b80e-f26e4b2d84b2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Impressão: 12/11/2018 14:03]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="57" width="203" height="15" uuid="8addcc9f-6dc0-4e74-a0e4-379bdf11a3d0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Atendente: CLEICE SILVA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="29" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="64" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="64" uuid="f76a5cc0-5a10-4a80-9d86-e462afb9856c"/>
+			</rectangle>
+		</band>
+	</pageFooter>
+</jasperReport>
