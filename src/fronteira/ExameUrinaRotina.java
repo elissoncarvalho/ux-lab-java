@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import java.util.List;
 import javax.swing.JOptionPane;
 import persistencia.UrinaRotinaDAO;
 
@@ -16,32 +17,54 @@ import persistencia.UrinaRotinaDAO;
 public class ExameUrinaRotina extends javax.swing.JFrame {
     
     Helper helper = new Helper();
-    
-    public ExameUrinaRotina() {
+    private int idExame;
+    public ExameUrinaRotina(int id) {
         initComponents();
-        
         formConfig();
+        listarExame(id);
     }
-    
-    
-     private void UpdateUrinaRotina(){
-        UrinaRotina ur = new UrinaRotina();
-      
-        ur.setCor(txtAfCor.getText().trim());
-        ur.setDensidade(txtAfDens.getText().trim());
-        ur.setAspecto(txtAfAspecto.getText().trim());
-        ur.setPh(Double.valueOf(txtAfPh.getText()));
-        ur.setCelEpiteliais(txtSedCelEpitel.getText().trim());
-        ur.setLeucocitos(txtSedLeuc.getText().trim());
-        ur.setHemacias(txtSedHem.getText().trim());
-        ur.setCilindros(txtSedCilin.getText().trim());
+    private void listarExame(int id){
+        List<UrinaRotina> listaExame;
         
-       UrinaRotinaDAO urDAO = new UrinaRotinaDAO();
-       urDAO.alteraUrinaRotina(ur);
-       JOptionPane.showMessageDialog(null, "Exame cadastrado com sucesso", 
-            "Registro de Exames", JOptionPane.INFORMATION_MESSAGE);
+        UrinaRotinaDAO urinaRotinaDAO = new UrinaRotinaDAO();
+        listaExame = urinaRotinaDAO.listarExame(id);
+        if(listaExame.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Exame não encontrado.");
+        }else{
+            idExame = id;
+            txtAfCor.setText(listaExame.get(0).getCor());
+            txtAfDens.setText(listaExame.get(0).getDensidade());
+            txtAfAspecto.setText(listaExame.get(0).getAspecto());
+            txtAfPh.setText(String.valueOf(listaExame.get(0).getPh()));
+            txtSedCelEpitel.setText(listaExame.get(0).getCelEpiteliais());
+            txtSedHem.setText(listaExame.get(0).getHemacias());
+            txtSedLeuc.setText(listaExame.get(0).getLeucocitos());
+            txtSedCilin.setText(listaExame.get(0).getCilindros());
+            
+        }
     }
-
+    private void salvaExame(){        
+        UrinaRotina urinaRotina = new UrinaRotina();
+        
+        urinaRotina.setCodigoUR(idExame);
+        urinaRotina.setCor(txtAfCor.getText().trim());
+        urinaRotina.setDensidade(txtAfDens.getText().trim());
+        urinaRotina.setAspecto(txtAfAspecto.getText().trim());
+        urinaRotina.setPh(Double.valueOf(txtAfPh.getText().trim()));
+        urinaRotina.setCelEpiteliais(txtSedCelEpitel.getText().trim());
+        urinaRotina.setHemacias(txtSedHem.getText().trim());
+        urinaRotina.setLeucocitos(txtSedLeuc.getText().trim());
+        urinaRotina.setCilindros(txtSedCilin.getText().trim());
+        
+        UrinaRotinaDAO urinaRotinaDAO = new UrinaRotinaDAO();
+        if(urinaRotinaDAO.salvarExame(urinaRotina)){
+            JOptionPane.showMessageDialog(this, "Exame Salvo com Sucesso!");
+            this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(this, "Falha ao salvar o Exame");
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -497,8 +520,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMouseExited
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        this.setVisible(false);
-        UpdateUrinaRotina();
+        salvaExame();
     }//GEN-LAST:event_btnSalvarActionPerformed
     
     private void formConfig(){
@@ -539,7 +561,7 @@ public class ExameUrinaRotina extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ExameUrinaRotina().setVisible(true);
+                new ExameUrinaRotina(0).setVisible(true);
             }
         });
     }

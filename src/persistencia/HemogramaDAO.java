@@ -25,12 +25,12 @@ public class HemogramaDAO {
             + "BASOFILOS1 = ?, LINFOCITOS1 = ?, MONOCITOS1 = ?, "
             + "CONTAGEM_PLAQUETAS = ? WHERE id_pedido_fk = ?";
 
-    public List<Hemograma> listarHemo (int idHemo){
+    public List<Hemograma> listarHemo (int id){
         List<Hemograma> listaExame = new ArrayList<>();
         try {
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(buscarHemo);
-            pstm.setInt(1, idHemo);
+            pstm.setInt(1, id);
             rs = pstm.executeQuery();
             if (rs.next()) {
                 hemo = new Hemograma();

@@ -15,22 +15,24 @@ public class FezesDAO {
     private ResultSet rs;
     private Fezes fezes;
     
-    private String consultaFezes = "SELECT * FROM FEZES WHERE DELET = 0 AND ID_PEDIDO_FK = ?";
+    private final String consultaFezes = "SELECT * FROM FEZES WHERE ID_PEDIDO_FK = ?";
     
-    private String alteraFezes= "UPDATE FEZES SET PARASITOLOGICO = ?, SANGUE_OCULTO = ? "
-            + "WHERE ID_PEDIDO_FK = ?";
+    private final String alteraFezes = "UPDATE FEZES SET Resut_Parasitologico = ?, Obs_Parasitologico = ?,"
+            + "SANGUE_OCULTO = ?, Obs_SANGUE_OCULTO = ? WHERE ID_PEDIDO_FK = ?";
     
-    public List<Fezes> listarFezes (String nome){
-       List<Fezes> listaFezes = new ArrayList<Fezes>();
+    public List<Fezes> listarExame (int id){
+       List<Fezes> listaFezes = new ArrayList<>();
        try{
            bd = new BaseDeDados();
            pstm = bd.conecta().prepareStatement(consultaFezes);
-           pstm.setString(1,nome);
+           pstm.setInt(1, id);
            rs = pstm.executeQuery();
-           while (rs.next()) {
-               fezes.setCodigoF(rs.getInt("ID_PEDIDO_FK"));
-               fezes.setParasitologico(rs.getString("PARASITOLOGICO"));
-               fezes.setSangueOculto(rs.getString("SANGUE_OCULTO"));
+           if (rs.next()) {
+               fezes = new Fezes();
+               fezes.setResutParasitologico(rs.getString("Resut_Parasitologico"));
+               fezes.setObsParasitologico(rs.getString("Obs_Parasitologico"));
+               fezes.setSangueOculto(rs.getBoolean("SANGUE_OCULTO"));
+               fezes.setObsSangueOculto(rs.getString("Obs_SANGUE_OCULTO"));
                listaFezes.add(fezes);
             }
         }catch (Exception e) {
@@ -40,18 +42,21 @@ public class FezesDAO {
         return listaFezes;
     }
     
-    public void alteraFezes (Fezes fezes){
+    public boolean salvarExame (Fezes fezes){
         try{
             bd = new BaseDeDados();
             pstm = bd.conecta().prepareStatement(alteraFezes);
-            pstm.setString(1, fezes.getParasitologico());
-            pstm.setString(2, fezes.getSangueOculto());
-            //Verificar linha de codigo abaixo
-            //pstm.setInt(3, fezes.getIdPedidoFk());
+            pstm.setString(1, fezes.getResutParasitologico());
+            pstm.setString(2, fezes.getObsParasitologico());
+            pstm.setBoolean(3, fezes.isSangueOculto());
+            pstm.setString(4, fezes.getObsSangueOculto());
+            pstm.setInt(5, fezes.getCodigoF());
             pstm.executeUpdate();
             bd.desconecta();
+            return true;
         }catch (Exception e){
             e.printStackTrace();
+            return false;
         }
     }
 }

@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import java.util.List;
 import javax.swing.JOptionPane;
 import persistencia.FezesDAO;
 
@@ -17,10 +18,12 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     
     Helper helper = new Helper();
     
-    public ExameSangueOculto() {
+    private int idExame;
+    
+    public ExameSangueOculto(int id) {
         initComponents();
-        
         formConfig();
+        listarExame(id);
     }
 
     @SuppressWarnings("unchecked")
@@ -297,22 +300,46 @@ public class ExameSangueOculto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-     private void UpdateSangueOculto(){
-         
-        Fezes fez = new Fezes();
-      
-        fez.setParasitologico(txtParasResult.getText().trim());
-        fez.setParasitologico(txaParasObs.getText().trim());
-        fez.setSangueOculto(rbAusente.getText().trim());
-        fez.setSangueOculto(rbPresente.getText().trim());
-        fez.setSangueOculto(txaSangOculObs.getText().trim());
+    private void listarExame(int id){
+        List<Fezes> listaExame;
         
-       FezesDAO fezDAO= new FezesDAO();
-       fezDAO.alteraFezes(fez);
-       JOptionPane.showMessageDialog(null, "Exame cadastrado com sucesso",
-               "Registro de Exames", JOptionPane.INFORMATION_MESSAGE);
+        FezesDAO fezesDAO = new FezesDAO();
+        listaExame = fezesDAO.listarExame(id);
+        if(listaExame.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Exame não encontrado.");
+        }else{
+            idExame = id;
+            txtParasResult.setText(String.valueOf(listaExame.get(0).getResutParasitologico()));
+            txaParasObs.setText(String.valueOf(listaExame.get(0).getObsParasitologico()));
+            if(listaExame.get(0).isSangueOculto()){
+                rbAusente.setSelected(true);
+            } else {
+                rbPresente.setSelected(true);
+            }
+            txaSangOculObs.setText(String.valueOf(listaExame.get(0).getObsSangueOculto()));
+            
+        }
     }
+    private void salvaExame(){
+        boolean sangueOculto;
+        sangueOculto = !rbAusente.isSelected();
+        
+        Fezes fez = new Fezes();
+        fez.setCodigoF(idExame);
+        fez.setResutParasitologico(txtParasResult.getText().trim());
+        fez.setObsParasitologico(txaParasObs.getText().trim());
+        fez.setSangueOculto(sangueOculto);
+        fez.setObsSangueOculto(txaSangOculObs.getText().trim());
+        
+        FezesDAO fezesDAO = new FezesDAO();
+        if(fezesDAO.salvarExame(fez)){
+            JOptionPane.showMessageDialog(this, "Exame Salvo com Sucesso!");
+            this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(this, "Falha ao salvar o Exame");
+        }
+    }
+    
     private void txtParasResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParasResultActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtParasResultActionPerformed
@@ -339,8 +366,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMouseExited
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        UpdateSangueOculto();
-        this.setVisible(false);
+        salvaExame();
     }//GEN-LAST:event_btnSalvarActionPerformed
     
     private void formConfig(){
@@ -381,7 +407,7 @@ public class ExameSangueOculto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ExameSangueOculto().setVisible(true);
+                new ExameSangueOculto(0).setVisible(true);
             }
         });
     }

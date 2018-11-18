@@ -2724,12 +2724,12 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHemogramaActionPerformed
 
     private void btnUrinaRotinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrinaRotinaActionPerformed
-        ExameUrinaRotina urinaRotina = new ExameUrinaRotina();
+        ExameUrinaRotina urinaRotina = new ExameUrinaRotina(Integer.valueOf(txtCodPedidoResult.getText().trim()));
         urinaRotina.setVisible(true);
     }//GEN-LAST:event_btnUrinaRotinaActionPerformed
 
     private void btnSangueOcultoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSangueOcultoActionPerformed
-        ExameSangueOculto sangueOculto = new ExameSangueOculto();
+        ExameSangueOculto sangueOculto = new ExameSangueOculto(Integer.valueOf(txtCodPedidoResult.getText().trim()));
         sangueOculto.setVisible(true);
     }//GEN-LAST:event_btnSangueOcultoActionPerformed
 

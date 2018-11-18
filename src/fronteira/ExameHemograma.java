@@ -24,7 +24,7 @@ public final class ExameHemograma extends javax.swing.JFrame {
     public ExameHemograma(int h) {
         initComponents();
         formConfig();
-        listarHemo(1);
+        listarExame(1);
     }
 
     @SuppressWarnings("unchecked")
@@ -829,7 +829,7 @@ public final class ExameHemograma extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
         
-    private void listarHemo(int h){
+    private void listarExame(int h){
         List<Hemograma> listaExame;
         
         HemogramaDAO hemogramaDAO = new HemogramaDAO();
@@ -899,7 +899,6 @@ public final class ExameHemograma extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "Falha ao salvar o Exame");
         }
-        
     }
     // Faz a validação dos campos, se foram preenchidos corretamente 
     private void  verificaSalvar(){
