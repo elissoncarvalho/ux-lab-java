@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="82613d71-006f-4928-a4e7-090486d6bebf">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="309"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT pedido.ID_N_PEDIDO, pedido.DATA_PEDIDO, pedido.CONVENIO, cliente.NOME, cliente.DATA_NASC, 
+	CASE WHEN cliente.SEXO = 1 THEN 'Feminino' ELSE 'Masculino' END AS 'SEXO', bioquimica.GLICOSE, bioquimica.ACIDO_URICO, bioquimica.UREIA, bioquimica.CREATININA, bioquimica.COLESTEROL_TOTAL, bioquimica.COLESTEROL_HDL, bioquimica.COLESTEROL_LDL, bioquimica.COLESTEROL_VLDL, bioquimica.TRIGLICERIDES, bioquimica.TGO, bioquimica.TGP, bioquimica.GAMA_GT, bioquimica.BILIRRUBINA
+FROM PEDIDO 
+	INNER JOIN cliente 
+    	ON cliente.DELET = 0 AND cliente.ID_CLIENTE = pedido.COD_CLIENTE_FK 
+    INNER JOIN bioquimica 
+    	on bioquimica.ID_PEDIDO_FK = pedido.ID_N_PEDIDO 
+WHERE pedido.DELET = 0 AND PEDIDO.ID_N_PEDIDO = 12 
+GROUP BY pedido.ID_N_PEDIDO]]>
+	</queryString>
+	<field name="ID_N_PEDIDO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATA_PEDIDO" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CONVENIO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATA_NASC" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEXO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="GLICOSE" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ACIDO_URICO" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UREIA" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CREATININA" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLESTEROL_TOTAL" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLESTEROL_HDL" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLESTEROL_LDL" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLESTEROL_VLDL" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TRIGLICERIDES" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TGO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TGP" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="GAMA_GT" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BILIRRUBINA" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="97"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="87"/>
+	</columnHeader>
+	<detail>
+		<band height="355" splitType="Stretch"/>
+	</detail>
+	<pageFooter>
+		<band height="147"/>
+	</pageFooter>
+</jasperReport>
