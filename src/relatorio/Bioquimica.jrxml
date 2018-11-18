@@ -3,7 +3,7 @@
 	<property name="template.type" value="columnar"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="309"/>
+	<property name="ireport.y" value="80"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -86,16 +86,219 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="132" splitType="Stretch"/>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement x="304" y="15" width="220" height="15" uuid="7c9ca3f6-6969-4d96-a4a4-c6ef3554da9f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Rua Coronel Tininho, 269 - Centro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="71" width="220" height="15" uuid="0cd29197-ece7-46af-a981-e4edc93312f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[BIOLAB - ANALISES CLINICAS LTDA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="29" width="220" height="15" uuid="b42e3f3b-9856-4a37-8530-28ea33f43733"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Bom Despacho - MG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="43" width="220" height="15" uuid="749629af-5833-45ac-a9c5-82043c934ff2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[Cep: 35600-000 | Tel (37) 3333-9999]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="57" width="220" height="15" uuid="16a7508d-df3d-4fcf-a4f5-a4e7a1778fa5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[E-mail: contato@biolab.com.br]]></text>
+			</staticText>
+			<image>
+				<reportElement x="16" y="5" width="151" height="94" uuid="ba8ba7cf-acb1-4f6b-9d31-c2be8d32528a"/>
+				<imageExpression><![CDATA["C:\\Users\\eliss\\Documents\\NetBeansProjects\\uxlabjavafont\\src\\imgIcons\\bioLabLogo1.png"]]></imageExpression>
+			</image>
+		</band>
 	</title>
 	<pageHeader>
-		<band height="97"/>
+		<band height="72">
+			<textField>
+				<reportElement x="126" y="24" width="111" height="14" uuid="1fb2d815-9285-4611-826a-f8abfc4e24f1"/>
+				<textFieldExpression><![CDATA[$F{DATA_NASC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="24" width="116" height="15" uuid="03f18385-fa4e-4f2c-a9e0-09dfa4bd261c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data de Nascimento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="405" y="39" width="140" height="13" uuid="02549c8c-cd71-48b1-85ee-bf45d99664c1"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="342" y="38" width="63" height="15" uuid="3009ea64-063c-4860-becb-8b7bc0ee2ac6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Impressão:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="459" y="10" width="43" height="15" uuid="22912513-130c-47a0-869f-8801cbf70583"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Número:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="502" y="10" width="43" height="15" uuid="e0a5361a-6154-48d2-b283-5e2caf3793e1"/>
+				<textFieldExpression><![CDATA[$F{ID_N_PEDIDO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="10" width="56" height="15" uuid="544ac354-0566-4415-9378-a61d6b1f51aa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Paciente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="126" y="38" width="215" height="14" uuid="ef3e037f-9ad6-43ee-b31b-c22986cea1e5"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="342" y="52" width="63" height="15" uuid="1b63c9ae-6668-4124-bc09-643ac16d84a2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Atendente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="405" y="52" width="140" height="15" uuid="3441f08d-58f4-4e6d-91f0-70df9eb581f5"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="10" width="32" height="14" uuid="2f585bca-8b24-4bc5-9c5d-eb179b95ac0b"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="52" width="275" height="15" uuid="a406da25-21f3-4da0-99b8-2de562e3173e"/>
+				<textFieldExpression><![CDATA[$F{CONVENIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="52" width="56" height="15" uuid="3812d2e0-9260-4c63-8926-60bc26d520ab"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Convênio: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="38" width="116" height="15" uuid="d51076b0-8262-4873-a49d-688c4ba70e9c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Solicitante Dr(a).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="459" y="25" width="50" height="15" uuid="84165d89-5e1b-41b3-8be8-3f4fe158f2ff"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Horario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="269" y="24" width="100" height="14" uuid="6fbd8c89-4c54-44d8-b3c8-62c29ce67a40"/>
+				<textFieldExpression><![CDATA[$F{SEXO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="25" width="36" height="14" uuid="a63df934-b9cf-4441-92b8-7d2591da47ce"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="342" y="10" width="75" height="15" uuid="2ad50349-e34a-4d38-b645-57d762767519"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Atendimento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="24" width="32" height="15" uuid="f8d9289d-5185-46cb-b98a-e35e26b13239"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sexo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="375" y="25" width="74" height="13" uuid="9dc452a6-45a8-4e17-b4cd-44e2e2090a6f"/>
+				<textFieldExpression><![CDATA[$F{DATA_PEDIDO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="10" width="275" height="14" uuid="3faf147b-4d48-41fd-8b24-fbf0aab8a748"/>
+				<textFieldExpression><![CDATA[$F{NOME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="342" y="24" width="33" height="15" uuid="87eb21cb-cd4a-4092-836f-d4a6e0e82ee4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="87"/>
+		<band height="63">
+			<textField>
+				<reportElement x="67" y="40" width="113" height="15" uuid="ccd166af-3559-4b93-aeae-b9545aebdda7"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="40" width="56" height="15" uuid="e4632da2-a28d-4421-945d-4d7ff365370c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Material:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="40" width="56" height="15" uuid="b968ba05-bccb-4bbb-90e5-4d188e189af2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Métodos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="25" width="96" height="15" uuid="067eff85-7272-4d30-876a-0d2456ea0b3e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data da coleta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="312" y="40" width="234" height="15" uuid="5b959cbc-0425-4aab-8a52-bed0b0e19a0e"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="10" width="117" height="15" uuid="09f8831a-b296-4b16-b013-7b79503dbd69"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIOQUÍMICA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="105" y="25" width="75" height="15" uuid="22421432-07b5-4f0e-9d48-0d3461710b2b"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="355" splitType="Stretch"/>
+		<band height="268" splitType="Stretch"/>
 	</detail>
 	<pageFooter>
 		<band height="147"/>
