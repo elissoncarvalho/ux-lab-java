@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Urina Rotina" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3fb9d7a9-b18c-4cd8-a0e8-b0f214d53852">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="166"/>
 	<queryString>
 		<![CDATA[SELECT
      urina_rotina.`ID_URINA_ROTINA` AS urina_rotina_ID_URINA_ROTINA,
@@ -235,10 +235,6 @@ FROM
 				<text><![CDATA[Material:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="70" y="30" width="114" height="15" uuid="107e190f-80a3-4859-98b3-98beebf30a83"/>
-				<text><![CDATA[Static text]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="259" y="30" width="56" height="15" uuid="bc8b298d-0333-4c25-a6c5-a8a6b5ab1d9c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Monospaced" isBold="false"/>
@@ -247,6 +243,10 @@ FROM
 			</staticText>
 			<textField>
 				<reportElement x="315" y="30" width="234" height="15" uuid="c67f782c-9a4e-4423-8a9c-df14d359d0d4"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="30" width="114" height="15" uuid="8bb9fdee-a7d4-473a-bf50-bb7ef1f2f61e"/>
 				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
 			</textField>
 		</band>
