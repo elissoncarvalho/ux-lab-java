@@ -712,7 +712,7 @@ public class Principal extends javax.swing.JFrame {
         cbxCoatinina.setBackground(new java.awt.Color(255, 255, 255));
         cbxCoatinina.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         cbxCoatinina.setForeground(new java.awt.Color(35, 59, 77));
-        cbxCoatinina.setText("Coatinina");
+        cbxCoatinina.setText("Creatinina");
         cbxCoatinina.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)), javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10)));
         cbxCoatinina.setBorderPainted(true);
         cbxCoatinina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1258,7 +1258,6 @@ public class Principal extends javax.swing.JFrame {
         btnSangueOculto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnSangueOculto.setForeground(new java.awt.Color(35, 59, 77));
         btnSangueOculto.setText(" EPF / Sangue Oculto");
-        btnSangueOculto.setActionCommand(" EPF / Sangue Oculto");
         btnSangueOculto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(35, 59, 77)));
         btnSangueOculto.setContentAreaFilled(false);
         btnSangueOculto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
