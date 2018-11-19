@@ -6,8 +6,10 @@ import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JFrame;
 import entidade.*;
+import java.awt.BorderLayout;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -15,6 +17,11 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.swing.JRViewer;
+import persistencia.BaseDeDados;
 import persistencia.ClienteDAO;
 import persistencia.PedidoDAO;
 
@@ -2551,6 +2558,22 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Selecione um cliente.");
         }
     }
+    private void exibeRelatorio(){
+        JFrame frameRelatorio = new JFrame();
+        try{
+            BaseDeDados bd = new BaseDeDados();
+            HashMap map = new HashMap();
+            String arquivo = System.getProperty("user.dir")+"/src/relatorio/UrinaRotina.jasper";
+            JasperPrint relatorio = JasperFillManager.fillReport(arquivo, map, bd.conecta());
+            frameRelatorio.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JRViewer exibe_rel = new JRViewer(relatorio);
+            frameRelatorio.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            frameRelatorio.add(exibe_rel, BorderLayout.CENTER);
+            frameRelatorio.setVisible(true);
+        }catch(JRException e){
+            e.printStackTrace();
+        }
+    }
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
         this.setExtendedState(JFrame.ICONIFIED);
     }//GEN-LAST:event_btnMinimizarActionPerformed
@@ -3167,7 +3190,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClienteCadastraMouseExited
 
     private void btnExameDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExameDetalheActionPerformed
-        exameGeraRel.setVisible(true);
+        exibeRelatorio();
     }//GEN-LAST:event_btnExameDetalheActionPerformed
 
     private void txtExPedCodClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtExPedCodClienteFocusLost
