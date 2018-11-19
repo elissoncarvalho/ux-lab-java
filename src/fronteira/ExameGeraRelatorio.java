@@ -5,6 +5,14 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import java.awt.BorderLayout;
+import java.util.HashMap;
+import javax.swing.JFrame;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.swing.JRViewer;
+import persistencia.BaseDeDados;
 
 /**
  *
@@ -185,7 +193,23 @@ public class ExameGeraRelatorio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void exibeRelatorio(){
+        JFrame frameRelatorio = new JFrame();
+        try{
+            BaseDeDados bd = new BaseDeDados();
+            HashMap map = new HashMap();
+            String arquivo = System.getProperty("user.dir")+"/src/relatorio/UrinaRotina.jrxml";
+            JasperPrint relatorio = JasperFillManager.fillReport(arquivo, map, bd.conecta());
+            frameRelatorio.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JRViewer exibe_rel = new JRViewer(relatorio);
+            frameRelatorio.add(exibe_rel, BorderLayout.CENTER);
+            frameRelatorio.setVisible(true);
+        }catch(JRException e){
+            e.printStackTrace();
+        }
+    }
+    
     private void btnImprimirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImprimirMouseEntered
         helper.setMouseBtnFormMoved(btnImprimir, 1, null);
     }//GEN-LAST:event_btnImprimirMouseEntered
@@ -195,7 +219,7 @@ public class ExameGeraRelatorio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnImprimirMouseExited
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
-        this.setVisible(false);
+        exibeRelatorio();
     }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void btnVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseEntered
@@ -264,4 +288,8 @@ public class ExameGeraRelatorio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
+
+    private void printStackTrace(Exception e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
