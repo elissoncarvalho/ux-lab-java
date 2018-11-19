@@ -3,7 +3,7 @@
 	<property name="template.type" value="columnar"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="183"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -298,7 +298,422 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="268" splitType="Stretch"/>
+		<band height="349" splitType="Stretch">
+			<textField>
+				<reportElement x="130" y="126" width="82" height="15" uuid="ad93ab04-5131-45bb-b038-0a9a232aeb61"/>
+				<textFieldExpression><![CDATA[$F{RDW}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="209" width="180" height="15" uuid="3c2a418d-4f81-4235-b358-d2ed24c9b235"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[0,5 a 6,0 % - Até 500 céls/mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="224" width="180" height="15" uuid="095a3db6-7e9c-4210-bbad-d2246aac7079"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Até 1.000 céls/mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="66" width="88" height="15" uuid="ec5a531a-9f91-4dcf-851c-c540fcfa6aa0"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="194" width="50" height="15" uuid="d6e52a7f-46cd-430a-acb2-a61c14605a12"/>
+				<textFieldExpression><![CDATA[$F{NEUTROFILOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="194" width="50" height="15" uuid="c8692f12-f3ab-4ef1-966f-f21226c48eb3"/>
+				<textFieldExpression><![CDATA[$F{NEUTROFILOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="359" y="51" width="180" height="15" uuid="abe4e0b5-8caf-461b-854d-b8105ea3748e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[13,5 a 18,0 g/dL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="81" width="115" height="15" uuid="11a541e8-68fc-4801-acad-e40efe2445c5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[VCM..............:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="111" width="82" height="15" uuid="08916ee4-6637-4a5e-a242-a2928325e919"/>
+				<textFieldExpression><![CDATA[$F{CHCM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="359" y="96" width="180" height="15" uuid="0f203d9c-a1c0-47cf-8090-f53f6c04c23b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[27,0 a 31,0 pg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="239" width="25" height="15" uuid="eb18bf6b-6908-4cee-82b0-edc0e2386b36"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="224" width="50" height="15" uuid="9a4f6339-bac1-4fa3-a0e6-010273b3fecb"/>
+				<textFieldExpression><![CDATA[$F{BASTONETES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="81" width="82" height="15" uuid="4eed0f56-b74c-4bcb-86a0-81feeac073f5"/>
+				<textFieldExpression><![CDATA[$F{VCM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="96" width="115" height="15" uuid="419a59b5-c709-493d-b079-44c2c4a5c661"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HCM..............:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="284" width="121" height="15" uuid="8e64f1ce-4108-48ae-b1d1-a7747b386814"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Basófilos..........:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="209" width="31" height="15" uuid="09ae0b07-3220-4eb9-8d8d-4fa798213c14"/>
+				<text><![CDATA[/mm³]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="209" width="50" height="15" uuid="6e2c3efc-8794-41f3-9764-8caafbebd4c1"/>
+				<textFieldExpression><![CDATA[$F{EOSINOFILOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="270" y="224" width="31" height="15" uuid="b208bc5e-6b4d-4532-b34f-7d5068c62c8b"/>
+				<text><![CDATA[/mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="179" width="180" height="15" uuid="6a20ca1b-ae4a-47ce-9ec0-52ddce032171"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[4.0 a 10.5 céls./mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="254" width="31" height="15" uuid="094e5124-ad7e-4161-a891-3df8e406ab74"/>
+				<text><![CDATA[/mm³]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="66" width="82" height="15" uuid="94228435-0ce5-4af8-bb0d-ef3d1f58e5e7"/>
+				<textFieldExpression><![CDATA[$F{HEMATOCRITO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="209" width="50" height="15" uuid="08623541-fc48-40d3-aea0-e5a249cf4361"/>
+				<textFieldExpression><![CDATA[$F{EOSINOFILOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="359" y="81" width="180" height="15" uuid="ba71c51f-51b3-454b-89cf-3f5fa883461c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[78,0 a 100,0 fL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="269" width="121" height="15" uuid="fc71cef5-98b6-41f3-960d-97c11c5101b6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Monócitos..........:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="36" width="115" height="15" uuid="0fca3675-05f6-4b32-92dc-1923e825b222"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hemácias.........:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="51" width="88" height="15" uuid="ab718f9d-24b4-4920-94b5-014e575f4405"/>
+				<text><![CDATA[g/dL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="96" width="82" height="15" uuid="a3e25bb8-8c55-4ebb-99c2-49c6b4609835"/>
+				<textFieldExpression><![CDATA[$F{HCM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="187" y="269" width="25" height="15" uuid="15a10426-0f45-48c0-9385-61c2f48aaa4e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="284" width="180" height="15" uuid="03620ed6-d1c4-4980-b537-68d493eb5a84"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[0,0 a 2,0 % - Até 100 céls/mm³]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="224" width="50" height="15" uuid="ddc6361b-6ab6-4bb7-bb45-c92401621c26"/>
+				<textFieldExpression><![CDATA[$F{BASTONETES1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="270" y="239" width="31" height="15" uuid="bc01f0b6-c8a4-45a9-a93c-7ad59d490d94"/>
+				<text><![CDATA[/mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="21" width="180" height="15" uuid="f77cd09d-a393-45a1-b0e0-21eda461390a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Valores de Referência:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="269" width="50" height="15" uuid="ae1104b3-b454-425b-940c-f0bd4ad57207"/>
+				<textFieldExpression><![CDATA[$F{MONOCITOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="209" width="121" height="15" uuid="103a04a6-bb65-4227-85b4-4bb1fca8b724"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Eosinófilos........:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="126" width="88" height="15" uuid="12dc2b5f-4ca6-46ec-8cf8-67e30fa3f03d"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="269" width="180" height="15" uuid="e3315ff9-04a6-4d66-b44c-a82ae2aa52c6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[2,0 a 10,0 % - Até 1.000 céls/mm³]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="254" width="50" height="15" uuid="15b8edcc-1e37-4c17-8d20-28e730093bf1"/>
+				<textFieldExpression><![CDATA[$F{LINFOCITOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="194" width="121" height="15" uuid="c1cd5730-49eb-4833-be36-afcfb00e0615"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Neutrofilos........:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="194" width="31" height="15" uuid="1382e14a-045a-4b67-88c2-aee90cab27f7"/>
+				<text><![CDATA[/mm³]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="239" width="50" height="15" uuid="20cbb9f1-1170-4e45-b9e6-4909bc5f40f5"/>
+				<textFieldExpression><![CDATA[$F{SEGMENTADOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="284" width="50" height="15" uuid="86b884a0-e7b1-41dd-9070-c4890ba9f50f"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="239" width="121" height="15" uuid="4f14b47c-2cf9-40b3-abab-7c33a16ff7cb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Segmentados........:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="126" width="115" height="15" uuid="a48227b3-308f-4406-a011-6a9fc50503b4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[RDW..............:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="284" width="25" height="15" uuid="c0b4d4f7-2a0f-434a-8584-f1832a63df17"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="254" width="25" height="15" uuid="7db7dcde-89e8-49ad-a9f9-661dccd0c0bf"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="254" width="121" height="15" uuid="9bbfd810-8b14-422c-ade7-a4623bbd1b4c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Linfócitos.........:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="224" width="121" height="15" uuid="b1a9a8a4-7445-47cb-b02e-0892792de655"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Bastonetes.........:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="51" width="115" height="15" uuid="4459d14d-c066-4fa7-b2a4-50df7c235a51"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hemoglobina......:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="153" width="132" height="15" uuid="47e76193-d556-4d5c-8ee1-ac90c1f094e3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LEUCOGRAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="284" width="31" height="15" uuid="380f5db2-9d01-4e97-8368-7969c82c7155"/>
+				<text><![CDATA[/mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="66" width="180" height="15" uuid="14790850-e17d-4666-ac76-9a32c5741024"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[42,0 a 52,0 %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="179" width="121" height="15" uuid="417ee175-aa59-4fcd-9683-f0b9cb4780cf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Leucócitos - Global:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="66" width="115" height="15" uuid="c6b6207f-e83b-4fca-8910-35d1d0d0cd4d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hematócrito......:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="254" width="180" height="15" uuid="fc45b7ea-2e95-4c32-a03d-7978b765cb1c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="126" width="180" height="15" uuid="c1549a9f-31f4-4913-bf1f-38343038ded4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="36" width="82" height="15" uuid="8b8ba604-b0e7-44f6-84c8-77625e3233d9"/>
+				<textFieldExpression><![CDATA[$F{HEMACIAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="254" width="50" height="15" uuid="905122da-ec77-49e4-810d-f89b085189a3"/>
+				<textFieldExpression><![CDATA[$F{LINFOCITOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="194" width="180" height="15" uuid="2150b2c1-236d-4a8b-a872-0a63133309ca"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="209" width="25" height="15" uuid="57c6418d-d647-4445-b7ff-5c51815a4458"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="239" width="180" height="15" uuid="2af629a9-3ffe-4b9b-b19d-bb7b65fad627"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[40,0 a 70,0 % - 1.300 a 6.000 céls/mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="36" width="180" height="15" uuid="ee181ede-af3d-46ec-8b69-31bbd1e001b8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[4,70 a 6,00 milhões/mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="36" width="88" height="15" uuid="c2d33e0e-2723-4871-b1ed-6257b3c1bdea"/>
+				<text><![CDATA[milhões/mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="111" width="180" height="15" uuid="f83fdb3a-0b24-4421-a966-13c7113670fe"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[31,0 a 36,0 %]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="179" width="50" height="15" uuid="a6efe721-013e-405b-9890-a6059ac2d2f6"/>
+				<textFieldExpression><![CDATA[$F{LEUCOCITOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="269" width="50" height="15" uuid="9e898cd0-fc02-4691-8582-ba3d71a1169b"/>
+				<textFieldExpression><![CDATA[$F{MONOCITOS1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="51" width="82" height="15" uuid="73c91e55-b6cc-4750-9722-561f9ce1f23e"/>
+				<textFieldExpression><![CDATA[$F{HEMOGLOBINA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="270" y="269" width="31" height="15" uuid="0caa0433-f02a-4df0-a627-70fd6bf41e67"/>
+				<text><![CDATA[/mm³]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="284" width="50" height="15" uuid="761165db-fef4-4954-a4d1-2f2451fcacf2"/>
+				<textFieldExpression><![CDATA[$F{field1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="212" y="81" width="88" height="15" uuid="7b3e73f3-3543-4716-9cee-bd9eb7235f84"/>
+				<text><![CDATA[fL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="224" width="25" height="15" uuid="b6c810a2-836c-4ffe-9a40-84a2f60db97f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="111" width="88" height="15" uuid="24d27ec8-6282-4d16-b38a-36d9e6065833"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="111" width="115" height="15" uuid="9354e637-464b-43d9-9cb3-90c81ad1868c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CHCM.............:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="10" width="132" height="15" uuid="88b17c27-d55f-46bb-8874-2fdfb5b8956f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ERITROGRAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="179" width="85" height="15" uuid="5fcac73c-0b3f-4c31-95a6-103ab5b51cae"/>
+				<text><![CDATA[céls./mm³]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="96" width="88" height="15" uuid="f9bb9c47-13a3-4ea0-8d06-8a3eda5fea2a"/>
+				<text><![CDATA[pg]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="239" width="50" height="15" uuid="8ee4d138-673c-4fd7-bb7f-f7dabb6192ea"/>
+				<textFieldExpression><![CDATA[$F{SEGMENTADOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="187" y="194" width="25" height="15" uuid="6310f0a5-f2cf-4edf-ade4-6f9c7ea358c4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+		</band>
 	</detail>
 	<pageFooter>
 		<band height="173">
