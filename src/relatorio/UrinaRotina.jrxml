@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Urina Rotina" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3fb9d7a9-b18c-4cd8-a0e8-b0f214d53852">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.366026910730141"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="343"/>
+	<property name="ireport.y" value="198"/>
+	<parameter name="idPedido" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT pedido.ID_N_PEDIDO, pedido.DATA_PEDIDO, pedido.CONVENIO, cliente.NOME, cliente.DATA_NASC, 
 	CASE WHEN cliente.SEXO = 1 THEN 'Feminino' ELSE 'Masculino' END AS 'SEXO', urina_rotina.COR, urina_rotina.DENSIDADE, urina_rotina.ASPECTO, urina_rotina.PH, urina_rotina.CEL_EPITELIAIS, urina_rotina.LEUCOCITOS, urina_rotina.HEMACIAS, urina_rotina.CILINDROS 
@@ -181,57 +184,55 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				</textElement>
 				<text><![CDATA[Atendente:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="70" y="15" width="275" height="14" uuid="24aac30f-3673-4802-aac5-80dab28fcfa6"/>
-				<textFieldExpression><![CDATA[$F{NOME}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="130" y="29" width="111" height="14" uuid="d8762197-41e4-440e-952f-064c4e2afb8a"/>
-				<textFieldExpression><![CDATA[$F{DATA_NASC}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="130" y="43" width="215" height="14" uuid="f438dc54-edab-43c5-902f-603f2ea6d6a1"/>
-				<textFieldExpression><![CDATA[F{field}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="70" y="57" width="275" height="15" uuid="c95f3286-4910-4ea8-bbe6-82d0dee23e4e"/>
-				<textFieldExpression><![CDATA[$F{CONVENIO}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="379" y="30" width="74" height="13" uuid="67135a0a-852a-4612-9766-e434d067d3ff"/>
-				<textFieldExpression><![CDATA[$F{DATA_PEDIDO}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="421" y="15" width="32" height="14" uuid="4288c239-a1cd-4ef6-8d01-84abb1a2006f"/>
-				<textFieldExpression><![CDATA[F{field}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="409" y="44" width="140" height="13" uuid="95200990-8df4-4e45-970d-e049bbdfd455"/>
-				<textFieldExpression><![CDATA[F{field}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="409" y="57" width="140" height="15" uuid="47748ea0-26e4-40de-a0ca-82a0ed52ec8c"/>
-				<textFieldExpression><![CDATA[F{field}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="506" y="15" width="43" height="15" uuid="f9d7cb35-f012-45e3-9a09-b9d6c7ae8b91"/>
-				<textFieldExpression><![CDATA[$F{ID_N_PEDIDO}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="513" y="30" width="36" height="14" uuid="47a3575e-2387-49ed-9483-4cba922628b2"/>
-				<textFieldExpression><![CDATA[F{field}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="273" y="29" width="72" height="14" uuid="e722b178-545c-4cbb-8aa5-1e5d0a3f93e8"/>
-				<textFieldExpression><![CDATA[$F{SEXO}]]></textFieldExpression>
-			</textField>
 			<line>
 				<reportElement x="0" y="0" width="555" height="1" uuid="df2edc67-7081-43f8-85d1-88fe1fab9275"/>
 			</line>
+			<textField>
+				<reportElement x="69" y="15" width="276" height="15" uuid="46e47c1c-7e0d-41c8-b2fc-86c8230ba596"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOME}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="130" y="29" width="111" height="15" uuid="cb25b8d6-a58a-49f4-883f-46049fe0e9a5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATA_NASC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="30" width="73" height="14" uuid="4085b54e-c3b7-488f-a6b0-f37443a67353"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SEXO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="57" width="171" height="15" uuid="a06fa1e7-a8e0-4d06-9a97-06f31cd4faeb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONVENIO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="379" y="30" width="84" height="14" uuid="b8eecbe0-28a2-4ac6-a95a-930cc0b89086"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATA_PEDIDO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="506" y="15" width="49" height="14" uuid="9c3185f6-fb9c-4c8a-bad5-030bf873caeb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID_N_PEDIDO}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch">
+	<detail>
+		<band height="69" splitType="Stretch">
 			<staticText>
 				<reportElement x="13" y="0" width="73" height="15" uuid="3f18845b-d6ca-4f87-8298-a634ed552903"/>
 				<textElement verticalAlignment="Middle">
@@ -246,10 +247,6 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				</textElement>
 				<text><![CDATA[Data da coleta:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="109" y="15" width="75" height="15" uuid="78b1adfd-48bc-486d-a2c5-5ca5f9e7ae1c"/>
-				<textFieldExpression><![CDATA[$F{DATA_PEDIDO}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="14" y="30" width="56" height="15" uuid="1be72e1d-9f1d-4d42-9e1e-438c454890ce"/>
 				<textElement verticalAlignment="Middle">
@@ -264,18 +261,15 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				</textElement>
 				<text><![CDATA[Métodos:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="315" y="30" width="234" height="15" uuid="c67f782c-9a4e-4423-8a9c-df14d359d0d4"/>
-				<textFieldExpression><![CDATA[F{field}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="70" y="30" width="114" height="15" uuid="8bb9fdee-a7d4-473a-bf50-bb7ef1f2f61e"/>
-				<textFieldExpression><![CDATA[F{field}]]></textFieldExpression>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="108" y="15" width="84" height="15" uuid="e30c3e39-c984-474b-9225-8b32f02bc679"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATA_PEDIDO}]]></textFieldExpression>
 			</textField>
 		</band>
-	</columnHeader>
-	<detail>
-		<band height="377" splitType="Stretch">
+		<band height="373" splitType="Stretch">
 			<staticText>
 				<reportElement x="14" y="0" width="132" height="15" uuid="36c4e71a-6368-478c-a645-1d06722d140d"/>
 				<textElement verticalAlignment="Middle">
@@ -402,22 +396,6 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				</textElement>
 				<text><![CDATA[Valores de Referência:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="184" y="47" width="131" height="15" uuid="75abf8bb-6803-4297-bd20-ebd9e7cf4d33"/>
-				<textFieldExpression><![CDATA[$F{ASPECTO}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="184" y="62" width="131" height="15" uuid="e94a0e37-c3a6-4e79-877b-ed7dabdaca7f"/>
-				<textFieldExpression><![CDATA[$F{COR}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="184" y="77" width="131" height="15" uuid="482d0178-3121-4bb5-af27-0e2c89d06f92"/>
-				<textFieldExpression><![CDATA[$F{PH}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="184" y="92" width="131" height="15" uuid="cdb05be9-a71c-420a-95b7-743a945a581f"/>
-				<textFieldExpression><![CDATA[$F{DENSIDADE}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="379" y="259" width="154" height="15" uuid="abeb40d1-607c-41de-9e65-eea26ea637cb"/>
 				<textElement verticalAlignment="Middle">
@@ -440,16 +418,12 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				<text><![CDATA[Ausente]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="30" y="349" width="154" height="15" uuid="375bdcad-1d8f-4c63-91d6-623ecc6c674a"/>
+				<reportElement x="30" y="304" width="153" height="15" uuid="375bdcad-1d8f-4c63-91d6-623ecc6c674a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Monospaced" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Cilindros...............:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="184" y="289" width="131" height="15" uuid="21de48aa-b8aa-47ff-bcd2-9706fc4a6194"/>
-				<textFieldExpression><![CDATA[$F{CEL_EPITELIAIS}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="379" y="334" width="154" height="15" uuid="e15431a7-8027-4793-9e72-8c226476f033"/>
 				<textElement verticalAlignment="Middle">
@@ -457,10 +431,6 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				</textElement>
 				<text><![CDATA[Ausentes]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="184" y="259" width="131" height="15" uuid="dec995e3-e3af-4443-857b-a1f45b8502e4"/>
-				<textFieldExpression><![CDATA[$F{LEUCOCITOS}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="379" y="349" width="154" height="15" uuid="f9741273-252c-480d-88ba-e7ac15f9b45a"/>
 				<textElement verticalAlignment="Middle">
@@ -475,10 +445,6 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				</textElement>
 				<text><![CDATA[Hemácias................:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="184" y="274" width="131" height="15" uuid="843e0825-c108-4edd-892f-a8feec743cc6"/>
-				<textFieldExpression><![CDATA[$F{HEMACIAS}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="30" y="289" width="154" height="15" uuid="21aec6fc-ab16-4294-bcc8-3605206480d9"/>
 				<textElement verticalAlignment="Middle">
@@ -500,10 +466,6 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				</textElement>
 				<text><![CDATA[SEDIMENTOSCOPIA]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="184" y="349" width="131" height="15" uuid="8ea649f9-6ecd-4cfc-96b4-8869666ef3e0"/>
-				<textFieldExpression><![CDATA[$F{CILINDROS}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="379" y="274" width="154" height="15" uuid="161c1af6-d0c5-42f3-ba6a-8076688f92cc"/>
 				<textElement verticalAlignment="Middle">
@@ -518,44 +480,96 @@ GROUP BY pedido.ID_N_PEDIDO]]>
 				</textElement>
 				<text><![CDATA[Raras]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="183" y="47" width="162" height="15" uuid="4e8a083d-d37b-468e-88f3-f48aa236d339"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASPECTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="62" width="162" height="15" uuid="fc75dc1a-3db0-43c8-b630-68cfb75a6cd5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="77" width="162" height="15" uuid="31149d45-7ffe-48f1-a395-9632045d9adf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="92" width="162" height="15" uuid="a5dfdbf0-fe49-4960-a274-d7e0c464c782"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DENSIDADE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="259" width="161" height="15" uuid="8081c55d-854d-4e2f-b8db-529f02f0e054"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LEUCOCITOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="274" width="161" height="15" uuid="cc473a80-9f86-4318-aa19-eb698e86f80d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HEMACIAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="289" width="161" height="15" uuid="3981de24-007f-4967-a2f3-c461c3d2ed46"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CEL_EPITELIAIS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="304" width="160" height="15" uuid="8275a4cf-cfe6-4f37-91d3-4796664931fd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CILINDROS}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="194" splitType="Stretch">
+		<band height="115" splitType="Stretch">
 			<staticText>
-				<reportElement x="14" y="9" width="246" height="15" uuid="59d605a4-8b05-45ba-b344-d92c1a6fa268"/>
+				<reportElement x="9" y="10" width="246" height="15" uuid="59d605a4-8b05-45ba-b344-d92c1a6fa268"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Esse Laudo foi conferido sob a assinatura digital: ]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="267" y="9" width="266" height="15" uuid="d735e27c-49bb-449b-b597-96f7dc8f1809"/>
-				<textFieldExpression><![CDATA[F{field}]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement x="9" y="114" width="536" height="15" uuid="3c746ce1-cafc-400b-94a7-33e97c829dec"/>
+				<reportElement x="9" y="46" width="536" height="15" uuid="3c746ce1-cafc-400b-94a7-33e97c829dec"/>
 				<textElement textAlignment="Justified">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Atenção! Os resultados anteriores informados são fornecidos de forma a ajudar o clínico na avaliação da evolução do paciente. Porém,]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="9" y="126" width="536" height="15" uuid="b78005db-623d-4637-ae98-802700e63f92"/>
+				<reportElement x="9" y="58" width="536" height="15" uuid="b78005db-623d-4637-ae98-802700e63f92"/>
 				<textElement textAlignment="Justified">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[devem ser analisados com cautela, levando-se em consideração os dados clínicos, alimentação, medicamentos, estados patologicos e]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="9" y="138" width="536" height="15" uuid="f7f182c3-6a6e-4a59-9605-ae72f459bdf1"/>
+				<reportElement x="9" y="70" width="536" height="15" uuid="f7f182c3-6a6e-4a59-9605-ae72f459bdf1"/>
 				<textElement textAlignment="Justified">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[fisiológicos, bem como valores de referência da época, uma vez que os mesmos podem sofrer modificações devido a mudança de kits, ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="9" y="150" width="536" height="15" uuid="fd419f73-450d-4702-b4ce-aa9b869f9694"/>
+				<reportElement x="9" y="82" width="536" height="15" uuid="fd419f73-450d-4702-b4ce-aa9b869f9694"/>
 				<textElement textAlignment="Justified">
 					<font size="8"/>
 				</textElement>

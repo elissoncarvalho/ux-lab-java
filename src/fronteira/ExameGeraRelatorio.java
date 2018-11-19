@@ -199,7 +199,7 @@ public class ExameGeraRelatorio extends javax.swing.JFrame {
         try{
             BaseDeDados bd = new BaseDeDados();
             HashMap map = new HashMap();
-            String arquivo = System.getProperty("user.dir")+"/src/relatorio/UrinaRotina.jrxml";
+            String arquivo = System.getProperty("user.dir")+"/src/relatorio/UrinaRotina.jasper";
             JasperPrint relatorio = JasperFillManager.fillReport(arquivo, map, bd.conecta());
             frameRelatorio.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             JRViewer exibe_rel = new JRViewer(relatorio);
