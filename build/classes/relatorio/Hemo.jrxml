@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a0438617-bdd5-4f21-aee1-fb677dfa85db">
+	<property name="template.type" value="columnar"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     hemograma.`ID_HEMOGRAMA` AS hemograma_ID_HEMOGRAMA,
+     hemograma.`ID_PEDIDO_FK` AS hemograma_ID_PEDIDO_FK,
+     hemograma.`HEMACIAS` AS hemograma_HEMACIAS,
+     hemograma.`HEMOGLOBINA` AS hemograma_HEMOGLOBINA,
+     hemograma.`HEMATOCRITO` AS hemograma_HEMATOCRITO,
+     hemograma.`VCM` AS hemograma_VCM,
+     hemograma.`HCM` AS hemograma_HCM,
+     hemograma.`CHCM` AS hemograma_CHCM,
+     hemograma.`RDW` AS hemograma_RDW,
+     hemograma.`LEUCOCITOS` AS hemograma_LEUCOCITOS,
+     hemograma.`NEUTROFILOS` AS hemograma_NEUTROFILOS,
+     hemograma.`SEGMENTADOS` AS hemograma_SEGMENTADOS,
+     hemograma.`BASTONETES` AS hemograma_BASTONETES,
+     hemograma.`EOSINOFILOS` AS hemograma_EOSINOFILOS,
+     hemograma.`BASOFILOS` AS hemograma_BASOFILOS,
+     hemograma.`LINFOCITOS` AS hemograma_LINFOCITOS,
+     hemograma.`MONOCITOS` AS hemograma_MONOCITOS,
+     hemograma.`LEUCOCITOS1` AS hemograma_LEUCOCITOS1,
+     hemograma.`NEUTROFILOS1` AS hemograma_NEUTROFILOS1,
+     hemograma.`SEGMENTADOS1` AS hemograma_SEGMENTADOS1,
+     hemograma.`BASTONETES1` AS hemograma_BASTONETES1,
+     hemograma.`EOSINOFILOS1` AS hemograma_EOSINOFILOS1,
+     hemograma.`BASOFILOS1` AS hemograma_BASOFILOS1,
+     hemograma.`LINFOCITOS1` AS hemograma_LINFOCITOS1,
+     hemograma.`MONOCITOS1` AS hemograma_MONOCITOS1,
+     hemograma.`CONTAGEM_PLAQUETAS` AS hemograma_CONTAGEM_PLAQUETAS,
+     hemograma.`DELET` AS hemograma_DELET
+FROM
+     `hemograma` hemograma]]>
+	</queryString>
+	<field name="hemograma_ID_HEMOGRAMA" class="java.lang.Integer"/>
+	<field name="hemograma_ID_PEDIDO_FK" class="java.lang.Integer"/>
+	<field name="hemograma_HEMACIAS" class="java.lang.Double"/>
+	<field name="hemograma_HEMOGLOBINA" class="java.lang.Double"/>
+	<field name="hemograma_HEMATOCRITO" class="java.lang.Double"/>
+	<field name="hemograma_VCM" class="java.lang.Double"/>
+	<field name="hemograma_HCM" class="java.lang.Double"/>
+	<field name="hemograma_CHCM" class="java.lang.Double"/>
+	<field name="hemograma_RDW" class="java.lang.Double"/>
+	<field name="hemograma_LEUCOCITOS" class="java.lang.Double"/>
+	<field name="hemograma_NEUTROFILOS" class="java.lang.Double"/>
+	<field name="hemograma_SEGMENTADOS" class="java.lang.Double"/>
+	<field name="hemograma_BASTONETES" class="java.lang.Double"/>
+	<field name="hemograma_EOSINOFILOS" class="java.lang.Double"/>
+	<field name="hemograma_BASOFILOS" class="java.lang.Double"/>
+	<field name="hemograma_LINFOCITOS" class="java.lang.Double"/>
+	<field name="hemograma_MONOCITOS" class="java.lang.Double"/>
+	<field name="hemograma_LEUCOCITOS1" class="java.lang.Double"/>
+	<field name="hemograma_NEUTROFILOS1" class="java.lang.Double"/>
+	<field name="hemograma_SEGMENTADOS1" class="java.lang.Double"/>
+	<field name="hemograma_BASTONETES1" class="java.lang.Double"/>
+	<field name="hemograma_EOSINOFILOS1" class="java.lang.Double"/>
+	<field name="hemograma_BASOFILOS1" class="java.lang.Double"/>
+	<field name="hemograma_LINFOCITOS1" class="java.lang.Double"/>
+	<field name="hemograma_MONOCITOS1" class="java.lang.Double"/>
+	<field name="hemograma_CONTAGEM_PLAQUETAS" class="java.lang.Double"/>
+	<field name="hemograma_DELET" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="2" y="0" width="118" height="132" uuid="3006010c-943a-48d1-b37c-62c591c0b5df"/>
+				<imageExpression><![CDATA["tree1.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="120" y="10" width="435" height="93" uuid="222abd69-3390-45d8-ad00-5c24d580da65"/>
+				<textElement>
+					<font size="80" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tree Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="336" y="103" width="217" height="29" uuid="1df0cab9-60cf-4170-843d-430e3aa4f9a5"/>
+				<textElement>
+					<font size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tree SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="540" splitType="Stretch">
+			<image>
+				<reportElement x="2" y="0" width="56" height="80" uuid="27e46611-b50a-40fc-8888-113cd3f36cc5"/>
+				<imageExpression><![CDATA["tree2.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="2" y="90" width="551" height="1" uuid="da6dfa66-515d-453f-b1c6-2950aed8a98c"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="0" width="132" height="20" forecolor="#000000" uuid="5ee626e0-6df8-4cda-bbcc-20f8c658cc95"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_ID_HEMOGRAMA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="0" width="338" height="18" uuid="403a3f69-8e4c-4224-9e5e-0db6424b0c81"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_ID_HEMOGRAMA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="20" width="132" height="20" forecolor="#000000" uuid="b109e02d-6599-4cf8-8dc8-301a8ff07729"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_ID_PEDIDO_FK]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="20" width="338" height="18" uuid="a998d17c-1678-4e83-bdd0-1cd33f7f5116"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_ID_PEDIDO_FK}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="40" width="132" height="20" forecolor="#000000" uuid="2b253d65-313d-458a-adde-4a601ecf89a9"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_HEMACIAS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="40" width="338" height="18" uuid="24be1879-b2aa-4b75-8f72-b8aacf834be8"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_HEMACIAS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="60" width="132" height="20" forecolor="#000000" uuid="a0de8445-2a4c-460a-a0bb-8a83eac52de2"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_HEMOGLOBINA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="60" width="338" height="18" uuid="1abfe460-490b-4e1d-b062-e84981175618"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_HEMOGLOBINA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="80" width="132" height="20" forecolor="#000000" uuid="d24cc275-ceaa-4925-bfd9-423a93614d8d"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_HEMATOCRITO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="80" width="338" height="18" uuid="119551c5-6abf-44ad-8b04-f18a7617ac78"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_HEMATOCRITO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="100" width="132" height="20" forecolor="#000000" uuid="36013769-511c-4d19-9b29-8c4e5d942ca0"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_VCM]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="100" width="338" height="18" uuid="11224244-97e4-486e-82bc-317c633aecd2"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_VCM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="120" width="132" height="20" forecolor="#000000" uuid="7b4cdd80-ad0a-4835-bb7b-bedd31185ec9"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_HCM]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="120" width="338" height="18" uuid="90c65f58-3064-4533-b29b-10c5d9003f38"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_HCM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="140" width="132" height="20" forecolor="#000000" uuid="ecdba1c1-9e39-4ff9-8014-b99f2cb755ce"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_CHCM]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="140" width="338" height="18" uuid="f7453f7e-77fd-4ba2-bc6d-02271d16a402"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_CHCM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="160" width="132" height="20" forecolor="#000000" uuid="93e0cbfa-bb2f-4df7-a0c9-6b4653bafd84"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_RDW]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="160" width="338" height="18" uuid="707faa9a-ead3-4874-a191-251d25dca6ba"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_RDW}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="180" width="132" height="20" forecolor="#000000" uuid="8cb2c541-8d40-4781-8a09-c9b4b5be1c4c"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_LEUCOCITOS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="180" width="338" height="18" uuid="7d9c3bc0-26ca-4da5-9429-4223c58a0d8f"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_LEUCOCITOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="200" width="132" height="20" forecolor="#000000" uuid="90b7518f-e464-4a79-905e-97584d8afc6b"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_NEUTROFILOS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="200" width="338" height="18" uuid="82e32502-3120-41ae-bc6d-fc68b69fc2bc"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_NEUTROFILOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="220" width="132" height="20" forecolor="#000000" uuid="962e6bad-e8b3-4794-ada1-5ca405ef69c5"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_SEGMENTADOS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="220" width="338" height="18" uuid="c534d987-2c46-477b-a07b-24aeb8380a91"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_SEGMENTADOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="240" width="132" height="20" forecolor="#000000" uuid="5b79fcae-a73c-4c6a-8719-90407c17d832"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_BASTONETES]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="240" width="338" height="18" uuid="0e761e62-6b3b-4cef-9d9d-d1ea2104124b"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_BASTONETES}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="260" width="132" height="20" forecolor="#000000" uuid="ecbadefc-8261-47f7-b4d9-7c71a05ddf35"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_EOSINOFILOS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="260" width="338" height="18" uuid="69be10af-0331-4abc-8451-91a129af032c"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_EOSINOFILOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="280" width="132" height="20" forecolor="#000000" uuid="e32ee54f-ad56-42d6-9404-88dec0376278"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_BASOFILOS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="280" width="338" height="18" uuid="32a83dee-e43e-4790-904a-28d17b049152"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_BASOFILOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="300" width="132" height="20" forecolor="#000000" uuid="c846ecf2-e513-4b59-8ce6-6efaca1ce2cb"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_LINFOCITOS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="300" width="338" height="18" uuid="9626dba0-9928-481d-8d78-34e323ce170e"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_LINFOCITOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="320" width="132" height="20" forecolor="#000000" uuid="16ce4dcd-b5de-4b96-aad3-3b8abebc70f2"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_MONOCITOS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="320" width="338" height="18" uuid="ffc6c974-ea7e-4415-be8c-b5585936f08a"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_MONOCITOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="340" width="132" height="20" forecolor="#000000" uuid="4359cf2c-8564-4567-86a2-1e0ab284d387"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_LEUCOCITOS1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="340" width="338" height="18" uuid="3b22d95f-e413-4416-b1be-69f687d46002"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_LEUCOCITOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="360" width="132" height="20" forecolor="#000000" uuid="6cc9068d-897d-43db-9e11-931a6518121e"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_NEUTROFILOS1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="360" width="338" height="18" uuid="213dafdb-d916-4a96-b05d-8e14d61f6476"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_NEUTROFILOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="380" width="132" height="20" forecolor="#000000" uuid="af55b4b7-c164-4a4d-88ae-448302973af0"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_SEGMENTADOS1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="380" width="338" height="18" uuid="ad7c2281-dccd-496c-8a3e-2ebeb3bbf9e6"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_SEGMENTADOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="400" width="132" height="20" forecolor="#000000" uuid="2cf623fe-0a0b-4736-871c-fa208f732485"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_BASTONETES1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="400" width="338" height="18" uuid="6eb0f3f5-806c-4c72-989f-a1acc34daf0a"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_BASTONETES1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="420" width="132" height="20" forecolor="#000000" uuid="000d6ea3-01f4-4e43-9cba-126070954bbd"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_EOSINOFILOS1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="420" width="338" height="18" uuid="5ece6549-87f7-4a88-9065-1fe0d15c5cd6"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_EOSINOFILOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="440" width="132" height="20" forecolor="#000000" uuid="99523aaf-e044-489f-9395-7ecac802831c"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_BASOFILOS1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="440" width="338" height="18" uuid="c5dc6f10-c482-4426-8e37-70406eda1ecd"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_BASOFILOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="460" width="132" height="20" forecolor="#000000" uuid="e9dd1078-173c-4923-bfa9-c3f5bd080e5c"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_LINFOCITOS1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="460" width="338" height="18" uuid="ee4c97fc-0dc5-4bb4-a82b-a28507881a35"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_LINFOCITOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="480" width="132" height="20" forecolor="#000000" uuid="8057662c-b6cf-4b77-97f7-255bba76267f"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_MONOCITOS1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="480" width="338" height="18" uuid="dbf47c31-29d6-4041-af07-4276bcb35b3b"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_MONOCITOS1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="500" width="132" height="20" forecolor="#000000" uuid="d4654542-52fa-47b6-a8ee-d4167cfc635b"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_CONTAGEM_PLAQUETAS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="500" width="338" height="18" uuid="000402ff-825f-4b66-aa9e-4adc0a1b52e9"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_CONTAGEM_PLAQUETAS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="520" width="132" height="20" forecolor="#000000" uuid="fb8c6986-ec27-41f2-8f97-460a5ca2152b"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[hemograma_DELET]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="520" width="338" height="18" uuid="17e4a572-c6b3-4de3-87ef-8afcbec219bb"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemograma_DELET}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="55b0d359-c055-4f9a-bc9e-e44440d92bd7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#9DB1B8" uuid="8edaa1cc-4804-4fbb-a5ef-3f667543babf"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="-1" width="40" height="13" forecolor="#FFFFFF" uuid="07574c8d-8243-42f0-844a-49f963584eeb"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="-1" width="80" height="13" forecolor="#FFFFFF" uuid="8a7e44c3-a4bd-41c3-84fb-4bc3b33dcf56"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="0" width="197" height="13" forecolor="#FFFFFF" uuid="0e60b26b-4c55-4cb1-bd5a-ecf3afcb87c0"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
